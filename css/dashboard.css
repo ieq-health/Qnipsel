@@ -1,0 +1,28 @@
+/* Sidebar */
+.sidebar-sticky {
+  height: 100vh;
+  position: relative;
+}
+
+.mm-wrapper {
+  height: 100%;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.mm-menu_theme-dark {
+  background: transparent;
+}
+
+/* .mm-listview .children {
+  font-size: 0.8rem;
+} */
+
+.mm-listitem_vertical > .mm-panel {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+.mm-listview .children a {
+  padding: 5px 5px 5px 10px;
+}
