@@ -1,7 +1,43 @@
-.codeview__preview-card .card-body {
+.codeview__preview-card .card-body,
+.codeview__code .card-body {
   padding: 0;
 }
 
 .codeview__preview-frame {
   border: none;
+}
+
+.codeview__code .card-body {
+  background: #1d1f21;
+}
+
+.codeview__code pre {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+/** Bad bootstrap */
+code .close {
+  float: none;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.close:not(:disabled):not(.disabled) {
+  cursor: initial;
+}
+
+.close:not(:disabled):not(.disabled):hover,
+.close:not(:disabled):not(.disabled):focus {
+  color: #f0c674;
+  opacity: 1;
+}
+
+/** Good bootstrap */
+pre code {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size: 0.87%;
 }

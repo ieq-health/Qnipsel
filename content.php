@@ -34,13 +34,13 @@ foreach ($sections as $section) {
                     <div class="card-body">
                         <div class="tab-content" id="<?= $title ?>TabContent">
                             <div class="tab-pane fade active show" role="tabpanel" id="<?= $title ?>-html">
-                                <code><pre><?= $html ?></pre></code>
+                                <pre><code data-language="html"><?= $html ?></code></pre>
                             </div>
                             <div class="tab-pane fade" role="tabpanel" id="<?= $title ?>-css">
-                                <code><pre><?= $css ?></pre></code>
+                                <pre><code data-language="css"><?= $css ?></code></pre>
                             </div>
                             <div class="tab-pane fade" role="tabpanel" id="<?= $title ?>-js">
-                                <code><pre><?= $js ?></pre></code>
+                                <pre><code data-language="javascript"><?= $js ?></code></pre>
                             </div>                   
                         </div>
                     </div>

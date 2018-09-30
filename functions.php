@@ -1,8 +1,12 @@
 <?php
 
+/** Custom Fields
+ * Set up the Custom Fields plugin and define some fields.
+ */
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+/** Add custom fields to pages */
 function templateq_crb_attach_post_options()
 {
     Container::make('post_meta', 'Sections')
@@ -15,14 +19,18 @@ function templateq_crb_attach_post_options()
 
                 ->add_fields('codepen', 'Codepen', array(
                     Field::make('text', 'title', 'Titel'),
-                    Field::make('textarea', 'html', 'HTML'),
-                    Field::make('textarea', 'css', 'CSS'),
-                    Field::make('textarea', 'js', 'JS'),
+                    Field::make('textarea', 'html', 'HTML')
+                        ->set_attribute('data-editor', 'html'),
+                    Field::make('textarea', 'css', 'CSS')
+                        ->set_attribute('data-editor', 'css'),
+                    Field::make('textarea', 'js', 'JS')
+                        ->set_attribute('data-editor', 'javascript'),
                 ))
         ));
 }
 add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
 
+/** Bootstrap Custom Fields */
 function templateq_crb_load()
 {
     require_once('vendor/autoload.php');
@@ -30,6 +38,20 @@ function templateq_crb_load()
 }
 add_action('after_setup_theme', 'templateq_crb_load');
 
+
+
+/**
+ * Supporting scripts and styles
+ */
+/** Backend */
+function templateq_enqueue_admin()
+{
+    wp_enqueue_script('ace', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js', array(), '1.4.1');
+    wp_enqueue_script('templateq_backend', get_template_directory_uri() . '/backend/script.js', array(), '0.0.1');
+}
+add_action('admin_enqueue_scripts', 'templateq_enqueue_admin');
+
+/** Frontend */
 function templateq_enqueue()
 {
     // Pull Bootstrap
@@ -43,6 +65,13 @@ function templateq_enqueue()
     // Pull mmenu
     wp_enqueue_style('mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.6/jquery.mmenu.all.css', array(), '7.0.6');
     wp_enqueue_script('mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.6/jquery.mmenu.all.js', array('jquery'), '7.0.6');
+
+    // Pull Rainbow
+    wp_enqueue_script('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js', array(), '1.2.0');
+    wp_enqueue_script('rainbow-html', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js', array('rainbow'), '1.2.0');
+    wp_enqueue_script('rainbow-css', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js', array('rainbow'), '1.2.0');
+    wp_enqueue_script('rainbow-js', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js', array('rainbow'), '1.2.0');
+    wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/tomorrow-night.min.css', array(), '1.2.0');
 
     // Pull custom CSS
     wp_enqueue_style('templateq_codeview', get_template_directory_uri() . '/css/codeview.css', array('bootstrap'), '0.0.1');
