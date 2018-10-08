@@ -23,8 +23,17 @@ function templateq_crb_attach_post_options()
                                ->set_attribute('data-editor', 'html'),
                           Field::make('textarea', 'css', 'CSS')
                                ->set_attribute('data-editor', 'css'),
+                          Field::make('multiselect', 'css_libs', 'CSS Libraries')
+                               ->add_options(array(
+                                   'bootstrap' => 'Bootstrap'
+                               )),
                           Field::make('textarea', 'js', 'JS')
                                ->set_attribute('data-editor', 'javascript'),
+                          Field::make('multiselect', 'js_libs', 'JS Libraries')
+                               ->add_options(array(
+                                   'bootstrap' => 'Bootstrap',
+                                   'jquery' => 'jQuery'
+                               ))
                       ))
              ));
 }
