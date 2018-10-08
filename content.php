@@ -42,6 +42,17 @@ foreach ($sections as $section) {
                         </div>                   
                     </div>
                 </div>
+                <div class="card-footer px-2 pb-2 pt-1">
+                    <?php if (in_array('bootstrap', $section['css_libs'])): ?>
+                    <span class="badge badge-pill badge-info">CSS: Bootstrap</span>
+                    <?php endif; ?>
+                    <?php if (in_array('bootstrap', $section['js_libs'])): ?>
+                    <span class="badge badge-pill badge-warning">JS: Bootstrap</span>
+                    <?php endif; ?>
+                    <?php if (in_array('jquery', $section['js_libs'])): ?>
+                    <span class="badge badge-pill badge-warning">JS: jQuery</span>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <script>
