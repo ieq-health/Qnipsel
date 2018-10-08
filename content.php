@@ -42,13 +42,34 @@ foreach ($sections as $section) {
                         </div>                   
                     </div>
                 </div>
+                <div class="card-footer px-2 pb-2 pt-1">
+                    <?php if (in_array('bootstrap', $section['css_libs'])): ?>
+                    <span class="badge badge-pill badge-info">CSS: Bootstrap</span>
+                    <?php endif; ?>
+                    <?php if (in_array('bootstrap', $section['js_libs'])): ?>
+                    <span class="badge badge-pill badge-warning">JS: Bootstrap</span>
+                    <?php endif; ?>
+                    <?php if (in_array('jquery', $section['js_libs'])): ?>
+                    <span class="badge badge-pill badge-warning">JS: jQuery</span>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <script>
                 let iframe = document.getElementById('<?= $section['title'] ?>').contentWindow.document;
                 iframe.open();
+                <?php if (in_array('bootstrap', $section['css_libs'])): ?>
+                iframe.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
+                <?php endif; ?>
                 iframe.write(`<style><?= $css ?></style>`);
                 iframe.write(`<body><?= $html ?></body>`);
+                <?php if (in_array('jquery', $section['js_libs'])): ?>
+                    iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+                <?php endif; ?>
+                <?php if (in_array('bootstrap', $section['js_libs'])): ?>
+                    iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+                    iframe.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
+                <?php endif; ?>
                 iframe.write(`<script><?= $js ?><\/script>`);
                 iframe.close();
             </script>
