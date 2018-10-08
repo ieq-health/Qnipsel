@@ -7,10 +7,6 @@
   border: none;
 }
 
-.codeview__code .card-body {
-  background: #1d1f21;
-}
-
 .codeview__code pre {
   height: 100%;
   margin-bottom: 0;
@@ -39,5 +35,5 @@ code .close {
 /** Good bootstrap */
 pre code {
   font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  font-size: 0.87%;
+  font-size: 0.87em;
 }
