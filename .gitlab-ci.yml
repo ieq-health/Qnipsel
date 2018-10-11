@@ -1,0 +1,16 @@
+stages:
+  - deploy
+
+deploy_production:
+  stage: deploy
+  image: tetraweb/php:7.1
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ssh-add <(echo "$STAGING_PRIVATE_KEY")
+  script:
+    - ssh -p22 p424439@mittwaldserver.info "cd /home/www/p424439/html/wordpress/wp-content/themes/templateQ && git pull"
+  only:
+    - master

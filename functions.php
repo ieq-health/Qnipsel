@@ -10,23 +10,32 @@ use Carbon_Fields\Field;
 function templateq_crb_attach_post_options()
 {
     Container::make('post_meta', 'Sections')
-        ->where('post_type', '=', 'page')
-        ->add_fields(array(
-            Field::make('complex', 'crb_sections', 'Sections')
-                ->add_fields('text', 'Text', array(
-                    Field::make('rich_text', 'text', 'Text')
-                ))
+             ->where('post_type', '=', 'page')
+             ->add_fields(array(
+                 Field::make('complex', 'crb_sections', 'Sections')
+                      ->add_fields('text', 'Text', array(
+                          Field::make('rich_text', 'text', 'Text')
+                      ))
 
-                ->add_fields('codepen', 'Codepen', array(
-                    Field::make('text', 'title', 'Titel'),
-                    Field::make('textarea', 'html', 'HTML')
-                        ->set_attribute('data-editor', 'html'),
-                    Field::make('textarea', 'css', 'CSS')
-                        ->set_attribute('data-editor', 'css'),
-                    Field::make('textarea', 'js', 'JS')
-                        ->set_attribute('data-editor', 'javascript'),
-                ))
-        ));
+                      ->add_fields('codepen', 'Codepen', array(
+                          Field::make('text', 'title', 'Titel'),
+                          Field::make('textarea', 'html', 'HTML')
+                               ->set_attribute('data-editor', 'html'),
+                          Field::make('textarea', 'css', 'CSS')
+                               ->set_attribute('data-editor', 'css'),
+                          Field::make('multiselect', 'css_libs', 'CSS Libraries')
+                               ->add_options(array(
+                                   'bootstrap' => 'Bootstrap'
+                               )),
+                          Field::make('textarea', 'js', 'JS')
+                               ->set_attribute('data-editor', 'javascript'),
+                          Field::make('multiselect', 'js_libs', 'JS Libraries')
+                               ->add_options(array(
+                                   'bootstrap' => 'Bootstrap',
+                                   'jquery' => 'jQuery'
+                               ))
+                      ))
+             ));
 }
 add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
 
@@ -38,6 +47,12 @@ function templateq_crb_load()
 }
 add_action('after_setup_theme', 'templateq_crb_load');
 
+/** We don't need the standard editor on pages anymore */
+function templateq_disable_editor()
+{
+    remove_post_type_support('page', 'editor');
+}
+add_action('admin_head', 'templateq_disable_editor');
 
 
 /**
