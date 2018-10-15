@@ -1,0 +1,41 @@
+{
+  "name": "templateq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "css-main": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify",
+    "css-lint": "stylelint --syntax scss \"scss/**/*.scss\"",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/main.scss dist/css/main.css",
+    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/main.min.css dist/css/main.css",
+    "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+    "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\""
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.gamkee.de:ieQ-health/templateQ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css": "^4.2.1",
+    "clean-css-cli": "^4.2.1",
+    "node-sass": "^4.9.4",
+    "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3",
+    "postcss": "^7.0.5",
+    "shx": "^0.3.2",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^1.0.0",
+    "stylelint-scss": "^3.3.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "postcss-cli": "^6.0.0"
+  }
+}

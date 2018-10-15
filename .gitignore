@@ -1,2 +1,8 @@
 .DS_Store
+
+# Compiled files
+dist/
+
+# Packages
 vendor/
+node_modules/

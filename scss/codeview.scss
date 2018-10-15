@@ -1,3 +1,8 @@
+.card-header-pills .nav-link.active {
+  border-left: 1px solid rgba(0,0,0,0.2);
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+
 .codeview__preview-card .card-body,
 .codeview__code .card-body {
   padding: 0;
