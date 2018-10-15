@@ -5,8 +5,12 @@ deploy_production:
   stage: deploy
   image: tetraweb/php:7.1
   before_script:
-    - "which sshpass || ( apt-get update -y && apt-get install sshpass -y )"
+    - "which ssh-agent || ( apt-get update -y && apt-get install ssh-agent -y )"
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
   script:
-    - sshpass -p $STAGING_SSH_PASS ssh p424439@p424439.mittwaldserver.info "cd /home/www/p424439/html/wordpress/wp-content/themes/templateQ && git pull"
+    - ssh p424439@p424439.mittwaldserver.info "cd /home/www/p424439/html/wordpress/wp-content/themes/templateQ && git pull"
   only:
     - master
