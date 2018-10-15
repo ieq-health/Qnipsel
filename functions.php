@@ -70,7 +70,6 @@ add_action('admin_enqueue_scripts', 'templateq_enqueue_admin');
 function templateq_enqueue()
 {
     // Pull Bootstrap
-    wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '4.1.3');
     wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3');
 
     // Pull latest jQuery
@@ -89,8 +88,7 @@ function templateq_enqueue()
     wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/tomorrow-night.min.css', array(), '1.2.0');
 
     // Pull custom CSS
-    wp_enqueue_style('templateq_codeview', get_template_directory_uri() . '/css/codeview.css', array('bootstrap'), '0.0.1');
-    wp_enqueue_style('templateq_dashboard', get_template_directory_uri() . '/css/dashboard.css', array('bootstrap'), '0.0.1');
+    wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/css/main.min.css', array(), '0.0.1');
 
     // Pull custom JS
     wp_enqueue_script('templateq_mmenu', get_template_directory_uri() . '/js/mmenu.js', array('mmenu'), '0.0.1');

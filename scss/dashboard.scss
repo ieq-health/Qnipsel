@@ -1,6 +1,5 @@
 /* Sidebar */
 .sidebar {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -25,6 +24,13 @@
   font-size: 0.8rem;
 } */
 
+.mm-listitem .mm-btn_next:before {
+  border-left: none;
+}
+.mm-listitem:after {
+  border-bottom: none;
+}
+
 .mm-listitem_vertical > .mm-panel {
   font-size: 0.8rem;
   padding: 5px;
@@ -32,4 +38,15 @@
 
 .mm-listview .children a {
   padding: 5px 5px 5px 10px;
+}
+
+.mm-listitem {
+  border-left: 2px solid transparent;
+}
+.mm-listitem_opened {
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid rgba(255,255,255,0.2);
+}
+.mm-menu_theme-dark .mm-listitem_opened>.mm-btn_next, .mm-menu_theme-dark .mm-listitem_opened>.mm-panel {
+  background: transparent;
 }
