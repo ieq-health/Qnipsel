@@ -53,11 +53,12 @@ function templateq_disable_editor()
     remove_post_type_support('page', 'editor');
 }
 add_action('admin_head', 'templateq_disable_editor');
-
+add_filter('use_block_editor_for_post_type', '__return_false');
 
 /**
  * Supporting scripts and styles
  */
+
 /** Backend */
 function templateq_enqueue_admin()
 {
