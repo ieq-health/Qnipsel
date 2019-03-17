@@ -68,6 +68,8 @@ function templateq_disable_editor()
     remove_post_type_support('page', 'editor');
 }
 add_action('admin_head', 'templateq_disable_editor');
+
+/** Or Gutenberg */
 add_filter('use_block_editor_for_post_type', '__return_false');
 
 /**
@@ -85,6 +87,9 @@ add_action('admin_enqueue_scripts', 'templateq_enqueue_admin');
 /** Frontend */
 function templateq_enqueue()
 {
+	// Remove block library (Gutenberg)
+	wp_deregister_style('wp-block-library');
+
     // Pull latest jQuery
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
