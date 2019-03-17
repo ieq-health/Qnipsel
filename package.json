@@ -1,7 +1,7 @@
 {
   "name": "templateq",
-  "version": "0.1.3",
-  "description": "",
+  "version": "0.2.0",
+  "description": "Wordpress theme to power qnipsel",
   "main": "webpack.config.js",
   "scripts": {
     "css-main": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git@git.trbk.it:ieq-health/qnipsel.git"
   },
-  "author": "",
+  "author": "Christian Brassat <christian@brassat.eu>",
   "license": "ISC",
   "dependencies": {
     "bulma": "^0.7.4",
