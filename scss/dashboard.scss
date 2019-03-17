@@ -17,6 +17,15 @@ aside.menu {
 		margin: 1em;
 	}
 
+	.logo {
+		margin: 3em 1em 2em;
+		text-align: center;
+	}
+
+	.logo img {
+		max-width: 180px;
+	}
+
 	nav {
 		position: sticky;
 		top: 1em;
