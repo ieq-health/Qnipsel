@@ -70,7 +70,7 @@ foreach ($sections as $section) {
 				<div class="control">
 				    <div class="tags has-addons">
 					<div class="tag is-dark">CSS</div>
-					<div class="tag is-info">Bootstrap</div>
+					<div class="tag is-black">Bootstrap</div>
 				    </div>
 				</div>
 				<?php endif; ?>
@@ -79,7 +79,7 @@ foreach ($sections as $section) {
 				<div class="control">
 				    <div class="tags has-addons">
 					<div class="tag is-dark">JS</div>
-					<div class="tag is-info">Bootstrap</div>
+					<div class="tag is-black">Bootstrap</div>
 				    </div>
 				</div>
 				<?php endif; ?>
@@ -88,7 +88,7 @@ foreach ($sections as $section) {
 				<div class="control">
 				    <div class="tags has-addons">
 					<div class="tag is-dark">JS</div>
-					<div class="tag is-info">jQuery</div>
+					<div class="tag is-black">jQuery</div>
 				    </div>
 				</div>
 				<?php endif; ?>
