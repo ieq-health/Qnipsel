@@ -8,7 +8,6 @@ body {
 
 aside.menu {
 	border-right: 1px solid #ddd;
-	box-shadow: 5px 0 0 0 #f9f9f9;
 	font-size: 0.8em;
 	width: 20vw;
 	max-width: 300px;
@@ -31,6 +30,12 @@ aside.menu {
 
 /* Main Content */
 
-main.container {
-	padding: 1em;
+main {
+	background: #fafafa;
+	flex-grow: 1;
+	padding-top: 4vw;
+
+	& > .container {
+		padding: 1em;
+	}
 }
