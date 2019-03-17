@@ -1,11 +1,16 @@
+.codeview__code {
+	background: #fff;
+	border: solid #eee;
+	border-width: 1px 0;
+	box-shadow: 0 2px 0 rgba(0,0,0,0.01);
+	padding: 1em 3em 2em;
+}
 .codeview__code iframe {
     border: 1px solid #eee;
     width: 100%;
 }
 
 .codeview__code pre {
-  background: #1d1f21;
-  color: #c5c8c6;
   height: 100%;
   margin-bottom: 0;
 }
@@ -16,7 +21,6 @@
 
 pre code {
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-    font-size: 0.87em;
 }
 
 /** Bad Bulma */
@@ -27,8 +31,4 @@ pre .tag {
     font-size: inherit;
     height: unset;
     padding: 0;
-}
-
-pre .tag.support {
-    color: #f0c674;
 }

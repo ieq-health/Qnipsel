@@ -1,4 +1,8 @@
-<h1 class="title"><?php the_title(); ?></h1>
+<div class="container">
+    <div class="content">
+	<h1 class="title"><?php the_title(); ?></h1>
+    </div>
+</div>
 
 <?php
 
@@ -7,9 +11,11 @@ foreach ($sections as $section) {
     switch ($section['_type']) {
         case 'text':
             ?>
-            <div class="content">
-                <?= wpautop($section['text']) ?>
-            </div>
+	    <div class="container">
+		<div class="content">
+		    <?= wpautop($section['text']) ?>
+		</div>
+	    </div>
             <?php
             break;
         

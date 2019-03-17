@@ -17,17 +17,13 @@
     </nav>
 </aside>
 
-<main class="container">
-    <div class="columns">
-	<div class="column">
-	    <?php
-	    if (have_posts()) {
-		while (have_posts()) {
-		    the_post();
-		    get_template_part('content', get_post_format());
-		}
-	    }
-	    ?>
-	</div>
-    </div>
+<main>
+    <?php
+    if (have_posts()) {
+	while (have_posts()) {
+	    the_post();
+	    get_template_part('content', get_post_format());
+	}
+    }
+    ?>
 </main>
