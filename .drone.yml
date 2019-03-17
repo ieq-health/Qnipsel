@@ -13,8 +13,11 @@ steps:
       from_secret: SSH_IP
   commands:
   - apk update
-  - apk add openssh sshpass
-  - sshpass -p $$SSH_PASS ssh -o StrictHostKeyChecking=no $$SSH_USER@$$SSH_IP "./update_qnipsel.sh"
+  - apk add git npm openssh sshpass
+  - npm install
+  - npm run css-main
+  - rm -rf .git build node_modules scss
+  - sshpass -p $$SSH_PASS scp -r -o StrictHostKeyChecking=no . $$SSH_USER@$$SSH_IP:html/qnipsel/wp-content/themes/templateq
   when:
     branch:
     - master
