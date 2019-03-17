@@ -18,6 +18,24 @@ foreach ($sections as $section) {
 	    </div>
             <?php
             break;
+
+	case 'message':
+	    ?>
+	    <div class="container">
+		<div class="message is-<?= $section['style'] ?>">
+		    <?php if (!empty($section['title'])): ?>
+		    <div class="message-header">
+			<?= $section['title'] ?>
+		    </div>
+		    <?php endif ?>
+
+		    <div class="message-body">
+			<?= $section['body'] ?>
+		    </div>
+		</div>
+	    </div>
+	    <?php
+	    break;
         
         case 'codepen':
             $title = $section['title'];
@@ -118,3 +136,8 @@ foreach ($sections as $section) {
             <?php
     }
 }
+?>
+
+			<footer class="footer has-text-centered">
+				<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?= the_modified_date(); ?>
+			</footer>
