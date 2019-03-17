@@ -1,15 +1,13 @@
-.card-header-pills .nav-link.active {
-  border-left: 1px solid rgba(0,0,0,0.2);
-  border-right: 1px solid rgba(0,0,0,0.2);
+.codeview__code {
+	background: #fff;
+	border: solid #eee;
+	border-width: 1px 0;
+	box-shadow: 0 2px 0 rgba(0,0,0,0.01);
+	padding: 1em 3em 2em;
 }
-
-.codeview__preview-card .card-body,
-.codeview__code .card-body {
-  padding: 0;
-}
-
-.codeview__preview-frame {
-  border: none;
+.codeview__code iframe {
+    border: 1px solid #eee;
+    width: 100%;
 }
 
 .codeview__code pre {
@@ -17,28 +15,20 @@
   margin-bottom: 0;
 }
 
-/** Bad bootstrap */
-code .close {
-  float: none;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  text-shadow: none;
-  opacity: 1;
+.codeview__code .tab-content div:not(.is-active) {
+    display: none;
 }
 
-.close:not(:disabled):not(.disabled) {
-  cursor: initial;
-}
-
-.close:not(:disabled):not(.disabled):hover,
-.close:not(:disabled):not(.disabled):focus {
-  color: #f0c674;
-  opacity: 1;
-}
-
-/** Good bootstrap */
 pre code {
-  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  font-size: 0.87em;
+    font-family: SFMono-Regular,Menlo,Monaco,"Roboto Mono", Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+/** Bad Bulma */
+
+pre .tag {
+    background-color: transparent;
+    border-radius: 0;
+    font-size: inherit;
+    height: unset;
+    padding: 0;
 }
