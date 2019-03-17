@@ -17,11 +17,16 @@ aside.menu {
     & > * {
 	margin: 1em;
     }
-}
 
-aside.menu .current_page_item > a {
-    background: $link;
-    color: $link-invert;
+    nav {
+	position: sticky;
+	top: 1em;
+    }
+
+    .current_page_item > a {
+	background: $link;
+	color: $link-invert;
+    }
 }
 
 /* Main Content */
