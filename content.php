@@ -1,3 +1,5 @@
+<h1 class="title"><?php the_title(); ?></h1>
+
 <?php
 
 $sections = carbon_get_the_post_meta('crb_sections');
@@ -17,42 +19,76 @@ foreach ($sections as $section) {
             $css = $section['css'];
             $js = $section['js'];
             ?>
-            <div class="card codeview__code">
-                <div class="card-header p-0">
-                    <ul class="nav nav-pills card-header-pills justify-content-center" id="<?= $title ?>Tab" role="tablist">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" role="tab" id="<?= $title ?>-tab-preview" href="#<?= $title ?>-preview">Vorschau</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" id="<?= $title ?>-tab-html" href="#<?= $title ?>-html">HTML</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" id="<?= $title ?>-tab-css"  href="#<?= $title ?>-css" >CSS</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" id="<?= $title ?>-tab-js"   href="#<?= $title ?>-js"  >JS</a></li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <div class="tab-content" id="<?= $title ?>TabContent">
-                        <div class="tab-pane fade active show" role="tabpanel" id="<?= $title ?>-preview">
-                            <iframe id="<?= $title ?>" class="codeview__preview-frame"></iframe>
-                        </div>
-                        <div class="tab-pane fade" role="tabpanel" id="<?= $title ?>-html">
-                            <pre><code data-language="html"><?= $html ?></code></pre>
-                        </div>
-                        <div class="tab-pane fade" role="tabpanel" id="<?= $title ?>-css">
-                            <pre><code data-language="css"><?= $css ?></code></pre>
-                        </div>
-                        <div class="tab-pane fade" role="tabpanel" id="<?= $title ?>-js">
-                            <pre><code data-language="javascript"><?= $js ?></code></pre>
-                        </div>                   
-                    </div>
-                </div>
-                <div class="card-footer px-2 pb-2 pt-1">
-                    <?php if (in_array('bootstrap', $section['css_libs'])): ?>
-                    <span class="badge badge-pill badge-info">CSS: Bootstrap</span>
-                    <?php endif; ?>
-                    <?php if (in_array('bootstrap', $section['js_libs'])): ?>
-                    <span class="badge badge-pill badge-warning">JS: Bootstrap</span>
-                    <?php endif; ?>
-                    <?php if (in_array('jquery', $section['js_libs'])): ?>
-                    <span class="badge badge-pill badge-warning">JS: jQuery</span>
-                    <?php endif; ?>
-                </div>
+            <div class="codeview__code">
+
+		<div class="level">
+
+		    <!-- Tabs -->
+		    <div class="level-left">
+			<div class="level-item">
+			    <div class="tabs">
+				<ul id="<?= $title ?>Tab">
+				    <li class="is-active"><a id="<?= $title ?>-tab-preview" href="#<?= $title ?>-preview">Vorschau</a></li>
+				    <li><a id="<?= $title ?>-tab-html" href="#<?= $title ?>-html">HTML</a></li>
+				    <li><a id="<?= $title ?>-tab-css"  href="#<?= $title ?>-css" >CSS</a></li>
+				    <li><a id="<?= $title ?>-tab-js"   href="#<?= $title ?>-js"  >JS</a></li>
+				</ul>
+			    </div>
+			</div>
+		    </div>
+		    <!-- END Tabs -->
+
+		    <!-- Tags -->
+		    <div class="level-right">
+			<div class="level-item">
+			    <div class="field is-grouped">
+				<?php if (in_array('bootstrap', $section['css_libs'])): ?>
+				<div class="control">
+				    <div class="tags has-addons">
+					<div class="tag is-dark">CSS</div>
+					<div class="tag is-info">Bootstrap</div>
+				    </div>
+				</div>
+				<?php endif; ?>
+
+				<?php if (in_array('bootstrap', $section['js_libs'])): ?>
+				<div class="control">
+				    <div class="tags has-addons">
+					<div class="tag is-dark">JS</div>
+					<div class="tag is-info">Bootstrap</div>
+				    </div>
+				</div>
+				<?php endif; ?>
+
+				<?php if (in_array('jquery', $section['js_libs'])): ?>
+				<div class="control">
+				    <div class="tags has-addons">
+					<div class="tag is-dark">JS</div>
+					<div class="tag is-info">jQuery</div>
+				    </div>
+				</div>
+				<?php endif; ?>
+			    </div>
+			</div>
+		    </div>
+		    <!-- END Tags -->
+
+		</div>
+
+		<div class="tab-content" id="<?= $title ?>TabContent">
+		    <div class="is-active" id="<?= $title ?>-preview">
+			<iframe id="<?= $title ?>" class="codeview__preview-frame"></iframe>
+		    </div>
+		    <div id="<?= $title ?>-html">
+			<pre><code data-language="html"><?= $html ?></code></pre>
+		    </div>
+		    <div id="<?= $title ?>-css">
+			<pre><code data-language="css"><?= $css ?></code></pre>
+		    </div>
+		    <div id="<?= $title ?>-js">
+			<pre><code data-language="javascript"><?= $js ?></code></pre>
+		    </div>                   
+		</div>
             </div>
 
             <script>
