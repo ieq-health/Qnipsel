@@ -7,7 +7,7 @@ foreach ($sections as $section) {
     switch ($section['_type']) {
         case 'text':
             ?>
-            <div class="section-text p-4">
+            <div class="content">
                 <?= wpautop($section['text']) ?>
             </div>
             <?php
