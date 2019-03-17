@@ -35,6 +35,21 @@ function templateq_crb_attach_post_options()
                                    'jquery' => 'jQuery'
                                ))
                       ))
+
+                      ->add_fields('message', 'Message', array(
+                          Field::make('text', 'title', 'Titel'),
+                          Field::make('rich_text', 'body', 'Text'),
+                          Field::make('select', 'style', 'Stil')
+                               ->add_options(array(
+                                   'dark'    => 'Dark',
+                                   'primary' => 'Primary',
+                                   'link'    => 'Link',
+                                   'info'    => 'Info',
+                                   'success' => 'Success',
+                                   'warning' => 'Warning',
+                                   'danger'  => 'Danger',
+                               ))
+                      ))
              ));
 }
 add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
@@ -70,28 +85,21 @@ add_action('admin_enqueue_scripts', 'templateq_enqueue_admin');
 /** Frontend */
 function templateq_enqueue()
 {
-    // Pull Bootstrap
-    wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3');
-
     // Pull latest jQuery
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
 
-    // Pull mmenu
-    wp_enqueue_style('mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.6/jquery.mmenu.all.css', array(), '7.0.6');
-    wp_enqueue_script('mmenu', 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.6/jquery.mmenu.all.js', array('jquery'), '7.0.6');
+    // Pull custom CSS
+    wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/css/main.min.css', array(), '0.0.1');
+
+    // Pull custom JS
+    wp_enqueue_script('templateq_codeview', get_template_directory_uri() . '/js/codeview.js', array('jquery'), '0.0.1');
 
     // Pull Rainbow
     wp_enqueue_script('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js', array(), '1.2.0');
     wp_enqueue_script('rainbow-html', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js', array('rainbow'), '1.2.0');
     wp_enqueue_script('rainbow-css', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js', array('rainbow'), '1.2.0');
     wp_enqueue_script('rainbow-js', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js', array('rainbow'), '1.2.0');
-    wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/tomorrow-night.min.css', array(), '1.2.0');
-
-    // Pull custom CSS
-    wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/css/main.min.css', array(), '0.0.1');
-
-    // Pull custom JS
-    wp_enqueue_script('templateq_mmenu', get_template_directory_uri() . '/js/mmenu.js', array('mmenu'), '0.0.1');
+    wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css', array('templateq_css'), '1.2.0');
 }
 add_action('wp_enqueue_scripts', 'templateq_enqueue');
