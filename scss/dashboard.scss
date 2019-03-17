@@ -1,36 +1,36 @@
 body {
-    display: flex;
-    margin: 0;
-    padding: 0;
+	display: flex;
+	margin: 0;
+	padding: 0;
 }
 
 /* Sidebar */
 
 aside.menu {
-    border-right: 1px solid #ddd;
-    box-shadow: 5px 0 0 0 #f9f9f9;
-    font-size: 0.8em;
-    width: 20vw;
-    max-width: 300px;
-    min-height: 100vh;
+	border-right: 1px solid #ddd;
+	box-shadow: 5px 0 0 0 #f9f9f9;
+	font-size: 0.8em;
+	width: 20vw;
+	max-width: 300px;
+	min-height: 100vh;
 
-    & > * {
-	margin: 1em;
-    }
+	& > * {
+		margin: 1em;
+	}
 
-    nav {
-	position: sticky;
-	top: 1em;
-    }
+	nav {
+		position: sticky;
+		top: 1em;
+	}
 
-    .current_page_item > a {
-	background: $link;
-	color: $link-invert;
-    }
+	.current_page_item > a {
+		background: $link;
+		color: $link-invert;
+	}
 }
 
 /* Main Content */
 
 main.container {
-    padding: 1em;
+	padding: 1em;
 }
