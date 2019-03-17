@@ -1,0 +1,23 @@
+kind: pipeline
+name: default
+
+steps:
+- name: update_theme
+  image: alpine
+  environment:
+    SSH_USER:
+      from_secret: SSH_USER
+    SSH_PASS:
+      from_secret: SSH_PASS
+    SSH_IP:
+      from_secret: SSH_IP
+  commands:
+  - apk update
+  - apk add git npm openssh sshpass
+  - npm install
+  - npm run css-main
+  - rm -rf .git build node_modules scss
+  - sshpass -p $$SSH_PASS scp -r -o StrictHostKeyChecking=no . $$SSH_USER@$$SSH_IP:html/qnipsel/wp-content/themes/templateq
+  when:
+    branch:
+    - master
