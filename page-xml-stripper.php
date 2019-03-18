@@ -23,14 +23,16 @@
 			</div>
 
 			<div class="container-fluid xml-stripper">
-				<div class="column">
-					<p class="has-text-grey is-uppercase is-size-7">Input</p>
-					<textarea class="textarea is-family-code" name="" id="input" cols="30" rows="10"></textarea>
-				</div>
+				<div class="columns">
+					<div class="column">
+						<p class="has-text-grey is-uppercase is-size-7">Input</p>
+						<textarea class="textarea is-family-code" name="" id="input" cols="30" rows="10"></textarea>
+					</div>
 
-				<div class="column has-background-light">
-					<p class="has-text-grey is-uppercase is-size-7">Output</p>
-					<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly></textarea>
+					<div class="column has-background-light">
+						<p class="has-text-grey is-uppercase is-size-7">Output</p>
+						<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly></textarea>
+					</div>
 				</div>
 			</div>
 		<?php endwhile; ?>
