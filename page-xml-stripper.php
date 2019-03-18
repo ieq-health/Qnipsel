@@ -24,8 +24,15 @@
 
 			<div class="container-fluid">
 				<div class="columns">
-					<div class="column"><textarea class="textarea" name="" id="input" cols="30" rows="10"></textarea></div>
-					<div class="column"><textarea class="textarea" name="" id="output" cols="30" rows="10"></textarea></div>
+					<div class="column">
+						<p>Hier XML reinkopieren</p>
+						<textarea class="textarea" name="" id="input" cols="30" rows="10"></textarea>
+					</div>
+
+					<div class="column">
+						<p>Hier XML rauskopieren</p>
+						<textarea class="textarea" name="" id="output" cols="30" rows="10" readonly></textarea>
+					</div>
 				</div>
 			</div>
 		<?php endwhile; ?>
@@ -41,6 +48,9 @@
 
 			xml = xml.replace(/.*<lastmod.*\n/g, '');
 			xml = xml.replace(/.*<priority.*\n/g, '');
+
+			xml = xml.replace(/.*<url.*\n.*gw_dental.*\n.*url>.*\n/g, '');
+			xml = xml.replace(/.*<url.*\n.*dentallabor.*\n.*url>.*\n/g, '');
 
 			$('#output').val(xml);
 		});
