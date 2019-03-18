@@ -52,7 +52,7 @@ function templateq_crb_attach_post_options()
                                ->set_attribute('data-editor', 'css'),
                           Field::make('multiselect', 'css_libs', 'CSS Libraries')
                                ->add_options(array(
-                                   'bootstrap' => 'Bootstrap'
+                                   'bootstrap' => 'Bootstrap',
                                    'slick' => 'Slick'
                                )),
                           Field::make('textarea', 'js', 'JS')
@@ -60,7 +60,7 @@ function templateq_crb_attach_post_options()
                           Field::make('multiselect', 'js_libs', 'JS Libraries')
                                ->add_options(array(
                                    'bootstrap' => 'Bootstrap',
-                                   'jquery' => 'jQuery'
+                                   'jquery' => 'jQuery',
                                    'slick' => 'Slick'
                                ))
                       ))
