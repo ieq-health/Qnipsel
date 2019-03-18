@@ -13,7 +13,7 @@ function templateq_crb_attach_post_options()
              ->where('post_type', '=', 'page')
              ->add_fields(array(
                  Field::make('complex', 'crb_sections', 'Sections')
-					  ->add_fields('columns', 'Spalten', array(
+                      ->add_fields('columns', 'Spalten', array(
                           Field::make('complex', 'crb_columns', 'Spalten')
                                ->add_fields('text', 'Text', array(
                                    Field::make('rich_text', 'text', 'Text')
@@ -33,10 +33,15 @@ function templateq_crb_attach_post_options()
                                            'danger'  => 'Danger',
                                        ))
                               ))
-			          ))
+                      ))
 
                       ->add_fields('text', 'Text', array(
                           Field::make('rich_text', 'text', 'Text')
+                      ))
+
+                      ->add_fields('code', 'Code', array(
+                          Field::make('text', 'language', 'Sprache'),
+                          Field::make('textarea', 'code', 'Code')
                       ))
 
                       ->add_fields('codepen', 'Codepen', array(
