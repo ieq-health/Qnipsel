@@ -10,12 +10,14 @@ $sections = carbon_get_the_post_meta('crb_sections');
 foreach ($sections as $section) {
 	switch ($section['_type']) {
 		case 'columns': ?>
-			<div class="columns">
-			<?php foreach ($section['crb_columns'] as $column): ?>
-				<div class="column">
-					column
+			<div class="container">
+				<div class="columns">
+				<?php foreach ($section['crb_columns'] as $column): ?>
+					<div class="column">
+						<?php var_dump($column); ?>
+					</div>
+				<?php endforeach; ?>
 				</div>
-			<?php endforeach; ?>
 			</div>
 		<?php break;
 
@@ -42,6 +44,12 @@ foreach ($sections as $section) {
 				</div>
 			</div>
 		<?php break;
+
+		case 'code': ?>
+			<div class="container">
+				<pre><code data-language="<?= $section['language']; ?>"><?= $section['code']; ?></code></pre>
+			</div>
+		<? break;
 		
 		case 'codepen':
 			$title = $section['title'];
