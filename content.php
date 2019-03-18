@@ -1,3 +1,9 @@
+<?php
+	include __DIR__ . '/content_blocks/code.php';
+	include __DIR__ . '/content_blocks/message.php';
+	include __DIR__ . '/content_blocks/text.php';
+?>
+
 <div class="container">
 	<div class="content">
 	<h1 class="title"><?php the_title(); ?></h1>
@@ -9,31 +15,24 @@
 $sections = carbon_get_the_post_meta('crb_sections');
 foreach ($sections as $section) {
 	switch ($section['_type']) {
+
 		case 'columns': ?>
 			<div class="container">
 				<div class="columns">
 				<?php foreach ($section['crb_columns'] as $column): ?>
 					<div class="column">
 						<?php if ($column['_type'] == 'text'): ?>
-							<div class="content">
-								<?= wpautop($column['text']); ?>
-							</div>
+							<?= templateq_text_block($column['text']); ?>
 						<?php endif; ?>
 
 						<?php if ($column['_type'] == 'message'): ?>
-							<div class="message is=<?= $column['style']; ?>">
-
-								<?php if (!empty($column['title'])): ?>
-									<div class="message-header">
-										<?= $column['title'] ?>
-									</div>
-								<?php endif ?>
-
-								<div class="message-body content">
-									<?= $column['body'] ?>
-								</div>
-							</div>
+							<?= templateq_message_block($column['style'], $column['title'], $column['body']); ?>
 						<?php endif; ?>
+
+						<?php if ($column['_type'] == 'code'): ?>
+							<?= templateq_code_block($column['language'], $column['code']); ?>
+						<?php endif; ?>
+
 					</div>
 				<?php endforeach; ?>
 				</div>
@@ -46,23 +45,21 @@ foreach ($sections as $section) {
 					<div class="tabs">
 						<ul>
 							<?php foreach ($section['crb_tabs'] as $tab): ?>
-								<li><a href="#<?= $tab['title']; ?>"><?= $tab['title']; ?></a></li>
+								<li><a href="#<?= sanitize_title($tab['title']); ?>"><?= $tab['title']; ?></a></li>
 							<?php endforeach; ?>
 						</ul>
 					</div>
 
 					<div class="tab-content">
 						<?php foreach ($section['crb_tabs'] as $tab): ?>
-							<div id="<?= $tab['title']; ?>">
+							<div id="<?= sanitize_title($tab['title']); ?>">
 								<?php if ($tab['_type'] == 'text'): ?>
-									<div class="content">
-										<?= wpautop($tab['text']); ?>
-									</div>
+									<?= templateq_text_block($tab['text']); ?>
 								<?php endif; ?>
 
 
 								<?php if ($tab['_type'] == 'code'): ?>
-									<pre><code data-language="<?= $tab['language']; ?>"><?= $tab['code']; ?></code></pre>
+									<?= templateq_code_block($tab['language'], $tab['code']); ?>
 								<?php endif; ?>
 							</div>
 						<?php endforeach; ?>
@@ -73,31 +70,19 @@ foreach ($sections as $section) {
 
 		case 'text': ?>
 			<div class="container">
-				<div class="content">
-					<?= wpautop($section['text']) ?>
-				</div>
+				<?= templateq_text_block($section['text']); ?>
 			</div>
 		<?php break;
 
 		case 'message': ?>
 			<div class="container">
-				<div class="message is-<?= $section['style'] ?>">
-					<?php if (!empty($section['title'])): ?>
-						<div class="message-header">
-							<?= $section['title'] ?>
-						</div>
-					<?php endif ?>
-
-					<div class="message-body content">
-						<?= $section['body'] ?>
-					</div>
-				</div>
+				<?= templateq_message_block($section['style'], $section['title'], $section['body']); ?>
 			</div>
 		<?php break;
 
 		case 'code': ?>
 			<div class="container">
-				<pre><code data-language="<?= $section['language']; ?>"><?= $section['code']; ?></code></pre>
+				<?= templateq_code_block($section['language'], $section['code']); ?>
 			</div>
 		<? break;
 		
