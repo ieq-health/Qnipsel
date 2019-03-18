@@ -14,16 +14,7 @@ foreach ($sections as $section) {
 				<div class="columns">
 				<?php foreach ($section['crb_columns'] as $column): ?>
 					<div class="column">
-						<?php switch ($column['_type']): ?>
-							<?php case 'text': ?>
-								text
-							<?php break; ?>
-
-							<?php case 'message': ?>
-								message
-							<?php break; ?>
-
-						<?php endswitch; ?>
+						<?= $column['_type']; ?>
 					</div>
 				<?php endforeach; ?>
 				</div>
@@ -141,18 +132,33 @@ foreach ($sections as $section) {
 			<script>
 				let iframe = document.getElementById('<?= $section['title'] ?>').contentWindow.document;
 				iframe.open();
+
 				<?php if (in_array('bootstrap', $section['css_libs'])): ?>
-				iframe.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
+					iframe.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
 				<?php endif; ?>
+
+				<?php if (in_array('slick', $section['css_libs'])): ?>
+					iframe.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
+					iframe.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
+				<?php endif; ?>
+
 				iframe.write(`<style><?= $css ?></style>`);
 				iframe.write(`<body><?= $html ?></body>`);
+
 				<?php if (in_array('jquery', $section['js_libs'])): ?>
 					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
 				<?php endif; ?>
+
 				<?php if (in_array('bootstrap', $section['js_libs'])): ?>
 					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
 					iframe.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
 				<?php endif; ?>
+
+				<?php if (in_array('slick', $section['js_libs'])): ?>
+					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+					iframe.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
+				<?php endif; ?>
+
 				iframe.write(`<script><?= $js ?><\/script>`);
 				iframe.close();
 			</script>
