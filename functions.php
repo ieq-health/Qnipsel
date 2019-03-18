@@ -62,6 +62,10 @@ function templateq_crb_load()
 }
 add_action('after_setup_theme', 'templateq_crb_load');
 
+/**
+ * Theme Support
+ */
+
 /** We don't need the standard editor on pages anymore */
 function templateq_disable_editor()
 {
@@ -71,6 +75,9 @@ add_action('admin_head', 'templateq_disable_editor');
 
 /** Or Gutenberg */
 add_filter('use_block_editor_for_post_type', '__return_false');
+
+/** Title Tag */
+add_theme_support('title-tag');
 
 /**
  * Supporting scripts and styles
