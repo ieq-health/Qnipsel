@@ -14,9 +14,59 @@ foreach ($sections as $section) {
 				<div class="columns">
 				<?php foreach ($section['crb_columns'] as $column): ?>
 					<div class="column">
-						<?= $column['_type']; ?>
+						<?php if ($column['_type'] == 'text'): ?>
+							<div class="content">
+								<?= wpautop($column['text']); ?>
+							</div>
+						<?php endif; ?>
+
+						<?php if ($column['_type'] == 'message'): ?>
+							<div class="message is=<?= $column['style']; ?>">
+
+								<?php if (!empty($column['title'])): ?>
+									<div class="message-header">
+										<?= $column['title'] ?>
+									</div>
+								<?php endif ?>
+
+								<div class="message-body content">
+									<?= $column['body'] ?>
+								</div>
+							</div>
+						<?php endif; ?>
 					</div>
 				<?php endforeach; ?>
+				</div>
+			</div>
+		<?php break;
+
+		case 'tabs': ?>
+			<div class="tabview">
+				<div class="container">
+					<div class="tabs">
+						<ul>
+							<?php foreach ($section['crb_tabs'] as $tab): ?>
+								<li><a href="#<?= $tab['title']; ?>"><?= $tab['title']; ?></a></li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+
+					<div class="tab-content">
+						<?php foreach ($section['crb_tabs'] as $tab): ?>
+							<div id="<?= $tab['title']; ?>">
+								<?php if ($tab['_type'] == 'text'): ?>
+									<div class="content">
+										<?= wpautop($tab['text']); ?>
+									</div>
+								<?php endif; ?>
+
+
+								<?php if ($tab['_type'] == 'code'): ?>
+									<pre><code data-language="<?= $tab['language']; ?>"><?= $tab['code']; ?></code></pre>
+								<?php endif; ?>
+							</div>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</div>
 		<?php break;
@@ -81,31 +131,51 @@ foreach ($sections as $section) {
 					<div class="level-item">
 						<div class="field is-grouped">
 						<?php if (in_array('bootstrap', $section['css_libs'])): ?>
-						<div class="control">
-							<div class="tags has-addons">
-							<div class="tag is-dark">CSS</div>
-							<div class="tag is-black">Bootstrap</div>
+							<div class="control">
+								<div class="tags has-addons">
+									<div class="tag is-dark">CSS</div>
+									<div class="tag is-black">Bootstrap</div>
+								</div>
 							</div>
-						</div>
+						<?php endif; ?>
+
+						<?php if (in_array('slick', $section['css_libs'])): ?>
+							<div class="control">
+								<div class="tags has-addons">
+									<div class="tag is-dark">CSS</div>
+									<div class="tag is-black">Slick</div>
+								</div>
+							</div>
 						<?php endif; ?>
 
 						<?php if (in_array('bootstrap', $section['js_libs'])): ?>
-						<div class="control">
-							<div class="tags has-addons">
-							<div class="tag is-dark">JS</div>
-							<div class="tag is-black">Bootstrap</div>
+							<div class="control">
+								<div class="tags has-addons">
+									<div class="tag is-dark">JS</div>
+									<div class="tag is-black">Bootstrap</div>
+								</div>
 							</div>
-						</div>
 						<?php endif; ?>
 
 						<?php if (in_array('jquery', $section['js_libs'])): ?>
-						<div class="control">
-							<div class="tags has-addons">
-							<div class="tag is-dark">JS</div>
-							<div class="tag is-black">jQuery</div>
+							<div class="control">
+								<div class="tags has-addons">
+									<div class="tag is-dark">JS</div>
+									<div class="tag is-black">jQuery</div>
+								</div>
 							</div>
-						</div>
 						<?php endif; ?>
+
+						<?php if (in_array('slick', $section['js_libs'])): ?>
+							<div class="control">
+								<div class="tags has-addons">
+									<div class="tag is-dark">JS</div>
+									<div class="tag is-black">Slick</div>
+								</div>
+							</div>
+						<?php endif; ?>
+
+
 						</div>
 					</div>
 					</div>
@@ -115,16 +185,16 @@ foreach ($sections as $section) {
 
 				<div class="tab-content" id="<?= $title ?>TabContent">
 					<div class="is-active" id="<?= $title ?>-preview">
-					<iframe id="<?= $title ?>" class="codeview__preview-frame"></iframe>
+						<iframe id="<?= $title ?>" class="codeview__preview-frame"></iframe>
 					</div>
 					<div id="<?= $title ?>-html">
-					<pre><code data-language="html"><?= $html ?></code></pre>
+						<pre><code data-language="html"><?= $html ?></code></pre>
 					</div>
 					<div id="<?= $title ?>-css">
-					<pre><code data-language="css"><?= $css ?></code></pre>
+						<pre><code data-language="css"><?= $css ?></code></pre>
 					</div>
 					<div id="<?= $title ?>-js">
-					<pre><code data-language="javascript"><?= $js ?></code></pre>
+						<pre><code data-language="javascript"><?= $js ?></code></pre>
 					</div>                   
 				</div>
 			</div>

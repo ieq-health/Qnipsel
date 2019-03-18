@@ -1,180 +1,181 @@
-<div class="container">
-	<div class="content">
-	<h1 class="title"><?php the_title(); ?></h1>
-	</div>
-</div>
-
 <?php
 
-$sections = carbon_get_the_post_meta('crb_sections');
-foreach ($sections as $section) {
-	switch ($section['_type']) {
-		case 'columns': ?>
-			<div class="container">
-				<div class="columns">
-				<?php foreach ($section['crb_columns'] as $column): ?>
-					<div class="column">
+/** Custom Fields
+ * Set up the Custom Fields plugin and define some fields.
+ */
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
 
-						<?php if ($column['_type'] == 'text'): ?>
-							<?php var_dump($column); ?>
-						<?php endif; ?>
+/** Add custom fields to pages */
+function templateq_crb_attach_post_options()
+{
+	Container::make('post_meta', 'Sections')
+				->where('post_type', '=', 'page')
+				->add_fields(array(
+					Field::make('complex', 'crb_sections', 'Sections')
+						->add_fields('columns', 'Spalten', array(
+							Field::make('complex', 'crb_columns', 'Spalten')
+								->add_fields('text', 'Text', array(
+									Field::make('rich_text', 'text', 'Text')
+								))
 
-						<?php if ($column['_type'] == 'message'): ?>
-							<?php var_dump($column); ?>
-						<?php endif; ?>
+								->add_fields('message', 'Message', array(
+									Field::make('text', 'title', 'Titel'),
+									Field::make('rich_text', 'body', 'Text'),
+									Field::make('select', 'style', 'Stil')
+										->add_options(array(
+											'dark'    => 'Dark',
+											'primary' => 'Primary',
+											'link'    => 'Link',
+											'info'    => 'Info',
+											'success' => 'Success',
+											'warning' => 'Warning',
+											'danger'  => 'Danger',
+										))
+								))
+						))
 
-					</div>
-				<?php endforeach; ?>
-				</div>
-			</div>
-		<?php break;
+						->add_fields('tabs', 'Tabs', array(
+							Field::make('complex', 'crb_tabs', 'Tabs')
+								->add_fields('text', 'Text', array(
+									Field::make('text', 'title', 'Titel'),
+									Field::make('rich_text', 'text', 'Text')
+								))
 
-		case 'text': ?>
-			<div class="container">
-				<div class="content">
-					<?= wpautop($section['text']) ?>
-				</div>
-			</div>
-		<?php break;
+								->add_fields('code', 'Code', array(
+									Field::make('text', 'title', 'Titel'),
+									Field::make('text', 'language', 'Sprache'),
+									Field::make('textarea', 'code', 'Code')
+								))
+						))
 
-		case 'message': ?>
-			<div class="container">
-				<div class="message is-<?= $section['style'] ?>">
-					<?php if (!empty($section['title'])): ?>
-						<div class="message-header">
-							<?= $section['title'] ?>
-						</div>
-					<?php endif ?>
+						->add_fields('text', 'Text', array(
+							Field::make('rich_text', 'text', 'Text')
+						))
 
-					<div class="message-body content">
-						<?= $section['body'] ?>
-					</div>
-				</div>
-			</div>
-		<?php break;
+						->add_fields('code', 'Code', array(
+							Field::make('text', 'language', 'Sprache'),
+							Field::make('textarea', 'code', 'Code')
+						))
 
-		case 'code': ?>
-			<div class="container">
-				<pre><code data-language="<?= $section['language']; ?>"><?= $section['code']; ?></code></pre>
-			</div>
-		<? break;
-		
-		case 'codepen':
-			$title = $section['title'];
-			$html = $section['html'];
-			$css = $section['css'];
-			$js = $section['js'];
-			?>
-			<div class="codeview__code">
+						->add_fields('codepen', 'Codepen', array(
+							Field::make('text', 'title', 'Titel'),
+							Field::make('textarea', 'html', 'HTML')
+								->set_attribute('data-editor', 'html'),
+							Field::make('textarea', 'css', 'CSS')
+								->set_attribute('data-editor', 'css'),
+							Field::make('multiselect', 'css_libs', 'CSS Libraries')
+								->add_options(array(
+									'bootstrap' => 'Bootstrap',
+									'slick' => 'Slick'
+								)),
+							Field::make('textarea', 'js', 'JS')
+								->set_attribute('data-editor', 'javascript'),
+							Field::make('multiselect', 'js_libs', 'JS Libraries')
+								->add_options(array(
+									'bootstrap' => 'Bootstrap',
+									'jquery' => 'jQuery',
+									'slick' => 'Slick'
+								))
+						))
 
-				<div class="level">
-
-					<!-- Tabs -->
-					<div class="level-left">
-					<div class="level-item">
-						<div class="tabs">
-						<ul id="<?= $title ?>Tab">
-							<li class="is-active"><a id="<?= $title ?>-tab-preview" href="#<?= $title ?>-preview">Vorschau</a></li>
-							<li><a id="<?= $title ?>-tab-html" href="#<?= $title ?>-html">HTML</a></li>
-							<li><a id="<?= $title ?>-tab-css"  href="#<?= $title ?>-css" >CSS</a></li>
-							<li><a id="<?= $title ?>-tab-js"   href="#<?= $title ?>-js"  >JS</a></li>
-						</ul>
-						</div>
-					</div>
-					</div>
-					<!-- END Tabs -->
-
-					<!-- Tags -->
-					<div class="level-right">
-					<div class="level-item">
-						<div class="field is-grouped">
-						<?php if (in_array('bootstrap', $section['css_libs'])): ?>
-						<div class="control">
-							<div class="tags has-addons">
-							<div class="tag is-dark">CSS</div>
-							<div class="tag is-black">Bootstrap</div>
-							</div>
-						</div>
-						<?php endif; ?>
-
-						<?php if (in_array('bootstrap', $section['js_libs'])): ?>
-						<div class="control">
-							<div class="tags has-addons">
-							<div class="tag is-dark">JS</div>
-							<div class="tag is-black">Bootstrap</div>
-							</div>
-						</div>
-						<?php endif; ?>
-
-						<?php if (in_array('jquery', $section['js_libs'])): ?>
-						<div class="control">
-							<div class="tags has-addons">
-							<div class="tag is-dark">JS</div>
-							<div class="tag is-black">jQuery</div>
-							</div>
-						</div>
-						<?php endif; ?>
-						</div>
-					</div>
-					</div>
-					<!-- END Tags -->
-
-				</div>
-
-				<div class="tab-content" id="<?= $title ?>TabContent">
-					<div class="is-active" id="<?= $title ?>-preview">
-					<iframe id="<?= $title ?>" class="codeview__preview-frame"></iframe>
-					</div>
-					<div id="<?= $title ?>-html">
-					<pre><code data-language="html"><?= $html ?></code></pre>
-					</div>
-					<div id="<?= $title ?>-css">
-					<pre><code data-language="css"><?= $css ?></code></pre>
-					</div>
-					<div id="<?= $title ?>-js">
-					<pre><code data-language="javascript"><?= $js ?></code></pre>
-					</div>                   
-				</div>
-			</div>
-
-			<script>
-				let iframe = document.getElementById('<?= $section['title'] ?>').contentWindow.document;
-				iframe.open();
-
-				<?php if (in_array('bootstrap', $section['css_libs'])): ?>
-					iframe.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
-				<?php endif; ?>
-
-				<?php if (in_array('slick', $section['css_libs'])): ?>
-					iframe.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
-					iframe.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
-				<?php endif; ?>
-
-				iframe.write(`<style><?= $css ?></style>`);
-				iframe.write(`<body><?= $html ?></body>`);
-
-				<?php if (in_array('jquery', $section['js_libs'])): ?>
-					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
-				<?php endif; ?>
-
-				<?php if (in_array('bootstrap', $section['js_libs'])): ?>
-					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
-					iframe.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
-				<?php endif; ?>
-
-				<?php if (in_array('slick', $section['js_libs'])): ?>
-					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
-					iframe.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
-				<?php endif; ?>
-
-				iframe.write(`<script><?= $js ?><\/script>`);
-				iframe.close();
-			</script>
-			<?php
-	}
+						->add_fields('message', 'Message', array(
+							Field::make('text', 'title', 'Titel'),
+							Field::make('rich_text', 'body', 'Text'),
+							Field::make('select', 'style', 'Stil')
+								->add_options(array(
+									'dark'    => 'Dark',
+									'primary' => 'Primary',
+									'link'    => 'Link',
+									'info'    => 'Info',
+									'success' => 'Success',
+									'warning' => 'Warning',
+									'danger'  => 'Danger',
+								))
+						))
+				));
 }
-?>
+add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
 
-			<footer class="footer has-text-centered">
-				<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?= the_modified_date(); ?>
-			</footer>
+/** Bootstrap Custom Fields */
+function templateq_crb_load()
+{
+	require_once('vendor/autoload.php');
+	\Carbon_Fields\Carbon_Fields::boot();
+}
+add_action('after_setup_theme', 'templateq_crb_load');
+
+/**
+ * Remove things
+ */
+
+/** We don't need the standard editor on pages anymore */
+function templateq_disable_editor()
+{
+	remove_post_type_support('page', 'editor');
+}
+add_action('admin_head', 'templateq_disable_editor');
+
+/** Or Gutenberg */
+add_filter('use_block_editor_for_post_type', '__return_false');
+
+/** Title Tag */
+add_theme_support('title-tag');
+
+/** Remove unnecessary menu items */
+function templateq_clean_admin_menu()
+{
+	remove_menu_page('edit.php');
+	remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'templateq_clean_admin_menu');
+
+/**
+ * Allow more file types
+ */
+
+function templateq_allow_filetypes($mime_types)
+{
+	$mime_types['svg'] = 'image/svg+xml';
+	$mime_types['psd'] = 'image/vnd.adobe.photoshop';
+	return $mime_types;
+}
+add_filter('upload_mimes', 'templateq_allow_filetypes', 1, 1);
+
+/**
+ * Supporting scripts and styles
+ */
+
+/** Backend */
+function templateq_enqueue_admin()
+{
+	wp_enqueue_script('ace', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js', array(), '1.4.1');
+	wp_enqueue_script('templateq_backend', get_template_directory_uri() . '/backend/script.js', array(), '0.0.1');
+}
+add_action('admin_enqueue_scripts', 'templateq_enqueue_admin');
+
+/** Frontend */
+function templateq_enqueue()
+{
+	// Remove block library (Gutenberg)
+	wp_deregister_style('wp-block-library');
+
+	// Pull latest jQuery
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
+
+	// Pull custom CSS
+	wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/css/main.min.css', array(), '0.0.1');
+
+	// Pull custom JS
+	wp_enqueue_script('templateq_codeview', get_template_directory_uri() . '/js/codeview.js', array('jquery'), '0.0.1');
+	wp_enqueue_script('templateq_tabview', get_template_directory_uri() . '/js/tabview.js', array('jquery'), '0.0.1');
+
+	// Pull Rainbow
+	wp_enqueue_script('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js', array(), '1.2.0');
+	wp_enqueue_script('rainbow-html', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js', array('rainbow'), '1.2.0');
+	wp_enqueue_script('rainbow-css', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js', array('rainbow'), '1.2.0');
+	wp_enqueue_script('rainbow-js', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js', array('rainbow'), '1.2.0');
+	wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css', array('templateq_css'), '1.2.0');
+}
+add_action('wp_enqueue_scripts', 'templateq_enqueue');
