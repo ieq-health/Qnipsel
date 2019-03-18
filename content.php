@@ -29,7 +29,7 @@ foreach ($sections as $section) {
 		    </div>
 		    <?php endif ?>
 
-		    <div class="message-body">
+		    <div class="message-body content">
 			<?= $section['body'] ?>
 		    </div>
 		</div>
