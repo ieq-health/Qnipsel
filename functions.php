@@ -88,6 +88,18 @@ function templateq_clean_admin_menu()
 add_action('admin_menu', 'templateq_clean_admin_menu');
 
 /**
+ * Allow more file types
+ */
+
+function templateq_allow_filetypes($mime_types)
+{
+	$mime_types['svg'] = 'image/svg+xml';
+	$mime_types['psd'] = 'image/vnd.adobe.photoshop';
+	return $mime_types;
+}
+add_filter('upload_mimes', 'templateq_allow_filetypes', 1, 1);
+
+/**
  * Supporting scripts and styles
  */
 
