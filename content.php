@@ -16,22 +16,11 @@ foreach ($sections as $section) {
 					<div class="column">
 						<?php switch ($column['_type']): ?>
 							<?php case 'text': ?>
-								<?= wpautop($column['text']); ?>
+								text
 							<?php break; ?>
 
 							<?php case 'message': ?>
-								<div class="message is-<?= $column['style'] ?>">
-
-									<?php if (!empty($column['title'])): ?>
-										<div class="message-header">
-											<?= $column['title'] ?>
-										</div>
-									<?php endif ?>
-
-									<div class="message-body content">
-										<?= $column['body'] ?>
-									</div>
-								</div>
+								message
 							<?php break; ?>
 
 						<?php endswitch; ?>
