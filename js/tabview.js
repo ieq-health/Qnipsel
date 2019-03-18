@@ -15,4 +15,7 @@ $(function() {
 			e.preventDefault();
 		});
 	});
+
+	$('.tabview .tabs li:first-child').addClass('is-active');
+	$('.tabview .tab-content > div:first-child').addClass('is-active');
 });
