@@ -6,6 +6,40 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+/** Code field */
+function templateq_code_field()
+{
+	return array(
+		Field::make('text', 'language', 'Sprache'),
+		Field::make('textarea', 'code', 'Code')
+	);
+}
+
+/** Text field */
+function templateq_text_field()
+{
+	return array(Field::make('rich_text', 'text', 'Text'));
+}
+
+/** Message field */
+function templateq_message_field()
+{
+	return array(
+		Field::make('text', 'title', 'Titel'),
+		Field::make('rich_text', 'body', 'Text'),
+		Field::make('select', 'style', 'Stil')
+			->add_options(array(
+				'dark'    => 'Dark',
+				'primary' => 'Primary',
+				'link'    => 'Link',
+				'info'    => 'Info',
+				'success' => 'Success',
+				'warning' => 'Warning',
+				'danger'  => 'Danger',
+			))
+	);
+}
+
 /** Add custom fields to pages */
 function templateq_crb_attach_post_options()
 {
@@ -13,26 +47,12 @@ function templateq_crb_attach_post_options()
 				->where('post_type', '=', 'page')
 				->add_fields(array(
 					Field::make('complex', 'crb_sections', 'Sections')
+
 						->add_fields('columns', 'Spalten', array(
 							Field::make('complex', 'crb_columns', 'Spalten')
-								->add_fields('text', 'Text', array(
-									Field::make('rich_text', 'text', 'Text')
-								))
-
-								->add_fields('message', 'Message', array(
-									Field::make('text', 'title', 'Titel'),
-									Field::make('rich_text', 'body', 'Text'),
-									Field::make('select', 'style', 'Stil')
-										->add_options(array(
-											'dark'    => 'Dark',
-											'primary' => 'Primary',
-											'link'    => 'Link',
-											'info'    => 'Info',
-											'success' => 'Success',
-											'warning' => 'Warning',
-											'danger'  => 'Danger',
-										))
-								))
+								->add_fields('text', 'Text', templateq_text_field())
+								->add_fields('message', 'Message', templateq_message_field())
+								->add_fields('code', 'Code', templateq_code_field())
 						))
 
 						->add_fields('tabs', 'Tabs', array(
@@ -49,14 +69,9 @@ function templateq_crb_attach_post_options()
 								))
 						))
 
-						->add_fields('text', 'Text', array(
-							Field::make('rich_text', 'text', 'Text')
-						))
-
-						->add_fields('code', 'Code', array(
-							Field::make('text', 'language', 'Sprache'),
-							Field::make('textarea', 'code', 'Code')
-						))
+						->add_fields('text', 'Text', templateq_text_field())
+						->add_fields('code', 'Code', templateq_code_field())
+						->add_fields('message', 'Message', templateq_message_field())
 
 						->add_fields('codepen', 'Codepen', array(
 							Field::make('text', 'title', 'Titel'),
@@ -76,21 +91,6 @@ function templateq_crb_attach_post_options()
 									'bootstrap' => 'Bootstrap',
 									'jquery' => 'jQuery',
 									'slick' => 'Slick'
-								))
-						))
-
-						->add_fields('message', 'Message', array(
-							Field::make('text', 'title', 'Titel'),
-							Field::make('rich_text', 'body', 'Text'),
-							Field::make('select', 'style', 'Stil')
-								->add_options(array(
-									'dark'    => 'Dark',
-									'primary' => 'Primary',
-									'link'    => 'Link',
-									'info'    => 'Info',
-									'success' => 'Success',
-									'warning' => 'Warning',
-									'danger'  => 'Danger',
 								))
 						))
 				));
@@ -179,3 +179,9 @@ function templateq_enqueue()
 	wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css', array('templateq_css'), '1.2.0');
 }
 add_action('wp_enqueue_scripts', 'templateq_enqueue');
+
+
+
+
+/** Custom Menu Walker */
+// class templateq_walker extends Walker_Nav_Menu
