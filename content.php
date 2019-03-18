@@ -14,7 +14,27 @@ foreach ($sections as $section) {
 				<div class="columns">
 				<?php foreach ($section['crb_columns'] as $column): ?>
 					<div class="column">
-						<?php var_dump($column); ?>
+						<?php switch ($column['_type']): ?>
+							<?php case 'text': ?>
+								<?= wpautop($column['text']); ?>
+							<?php break; ?>
+
+							<?php case 'message': ?>
+								<div class="message is-<?= $column['style'] ?>">
+
+									<?php if (!empty($column['title'])): ?>
+										<div class="message-header">
+											<?= $column['title'] ?>
+										</div>
+									<?php endif ?>
+
+									<div class="message-body content">
+										<?= $column['body'] ?>
+									</div>
+								</div>
+							<?php break; ?>
+
+						<?php endswitch; ?>
 					</div>
 				<?php endforeach; ?>
 				</div>
@@ -33,13 +53,13 @@ foreach ($sections as $section) {
 			<div class="container">
 				<div class="message is-<?= $section['style'] ?>">
 					<?php if (!empty($section['title'])): ?>
-					<div class="message-header">
-					<?= $section['title'] ?>
-					</div>
+						<div class="message-header">
+							<?= $section['title'] ?>
+						</div>
 					<?php endif ?>
 
 					<div class="message-body content">
-					<?= $section['body'] ?>
+						<?= $section['body'] ?>
 					</div>
 				</div>
 			</div>
