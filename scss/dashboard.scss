@@ -26,6 +26,11 @@ aside.menu {
 		max-width: 180px;
 	}
 
+	.current_page_item > a {
+		background: $link;
+		color: $link-invert;
+	}
+
 	nav {
 		position: sticky;
 		top: 1em;
@@ -41,11 +46,6 @@ aside.menu {
 
 	nav .menu-label a {
 		color: inherit;
-	}
-
-	.current_page_item > a {
-		background: $link;
-		color: $link-invert;
 	}
 }
 
