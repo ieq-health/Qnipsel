@@ -8,3 +8,17 @@
     <?php wp_head(); ?>
 </head>
 <body>
+
+<aside class="menu">
+	<!-- Logo -->
+	<div class="logo">
+		<img src="/wp-content/themes/templateq/img/logo.svg" alt="Qnipsel">
+	</div>
+
+	<nav>
+		<?php wp_list_pages(array(
+			'title_li' => null,
+			'walker' => new Templateq_Walker()
+		)); ?>
+	</nav>
+</aside>
