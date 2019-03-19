@@ -3,7 +3,7 @@
 function templateq_code_block($lang, $code)
 {
 	$id = bin2hex(random_bytes(8)); ?>
-	<a class="button is-small is-link copy-code-button" onclick="copyCode('<?= $id ?>')">Copy</a>
+	<a class="has-text-grey-light has-text-weight-bold is-uppercase copy-code-button" onclick="copyCode('<?= $id ?>')">Copy</a>
 	<pre><code id="code_<?= $id ?>" data-language="<?= $lang ?>"><?= htmlspecialchars($code) ?></code></pre>
 
 	<script>
