@@ -100,12 +100,12 @@ foreach ($sections as $section) {
 					<div class="level-left">
 					<div class="level-item">
 						<div class="tabs">
-						<ul id="<?= $title ?>Tab">
-							<li class="is-active"><a id="<?= $title ?>-tab-preview" href="#<?= $title ?>-preview">Vorschau</a></li>
-							<li><a id="<?= $title ?>-tab-html" href="#<?= $title ?>-html">HTML</a></li>
-							<li><a id="<?= $title ?>-tab-css"  href="#<?= $title ?>-css" >CSS</a></li>
-							<li><a id="<?= $title ?>-tab-js"   href="#<?= $title ?>-js"  >JS</a></li>
-						</ul>
+							<ul id="<?= $title ?>Tab">
+								<li class="is-active"><a id="<?= $title ?>-tab-preview" href="#<?= $title ?>-preview">Vorschau</a></li>
+								<li><a id="<?= $title ?>-tab-html" href="#<?= $title ?>-html">HTML</a></li>
+								<li><a id="<?= $title ?>-tab-css"  href="#<?= $title ?>-css" >CSS</a></li>
+								<li><a id="<?= $title ?>-tab-js"   href="#<?= $title ?>-js"  >JS</a></li>
+							</ul>
 						</div>
 					</div>
 					</div>
@@ -185,43 +185,54 @@ foreach ($sections as $section) {
 			</div>
 
 			<script>
-				let iframe = document.getElementById('<?= $section['title'] ?>').contentWindow.document;
-				iframe.open();
+				let iframe = document.getElementById('<?= $section['title'] ?>');
+				let iframeDocument = iframe.contentWindow.document;
+
+				iframeDocument.open();
 
 				<?php if (in_array('bootstrap', $section['css_libs'])): ?>
-					iframe.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
+					iframeDocument.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
 				<?php endif; ?>
 
 				<?php if (in_array('slick', $section['css_libs'])): ?>
-					iframe.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
-					iframe.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
+					iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
+					iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
 				<?php endif; ?>
 
-				iframe.write(`<style><?= $css ?></style>`);
-				iframe.write(`<body><?= $html ?></body>`);
+				iframeDocument.write(`<style>html,body{margin:0;padding:0;}</style>`);
+				iframeDocument.write(`<style><?= $css ?></style>`);
+				iframeDocument.write(`<body><?= $html ?></body>`);
 
 				<?php if (in_array('jquery', $section['js_libs'])): ?>
-					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+					iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
 				<?php endif; ?>
 
 				<?php if (in_array('bootstrap', $section['js_libs'])): ?>
-					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
-					iframe.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
+					iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+					iframeDocument.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
 				<?php endif; ?>
 
 				<?php if (in_array('slick', $section['js_libs'])): ?>
-					iframe.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
-					iframe.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
+					iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+					iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
 				<?php endif; ?>
 
-				iframe.write(`<script><?= $js ?><\/script>`);
-				iframe.close();
+				iframeDocument.write(`<script><?= $js ?><\/script>`);
+				iframeDocument.close();
+
+				let contentHeight = iframeDocument.body.scrollHeight;
+				let grow = setInterval(function() {
+					if (iframeDocument.body.scrollHeight > contentHeight) {
+						iframe.style.height = iframeDocument.body.scrollHeight + 'px';
+						clearInterval(this);
+					}
+				}, 1000);
 			</script>
 			<?php
 	}
 }
 ?>
 
-			<footer class="footer has-text-centered">
-				<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?= the_modified_date(); ?>
-			</footer>
+<footer class="footer has-text-centered">
+	<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?= the_modified_date(); ?>
+</footer>
