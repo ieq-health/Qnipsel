@@ -11,5 +11,13 @@ $radius-small: 3px;
 @import "xml-stripper";
 
 html {
-    font-size: 14px;
+	font-size: 14px;
+}
+
+.copy-code-button {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	position: absolute;
+	right: 0;
 }
