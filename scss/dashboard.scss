@@ -30,6 +30,18 @@ aside.menu {
 		position: sticky;
 		top: 1em;
 	}
+	
+	nav .menu-label {
+		font-size: 0.9em;
+	}
+
+	nav .menu-label:not(:first-child) {
+		margin-top: 2em;
+	}
+
+	nav .menu-label a {
+		color: inherit;
+	}
 
 	.current_page_item > a {
 		background: $link;
