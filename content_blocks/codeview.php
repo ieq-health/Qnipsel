@@ -84,7 +84,6 @@ function templateq_codeview_block($title, $html, $css, $js)
 			</div>
 			<div id="<?= $title ?>-html">
 				<?= templateq_code_block('html', $html); ?>
-				<pre><code data-language="html"><?= $html ?></code></pre>
 			</div>
 			<div id="<?= $title ?>-css">
 				<?= templateq_code_block('css', $css); ?>
