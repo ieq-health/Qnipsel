@@ -183,5 +183,30 @@ add_action('wp_enqueue_scripts', 'templateq_enqueue');
 
 
 
-/** Custom Menu Walker */
-// class templateq_walker extends Walker_Nav_Menu
+// /** Custom Menu Walker */
+class Templateq_Walker extends Walker_Page
+{
+	public function start_lvl(&$output, $depth=0, $args=array())
+	{
+		$output .= '<ul class="menu-list">';
+	}
+
+	public function start_el(&$output, $page, $depth=0, $args=array(), $id)
+	{
+		$link = '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . "</a>";
+
+		if ($depth == 0) {
+			$output .= '<p class="menu-label">' . $link . '</p>';
+			return;
+		}
+
+		$output .= '<li>' . $link;
+	}
+
+	public function end_el(&$output, $page, $depth=0, $args=array())
+	{
+		if ($depth != 0) {
+			$output .= '</li>';
+		}
+	}
+}
