@@ -20,14 +20,16 @@ $(function() {
 		let startY, startHeight;
 		let $dragHandle = $(this).find('.resizer');
 		let $preview = $(this).find('div[id$="-preview"]');
+		let $iframe = $preview.find('iframe');
 
 		$dragHandle.on('mousedown', initDrag);
 
 		function initDrag(e) {
 			startY = e.clientY;
 			startHeight = parseInt($preview.height());
-			$dragHandle.on('mousemove', doDrag);
-			$dragHandle.on('mouseup', stopDrag);
+			$iframe.css('pointer-events', 'none');
+			$(document).on('mousemove', doDrag);
+			$(document).on('mouseup', stopDrag);
 		}
 
 		function doDrag(e) {
@@ -35,7 +37,8 @@ $(function() {
 		}
 
 		function stopDrag(e) {
-			$dragHandle.off('mousemove');
+			$iframe.css('pointer-events', 'all');
+			$(document).off('mousemove');
 		}
 	});
 });
