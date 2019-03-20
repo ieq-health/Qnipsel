@@ -88,7 +88,7 @@ foreach ($sections as $section) {
 		<? break;
 		
 		case 'codepen':
-			echo templateq_codeview_block($section['title'], $section['html'], $section['css'], $section['js']);
+			echo templateq_codeview_block($section['title'], $section['html'], $section['css'], $section['css_libs'], $section['js'], $section['js_libs']);
 	}
 }
 ?>
