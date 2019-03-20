@@ -19,13 +19,13 @@
 
 .codeview__code .resizer {
     background: #eee;
-    border-radius: 0.4em;
+    border-radius: 0.25em;
 	cursor: row-resize;
     display: block;
-    height: 0.8em;
+    height: 0.5em;
     width: 100px;
     position: absolute;
-    bottom: 0.1em;
+    bottom: 0;
     left: calc(50% - 50px);
 }
 
