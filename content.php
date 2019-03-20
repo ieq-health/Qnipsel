@@ -97,5 +97,5 @@ foreach ($sections as $section) {
 ?>
 
 <footer class="footer has-text-centered">
-	<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?= the_modified_date(); ?>
+	<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?php the_modified_author(); ?> | <?= the_modified_date(); ?>
 </footer>
