@@ -5,6 +5,19 @@
 	box-shadow: 0 2px 0 rgba(0,0,0,0.01);
 	padding: 1em 3em 2em;
 }
+
+.codeview__code *[id$='-preview']:after {
+    background: #eee;
+    border-radius: 0.4em;
+    content: '';
+    display: block;
+    height: 0.8em;
+    width: 100px;
+    position: absolute;
+    bottom: 0.1em;
+    left: calc(50% - 50px);
+}
+
 .codeview__code iframe {
     border: 1px solid #eee;
     width: 100%;
