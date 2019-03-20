@@ -14,5 +14,28 @@ $(function() {
 
 			e.preventDefault();
 		});
+
+
+		// Resizable
+		let startY, startHeight;
+		let $dragHandle = $(this).find('.resizer');
+		let $preview = $(this).find('div[id$="-preview"]');
+
+		$dragHandle.on('mousedown', initDrag);
+
+		function initDrag(e) {
+			startY = e.clientY;
+			startHeight = parseInt($preview.height());
+			$dragHandle.on('mousemove', doDrag);
+			$dragHandle.on('mouseup', stopDrag);
+		}
+
+		function doDrag(e) {
+			$preview.height(startHeight + e.clientY - startY);
+		}
+
+		function stopDrag(e) {
+			$dragHandle.off('mousemove');
+		}
 	});
 });
