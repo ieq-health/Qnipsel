@@ -81,6 +81,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 		<div class="tab-content" id="<?= $title ?>TabContent">
 			<div class="is-active" id="<?= $title ?>-preview">
 				<iframe id="<?= $title ?>" class="codeview__preview-frame"></iframe>
+				<div class="resizer"></div>
 			</div>
 			<div id="<?= $title ?>-html">
 				<?= templateq_code_block('html', $html); ?>
