@@ -130,6 +130,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 		iframeDocument.write(`<script><?= $js ?><\/script>`);
 		iframeDocument.close();
 
+/**
 		let contentHeight = iframeDocument.body.scrollHeight;
 		let grow = setInterval(function() {
 			if (iframeDocument.body.scrollHeight > contentHeight) {
@@ -137,5 +138,6 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 				clearInterval(this);
 			}
 		}, 1000);
+*/
 	</script>
 <?php }
