@@ -6,6 +6,10 @@
 	padding: 1em 3em 2em;
 }
 
+.codeview__code div[id$="-preview"] {
+	overflow: hidden;
+}
+
 .codeview__code iframe {
     border: 1px solid #eee;
     width: 100%;
@@ -14,6 +18,7 @@
 .codeview__code .resizer {
     background: #eee;
     border-radius: 0.4em;
+	cursor: row-resize;
     display: block;
     height: 0.8em;
     width: 100px;
