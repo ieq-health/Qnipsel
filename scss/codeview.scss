@@ -8,11 +8,13 @@
 
 .codeview__code div[id$="-preview"] {
 	overflow: hidden;
+	padding-bottom: 1em;
 }
 
 .codeview__code iframe {
     border: 1px solid #eee;
     width: 100%;
+	height: 100%;
 }
 
 .codeview__code .resizer {
