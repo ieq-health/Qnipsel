@@ -93,6 +93,11 @@ function templateq_crb_attach_post_options()
 									'slick' => 'Slick'
 								))
 						))
+						
+						->add_fields('hr', 'Trennlinie', array(
+							Field::make('html', 'hr', 'Trennlinie')
+								->set_html('<hr>')
+						))
 				));
 }
 add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
