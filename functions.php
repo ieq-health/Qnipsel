@@ -28,15 +28,15 @@ function templateq_message_field()
 		Field::make('text', 'title', 'Titel'),
 		Field::make('rich_text', 'body', 'Text'),
 		Field::make('select', 'style', 'Stil')
-			->add_options(array(
-				'dark'    => 'Dark',
-				'primary' => 'Primary',
-				'link'    => 'Link',
-				'info'    => 'Info',
-				'success' => 'Success',
-				'warning' => 'Warning',
-				'danger'  => 'Danger',
-			))
+		->add_options(array(
+			'dark'    => 'Dark',
+			'primary' => 'Primary',
+			'link'    => 'Link',
+			'info'    => 'Info',
+			'success' => 'Success',
+			'warning' => 'Warning',
+			'danger'  => 'Danger',
+		))
 	);
 }
 
@@ -44,61 +44,61 @@ function templateq_message_field()
 function templateq_crb_attach_post_options()
 {
 	Container::make('post_meta', 'Sections')
-				->where('post_type', '=', 'page')
-				->add_fields(array(
-					Field::make('complex', 'crb_sections', 'Sections')
+		->where('post_type', '=', 'page')
+		->add_fields(array(
+			Field::make('complex', 'crb_sections', 'Sections')
 
-						->add_fields('columns', 'Spalten', array(
-							Field::make('complex', 'crb_columns', 'Spalten')
-								->add_fields('text', 'Text', templateq_text_field())
-								->add_fields('message', 'Message', templateq_message_field())
-								->add_fields('code', 'Code', templateq_code_field())
-						))
+			->add_fields('columns', 'Spalten', array(
+				Field::make('complex', 'crb_columns', 'Spalten')
+				->add_fields('text', 'Text', templateq_text_field())
+				->add_fields('message', 'Message', templateq_message_field())
+				->add_fields('code', 'Code', templateq_code_field())
+			))
 
-						->add_fields('tabs', 'Tabs', array(
-							Field::make('complex', 'crb_tabs', 'Tabs')
-								->add_fields('text', 'Text', array(
-									Field::make('text', 'title', 'Titel'),
-									Field::make('rich_text', 'text', 'Text')
-								))
+			->add_fields('tabs', 'Tabs', array(
+				Field::make('complex', 'crb_tabs', 'Tabs')
+				->add_fields('text', 'Text', array(
+					Field::make('text', 'title', 'Titel'),
+					Field::make('rich_text', 'text', 'Text')
+				))
 
-								->add_fields('code', 'Code', array(
-									Field::make('text', 'title', 'Titel'),
-									Field::make('text', 'language', 'Sprache'),
-									Field::make('textarea', 'code', 'Code')
-								))
-						))
+				->add_fields('code', 'Code', array(
+					Field::make('text', 'title', 'Titel'),
+					Field::make('text', 'language', 'Sprache'),
+					Field::make('textarea', 'code', 'Code')
+				))
+			))
 
-						->add_fields('text', 'Text', templateq_text_field())
-						->add_fields('code', 'Code', templateq_code_field())
-						->add_fields('message', 'Message', templateq_message_field())
+			->add_fields('text', 'Text', templateq_text_field())
+			->add_fields('code', 'Code', templateq_code_field())
+			->add_fields('message', 'Message', templateq_message_field())
 
-						->add_fields('codepen', 'Codepen', array(
-							Field::make('text', 'title', 'Titel'),
-							Field::make('textarea', 'html', 'HTML')
-								->set_attribute('data-editor', 'html'),
-							Field::make('textarea', 'css', 'CSS')
-								->set_attribute('data-editor', 'css'),
-							Field::make('multiselect', 'css_libs', 'CSS Libraries')
-								->add_options(array(
-									'bootstrap' => 'Bootstrap',
-									'slick' => 'Slick'
-								)),
-							Field::make('textarea', 'js', 'JS')
-								->set_attribute('data-editor', 'javascript'),
-							Field::make('multiselect', 'js_libs', 'JS Libraries')
-								->add_options(array(
-									'bootstrap' => 'Bootstrap',
-									'jquery' => 'jQuery',
-									'slick' => 'Slick'
-								))
-						))
+			->add_fields('codepen', 'Codepen', array(
+				Field::make('text', 'title', 'Titel'),
+				Field::make('textarea', 'html', 'HTML')
+				->set_attribute('data-editor', 'html'),
+				Field::make('textarea', 'css', 'CSS')
+				->set_attribute('data-editor', 'css'),
+				Field::make('multiselect', 'css_libs', 'CSS Libraries')
+				->add_options(array(
+					'bootstrap' => 'Bootstrap',
+					'slick' => 'Slick'
+				)),
+				Field::make('textarea', 'js', 'JS')
+				->set_attribute('data-editor', 'javascript'),
+				Field::make('multiselect', 'js_libs', 'JS Libraries')
+				->add_options(array(
+					'bootstrap' => 'Bootstrap',
+					'jquery' => 'jQuery',
+					'slick' => 'Slick'
+				))
+			))
 						
-						->add_fields('hr', 'Trennlinie', array(
-							Field::make('html', 'hr', 'Trennlinie')
-								->set_html('<hr>')
-						))
-				));
+			->add_fields('hr', 'Trennlinie', array(
+				Field::make('html', 'hr', 'Trennlinie')
+				->set_html('<hr>')
+			))
+		));
 }
 add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
 
@@ -186,10 +186,7 @@ function templateq_enqueue()
 }
 add_action('wp_enqueue_scripts', 'templateq_enqueue');
 
-
-
-
-// /** Custom Menu Walker */
+/** Custom Menu Walker */
 class Templateq_Walker extends Walker_Page
 {
 	public function start_lvl(&$output, $depth=0, $args=array())
