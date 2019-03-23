@@ -194,7 +194,7 @@ class Templateq_Walker extends Walker_Page
 		$output .= '<ul class="menu-list">';
 	}
 
-	public function start_el(&$output, $page, $depth=0, $args=array(), $id)
+	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
 		$link = '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . "</a>";
 
