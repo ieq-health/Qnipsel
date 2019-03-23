@@ -1,16 +1,27 @@
-// Configure Bootstrap
-$enable-rounded: false;
-$enable-print-styles: false;
-$blue: #999;
+// Configure Bulma
 
-// Nav
-$nav-pills-link-active-bg: rgba(0,0,0,0.02);
-$nav-pills-link-active-color: inherit;
+$blue: rgb(0,100,183);
+$radius-small: 3px;
 
-// Cards
-$card-cap-bg: #fafafa;
-
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bulma/bulma.sass";
 
 @import "dashboard";
 @import "codeview";
+@import "tabview";
+@import "xml-stripper";
+
+html {
+	font-size: 14px;
+}
+
+hr {
+	border: 1px solid #eee;
+	height: 5px;
+	margin: 4rem 0;
+}
+
+.copy-code-button {
+	margin: 0.5em 1em;
+	position: absolute;
+	right: 0;
+}
