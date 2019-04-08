@@ -43,12 +43,12 @@
 
 		<div class="navbar-end">
 			<div class="field">
-				<input id="darkMode" type="checkbox" name="darkMode" class="switch is-small is-rounded is-rtl">
-				<label for="darkMode">Darkmode</label>
+				<input id="darkMode" type="checkbox" name="darkMode" class="switch is-small is-link is-rounded is-rtl">
+				<label for="darkMode"><i class="fas fa-moon"></i></label>
 			</div>
 			<div class="field">
-				<input id="dennisMode" type="checkbox" name="dennisMode" class="switch is-small is-rounded is-rtl">
-				<label for="dennisMode">Dennismode</label>
+				<input id="dennisMode" type="checkbox" name="dennisMode" class="switch is-small is-danger is-rounded is-rtl">
+				<label for="dennisMode"><i class="fas fa-ambulance"></i></label>
 			</div>
 		</div>
 	</div>

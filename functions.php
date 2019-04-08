@@ -200,6 +200,7 @@ function templateq_enqueue()
 	// Pull custom CSS
 	wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/css/main.min.css', array(), '0.0.1');
 	wp_enqueue_style('bulma-switch', 'https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.4/bulma-switch/dist/css/bulma-switch.min.css', array(), '6.2.4');
+	wp_enqueue_style('fontawesome', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css', array(), '5.8.1');
 
 	// Pull custom JS
 	wp_enqueue_script('templateq_codeview', get_template_directory_uri() . '/js/codeview.js', array('jquery'), '0.0.1');
