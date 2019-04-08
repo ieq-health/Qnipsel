@@ -40,5 +40,12 @@
 				'walker' => new Templateq_Mega_Walker()
 			)); ?>
 		</div>
+
+		<div class="navbar-end">
+			<div class="field">
+				<input id="dennisMode" type="checkbox" name="dennisMode" class="switch is-small is-rounded is-rtl">
+				<label for="dennisMode">Dennismode</label>
+			</div>
+		</div>
 	</div>
 </nav>

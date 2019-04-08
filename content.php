@@ -112,7 +112,7 @@
 	</main>
 
 	<?php if (sizeof($submenu) > 0): ?>
-		<aside class="menu">
+		<aside class="menu" id="nonDennisMenu">
 			<nav class="submenu">
 				<ul class="menu-list">
 					<?= implode($submenu) ?>
@@ -120,6 +120,17 @@
 			</nav>
 		</aside>
 	<?php endif; ?>
+
+	<aside class="menu" id="dennisMenu">
+		<nav>
+			<ul class="menu-list">
+				<?php wp_list_pages(array(
+					'title_li' => null,
+					'walker' => new Templateq_Walker()
+				)); ?>
+			</ul>
+		</nav>
+	<aside>
 </div>
 
 <footer class="footer has-text-centered">

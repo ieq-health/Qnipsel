@@ -25,3 +25,19 @@ hr {
 	position: absolute;
 	right: 0;
 }
+
+// Dennismode
+
+#dennisMenu {
+	display: none;
+}
+
+body.dennisMode {
+	#dennisMenu {
+		display: block;
+	}
+	.navbar-start,
+	#nonDennisMenu {
+		display: none;
+	}
+}
