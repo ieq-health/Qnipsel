@@ -6,6 +6,26 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+/** Add navigation title */
+function templateq_add_navigation_option($fields)
+{
+	return array_merge(
+		array(
+			Field::make('checkbox', 'nav_title_enabled', 'In Subnavigation?')
+			->set_option_value('enabled'),
+
+			Field::make('text', 'nav_title', 'Navtitel')
+			->set_conditional_logic(array(
+				array(
+					'field' => 'nav_title_enabled',
+					'value' => true
+				)
+			))
+		),
+		$fields
+	);
+}
+
 /** Code field */
 function templateq_code_field()
 {
@@ -48,32 +68,39 @@ function templateq_crb_attach_post_options()
 		->add_fields(array(
 			Field::make('complex', 'crb_sections', 'Sections')
 
-			->add_fields('columns', 'Spalten', array(
+			/** Spalten */
+			->add_fields('columns', 'Spalten', templateq_add_navigation_option(array(
 				Field::make('complex', 'crb_columns', 'Spalten')
 				->add_fields('text', 'Text', templateq_text_field())
 				->add_fields('message', 'Message', templateq_message_field())
 				->add_fields('code', 'Code', templateq_code_field())
-			))
-
-			->add_fields('tabs', 'Tabs', array(
+			)))
+			
+			/** Tabs */
+			->add_fields('tabs', 'Tabs', templateq_add_navigation_option(array(
 				Field::make('complex', 'crb_tabs', 'Tabs')
 				->add_fields('text', 'Text', array(
 					Field::make('text', 'title', 'Titel'),
 					Field::make('rich_text', 'text', 'Text')
 				))
-
 				->add_fields('code', 'Code', array(
 					Field::make('text', 'title', 'Titel'),
 					Field::make('text', 'language', 'Sprache'),
 					Field::make('textarea', 'code', 'Code')
 				))
-			))
+			)))
 
-			->add_fields('text', 'Text', templateq_text_field())
-			->add_fields('code', 'Code', templateq_code_field())
+			/** Text */
+			->add_fields('text', 'Text', templateq_add_navigation_option(templateq_text_field()))
+
+			/** Code */
+			->add_fields('code', 'Code', templateq_add_navigation_option(templateq_code_field()))
+
+			/** Message */
 			->add_fields('message', 'Message', templateq_message_field())
 
-			->add_fields('codepen', 'Codepen', array(
+			/** Codepen */
+			->add_fields('codepen', 'Codepen', templateq_add_navigation_option(array(
 				Field::make('text', 'title', 'Titel'),
 				Field::make('textarea', 'html', 'HTML')
 				->set_attribute('data-editor', 'html'),
@@ -92,8 +119,9 @@ function templateq_crb_attach_post_options()
 					'jquery' => 'jQuery',
 					'slick' => 'Slick'
 				))
-			))
-						
+			)))
+
+			/** Horizontal Rule */
 			->add_fields('hr', 'Trennlinie', array(
 				Field::make('html', 'hr', 'Trennlinie')
 				->set_html('<hr>')
