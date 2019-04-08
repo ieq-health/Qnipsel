@@ -28,7 +28,7 @@
 </head>
 <body>
 
-<nav class="navbar">
+<nav class="navbar has-shadow">
 	<div class="navbar-brand">
 		<img src="/wp-content/themes/templateq/img/logo.svg" alt="Qnipsel">
 	</div>
