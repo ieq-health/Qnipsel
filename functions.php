@@ -202,6 +202,7 @@ function templateq_enqueue()
 
 	// Pull custom JS
 	wp_enqueue_script('templateq_codeview', get_template_directory_uri() . '/js/codeview.js', array('jquery'), '0.0.1');
+	wp_enqueue_script('templateq_submenu', get_template_directory_uri() . '/js/submenu.js', array('jquery'), '0.0.1');
 	wp_enqueue_script('templateq_tabview', get_template_directory_uri() . '/js/tabview.js', array('jquery'), '0.0.1');
 
 	// Pull Rainbow
