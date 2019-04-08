@@ -37,8 +37,12 @@ body.dennisMode {
 	#dennisMenu {
 		display: block;
 	}
-	.navbar-start,
-	#nonDennisMenu {
+	.navbar-start {
 		display: none;
+	}
+	#nonDennisMenu {
+		order: 0;
+		border-right: none;
+		border-left: 1px solid #ddd;
 	}
 }
