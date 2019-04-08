@@ -76,6 +76,14 @@ nav.navbar {
 			padding: .375rem 1rem;
 		}
 	}
+	
+	.navbar-end {
+		align-items: center;
+
+		> .field {
+			margin: 0 1em;
+		}
+	}
 }
 
 /* Main Content */
