@@ -197,8 +197,6 @@ class Templateq_Mega_Walker extends Walker_Page
 			$output .= '		<div class="columns">';
 			return;
 		}
-
-		$output .= '			<div class="column">';
 	}
 
 	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
@@ -206,8 +204,13 @@ class Templateq_Mega_Walker extends Walker_Page
 		$children = count(get_pages(array('child_of' => $page->ID)));
 
 		if ($depth == 0) {
-			$output .= '<div class="navbar-item has-dropdown is-hoverable is-mega">' . $page->post_title;
+			$output .= '<div class="navbar-item has-dropdown is-hoverable is-mega">';
+			$output .= '	<div class="navbar-link">' . $page->post_title . '</div>';
 			return;
+		}
+
+		if ($depth == 1) {
+			$output .= '<div class="column">';
 		}
 
 		if ($children > 0) {
@@ -220,7 +223,7 @@ class Templateq_Mega_Walker extends Walker_Page
 
 	public function end_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
-		if ($depth == 0) {
+		if ($depth == 0 || $depth == 1) {
 			$output .= '</div>';
 			return;
 		}
@@ -234,8 +237,6 @@ class Templateq_Mega_Walker extends Walker_Page
 			$ouptut .= '</div>';
 			return;
 		}
-
-		$output .= '			</div>';
 	}
 }
 
