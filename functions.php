@@ -187,16 +187,71 @@ function templateq_enqueue()
 add_action('wp_enqueue_scripts', 'templateq_enqueue');
 
 /** Custom Menu Walker */
-class Templateq_Walker extends Walker_Page
+class Templateq_Mega_Walker extends Walker_Page
 {
 	public function start_lvl(&$output, $depth=0, $args=array())
 	{
-		$output .= '<ul class="menu-list">';
+		if ($depth == 0) {
+			$output .= '<ul class="navbar-dropdown">';
+			$output .= '	<div class="container is-fluid">';
+			$output .= '		<div class="columns">';
+			return;
+		}
+
+		$output .= '			<div class="column">';
 	}
 
 	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
-		$link = '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . "</a>";
+		$children = count(get_pages(array('child_of' => $page->ID)));
+
+		if ($depth == 0) {
+			$output .= '<div class="navbar-item has-dropdown is-hoverable is-mega">' . $page->post_title;
+			return;
+		}
+
+		if ($children > 0) {
+			$output .= '<h1 class="title is-6 is-mega-menu-title">' . $page->post_title . '</h1>';
+			return;
+		}
+
+		$output .= '<a href="' . get_permalink($page->ID) . '" class="navbar-item">' . $page->post_title . '</a>';
+	}
+
+	public function end_el(&$output, $page, $depth=0, $args=array(), $id=0)
+	{
+		if ($depth == 0) {
+			$output .= '</div>';
+			return;
+		}
+	}
+
+	public function end_lvl(&$output, $depth=0, $args=array())
+	{
+		if ($depth == 0) {
+			$output .= '		</div>';
+			$output .= '	</div>';
+			$ouptut .= '</div>';
+			return;
+		}
+
+		$output .= '			</div>';
+	}
+}
+
+class Templateq_Walker extends Walker_Page
+{
+	public function start_lvl(&$output, $depth=0, $args=array())
+	{
+		$output .= '<ul class="menu-list"><!-- Level: ' . $depth . ' Args: ' . $args->walker . ' -->';
+	}
+
+	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
+	{
+		// has children?
+		$children = count(get_pages(array('child_of' => $page->ID)));
+
+		$link = '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a><!-- El: ' . $depth . ' Args: ' . $children . ' -->';
 
 		if ($depth == 0) {
 			$output .= '<p class="menu-label">' . $link . '</p>';
