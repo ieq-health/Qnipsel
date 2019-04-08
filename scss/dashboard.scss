@@ -1,5 +1,5 @@
 body {
-	display: flex;
+	// display: flex;
 	margin: 0;
 	padding: 0;
 }
@@ -46,6 +46,21 @@ aside.menu {
 
 	nav .menu-label a {
 		color: inherit;
+	}
+}
+
+/* Mega Menu */
+nav.navbar {
+	position: sticky;
+	top: 0;
+	
+	.navbar-item.is-mega {
+		position: static;
+
+		.is-mega-menu-title {
+			margin-bottom: 0;
+			padding: .375rem 1rem;
+		}
 	}
 }
 
