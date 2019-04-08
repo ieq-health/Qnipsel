@@ -28,16 +28,17 @@
 </head>
 <body>
 
-<aside class="menu">
-	<!-- Logo -->
-	<div class="logo">
+<nav class="navbar">
+	<div class="navbar-brand">
 		<img src="/wp-content/themes/templateq/img/logo.svg" alt="Qnipsel">
 	</div>
 
-	<nav>
-		<?php wp_list_pages(array(
-			'title_li' => null,
-			'walker' => new Templateq_Walker()
-		)); ?>
-	</nav>
-</aside>
+	<div class="navbar-menu">
+		<div class="navbar-start">
+			<?php wp_list_pages(array(
+				'title_li' => null,
+				'walker' => new Templateq_Mega_Walker()
+			)); ?>
+		</div>
+	</div>
+</nav>
