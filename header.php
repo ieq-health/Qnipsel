@@ -43,6 +43,10 @@
 
 		<div class="navbar-end">
 			<div class="field">
+				<input id="darkMode" type="checkbox" name="darkMode" class="switch is-small is-rounded is-rtl">
+				<label for="darkMode">Darkmode</label>
+			</div>
+			<div class="field">
 				<input id="dennisMode" type="checkbox" name="dennisMode" class="switch is-small is-rounded is-rtl">
 				<label for="dennisMode">Dennismode</label>
 			</div>
