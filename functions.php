@@ -210,11 +210,11 @@ class Templateq_Mega_Walker extends Walker_Page
 		}
 
 		if ($depth == 1) {
-			$output .= '<div class="column">';
+			$output .= '<div class="column is-one-fifth">';
 		}
 
 		if ($children > 0) {
-			$output .= '<h1 class="title is-6 is-mega-menu-title">' . $page->post_title . '</h1>';
+			$output .= '<h1 class="title is-6 is-mega-menu-title"><a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a></h1>';
 			return;
 		}
 
@@ -244,7 +244,7 @@ class Templateq_Walker extends Walker_Page
 {
 	public function start_lvl(&$output, $depth=0, $args=array())
 	{
-		$output .= '<ul class="menu-list"><!-- Level: ' . $depth . ' Args: ' . $args->walker . ' -->';
+		$output .= '<ul class="menu-list">';
 	}
 
 	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
@@ -252,7 +252,7 @@ class Templateq_Walker extends Walker_Page
 		// has children?
 		$children = count(get_pages(array('child_of' => $page->ID)));
 
-		$link = '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a><!-- El: ' . $depth . ' Args: ' . $children . ' -->';
+		$link = '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
 
 		if ($depth == 0) {
 			$output .= '<p class="menu-label">' . $link . '</p>';
