@@ -1,0 +1,41 @@
+body.darkMode {
+	background: #222;
+	color: #eee;
+	
+	.navbar {
+		background: #333;
+											
+		&.has-shadow {
+			box-shadow: 0 2px 0 0 #000;
+		}
+	}
+	
+	aside.menu {
+		border-color: #444;
+	}
+	
+	.menu-list li ul {
+		border-color: #555;
+	}
+	
+	.menu-list a {
+		color: #ccc;
+	}
+	
+	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+		color: #aaa;
+	}
+	
+	strong {
+		color: #ccc;
+	}
+	
+	hr {
+		border-color: #444;
+		background: #222;
+	}
+	
+	.footer {
+		background: #000;
+	}
+}
