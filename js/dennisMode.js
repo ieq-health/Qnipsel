@@ -2,6 +2,7 @@
 $(function() {
 	if (Cookies.get('dennisMode') == 'true') {
 		$('body').addClass('dennisMode');
+		$('input[name="dennisMode"]').prop('checked', true);
 	}
 
 	$('input[name="dennisMode"]').on('change', function() {
