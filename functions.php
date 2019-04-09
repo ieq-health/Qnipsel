@@ -222,6 +222,31 @@ function templateq_enqueue()
 }
 add_action('wp_enqueue_scripts', 'templateq_enqueue');
 
+/** Recent Changes */
+function templateq_recent_updates()
+{
+	$loop = new WP_Query(array(
+		'post_type' => 'page',
+		'orderby' => 'modified'
+	));
+
+	$counter = 0;
+
+	$string .= '<ul>';
+	$string = '<table class="table"><tbody>';
+
+	while ($loop->have_posts() && $counter < 5) {
+		$loop->the_post();
+		$string .= '<tr><td><a href="' . get_permalink($loop->post->ID) .'">' . get_the_title($loop->post->ID) . '</a></td>';
+		$string .= '<td><small>(' . get_the_modified_date() . ')</small></td>';
+		$string .= '<td>' . get_the_modified_author() . '</td></tr>';
+		$counter++;
+	}
+
+	$string .= '</tbody></table>';
+	return $string;
+}
+
 /** Custom Menu Walker */
 class Templateq_Mega_Walker extends Walker_Page
 {
