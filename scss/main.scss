@@ -36,6 +36,13 @@ hr {
 body.dennisMode {
 	#dennisMenu {
 		display: block;
+		height: calc(100vh - 5em);
+		min-height: calc(100vh - 5em);
+											
+		nav {
+			height: calc(100% - 2em);
+			overflow: auto;
+		}
 	}
 	.navbar-start {
 		display: none;
