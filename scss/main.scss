@@ -36,9 +36,11 @@ hr {
 body.dennisMode {
 	#dennisMenu {
 		display: block;
-		height: calc(100vh - 5em);
-		min-height: calc(100vh - 5em);
-											
+		height: calc(100vh - 3.25rem);
+		min-height: calc(100vh - 3.25rem);
+		position: sticky;
+		top: 3.25rem;
+
 		nav {
 			height: 100%;
 			margin: 0;
@@ -53,5 +55,19 @@ body.dennisMode {
 		order: -1;
 		border-right: none;
 		border-left: 1px solid #ddd;
+	}
+}
+
+.simplebar-track {
+	right: 4px;
+	
+	.simplebar-scrollbar.simplebar-visible::before {
+		background: transparent;
+		border: 1px solid #000;
+		margin: 4px 0;
+		opacity: 0.1;
+	}
+	.simplebar-scrollbar.simplebar-visible.simplebar-hover::before {
+		background: #000;
 	}
 }
