@@ -1,6 +1,6 @@
-.darkmode(@rules) {
+@mixin darkmode() {
 	body.darkMode & {
-		@rules();
+		@content;
 	}
 }
 
