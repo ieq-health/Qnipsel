@@ -40,7 +40,9 @@ body.dennisMode {
 		min-height: calc(100vh - 5em);
 											
 		nav {
-			height: calc(100% - 2em);
+			height: 100%;
+			margin: 0;
+			padding: 1em;
 			overflow: auto;
 		}
 	}
