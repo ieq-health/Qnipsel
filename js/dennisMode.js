@@ -13,5 +13,7 @@ $(function() {
 		} else {
 			$('body').removeClass('dennisMode');
 		}
-	})
+	});
+	
+	new SimpleBar($('#dennisMenu > nav')[0], { autoHide: false });
 });
