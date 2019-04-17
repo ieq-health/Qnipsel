@@ -30,7 +30,7 @@ $(function() {
     let lang = $(this).val();
     let $textarea = $(this).parent().parent().next().find('textarea');
 
-    let editor = CodeMirror.fromTextArea($textarea[0], {
+    wp.codeEditor.initialize($textarea[0], {
       lineNumbers: false,
       mode: lang
     });
