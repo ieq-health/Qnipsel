@@ -1,12 +1,14 @@
 function makeCodeEditor () {
   let $textarea = $(this).parent().parent().next().find('textarea');
-  let lang = (function(input) {
+
+  let lang = $(this).val();
+  lang = (function(input) {
     switch (input) {
       case 'js':   'javascript'; break;
       case 'html': 'htmlmixed'; break;
       default: input;
     }
-  })($(this).val());
+  })(lang);
 
   // If editor exists, change mode
   if ($textarea.siblings('.CodeMirror').length > 0) {
