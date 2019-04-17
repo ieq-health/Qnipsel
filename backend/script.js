@@ -1,6 +1,18 @@
 function makeCodeEditor () {
-  let lang = $(this).val();
   let $textarea = $(this).parent().parent().next().find('textarea');
+  let lang = (function(input) {
+    switch (input) {
+      case 'js':   'javascript'; break;
+      case 'html': 'htmlmixed'; break;
+      default: input;
+    }
+  })($(this).val());
+
+  // If editor exists, change mode
+  if ($textarea.siblings('.CodeMirror').length > 0) {
+    $textarea.siblings('.CodeMirror').setOption('mode', lang);
+    return;
+  }
 
   wp.codeEditor.initialize($textarea[0], {
     lineNumbers: false,
