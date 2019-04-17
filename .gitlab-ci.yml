@@ -10,19 +10,22 @@ before_script:
 
 build_npm:
     stage: build
-    only: master
+    only: 
+        - master
     script:
         - npm install
         - npm run css-main
 
 build_php:
     stage: build
-    only: master
+    only:
+        - master
     script: composer install
 
 release:
     stage: deploy
-    only: master
+    only:
+        - master
     script:
         - rm -rf .git build node_modules scss
         - sshpass -p $SSH_PASS scp -r -o StrictHostKeyChecking=no . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
