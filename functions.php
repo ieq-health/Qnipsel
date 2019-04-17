@@ -32,6 +32,7 @@ function templateq_code_field()
 	return array(
 		Field::make('text', 'language', 'Sprache'),
 		Field::make('textarea', 'code', 'Code')
+		->set_attribute('data-editor')
 	);
 }
 

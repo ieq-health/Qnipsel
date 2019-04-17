@@ -1,3 +1,4 @@
+/**
 $(function() {
   $("textarea[data-editor]").each(function() {
     var textarea = $(this);
@@ -19,6 +20,19 @@ $(function() {
     // copy back to textarea on form submit...
     textarea.closest("form").submit(function() {
       textarea.val(editor.getSession().getValue());
+    });
+  });
+});
+*/
+
+$(function() {
+  $('#carbon_fields_container_sections').on('blur', 'input[name*=language]', function() {
+    let lang = $(this).val();
+    let $textarea = $(this).parent().parent().next().find('textarea');
+
+    let editor = CodeMirror.fromTextArea($textarea[0], {
+      lineNumbers: false,
+      mode: lang
     });
   });
 });
