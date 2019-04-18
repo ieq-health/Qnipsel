@@ -14,9 +14,6 @@ build_npm:
     script:
         - apk add npm
         - npm install
-        - npm install monaco-editor
-        - mkdir -p dist/js
-        - cp -r node_modules/monaco-editor dist/js/
         - npm run css-main
     artifacts:
         paths:
