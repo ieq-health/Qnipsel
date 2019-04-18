@@ -14,6 +14,8 @@ build_npm:
         - master
     script:
         - npm install
+        - npm install monaco-editor
+        - cp -r node_modules/monaco-editor js/
         - npm run css-main
 
 build_php:
@@ -27,6 +29,5 @@ release:
     only:
         - master
     script:
-        - cp -r node_modules/monaco-editor js/
         - rm -rf .git build node_modules scss
         - sshpass -p $SSH_PASS scp -r -o StrictHostKeyChecking=no . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
