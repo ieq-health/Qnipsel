@@ -184,6 +184,8 @@ add_filter('upload_mimes', 'templateq_allow_filetypes', 1, 1);
 function templateq_enqueue_admin()
 {
 	wp_enqueue_code_editor( array( 'type' => 'text/html' ) );
+	wp_enqueue_script('cm_emmet', 'https://cdn.jsdelivr.net/npm/@emmetio/codemirror-plugin@0.5.4/dist/emmet-codemirror-plugin.min.js', array(), '0.5.4');
+	wp_add_inline_script('cm_emmet', 'let CodeMirror = wp.CodeMirror;', 'before');
 	wp_enqueue_script('templateq_backend', get_template_directory_uri() . '/backend/script.js', array(), '0.0.1');
 }
 add_action('admin_enqueue_scripts', 'templateq_enqueue_admin');

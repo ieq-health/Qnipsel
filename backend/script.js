@@ -8,6 +8,11 @@ const cmOpts = {
 	markTagPairs: true,
 	autoRenameTags: true,
 	autoCloseBrackets: true,
+	extraKeys: {
+		'Tab': 'emmetExpandAbbreviation',
+		'Enter': 'emmetInsertLineBreak',
+		'Ctrl-Space': 'autocomplete'
+	}
 };
 
 function translateMode (mode) {
