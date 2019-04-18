@@ -10,6 +10,8 @@ function makeCodeEditor () {
     }
   })(lang);
 
+  console.log(lang);
+
   // If editor exists, change mode
   if ($textarea.siblings('.CodeMirror').length > 0) {
     $textarea.siblings('.CodeMirror')[0].CodeMirror.setOption('mode', lang);
