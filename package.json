@@ -21,6 +21,7 @@
   "author": "Christian Brassat <christian@brassat.eu>",
   "license": "ISC",
   "dependencies": {
+    "monaco-editor": "0.16.2",
     "bulma": "^0.7.4",
     "clean-css": "^4.2.1",
     "clean-css-cli": "^4.2.1",
