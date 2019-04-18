@@ -2,6 +2,14 @@
 // ─── HELPER ─────────────────────────────────────────────────────────────────────
 //
 
+const cmOpts = {
+	lineNumbers: false,
+	lineWrapping: true,
+	markTagPairs: true,
+	autoRenameTags: true,
+	autoCloseBrackets: true,
+};
+
 function translateMode (mode) {
 	let output;
 	switch (mode) {
@@ -27,8 +35,8 @@ function makeCodeEditor () {
 	}
 
 	wp.codeEditor.initialize($textarea[0], { codemirror: {
-		lineNumbers: false,
-		mode: lang
+		mode: lang,
+		...cmOpts
 	}});
 }
 
@@ -48,8 +56,8 @@ function makeCodepenEditor () {
 			if ($(this).siblings('.CodeMirror').length > 0) return;
 
 			wp.codeEditor.initialize(this, { codemirror: {
-				lineNumbers: false,
-				mode: translateMode($(this).data('editor'))
+				mode: translateMode($(this).data('editor')),
+				...cmOpts
 			}});
 		});
 	}, 100);
