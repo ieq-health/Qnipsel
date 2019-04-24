@@ -34,7 +34,7 @@
 								</div>
 
 								<!-- Land -->
-
+<!--
 								<div class="column">
 									<label class="label">Land</label>
 									<div class="field is-grouped">
@@ -50,7 +50,7 @@
 										</div>
 									</div>
 								</div>
-
+-->
 								<!-- Datum -->
 
 								<div class="column">
@@ -150,11 +150,11 @@
 			let year = $('input[name="year"]').val();
 			let ymo = `${year.substr(-2)}${month.num}`;
 			let text = $('textarea[name="text"]').val();
-			let land = $('input[name="land"]:checked').val();
+			// let land = $('input[name="land"]:checked').val();
 			let gewerk = $('input[name="gewerk"]:checked').val();
 			let slug = makeSlug(title);
 			let newspath = `${ymo}-${slug}`;
-			let link = `http:/scripts/show.aspx?content=/health/${gewerk}/news/${land}/${year}/${newspath}`;
+			let link = `http:/scripts/show.aspx?content=/health/${gewerk}/news/${year}/${newspath}`;
 
 			$('#output').val(`
 ${newspath}
