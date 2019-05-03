@@ -216,8 +216,8 @@ function templateq_enqueue()
 	wp_enqueue_script('templateq_darkMode', get_template_directory_uri() . '/js/darkMode.js', array('cookies'), '0.0.1');
 										
 	// Custom Scrollbars
-	wp_enqueue_script('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@3/dist/simplebar.min.js', array(), '3');
-	wp_enqueue_style('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@3/dist/simplebar.css', array(), '3');
+	wp_enqueue_script('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), 'latest');
+	wp_enqueue_style('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css', array(), 'latest');
 
 	// Pull Rainbow
 	wp_enqueue_script('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js', array(), '1.2.0');
