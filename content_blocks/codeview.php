@@ -115,16 +115,16 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 		iframeDocument.write(`<body><?= $html ?></body>`);
 
 		<?php if (in_array('jquery', $js_libs)): ?>
-			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
 		<?php if (in_array('bootstrap', $js_libs)): ?>
-			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
 			iframeDocument.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
 		<?php if (in_array('slick', $js_libs)): ?>
-			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"><\/script>');
+			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
 			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
