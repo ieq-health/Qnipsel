@@ -112,19 +112,6 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</main>
-	<aside class="menu" id="dennisMenu">
-		<nav>
-			<ul class="menu-list">
-				<?php wp_list_pages(array(
-					'title_li' => null,
-					'walker' => new Templateq_Walker()
-				)); ?>
-			</ul>
-		</nav>
-	<aside>
-</div>
-
-
 
 <script>
 	function makeSlug (string) {
@@ -167,3 +154,5 @@ ${title}
 		});
 	});
 </script>
+
+<?php get_footer(); ?>
