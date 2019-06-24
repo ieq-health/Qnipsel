@@ -8,6 +8,10 @@ body.darkMode {
 	background: #222;
 	color: #eee;
 
+	.input, .select select, .textarea {
+		color: #999;
+	}
+
 	.tabs a {
 		color: #ccc;
 	}
@@ -53,7 +57,7 @@ body.darkMode {
 	}
 
 	.has-background-light {
-		background: #222 !important;
+		background: #282828 !important;
 	}
 
 	/** Codeview */
