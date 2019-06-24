@@ -26,6 +26,10 @@ body.darkMode {
 	
 	.menu-list a {
 		color: #ccc;
+
+		&:hover {
+			background: #333;
+		}
 	}
 	
 	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
@@ -47,5 +51,25 @@ body.darkMode {
 	
 	.footer {
 		background: #000;
+	}
+
+	.has-background-light {
+		background: #222 !important;
+	}
+
+	/** Codeview */
+
+	.codeview__code {
+		background: #333;
+		border-color: #111;
+	}
+
+	.codeview__code .resizer {
+		background: #555;
+	}
+
+	/** XML Stripper */
+	.xml-stripper .column {
+		border-color: #111;
 	}
 }
