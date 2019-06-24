@@ -7,6 +7,10 @@
 body.darkMode {
 	background: #222;
 	color: #eee;
+
+	.tabs a {
+		color: #ccc;
+	}
 	
 	.navbar {
 		background: #333;
@@ -35,11 +39,6 @@ body.darkMode {
 	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
 		color: #aaa;
 	}
-	
-	.tabs a {
-		color: #ccc;
-	}
-	
 	strong {
 		color: #ccc;
 	}
