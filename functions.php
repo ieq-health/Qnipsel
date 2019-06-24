@@ -32,7 +32,7 @@ function templateq_code_field()
 	return array(
 		Field::make('text', 'language', 'Sprache'),
 		Field::make('textarea', 'code', 'Code')
-		->set_attribute('data-editor')
+			->set_attribute('data-editor')
 	);
 }
 
@@ -254,16 +254,61 @@ function templateq_recent_updates()
 	return $string;
 }
 
+/** Snippet post type */
+
+function templateq_snippet_taxonomies()
+{
+	register_taxonomy('vscode_taxonomy', array('vscode_snippet'), array(
+		'labels' => array(
+			'name' => 'Kategorien',
+			'singular_name' => 'Kategorie'
+		),
+		'hierarchical' => true
+	));
+}
+add_action('init', 'templateq_snippet_taxonomies');
+
+function templateq_crb_attach_snippet_options() {
+	Container::make('post_meta', 'Snippet')
+		->where('post_type', '=', 'vscode_snippet')
+		->add_fields(array(
+			Field::make('multiselect', 'scope', 'Scopes')
+				->add_options(array(
+					'css' => 'CSS',
+					'html' => 'HTML',
+					'javascript' => 'Javascript'
+				)),
+
+			Field::make('text', 'prefix', 'Prefix'),
+
+			Field::make('textarea', 'body', 'Body')
+				->set_attribute('data-editor'),
+
+			Field::make('text', 'description', 'Description')
+		));
+}
+add_action('carbon_fields_register_fields', 'templateq_crb_attach_snippet_options');
+
+function templateq_snippet_post_type()
+{
+	register_post_type('vscode_snippet', array(
+		'labels' => array(
+			'name' => 'VSCode Snippets',
+			'singular_name' => 'VSCode Snippet'
+		),
+		'public' => true,
+		'has_archive' => false
+	));
+}
+add_action('init', 'templateq_snippet_post_type');
+
 /** Custom Menu Walker */
-class Templateq_Mega_Walker extends Walker_Page
+class Templateq_Nav_Walker extends Walker_Page
 {
 	public function start_lvl(&$output, $depth=0, $args=array())
 	{
 		if ($depth == 0) {
-			$output .= '<ul class="navbar-dropdown">';
-			$output .= '	<div class="container is-fluid">';
-			$output .= '		<div class="columns">';
-			return;
+			$output .= '<div class="navbar-dropdown">';
 		}
 	}
 
@@ -272,38 +317,37 @@ class Templateq_Mega_Walker extends Walker_Page
 		$children = count(get_pages(array('child_of' => $page->ID)));
 
 		if ($depth == 0) {
-			$output .= '<div class="navbar-item has-dropdown is-hoverable is-mega">';
-			$output .= '	<div class="navbar-link">' . $page->post_title . '</div>';
-			return;
+			$output .= '	<div class="navbar-item is-hoverable' . ($children > 0 ? ' has-dropdown' : '') . '">';
+			$output .= '		<div class="navbar-link">';
+			$output .= '			<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
+			$output .= '		</div>';
+		} elseif ($depth == 1) {
+			if ($children > 0) {
+				$output .= '	<hr class="navbar-divider">';
+			}
+			$output .= '	<a href="' . get_permalink($page->ID) . '" class="navbar-item' . ($children > 0 ? ' has-text-weight-bold' : '') . '">' . $page->post_title . '</a>';
+		} else {
+			$output .= '	<a href="' . get_permalink($page->ID) . '" class="navbar-item" style="padding-left: 2rem">' . $page->post_title . '</a>';
 		}
-
-		if ($depth == 1) {
-			$output .= '<div class="column is-one-fifth">';
-		}
-
-		if ($children > 0) {
-			$output .= '<h1 class="title is-6 is-mega-menu-title"><a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a></h1>';
-			return;
-		}
-
-		$output .= '<a href="' . get_permalink($page->ID) . '" class="navbar-item">' . $page->post_title . '</a>';
 	}
 
 	public function end_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
-		if ($depth == 0 || $depth == 1) {
-			$output .= '</div>';
-			return;
+		$children = count(get_pages(array('child_of' => $page->ID)));
+
+		if ($depth == 0) {
+			$output .= '	</div>';
+		} else {
+			if ($children > 0) {
+				$output .= '	<hr class="navbar-divider">';
+			}
 		}
 	}
 
 	public function end_lvl(&$output, $depth=0, $args=array())
 	{
 		if ($depth == 0) {
-			$output .= '		</div>';
-			$output .= '	</div>';
-			$ouptut .= '</div>';
-			return;
+			$output .= '</div>';
 		}
 	}
 }

@@ -120,19 +120,3 @@
 			</nav>
 		</aside>
 	<?php endif; ?>
-
-	<aside class="menu" id="dennisMenu">
-		<nav>
-			<ul class="menu-list">
-				<?php wp_list_pages(array(
-					'title_li' => null,
-					'walker' => new Templateq_Walker()
-				)); ?>
-			</ul>
-		</nav>
-	<aside>
-</div>
-
-<footer class="footer has-text-centered">
-	<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?php the_modified_author(); ?> | <?= the_modified_date(); ?>
-</footer>
