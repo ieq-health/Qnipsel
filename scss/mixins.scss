@@ -1,0 +1,5 @@
+@mixin darkmode() {
+	body.darkMode & {
+		@content;
+	}
+}

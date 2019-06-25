@@ -1,9 +1,3 @@
-@mixin darkmode() {
-	body.darkMode & {
-		@content;
-	}
-}
-
 body.darkMode {
 	background: #222;
 	color: #eee;
