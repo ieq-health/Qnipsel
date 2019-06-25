@@ -4,6 +4,11 @@
 	border-width: 1px 0;
 	box-shadow: 0 2px 0 rgba(0,0,0,0.01);
 	padding: 1em 3em 2em;
+
+    @include darkmode {
+		background: #333;
+		border-color: #111;
+	}
 }
 
 .codeview__code div[id$="-preview"] {
@@ -27,6 +32,10 @@
     position: absolute;
     bottom: 0;
     left: calc(50% - 50px);
+
+    @include darkmode {
+        background: #555;
+    }
 }
 
 .codeview__code pre {
