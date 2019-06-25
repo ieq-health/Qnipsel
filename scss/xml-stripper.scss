@@ -9,6 +9,10 @@
 		border: solid #eee;
 		border-width: 1px 0;
 		padding: 1em;
+
+		@include darkmode {
+			border-color: #111;
+		}
 	}
 	
 	p {

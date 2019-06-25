@@ -24,6 +24,8 @@ body.darkMode {
 		}
 	}
 	
+	
+	&.dennisMode #nonDennisMenu,
 	aside.menu {
 		border-color: #444;
 	}
@@ -43,6 +45,7 @@ body.darkMode {
 	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
 		color: #aaa;
 	}
+
 	strong {
 		color: #ccc;
 	}
@@ -60,19 +63,11 @@ body.darkMode {
 		background: #282828 !important;
 	}
 
-	/** Codeview */
+	.message.is-dark {
+		background: #4f4f4f;
 
-	.codeview__code {
-		background: #333;
-		border-color: #111;
-	}
-
-	.codeview__code .resizer {
-		background: #555;
-	}
-
-	/** XML Stripper */
-	.xml-stripper .column {
-		border-color: #111;
+		.message-body {
+			color: #fafafa;
+		}
 	}
 }
