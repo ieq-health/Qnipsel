@@ -5,6 +5,7 @@ $radius-small: 3px;
 
 @import "../node_modules/bulma/bulma.sass";
 
+@import "mixins";
 @import "dashboard";
 @import "codeview";
 @import "tabview";
