@@ -127,6 +127,14 @@
 
 	$(function() {
 		const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+		
+		const today = new Date();
+		const month = today.getMonth() + 1;
+		const year = today.getYear() + 1900;
+		
+		$('select[name="month"]').val((month < 10) ? '0' + month : month.toString());
+		$('input[name="year"]').val(year);
+		
 
 		$('input, select, .field textarea').on('input propertychange', function() {
 			let title = $('input[name="title"]').val();
@@ -149,7 +157,7 @@ ${newspath}
 ${title}
 
 <h3 class="news-heading"><span class="news-datum">${month.string} ${year}</span> <span class="dash">&ndash;</span> ${title}</h3>
-<p class="news-text">${text} <a href="${link}" title="Gehe zu: News" class="news-link">Mehr erfahren</a></p>
+<p class="news-text">${text} <a href="${link}" title="Gehe zu: News" class="news-link">Mehr »</a></p>
 			`);
 		});
 	});
