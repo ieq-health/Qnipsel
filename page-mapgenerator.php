@@ -17,17 +17,24 @@
 
 							<div class="columns">
 								<div class="column">
-									<div class="field">
+									<div class="field has-addons">
 										<label class="label">Location</label>
 
+										<p class="control"><button class="button is-static">Lat</button</p>
 										<div class="control">
 											<input name="lat" type="text" class="input" placeholder="Latitude">
 										</div>
+									</div>
 
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Lng</button</p>
 										<div class="control">
 											<input name="lng" type="text" class="input" placeholder="Longitude">
 										</div>
+									</div>
 
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Zoom</button</p>
 										<div class="control">
 											<input name="zoom" type="text" class="input" placeholder="Zoom">
 										</div>
@@ -35,17 +42,24 @@
 								</div>
 
 								<div class="column">
-									<div class="field">
+									<div class="field has-addons">
 										<label class="label">Offset LG</label>
 
+										<p class="control"><button class="button is-static">Lat</button></p>
 										<div class="control">
 											<input name="lat_offset" value="0" type="text" class="input" placeholder="Latitude">
 										</div>
+									</div>
 
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Lat</button></p>
 										<div class="control">
 											<input name="lng_offset" value="0" type="text" class="input" placeholder="Longitude">
 										</div>
+									</div>
 
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Lat</button></p>
 										<div class="control">
 											<input name="zoom_offset" type="text" class="input" placeholder="Zoom">
 										</div>
@@ -54,27 +68,49 @@
 							</div>
 
 							<!-- Styles -->
-
-							<div class="field">
-								<label class="label">Styles</label>
-								<div class="control">
-									<textarea name="styles" class="textarea has-border"></textarea>
+							<div class="columns">
+								<div class="column">
+									<div class="field">
+										<label class="label">Styles</label>
+										<div class="control">
+											<textarea name="styles" class="textarea has-border"></textarea>
+										</div>
+									</div>
 								</div>
 							</div>
 
 							<!-- Marker -->
+							<div class="columns">
+								<div class="column">
+									<div class="field has-addons">
+										<label class="label">Marker</label>
+										<p class="control"><button class="button is-static">Marker URL</button></p>
+										<div class="control"><input class="input" type="text" name="marker"></div>
+									</div>
 
-							<div class="column">
-								<div class="field">
-									<label class="label">Marker</label>
-									<div class="control"><input type="text" name="marker"></div>
-									<div class="control"><input type="text" name="marker_width"></div>
-									<div class="control"><input type="text" name="marker_height"></div>
-									<div class="control"><input type="text" name="title"></div>
-									<div class="control"><input type="text" name="url"></div>
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Marker Breite</button></p>
+										<div class="control"><input class="input" type="text" name="marker_width"></div>
+									</div>
+
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Marker Höhe</button></p>
+										<div class="control"><input class="input" type="text" name="marker_height"></div>
+									</div>
+								</div>
+
+								<div class="column">
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Label Titel</button></p>
+										<div class="control"><input class="input" type="text" name="title"></div>
+									</div>
+
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Label URL</button></p>
+										<div class="control"><input class="input" type="text" name="url"></div>
+									</div>
 								</div>
 							</div>
-
 						</div>
 
 						<div class="column has-background-light">
@@ -86,18 +122,18 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</main>
-	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 <script>
 	$(function() {
 
 		$('input, select, .field textarea').on('input propertychange', function() {
-			let lat = $('input[name="lat"]').val()
-			let lng = $('input[name="lng"]').val()
-			let zoom = $('input[name="zoom"]').val()
+			let lat = $('input[name="lat"]').val();
+			let lng = $('input[name="lng"]').val();
+			let zoom = $('input[name="zoom"]').val();
 
-			let lat_offset = lat + $('input[name="lat_offset"]').val();
-			let lng_offset = lng + $('input[name="lng_offset"]').val();
-			let zoom_offset = zoom + $('input[name="zoom_offset"]').val();
+			let lat_offset = lat * 1 + $('input[name="lat_offset"]').val() * 1;
+			let lng_offset = lng * 1 + $('input[name="lng_offset"]').val() * 1;
+			let zoom_offset = zoom * 1 + $('input[name="zoom_offset"]').val() * 1;
 
 			let styles = $('textarea[name="styles"]').val();
 
