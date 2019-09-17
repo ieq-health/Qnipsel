@@ -17,24 +17,24 @@
 
 							<div class="columns">
 								<div class="column">
-									<div class="field has-addons">
-										<label class="label">Location</label>
+									<label class="label">Location</label>
 
-										<p class="control"><button class="button is-static">Lat</button</p>
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Lat</button></p>
 										<div class="control">
 											<input name="lat" type="text" class="input" placeholder="Latitude">
 										</div>
 									</div>
 
 									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Lng</button</p>
+										<p class="control"><button class="button is-static">Lng</button></p>
 										<div class="control">
 											<input name="lng" type="text" class="input" placeholder="Longitude">
 										</div>
 									</div>
 
 									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Zoom</button</p>
+										<p class="control"><button class="button is-static">Zoom</button></p>
 										<div class="control">
 											<input name="zoom" type="text" class="input" placeholder="Zoom">
 										</div>
@@ -42,9 +42,9 @@
 								</div>
 
 								<div class="column">
-									<div class="field has-addons">
-										<label class="label">Offset LG</label>
+									<label class="label">Offset LG</label>
 
+									<div class="field has-addons">
 										<p class="control"><button class="button is-static">Lat</button></p>
 										<div class="control">
 											<input name="lat_offset" value="0" type="text" class="input" placeholder="Latitude">
@@ -82,8 +82,9 @@
 							<!-- Marker -->
 							<div class="columns">
 								<div class="column">
+									<label class="label">Marker</label>
+
 									<div class="field has-addons">
-										<label class="label">Marker</label>
 										<p class="control"><button class="button is-static">Marker URL</button></p>
 										<div class="control"><input class="input" type="text" name="marker"></div>
 									</div>
@@ -100,6 +101,8 @@
 								</div>
 
 								<div class="column">
+									<label class="label">Label</label>
+
 									<div class="field has-addons">
 										<p class="control"><button class="button is-static">Label Titel</button></p>
 										<div class="control"><input class="input" type="text" name="title"></div>
