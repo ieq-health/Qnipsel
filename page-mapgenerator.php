@@ -170,7 +170,7 @@ function initMap() {
 		center: mq.matches ? mapLocation.offset : mapLocation,
 		zoom: mq.matches ? mapLocation.offset.zoom : mapLocation.zoom,
 		disableDefaultUI: true,
-		styles: [ ${styles} ]
+		styles: ${styles}
 	});
 
 	const image = {
