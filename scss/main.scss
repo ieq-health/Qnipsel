@@ -80,3 +80,7 @@ body.dennisMode {
 		}
 	}
 }
+
+body.lineWrap .content pre {
+	white-space: normal;
+}

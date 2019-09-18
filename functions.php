@@ -210,10 +210,11 @@ function templateq_enqueue()
 	wp_enqueue_script('templateq_submenu', get_template_directory_uri() . '/js/submenu.js', array('jquery'), '0.0.1');
 	wp_enqueue_script('templateq_tabview', get_template_directory_uri() . '/js/tabview.js', array('jquery'), '0.0.1');
 
-	// Dennismode && Darkmode
+	// Dennismode && Darkmode && Linewrap
 	wp_enqueue_script('cookies', 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', array(), '2');
 	wp_enqueue_script('templateq_dennisMode', get_template_directory_uri() . '/js/dennisMode.js', array('cookies'), '0.0.1');
 	wp_enqueue_script('templateq_darkMode', get_template_directory_uri() . '/js/darkMode.js', array('cookies'), '0.0.1');
+	wp_enqueue_script('templateq_lineWrap', get_template_directory_uri() . '/js/lineWrap.js', array('cookies'), '0.0.1');
 										
 	// Custom Scrollbars
 	wp_enqueue_script('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), 'latest');
