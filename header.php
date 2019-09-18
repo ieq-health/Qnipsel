@@ -50,6 +50,10 @@
 				<input id="dennisMode" type="checkbox" name="dennisMode" class="switch is-small is-danger is-rounded is-rtl">
 				<label for="dennisMode"><i class="fas fa-ambulance"></i></label>
 			</div>
+			<div class="field">
+				<input type="checkbox" id="lineWrap" name="lineWrap" class="switch is-small is-warning is-rounded is-rtl">
+				<label for="lineWrap"><i class="fas fa-align-left"></i></label>
+			</div>
 		</div>
 	</div>
 </nav>
