@@ -204,6 +204,7 @@ function templateq_enqueue()
 	wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/css/main.min.css', array(), '0.0.1');
 	wp_enqueue_style('bulma-switch', 'https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.4/bulma-switch/dist/css/bulma-switch.min.css', array(), '6.2.4');
 	wp_enqueue_style('fontawesome', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css', array(), '5.8.1');
+	wp_enqueue_style('bulma-tooltip', 'https://cdn.jsdelivr.net/npm/bulma-tooltip@2.0.2/dist/css/bulma-tooltip.min.css', array(), '2.0.2');
 
 	// Pull custom JS
 	wp_enqueue_script('templateq_codeview', get_template_directory_uri() . '/js/codeview.js', array('jquery'), '0.0.1');
@@ -215,7 +216,7 @@ function templateq_enqueue()
 	wp_enqueue_script('templateq_dennisMode', get_template_directory_uri() . '/js/dennisMode.js', array('cookies'), '0.0.1');
 	wp_enqueue_script('templateq_darkMode', get_template_directory_uri() . '/js/darkMode.js', array('cookies'), '0.0.1');
 	wp_enqueue_script('templateq_lineWrap', get_template_directory_uri() . '/js/lineWrap.js', array('cookies'), '0.0.1');
-										
+
 	// Custom Scrollbars
 	wp_enqueue_script('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), 'latest');
 	wp_enqueue_style('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css', array(), 'latest');
