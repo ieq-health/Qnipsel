@@ -241,7 +241,6 @@ function templateq_recent_updates()
 
 	$counter = 0;
 
-	$string .= '<ul>';
 	$string = '<table class="table"><tbody>';
 
 	while ($loop->have_posts() && $counter < 5) {
@@ -260,17 +259,24 @@ function templateq_recent_updates()
 
 function templateq_snippet_taxonomies()
 {
-	register_taxonomy('vscode_taxonomy', array('vscode_snippet'), array(
+	$tax_options = array(
 		'labels' => array(
-			'name' => 'Kategorien',
+			'name'          => 'Kategorien',
 			'singular_name' => 'Kategorie'
 		),
 		'hierarchical' => true
-	));
+	);
+
+	register_taxonomy(
+		'vscode_taxonomy',
+		array('vscode_snippet'),
+		$tax_options
+	);
 }
 add_action('init', 'templateq_snippet_taxonomies');
 
-function templateq_crb_attach_snippet_options() {
+function templateq_crb_attach_snippet_options()
+{
 	Container::make('post_meta', 'Snippet')
 		->where('post_type', '=', 'vscode_snippet')
 		->add_fields(array(
