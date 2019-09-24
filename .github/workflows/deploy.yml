@@ -1,0 +1,39 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - uses: shivammathur/setup-php@master
+        with:
+          php-version: 7.3
+
+      - name: compile CSS
+        run: |
+          npm install
+          npm run css-main
+
+      - name: install PHP deps
+        run: |
+          composer install
+
+      - name: release
+        env:
+          SSH_PASS: ${{ secrets.SSH_PASS }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_IP: ${{ secrets.SSH_IP }}
+        run: |
+          rm -rf .git build node_modules scss
+          sshpass -p "$SSH_PASS" scp -r -o StrictHostKeyChecking=no . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
