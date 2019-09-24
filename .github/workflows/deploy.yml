@@ -25,8 +25,6 @@ jobs:
       run: |
         npm install
         npm run css-main
-      env:
-        CI: true
         
     - name: install PHP deps
       run: |
@@ -35,4 +33,4 @@ jobs:
     - name: release
       run: |
         rm -rf .git build node_modules scss
-        sshpass -p$SSH_PASS scp -r -o StrictHostKeyChecking=no . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
+        sshpass -p "$SSH_PASS" scp -r -o StrictHostKeyChecking=no . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
