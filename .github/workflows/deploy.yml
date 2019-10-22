@@ -22,7 +22,7 @@ jobs:
 
       - name: compile CSS
         run: |
-          npm install
+          npm ci
           npm run css-main
 
       - name: install PHP deps
