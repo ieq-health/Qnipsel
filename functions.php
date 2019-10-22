@@ -127,6 +127,9 @@ function templateq_crb_attach_post_options()
 				Field::make('html', 'hr', 'Trennlinie')
 				->set_html('<hr>')
 			))
+
+			/** Output in REST Api */
+			->set_visible_in_rest_api($visible = true)
 		));
 }
 add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
