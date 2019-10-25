@@ -346,11 +346,9 @@ class Templateq_Split_Nav_Topnav_Walker extends Walker_Page
 	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
 		if ($depth == 0) {
-			$output .= '	<div class="navbar-item">';
-			$output .= '		<div class="navbar-link">';
-			$output .= '			<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
-			$output .= '		</div>';
-			$output .= '    </div>';
+			$output .= '	<div class="navbar-link is-arrowless">';
+			$output .= '		<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
+			$output .= '	</div>';
 		}
 	}
 
