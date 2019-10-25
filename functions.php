@@ -436,12 +436,12 @@ class Templateq_Split_Nav_Sidenav_Walker extends Walker_Page
 	function start_el(&$output, $page, $depth, $args=array(), $id=0)
 	{
 		if (in_array($page->post_parent, $this->parents))
-			parent::start_el($output, $page, $depth, $args, $id);
+			parent::start_el(&$output, $page, $depth, $args, $id);
 	}
 
 	function end_el(&$output, $page, $depth)
 	{
 		if (in_array($page->post_parent, $this->parents))
-			parent::end_el($output, $page, $depth);
+			parent::end_el(&$output, $page, $depth);
 	}
 }
