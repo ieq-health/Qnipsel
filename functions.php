@@ -409,34 +409,15 @@ class Templateq_Split_Nav_Topnav_Walker extends Walker_Page
 			$output .= '		<div class="navbar-link">';
 			$output .= '			<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
 			$output .= '		</div>';
+			$output .= '    </div>';
 		}
 	}
 
 	public function end_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
-		if ($depth == 0) {
-			$output .= '	</div>';
-		}
 	}
 
 	public function end_lvl(&$output, $depth=0, $args=array())
 	{
 	}
-}
-
-function templateq_list_child_pages()
-{
-	global $post;
-
-	if (is_page() && $post->post_parent) {
-		$children = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0');
-	} else {
-		$children = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0');
-	}
-
-	if ($children) {
-		$string = '<ul>' . $children . '</ul>';
-	}
-
-	return $string;
 }
