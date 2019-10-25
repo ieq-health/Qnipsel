@@ -13,7 +13,7 @@
             wp_list_pages(array(
                 'title_li' => null,
                 'child_of' => $parent,
-                'walker' => new Templateq_Walker()
+                'walker' => new Templateq_Split_Nav_Sidenav_Walker()
             ));
             ?>
         </ul>
