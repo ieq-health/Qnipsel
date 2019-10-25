@@ -424,24 +424,19 @@ class Templateq_Split_Nav_Topnav_Walker extends Walker_Page
 	}
 }
 
-class Templateq_Split_Nav_Sidenav_Walker extends Walker_Page
+function templateq_list_child_pages()
 {
-	var $parents = array();
+	global $post;
 
-	function __construct($parents)
-	{
-		$this->parents = $parents;
+	if (is_page() && $post->post_parent) {
+		$children = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0');
+	} else {
+		$children = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0');
 	}
 
-	function start_el(&$output, $page, $depth, $args=array(), $id=0)
-	{
-		if (in_array($page->post_parent, $this->parents))
-			parent::start_el(&$output, $page, $depth, $args, $id);
+	if ($children) {
+		$string = '<ul>' . $children . '</ul>';
 	}
 
-	function end_el(&$output, $page, $depth)
-	{
-		if (in_array($page->post_parent, $this->parents))
-			parent::end_el(&$output, $page, $depth);
-	}
+	return $string;
 }
