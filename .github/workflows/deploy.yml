@@ -30,7 +30,7 @@ jobs:
           composer install
 
       - name: stage
-        if: github.ref == 'develop'
+        if: github.ref == 'refs/heads/develop'
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
           SSH_USER: ${{ secrets.SSH_USER }}
@@ -40,7 +40,7 @@ jobs:
           sshpass -p "$SSH_PASS" rsync -aqz -e ssh . $SSH_USER@$SSH_IP:html/qnipsel-staging/wp-content/themes/templateq
 
       - name: release
-        if: github.ref == 'master'
+        if: github.ref == 'refs/heads/master'
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
           SSH_USER: ${{ secrets.SSH_USER }}
