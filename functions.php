@@ -392,3 +392,56 @@ class Templateq_Walker extends Walker_Page
 		}
 	}
 }
+
+/** Split Nav Walker */
+class Templateq_Split_Nav_Topnav_Walker extends Walker_Page
+{
+	public function start_lvl(&$output, $depth=0, $args=array())
+	{
+	}
+
+	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
+	{
+		$children = count(get_pages(array('child_of' => $page->ID)));
+
+		if ($depth == 0) {
+			$output .= '	<div class="navbar-item is-hoverable">';
+			$output .= '		<div class="navbar-link">';
+			$output .= '			<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
+			$output .= '		</div>';
+		}
+	}
+
+	public function end_el(&$output, $page, $depth=0, $args=array(), $id=0)
+	{
+		if ($depth == 0) {
+			$output .= '	</div>';
+		}
+	}
+
+	public function end_lvl(&$output, $depth=0, $args=array())
+	{
+	}
+}
+
+class Templateq_Split_Nav_Sidenav_Walker extends Walker_Page
+{
+	var $parents = array();
+
+	function __construct($parents)
+	{
+		$this->parents = $parents;
+	}
+
+	function start_el(&$output, $page, $depth, $args=array(), $id=0)
+	{
+		if (in_array($page->post_parent, $this->parents))
+			parent::start_el($output, $page, $depth, $args, $id);
+	}
+
+	function end_el(&$output, $page, $depth)
+	{
+		if (in_array($page->post_parent, $this->parents))
+			parent::end_el($output, $page, $depth);
+	}
+}
