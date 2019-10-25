@@ -216,7 +216,6 @@ function templateq_enqueue()
 
 	// Dennismode && Darkmode && Linewrap
 	wp_enqueue_script('cookies', 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', array(), '2');
-	wp_enqueue_script('templateq_dennisMode', get_template_directory_uri() . '/js/dennisMode.js', array('cookies'), '0.0.1');
 	wp_enqueue_script('templateq_darkMode', get_template_directory_uri() . '/js/darkMode.js', array('cookies'), '0.0.1');
 	wp_enqueue_script('templateq_lineWrap', get_template_directory_uri() . '/js/lineWrap.js', array('cookies'), '0.0.1');
 
@@ -314,56 +313,8 @@ function templateq_snippet_post_type()
 add_action('init', 'templateq_snippet_post_type');
 
 /** Custom Menu Walker */
-class Templateq_Nav_Walker extends Walker_Page
-{
-	public function start_lvl(&$output, $depth=0, $args=array())
-	{
-		if ($depth == 0) {
-			$output .= '<div class="navbar-dropdown">';
-		}
-	}
 
-	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
-	{
-		$children = count(get_pages(array('child_of' => $page->ID)));
-
-		if ($depth == 0) {
-			$output .= '	<div class="navbar-item is-hoverable' . ($children > 0 ? ' has-dropdown' : '') . '">';
-			$output .= '		<div class="navbar-link">';
-			$output .= '			<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
-			$output .= '		</div>';
-		} elseif ($depth == 1) {
-			if ($children > 0) {
-				$output .= '	<hr class="navbar-divider">';
-			}
-			$output .= '	<a href="' . get_permalink($page->ID) . '" class="navbar-item' . ($children > 0 ? ' has-text-weight-bold' : '') . '">' . $page->post_title . '</a>';
-		} else {
-			$output .= '	<a href="' . get_permalink($page->ID) . '" class="navbar-item" style="padding-left: 2rem">' . $page->post_title . '</a>';
-		}
-	}
-
-	public function end_el(&$output, $page, $depth=0, $args=array(), $id=0)
-	{
-		$children = count(get_pages(array('child_of' => $page->ID)));
-
-		if ($depth == 0) {
-			$output .= '	</div>';
-		} else {
-			if ($children > 0) {
-				$output .= '	<hr class="navbar-divider">';
-			}
-		}
-	}
-
-	public function end_lvl(&$output, $depth=0, $args=array())
-	{
-		if ($depth == 0) {
-			$output .= '</div>';
-		}
-	}
-}
-
-class Templateq_Walker extends Walker_Page
+class Templateq_Split_Nav_Sidenav_Walker extends Walker_Page
 {
 	public function start_lvl(&$output, $depth=0, $args=array())
 	{
@@ -373,23 +324,15 @@ class Templateq_Walker extends Walker_Page
 	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
 		// has children?
-		$children = count(get_pages(array('child_of' => $page->ID)));
 
 		$link = '<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
-
-		if ($depth == 0) {
-			$output .= '<p class="menu-label">' . $link . '</p>';
-			return;
-		}
 
 		$output .= '<li>' . $link;
 	}
 
 	public function end_el(&$output, $page, $depth=0, $args=array())
 	{
-		if ($depth != 0) {
-			$output .= '</li>';
-		}
+		$output .= '</li>';
 	}
 }
 
@@ -402,10 +345,8 @@ class Templateq_Split_Nav_Topnav_Walker extends Walker_Page
 
 	public function start_el(&$output, $page, $depth=0, $args=array(), $id=0)
 	{
-		$children = count(get_pages(array('child_of' => $page->ID)));
-
 		if ($depth == 0) {
-			$output .= '	<div class="navbar-item is-hoverable">';
+			$output .= '	<div class="navbar-item">';
 			$output .= '		<div class="navbar-link">';
 			$output .= '			<a href="' . get_permalink($page->ID) . '">' . $page->post_title . '</a>';
 			$output .= '		</div>';
