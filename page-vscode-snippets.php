@@ -70,6 +70,7 @@ parseDescription(carbon_get_the_post_meta('description')) . '
 ?>
 
 <?php get_header(); ?>
+
 <div id="site-container">
 	<main>
 		<?php if (have_posts()): ?>
@@ -108,8 +109,5 @@ parseDescription(carbon_get_the_post_meta('description')) . '
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</main>
-</div>
 
-<footer class="footer has-text-centered">
-	<?php the_author(); ?> | <?= the_date(); ?> &mdash; <?php the_modified_author(); ?> | <?= the_modified_date(); ?>
-</footer>
+<?php get_footer(); ?>
