@@ -149,7 +149,7 @@
 
 
 			$('#output').val(`
-<div id="#map"></div>
+<div id="map"></div>
 
 <script>
 const mq = window.matchMedia('screen and (min-width: 1200px)');
