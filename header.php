@@ -37,7 +37,7 @@
 		<div class="navbar-start">
 			<?php wp_list_pages(array(
 				'title_li' => null,
-				'walker' => new Templateq_Nav_Walker()
+				'walker' => new Templateq_Split_Nav_Topnav_Walker()
 			)); ?>
 		</div>
 
@@ -45,10 +45,6 @@
 			<div class="field tooltip is-tooltip-bottom" data-tooltip="Dark Mode">
 				<input id="darkMode" type="checkbox" name="darkMode" class="switch is-small is-link is-rounded is-rtl">
 				<label for="darkMode"><i class="fas fa-moon"></i></label>
-			</div>
-			<div class="field tooltip is-tooltip-bottom" data-tooltip="Dennis Mode">
-				<input id="dennisMode" type="checkbox" name="dennisMode" class="switch is-small is-danger is-rounded is-rtl">
-				<label for="dennisMode"><i class="fas fa-ambulance"></i></label>
 			</div>
 			<div class="field tooltip is-tooltip-bottom" data-tooltip="Zeilenumbruch">
 				<input type="checkbox" id="lineWrap" name="lineWrap" class="switch is-small is-warning is-rounded is-rtl">
