@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - develop
 
 jobs:
   build:
@@ -37,7 +38,7 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
         run: |
           rm -rf .git build node_modules scss
-          sshpass -p "$SSH_PASS" rsync -aqz -e ssh . $SSH_USER@$SSH_IP:html/qnipsel-staging/wp-content/themes/templateq
+          sshpass -p "$SSH_PASS" rsync -aqz -e "ssh -o StrictHostKeyChecking=no" . $SSH_USER@$SSH_IP:html/qnipsel-staging/wp-content/themes/templateq
 
       - name: release
         if: github.ref == 'refs/heads/master'
@@ -47,4 +48,4 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
         run: |
           rm -rf .git build node_modules scss
-          sshpass -p "$SSH_PASS" rsync -aqz -e ssh . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
+          sshpass -p "$SSH_PASS" rsync -aqz -e "ssh -o StrictHostKeyChecking=no" . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq

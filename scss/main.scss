@@ -30,35 +30,27 @@ hr {
 	right: 0;
 }
 
-// Dennismode
+// Side Menus
 
 #dennisMenu {
-	display: none;
+	display: block;
+	height: calc(100vh - 3.25rem);
+	min-height: calc(100vh - 3.25rem);
+	position: sticky;
+	top: 3.25rem;
+
+	nav {
+		height: 100%;
+		margin: 0;
+		padding: 1em;
+		overflow: auto;
+	}
 }
 
-body.dennisMode {
-	#dennisMenu {
-		display: block;
-		height: calc(100vh - 3.25rem);
-		min-height: calc(100vh - 3.25rem);
-		position: sticky;
-		top: 3.25rem;
-
-		nav {
-			height: 100%;
-			margin: 0;
-			padding: 1em;
-			overflow: auto;
-		}
-	}
-	.navbar-start {
-		display: none;
-	}
-	#nonDennisMenu {
-		order: -1;
-		border-right: none;
-		border-left: 1px solid #ddd;
-	}
+#nonDennisMenu {
+	order: -1;
+	border-right: none;
+	border-left: 1px solid #ddd;
 }
 
 .simplebar-track {
