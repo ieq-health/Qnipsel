@@ -115,5 +115,11 @@
 	</main>
 
 	<?php if (sizeof($submenu) > 0): ?>
-		<?php get_template_part('partials/menu', 'article') ?>
+		<aside class="menu" id="articleNav">
+			<nav class="submenu">
+				<ul class="menu-list">
+					<?= implode($submenu) ?>
+				</ul>
+			</nav>
+		</aside>
 	<?php endif; ?>
