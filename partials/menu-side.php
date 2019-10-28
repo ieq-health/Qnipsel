@@ -23,5 +23,5 @@
             ?>
         </ul>
     </nav>
-<aside>
+</aside>
 <?php endif; ?>
