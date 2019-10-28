@@ -1,4 +1,4 @@
-            <?php get_template_part('dennisMenu') ?>
+            <?php get_template_part('partials/menu', 'side'); ?>
         </div>
 
         <footer class="footer has-text-centered">
