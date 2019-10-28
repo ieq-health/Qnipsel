@@ -147,8 +147,11 @@
 			let title = $('input[name="title"]').val();
 			let url = $('input[name="url"]').val();
 
-			$('#output').val(`
 
+			$('#output').val(`
+<div id="#map"></div>
+
+<script>
 const mq = window.matchMedia('screen and (min-width: 1200px)');
 
 const mapLocation = {
@@ -212,8 +215,9 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	}
 }
-
-				`);
+<\/script>;
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtUVcIJM2wYvsD0_OxNNvHjPix9QAoJdU&amp;callback=initMap&amp;libraries=places">
+<\/script>`);
 		});
 	});
 </script>
