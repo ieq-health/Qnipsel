@@ -138,7 +138,7 @@
 			let lng_offset = lng * 1 + $('input[name="lng_offset"]').val() * 1;
 			let zoom_offset = zoom * 1 + $('input[name="zoom_offset"]').val() * 1;
 
-			let styles = $('textarea[name="styles"]').val();
+			let styles = $('textarea[name="styles"]').val() || '[]';
 
 			let marker = $('input[name="marker"]').val();
 			let marker_width = $('input[name="marker_width"]').val();
