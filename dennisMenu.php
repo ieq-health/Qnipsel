@@ -1,15 +1,18 @@
+<?php 
+    if ($post->post_parent) {
+        $ancestors = get_post_ancestors($post->ID);
+        $root=count($ancestors)-1;
+        $parent = $ancestors[$root];
+    } else {
+        $parent = $post->ID;
+    }
+?>
+
+<?php if ($parent): ?>
 <aside class="menu" id="dennisMenu">
     <nav>
         <ul class="menu-list">
             <?php
-            if ($post->post_parent) {
-                $ancestors = get_post_ancestors($post->ID);
-                $root=count($ancestors)-1;
-                $parent = $ancestors[$root];
-            } else {
-                $parent = $post->ID;
-            }
-
             wp_list_pages(array(
                 'title_li' => null,
                 'child_of' => $parent,
@@ -19,3 +22,4 @@
         </ul>
     </nav>
 <aside>
+<?php endif; ?>
