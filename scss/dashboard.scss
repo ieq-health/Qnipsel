@@ -63,6 +63,20 @@ nav.navbar {
 	.navbar-brand {
 		padding: 0 1em;
 		align-items: center;
+		margin-right: 1rem;
+		position: relative;
+		width: 20vw;
+		max-width: 300px;
+
+		&:after {
+			content: '';
+			display: block;
+			width: 1px;
+			height: 60%;
+			background: #ddd;
+			position: absolute;
+			right: 0;
+		}
 
 		img {
 			height: 30px;
