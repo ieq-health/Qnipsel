@@ -4,11 +4,7 @@
 	<main>
 		<?php if (have_posts()): ?>
 			<?php while (have_posts()): the_post(); ?>
-				<div class="container">
-					<div class="content">
-						<h1 class="title"><?php the_title(); ?></h1>
-					</div>
-				</div>
+				<?php get_template_part('partials/content', 'title'); ?>
 
 				<div class="container-fluid xml-stripper">
 					<div class="columns">

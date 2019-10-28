@@ -75,11 +75,9 @@ parseDescription(carbon_get_the_post_meta('description')) . '
 	<main>
 		<?php if (have_posts()): ?>
 			<?php while (have_posts()): the_post(); ?>
-				<div class="container">
-					<div class="content">
-						<h1 class="title"><?php the_title(); ?></h1>
-					</div>
+				<?php get_template_part('partials/content', 'title'); ?>
 
+				<div class="container">
 					<div class="tabview">
 						<div class="tabs">
 							<ul>

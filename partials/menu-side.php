@@ -11,7 +11,7 @@
 ?>
 
 <?php if ($childcount > 0): ?>
-<aside class="menu" id="dennisMenu">
+<aside class="menu" id="sideMenu">
     <nav>
         <ul class="menu-list">
             <?php

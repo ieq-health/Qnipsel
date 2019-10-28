@@ -32,7 +32,7 @@ hr {
 
 // Side Menus
 
-#dennisMenu {
+#sideMenu {
 	display: block;
 	height: calc(100vh - 3.25rem);
 	min-height: calc(100vh - 3.25rem);
@@ -47,7 +47,7 @@ hr {
 	}
 }
 
-#nonDennisMenu {
+#articleNav {
 	order: -1;
 	border-right: none;
 	border-left: 1px solid #ddd;
