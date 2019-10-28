@@ -20,8 +20,11 @@
 			foreach ($sections as $section): ?>
 
 			<?php /** In Subnavi? */ ?>
-			<?php if ($section['nav_title_enabled']): ?>
-				<?php array_push($submenu, '<li><a href="#' . sanitize_title($section['nav_title']) . '">' . $section['nav_title'] . '</a></li>') ?>
+			<?php if (array_key_exists('nav_title_enabled', $section) && $section['nav_title_enabled']): ?>
+				<?php array_push(
+					$submenu,
+					'<li><a href="#' . sanitize_title($section['nav_title']) . '">' . $section['nav_title'] . '</a></li>'
+				) ?>
 				<?php $nav_id = 'id="' . sanitize_title($section['nav_title']) . '"' ?>
 			<?php else: ?>
 				<?php $nav_id = '' ?>
