@@ -211,7 +211,7 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	}
 }
-<\/script>;
+<\/script>
 <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtUVcIJM2wYvsD0_OxNNvHjPix9QAoJdU&amp;callback=initMap&amp;libraries=places">
 <\/script>`);
 		});
