@@ -6,9 +6,11 @@
     } else {
         $parent = $post->ID;
     }
+
+    $childcount = count(get_pages(array('child_of' => $parent)));
 ?>
 
-<?php if ($parent): ?>
+<?php if ($childcount > 0): ?>
 <aside class="menu" id="dennisMenu">
     <nav>
         <ul class="menu-list">
