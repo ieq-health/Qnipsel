@@ -12,7 +12,10 @@
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\""
   },
   "stylelint": {
-    "extends": "stylelint-config-recommended-scss"
+    "extends": "stylelint-config-recommended-scss",
+    "rules": {
+      "no-descending-specificity": null
+    }
   },
   "repository": {
     "type": "git",
