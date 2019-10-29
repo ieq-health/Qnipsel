@@ -75,6 +75,10 @@ body.darkMode {
 			}
 		}
 
+		li.is-active a {
+			border-bottom-color: $blue;
+		}
+
 		ul {
 			border-bottom-color: $border-color;
 		}
