@@ -219,4 +219,40 @@ function debounce(func, wait, immediate) {
 	});
 </script>
 
+<script>
+	let map;
+
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('preview'), {
+			center: {lat: 51.933799, lng: 7.655033},
+			zoom: 16,
+			disableDefaultUI: true,
+			styles: []
+		});
+	}
+
+	$(function() {
+		$('input[name="lat"], input[name="lng"]').on('input propertychange', function() {
+			let lat = parseFloat($('input[name="lat"]').val());
+			let lng = parseFloat($('input[name="lng"]').val());
+
+			map.setCenter({lat: lat, lng: lng});
+		});
+
+		$('input[name="zoom"]').on('input propertychange', function() {
+			let lng = parseFloat($('input[name="zoom"]').val());
+
+			map.setZoom(zoom);
+		});
+
+		$('textarea[name="styles"]').on('input propertychange', function() {
+			let styles = JSON.parse($('textarea[name="styles"]').val());
+
+			map.setOptions({styles: styles});
+		});
+	});
+</script>
+
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=***API KEY***&amp;callback=initMap&amp;libraries=places"></script>
+
 <?php get_footer(); ?>
