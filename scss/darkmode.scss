@@ -2,24 +2,36 @@ body.darkMode {
 	background: #222;
 	color: #eee;
 
-	.input, .select select, .textarea {
-		color: #999;
-	}
-
 	.tabs a {
 		color: #ccc;
 	}
 	
+	/** Main Menu */
+
 	.navbar {
 		background: #333;
 											
 		&.has-shadow {
 			box-shadow: 0 2px 0 0 #000;
 		}
+
+		.navbar-brand::after {
+			background: #444;
+		}
+
+		.navbar-item, .navbar-link {
+			color: #ccc;
+
+			&.is-active, &:focus, &:focus-within, &:hover {
+				background: #383838;
+				color: #fff;
+			}
+		}
 	}
-	
-	
-	&.dennisMode #nonDennisMenu,
+
+	/** Side Menus */
+
+	#articleNav,
 	aside.menu {
 		border-color: #444;
 	}
@@ -35,6 +47,8 @@ body.darkMode {
 			background: #333;
 		}
 	}
+
+	/** Content */
 	
 	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
 		color: #aaa;
@@ -48,10 +62,35 @@ body.darkMode {
 		border-color: #2a2a2a;
 		background: #111;
 	}
+
+	/** Forms */
+
+	.input, .select select, .textarea {
+		background: #111;
+		border-color: #333;
+		color: #999;
+
+		&:placeholder {
+			color: #666;
+		}
+	}
+
+	.button.is-static {
+		background: #1c1c1c;
+		border-color: #333;
+	}
+
+	.label {
+		color: inherit;
+	}
+
+	/** Footer */
 	
 	.footer {
 		background: #000;
 	}
+
+	/** Misc. modifiers */
 
 	.has-background-light {
 		background: #282828 !important;
@@ -63,5 +102,52 @@ body.darkMode {
 		.message-body {
 			color: #fafafa;
 		}
+	}
+
+	/**
+	 * rainbow theme, uses obsidian:
+	 * https://github.com/ccampbell/rainbow/blob/master/themes/sass/obsidian.sass
+	 */
+
+	pre { 
+		background: #22282A;
+		color: #F1F2F3;
+
+		.comment { 
+			color: #66747B;
+		}
+
+		.constant, .storage, .string, .comment.docstring { 
+			color: #EC7600;
+		}
+
+		.string.regexp, .support.tag.script, .support.tag.style { 
+			color: #fff;
+		}
+
+		.keyword, .selector, .entity { 
+			color: #93C763;
+		}
+
+		.inherited-class { 
+			font-style: italic;
+		}
+
+		.integer { 
+			color: #FFCD22;
+		}
+
+		.variable.global, .variable.class, .variable.instance { 
+			color: #CCC;
+		}
+
+		/* C# specific rule */
+		.preprocessor { 
+			color: #66747B;
+		}
+	}
+
+	pre .support, *[data-language="csharp"] .function.call { 
+		color: #FACD22;
 	}
 }
