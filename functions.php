@@ -325,11 +325,12 @@ class Templateq_Split_Nav_Sidenav_Walker extends Walker_Page
 	{
 		$class = ($page->ID == $id) ? 'is-active' : ''; 
 		$link = '<a href="' . get_permalink($page->ID) . '" class="' . $class . '">' . $page->post_title . '</a>'; 
-		$output .= '<li>' . $link . '</li>';
+		$output .= '<li>' . $link;
 	}
 
 	public function end_el(&$output, $page, $depth=0, $args=array())
 	{
+		$output .= '</li>';
 	}
 }
 
