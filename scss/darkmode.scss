@@ -1,11 +1,9 @@
 body.darkMode {
+	$border-color: #333;
+
 	background: #222;
 	color: #eee;
 
-	.tabs a {
-		color: #ccc;
-	}
-	
 	/** Main Menu */
 
 	.navbar {
@@ -33,18 +31,20 @@ body.darkMode {
 
 	#articleNav,
 	aside.menu {
-		border-color: #444;
+		border-color: $border-color;
 	}
-	
-	.menu-list li ul {
-		border-color: #555;
-	}
-	
-	.menu-list a {
-		color: #ccc;
 
-		&:hover {
-			background: #333;
+	.menu-list {
+		a {
+			color: #ccc;
+
+			&:hover {
+				background: $border-color;
+			}
+		}
+
+		li ul {
+			border-color: $border-color;
 		}
 	}
 
@@ -63,11 +63,23 @@ body.darkMode {
 		background: #111;
 	}
 
+	/** Tabs */
+
+	.tabs {
+		a {
+			color: #ccc;
+		}
+
+		ul {
+			border-bottom-color: $border-color;
+		}
+	}
+	
 	/** Forms */
 
 	.input, .select select, .textarea {
 		background: #111;
-		border-color: #333;
+		border-color: $border-color;
 		color: #999;
 
 		&:placeholder {
@@ -77,7 +89,7 @@ body.darkMode {
 
 	.button.is-static {
 		background: #1c1c1c;
-		border-color: #333;
+		border-color: $border-color;
 	}
 
 	.label {
@@ -104,13 +116,18 @@ body.darkMode {
 		}
 	}
 
+	.codeview__code iframe {
+		border-color: #444;
+	}
+
 	/**
 	 * rainbow theme, uses obsidian:
 	 * https://github.com/ccampbell/rainbow/blob/master/themes/sass/obsidian.sass
 	 */
 
 	pre { 
-		background: #22282A;
+		background: #282828;
+		border-color: $border-color;
 		color: #F1F2F3;
 
 		.comment { 
