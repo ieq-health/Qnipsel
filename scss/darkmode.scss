@@ -68,6 +68,11 @@ body.darkMode {
 	.tabs {
 		a {
 			color: #ccc;
+			border-bottom-color: $border-color;
+
+			&:hover {
+				border-bottom-color: #444;
+			}
 		}
 
 		ul {
@@ -121,50 +126,41 @@ body.darkMode {
 	}
 
 	/**
-	 * rainbow theme, uses obsidian:
-	 * https://github.com/ccampbell/rainbow/blob/master/themes/sass/obsidian.sass
+	 * rainbow theme, uses tomorrow night:
+	 * https://github.com/ccampbell/rainbow/blob/master/themes/sass/tomorrow-night.sass
 	 */
 
 	pre { 
 		background: #282828;
 		border-color: $border-color;
-		color: #F1F2F3;
+		color: #c5c8c6;
 
 		.comment { 
-			color: #66747B;
-		}
-
-		.constant, .storage, .string, .comment.docstring { 
-			color: #EC7600;
-		}
-
-		.string.regexp, .support.tag.script, .support.tag.style { 
-			color: #fff;
-		}
-
-		.keyword, .selector, .entity { 
-			color: #93C763;
-		}
-
-		.inherited-class { 
-			font-style: italic;
-		}
-
-		.integer { 
-			color: #FFCD22;
+			color: #969896;
 		}
 
 		.variable.global, .variable.class, .variable.instance { 
-			color: #CCC;
+			color: #cc6666 /* red */
 		}
 
-		/* C# specific rule */
-		.preprocessor { 
-			color: #66747B;
+		.constant.numeric, .constant.language, .constant.hex-color, .keyword.unit { 
+			color: #de935f /* orange */
 		}
-	}
 
-	pre .support, *[data-language="csharp"] .function.call { 
-		color: #FACD22;
+		.constant, .entity, .entity.class, .support { 
+			color: #f0c674 /* yellow */
+		}
+
+		.constant.symbol, .string { 
+			color: #b5bd68 /* green */
+		}
+
+		.entity.function, .support.css-property, .selector { 
+			color: #81a2be /* blue */
+		}
+
+		.keyword, .storage { 
+			color: #b294bb /* purple */
+		}
 	}
 }
