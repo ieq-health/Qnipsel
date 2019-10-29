@@ -1,40 +1,54 @@
 body.darkMode {
+	$border-color: #333;
+
 	background: #222;
 	color: #eee;
 
-	.input, .select select, .textarea {
-		color: #999;
-	}
+	/** Main Menu */
 
-	.tabs a {
-		color: #ccc;
-	}
-	
 	.navbar {
 		background: #333;
 											
 		&.has-shadow {
 			box-shadow: 0 2px 0 0 #000;
 		}
-	}
-	
-	
-	&.dennisMode #nonDennisMenu,
-	aside.menu {
-		border-color: #444;
-	}
-	
-	.menu-list li ul {
-		border-color: #555;
-	}
-	
-	.menu-list a {
-		color: #ccc;
 
-		&:hover {
-			background: #333;
+		.navbar-brand::after {
+			background: #444;
+		}
+
+		.navbar-item, .navbar-link {
+			color: #ccc;
+
+			&.is-active, &:focus, &:focus-within, &:hover {
+				background: #383838;
+				color: #fff;
+			}
 		}
 	}
+
+	/** Side Menus */
+
+	#articleNav,
+	aside.menu {
+		border-color: $border-color;
+	}
+
+	.menu-list {
+		a {
+			color: #ccc;
+
+			&:hover {
+				background: $border-color;
+			}
+		}
+
+		li ul {
+			border-color: $border-color;
+		}
+	}
+
+	/** Content */
 	
 	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
 		color: #aaa;
@@ -48,10 +62,52 @@ body.darkMode {
 		border-color: #2a2a2a;
 		background: #111;
 	}
+
+	/** Tabs */
+
+	.tabs {
+		a {
+			color: #ccc;
+			border-bottom-color: $border-color;
+
+			&:hover {
+				border-bottom-color: #444;
+			}
+		}
+
+		ul {
+			border-bottom-color: $border-color;
+		}
+	}
+	
+	/** Forms */
+
+	.input, .select select, .textarea {
+		background: #111;
+		border-color: $border-color;
+		color: #999;
+
+		&:placeholder {
+			color: #666;
+		}
+	}
+
+	.button.is-static {
+		background: #1c1c1c;
+		border-color: $border-color;
+	}
+
+	.label {
+		color: inherit;
+	}
+
+	/** Footer */
 	
 	.footer {
 		background: #000;
 	}
+
+	/** Misc. modifiers */
 
 	.has-background-light {
 		background: #282828 !important;
@@ -62,6 +118,49 @@ body.darkMode {
 
 		.message-body {
 			color: #fafafa;
+		}
+	}
+
+	.codeview__code iframe {
+		border-color: #444;
+	}
+
+	/**
+	 * rainbow theme, uses tomorrow night:
+	 * https://github.com/ccampbell/rainbow/blob/master/themes/sass/tomorrow-night.sass
+	 */
+
+	pre { 
+		background: #282828;
+		border-color: $border-color;
+		color: #c5c8c6;
+
+		.comment { 
+			color: #969896;
+		}
+
+		.variable.global, .variable.class, .variable.instance { 
+			color: #cc6666 /* red */
+		}
+
+		.constant.numeric, .constant.language, .constant.hex-color, .keyword.unit { 
+			color: #de935f /* orange */
+		}
+
+		.constant, .entity, .entity.class, .support { 
+			color: #f0c674 /* yellow */
+		}
+
+		.constant.symbol, .string { 
+			color: #b5bd68 /* green */
+		}
+
+		.entity.function, .support.css-property, .selector { 
+			color: #81a2be /* blue */
+		}
+
+		.keyword, .storage { 
+			color: #b294bb /* purple */
 		}
 	}
 }

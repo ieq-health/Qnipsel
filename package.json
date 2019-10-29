@@ -1,6 +1,6 @@
 {
   "name": "templateq",
-  "version": "0.2.1",
+  "version": "0.2.0",
   "description": "Wordpress theme to power qnipsel",
   "main": "webpack.config.js",
   "scripts": {
@@ -12,7 +12,10 @@
     "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\""
   },
   "stylelint": {
-    "extends": "stylelint-config-recommended-scss"
+    "extends": "stylelint-config-recommended-scss",
+    "rules": {
+      "no-descending-specificity": null
+    }
   },
   "repository": {
     "type": "git",
