@@ -42,8 +42,12 @@ aside.menu {
 		top: 4.25em;
 	}
 
-	li ul {
+	.menu-list li ul {
 		margin-right: 0;
+
+		@include darkmode {
+			border-left-color: #333;
+		}
 	}
 
 	.menu-list a {

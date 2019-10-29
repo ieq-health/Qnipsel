@@ -19,9 +19,17 @@ html {
 }
 
 hr {
+	background: #f8f8f8;
 	border: 1px solid #eee;
+	border-left-color: #f8f8f8;
 	height: 5px;
 	margin: 4rem 0;
+
+	@include darkmode {
+		border-color: #333;
+		border-left-color: #181818;
+		background: #181818;
+	}
 }
 
 .copy-code-button {
