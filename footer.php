@@ -7,7 +7,7 @@
             </p>
 
             <p>
-                <a href="https://github.com/ieq-health/Qnipsel"><i class="fas fa-github-alt"></i></a> 
+                <a href="https://github.com/ieq-health/Qnipsel"><i class="fab fa-github-alt"></i></a> 
             </p>
         </footer>
 
