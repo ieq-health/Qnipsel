@@ -21,7 +21,6 @@ aside.menu {
 
 	nav {
 		position: sticky;
-		top: 4.25em;
 	}
 
 	.menu-list a {
@@ -40,6 +39,7 @@ aside.menu {
 
 	nav {
 		margin-left: 1rem;
+		top: 4.25em;
 	}
 
 	li ul {
@@ -70,6 +70,7 @@ aside.menu {
 			background-color: #222;
 			border-color: #181818;
 			border-left-color: $blue;
+			color: #fff;
 		}
 	}
 }
@@ -78,14 +79,23 @@ aside.menu {
 	order: -1;
 
 	.submenu {
-		border-left: 1px solid #ddd;
+		padding-left: 1rem;
+		top: 7.25em;
 
-		@include darkmode {
-			border-left-color: #333;
+		ul {
+			border-left: 1px solid #ddd;
+
+			@include darkmode {
+				border-left-color: #444;
+			}
 		}
 
 		li {
 			padding: .5em 1em;
+		}
+
+		a {
+			color: inherit;
 		}
 	}
 }
