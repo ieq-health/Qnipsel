@@ -27,27 +27,6 @@ body.darkMode {
 		}
 	}
 
-	/** Side Menus */
-
-	#articleNav,
-	aside.menu {
-		border-color: $border-color;
-	}
-
-	.menu-list {
-		a {
-			color: #ccc;
-
-			&:hover {
-				background: $border-color;
-			}
-		}
-
-		li ul {
-			border-color: $border-color;
-		}
-	}
-
 	/** Content */
 	
 	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {

@@ -117,7 +117,7 @@
 	<?php if (sizeof($submenu) > 0): ?>
 		<aside class="menu" id="articleNav">
 			<nav class="submenu">
-				<ul class="menu-list">
+				<ul>
 					<?= implode($submenu) ?>
 				</ul>
 			</nav>

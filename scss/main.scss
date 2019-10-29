@@ -30,51 +30,6 @@ hr {
 	right: 0;
 }
 
-// Side Menus
-
-#sideMenu {
-	display: block;
-	height: calc(100vh - 3.25rem);
-	min-height: calc(100vh - 3.25rem);
-	position: sticky;
-	top: 3.25rem;
-
-	nav {
-		height: 100%;
-		margin: 0;
-		padding: 1em;
-		overflow: auto;
-	}
-}
-
-#articleNav {
-	order: -1;
-	border-right: none;
-	border-left: 1px solid #ddd;
-}
-
-.simplebar-track {
-	right: 4px !important;
-	
-	.simplebar-scrollbar.simplebar-visible::before {
-		background: transparent;
-		border: 1px solid #000;
-		margin: 4px 0;
-		opacity: 0.1 !important;
-											
-		@include darkmode {
-			border-color: #fff;
-		}
-	}
-	.simplebar-scrollbar.simplebar-visible.simplebar-hover::before {
-		background: #000;
-											
-		@include darkmode {
-			background: #fff;
-		}
-	}
-}
-
 body.lineWrap .content pre {
 	white-space: normal;
 }

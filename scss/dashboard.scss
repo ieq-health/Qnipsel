@@ -13,47 +13,106 @@ body {
 /* Sidebar */
 
 aside.menu {
-	border-right: 1px solid #ddd;
+	border-color: #ddd;
 	font-size: 0.9em;
 	width: 20vw;
 	max-width: 300px;
 	min-height: 100vh;
 
-	& > * {
-		margin: 1em;
+	nav {
+		position: sticky;
+		top: 4.25em;
 	}
 
-	.logo {
-		margin: 3em 1em 2em;
-		text-align: center;
+	.menu-list a {
+		padding: .75em;
 	}
+}
 
-	.logo img {
-		max-width: 180px;
-	}
+#sideMenu {
+	background: #f8f8f8;
+	border-right: 1px solid #eee;
 
-	.current_page_item > a {
-		background: $link;
-		color: $link-invert;
+	@include darkmode {
+		background: #181818;
+		border-right-color: #333;
 	}
 
 	nav {
-		position: sticky;
-		top: 5em;
-	}
-	
-	nav .menu-label {
-		font-size: 0.9em;
+		margin-right: 1rem;
 	}
 
-	nav .menu-label:not(:first-child) {
-		margin-top: 2em;
+	li ul {
+		margin-left: 0;
 	}
 
-	nav .menu-label a {
-		color: inherit;
+	.menu-list a {
+		border-radius: 3px 0 0 3px;
+	}
+
+	.menu-list a:hover {
+		background-color: #eee;
+
+		@include darkmode {
+			background-color: #222;
+		}
+	}
+
+	.menu-list a.is-active {
+		background-color: #fff;
+		border: 1px solid #eee;
+		border-right: none;
+		border-left: 2px solid $blue;
+		color: $blue;
+		margin-right: -1px;
+
+		@include darkmode {
+			background-color: #222;
+			border-color: #181818;
+			border-left-color: $blue;
+		}
 	}
 }
+
+#articleNav {
+	order: -1;
+
+	.submenu {
+		border-left: 1px solid #ddd;
+
+		@include darkmode {
+			border-left-color: #333;
+		}
+
+		li {
+			padding: .5em 1em;
+		}
+	}
+}
+
+
+.simplebar-track {
+	right: 4px !important;
+	
+	.simplebar-scrollbar.simplebar-visible::before {
+		background: transparent;
+		border: 1px solid #000;
+		margin: 4px 0;
+		opacity: 0.1 !important;
+											
+		@include darkmode {
+			border-color: #fff;
+		}
+	}
+	.simplebar-scrollbar.simplebar-visible.simplebar-hover::before {
+		background: #000;
+											
+		@include darkmode {
+			background: #fff;
+		}
+	}
+}
+
 
 /* Mega Menu */
 nav.navbar {
