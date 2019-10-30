@@ -4,6 +4,10 @@
 	<main>
 		<?php if (have_posts()): ?>
 			<?php while (have_posts()): the_post(); ?>
+				<div class="container-fluid">
+					<div id="preview" style="width:100%;height:300px"></div>
+				</div>
+
 				<div class="container-fluid xml-stripper">
 					<div class="columns">
 						<div class="column">
@@ -219,6 +223,7 @@ function debounce(func, wait, immediate) {
 
 <script>
 	let map;
+	let marker;
 
 	function initMap() {
 		map = new google.maps.Map(document.getElementById('preview'), {
@@ -226,6 +231,11 @@ function debounce(func, wait, immediate) {
 			zoom: 16,
 			disableDefaultUI: true,
 			styles: []
+		});
+
+		marker = new google.maps.Marker({
+			position: {lat: 51.933799, lng: 7.655033},
+			map: map,
 		});
 	}
 
@@ -235,6 +245,7 @@ function debounce(func, wait, immediate) {
 			let lng = parseFloat($('input[name="lng"]').val());
 
 			map.setCenter({lat: lat, lng: lng});
+			marker.setOptions({position: {lat: lat, lng: lng}});
 		});
 
 		$('input[name="zoom"]').on('input propertychange', function() {
