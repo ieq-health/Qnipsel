@@ -17,19 +17,19 @@
 								<div class="column">
 									<label class="label">Location</label>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Lat',
 										'name' => 'lat',
 										'placeholder' => '51.933799'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Lng',
 										'name' => 'lng',
 										'placeholder' => '7.655033'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Zoom',
 										'name' => 'zoom',
 										'placeholder' => '16'
@@ -39,25 +39,25 @@
 								<div class="column">
 									<label class="label">Offset LG</label>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Lat',
 										'name' => 'lat_offset',
 										'placeholder' => '0'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Lng',
 										'name' => 'lng_offset',
 										'placeholder' => '0'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Zoom',
 										'name' => 'zoom_offset',
 										'placeholder' => '0'
 									)) ?>
 
-									<?= bulmaFormCheckbox(array(
+									<?= fractalFormCheckbox(array(
 										'label' => 'Anzeigen',
 										'name' => 'offset_visible'
 									)) ?>
@@ -67,7 +67,7 @@
 							<!-- Styles -->
 							<div class="columns">
 								<div class="column">
-									<?= bulmaFormTextarea(array(
+									<?= fractalFormTextarea(array(
 										'label' => 'Styles',
 										'name' => 'styles'
 									)) ?>
@@ -81,19 +81,19 @@
 								<div class="column">
 									<label class="label">Marker</label>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Marker URL',
 										'name' => 'marker',
 										'placeholder' => 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Marker Breite',
 										'name' => 'marker_width',
 										'placeholder' => '27'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Marker Höhe',
 										'name' => 'marker_height',
 										'placeholder' => '43'
@@ -103,13 +103,13 @@
 								<div class="column">
 									<label class="label">Anker (%)</label>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'X',
 										'name' => 'anchorx',
 										'placeholder' => '50'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Y',
 										'name' => 'anchory',
 										'placeholder' => '27'
@@ -119,12 +119,12 @@
 								<div class="column">
 									<label class="label">Label</label>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Label Titel',
 										'name' => 'title'
 									)) ?>
 
-									<?= bulmaFormText(array(
+									<?= fractalFormText(array(
 										'label' => 'Label URL',
 										'name' => 'url'
 									)) ?>

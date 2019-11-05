@@ -8,7 +8,7 @@ function _parseAttr($attr)
 	);
 }
 
-function bulmaFormText($attr)
+function fractalFormText($attr)
 {
 	$output =  '<div class="field has-addons">';
 
@@ -24,7 +24,7 @@ function bulmaFormText($attr)
 	return $output;
 }
 
-function bulmaFormTextarea($attr)
+function fractalFormTextarea($attr)
 {
 	$output =  '<div class="field">';
 
@@ -40,7 +40,7 @@ function bulmaFormTextarea($attr)
 	return $output;
 }
 
-function bulmaFormCheckbox($attr)
+function fractalFormCheckbox($attr)
 {
 	$output =  '<label class="checkbox">';
 	$output .= '	<input type="checkbox" class="checkbox" ' . _parseAttr($attr) . '>';
