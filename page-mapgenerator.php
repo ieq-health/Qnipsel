@@ -74,6 +74,8 @@
 											<textarea name="styles" class="textarea has-border"></textarea>
 										</div>
 									</div>
+
+									<p><a href="https://mapstyle.withgoogle.com/" target="_blank" rel="noopener">https://mapstyle.withgoogle.com</a></p>
 								</div>
 							</div>
 
