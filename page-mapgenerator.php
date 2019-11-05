@@ -17,51 +17,45 @@
 								<div class="column">
 									<label class="label">Location</label>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Lat</button></p>
-										<div class="control">
-											<input name="lat" type="text" class="input" placeholder="Latitude">
-										</div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Lat',
+										'name' => 'lat',
+										'placeholder' => '51.933799'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Lng</button></p>
-										<div class="control">
-											<input name="lng" type="text" class="input" placeholder="Longitude">
-										</div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Lng',
+										'name' => 'lng',
+										'placeholder' => '7.655033'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Zoom</button></p>
-										<div class="control">
-											<input name="zoom" type="text" class="input" placeholder="Zoom">
-										</div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Zoom',
+										'name' => 'zoom',
+										'placeholder' => '16'
+									)) ?>
 								</div>
 
 								<div class="column">
 									<label class="label">Offset LG</label>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Lat</button></p>
-										<div class="control">
-											<input name="lat_offset" value="0" type="text" class="input" placeholder="Latitude">
-										</div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Lat',
+										'name' => 'lat_offset',
+										'placeholder' => '0'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Lng</button></p>
-										<div class="control">
-											<input name="lng_offset" value="0" type="text" class="input" placeholder="Longitude">
-										</div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Lng',
+										'name' => 'lng_offset',
+										'placeholder' => '0'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Zoom</button></p>
-										<div class="control">
-											<input name="zoom_offset" type="text" class="input" placeholder="Zoom">
-										</div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Zoom',
+										'name' => 'zoom_offset',
+										'placeholder' => '0'
+									)) ?>
 
 									<label class="checkbox">
 										<input type="checkbox" class="checkbox" name="offset_visible">
@@ -88,48 +82,53 @@
 								<div class="column">
 									<label class="label">Marker</label>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Marker URL</button></p>
-										<div class="control"><input class="input" type="text" name="marker"></div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Marker URL',
+										'name' => 'marker',
+										'placeholder' => 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Marker Breite</button></p>
-										<div class="control"><input class="input" type="text" name="marker_width"></div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Marker Breite',
+										'name' => 'marker_width',
+										'placeholder' => '27'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Marker Höhe</button></p>
-										<div class="control"><input class="input" type="text" name="marker_height"></div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Marker Höhe',
+										'name' => 'marker_height',
+										'placeholder' => '43'
+									)) ?>
 								</div>
 
 								<div class="column">
 									<label class="label">Anker (%)</label>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">X</button></p>
-										<div class="control"><input type="text" value="50" class="input" name="anchorx"></div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'X',
+										'name' => 'anchorx',
+										'placeholder' => '50'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Y</button></p>
-										<div class="control"><input type="text" value="100" class="input" name="anchory"></div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Y',
+										'name' => 'anchory',
+										'placeholder' => '27'
+									)) ?>
 								</div>
 
 								<div class="column">
 									<label class="label">Label</label>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Label Titel</button></p>
-										<div class="control"><input class="input" type="text" name="title"></div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Label Titel',
+										'name' => 'title'
+									)) ?>
 
-									<div class="field has-addons">
-										<p class="control"><button class="button is-static">Label URL</button></p>
-										<div class="control"><input class="input" type="text" name="url"></div>
-									</div>
+									<?= bulmaFormText(array(
+										'label' => 'Label URL',
+										'name' => 'url'
+									)) ?>
 								</div>
 							</div>
 						</div>
