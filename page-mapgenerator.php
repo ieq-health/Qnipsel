@@ -272,11 +272,11 @@ function debounce(func, wait, immediate) {
 		$('input[name="lat"], input[name="lng"], input[name="offset_visible"]').on('input propertychange', function() {
 			let offset_visible = $('input[name="offset_visible"]').is(':checked');
 
-			let lat = parseFloat($('input[name="lat"]').val());
-			let lng = parseFloat($('input[name="lng"]').val());
+			let lat = parseFloat($('input[name="lat"]').val()) || 51.933799;
+			let lng = parseFloat($('input[name="lng"]').val()) || 7.655033;
 
-			let lat_offset = parseFloat($('input[name="lat_offset"]').val());
-			let lng_offset = parseFloat($('input[name="lng_offset"]').val());
+			let lat_offset = parseFloat($('input[name="lat_offset"]').val()) || 0;
+			let lng_offset = parseFloat($('input[name="lng_offset"]').val()) || 0;
 
 			map.setCenter({
 				lat: offset_visible ? lat_offset + lat : lat,
@@ -294,8 +294,8 @@ function debounce(func, wait, immediate) {
 		$('input[name="zoom"]').on('input propertychange', function() {
 			let offset_visible = $('input[name="offset_visible"]').is(':checked');
 
-			let zoom = parseFloat($('input[name="zoom"]').val());
-			let zoom_offset = parseFloat($('input[name="zoom_offset"]').val());
+			let zoom = parseFloat($('input[name="zoom"]').val()) || 16;
+			let zoom_offset = parseFloat($('input[name="zoom_offset"]').val()) || 0;
 
 			map.setZoom(offset_visible ? zoom_offset + zoom : zoom);
 		});
@@ -303,7 +303,7 @@ function debounce(func, wait, immediate) {
 		/** set style */
 
 		$('textarea[name="styles"]').on('input propertychange', function() {
-			let styles = JSON.parse($('textarea[name="styles"]').val());
+			let styles = JSON.parse($('textarea[name="styles"]').val()) || [];
 
 			map.setOptions({
 				styles: styles
