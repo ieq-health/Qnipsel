@@ -2,12 +2,15 @@
 
 function bulmaFormText($attr)
 {
-	$output = '';
+	$attributes = join(
+		' ',
+		array_map(function($key) use ($attr) { return $key . '="' . $attr[$key] . '"'; }, array_keys($attr))
+	);
 
-	$output .= '<div class="field has-addons">';
+	$output =  '<div class="field has-addons">';
 	$output .= '	<p class="control"><button class="button is-static">' . $attr['label'] . '</button></p>';
 	$output .= '	<div class="control">';
-	$output .= '		<input name="' . $attr['name'] . '" type="text" class="input" placeholder="' . $attr['placeholder'] . ' value="' . $attr['value'] . '">';
+	$output .= '		<input type="text" class="input" ' . $attributes . '>';
 	$output .= '	</div>';
 	$output .= '</div>';
 
