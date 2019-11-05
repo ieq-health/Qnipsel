@@ -49,5 +49,5 @@ jobs:
           GMAPS_API: ${{ secrets.GMAPS_API_KEY }}
         run: |
           rm -rf .git build node_modules scss
-          sed -i "s/\*\*\*API KEY\*\*\*/$GMAPS_API/" page-mapgenerator.php
+          sed -i "s/\*\*\*API KEY\*\*\*/$GMAPS_API/g" page-mapgenerator.php
           sshpass -p "$SSH_PASS" rsync -aqz -e "ssh -o StrictHostKeyChecking=no" . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
