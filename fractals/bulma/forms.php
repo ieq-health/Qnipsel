@@ -42,10 +42,12 @@ function fractalFormTextarea($attr)
 
 function fractalFormCheckbox($attr)
 {
-	$output =  '<label class="checkbox">';
-	$output .= '	<input type="checkbox" class="checkbox" ' . _parseAttr($attr) . '>';
-	$output .= '	' . $attr['label'];
-	$output .= '</label>';
+	$output =  '<div class="field">';
+	$output .= '	<label class="checkbox">';
+	$output .= '		<input type="checkbox" class="checkbox switch is-small is-rounded" ' . _parseAttr($attr) . '>';
+	$output .= '		' . $attr['label'];
+	$output .= '	</label>';
+	$output .= '</div>';
 
 	return $output;
 }
