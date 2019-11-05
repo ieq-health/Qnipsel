@@ -4,7 +4,7 @@
 	<main>
 		<?php if (have_posts()): ?>
 			<?php while (have_posts()): the_post(); ?>
-				<div class="container-fluid">
+				<div class="container-fluid" style="margin-top:-4vw;margin-bottom:-3vw;">
 					<div id="preview" style="width:100%;height:300px"></div>
 				</div>
 
@@ -62,6 +62,11 @@
 											<input name="zoom_offset" type="text" class="input" placeholder="Zoom">
 										</div>
 									</div>
+
+									<label class="checkbox">
+										<input type="checkbox" class="checkbox" name="offset_visible">
+										Anzeigen
+									</label>
 								</div>
 							</div>
 
@@ -96,6 +101,20 @@
 									<div class="field has-addons">
 										<p class="control"><button class="button is-static">Marker Höhe</button></p>
 										<div class="control"><input class="input" type="text" name="marker_height"></div>
+									</div>
+								</div>
+
+								<div class="column">
+									<label class="label">Anker (%)</label>
+
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">X</button></p>
+										<div class="control"><input type="text" value="50" class="input" name="anchorx"></div>
+									</div>
+
+									<div class="field has-addons">
+										<p class="control"><button class="button is-static">Y</button></p>
+										<div class="control"><input type="text" value="100" class="input" name="anchory"></div>
 									</div>
 								</div>
 
@@ -224,7 +243,7 @@ function debounce(func, wait, immediate) {
 <script>
 	let map;
 	let marker;
-
+	let icon;
 	function initMap() {
 		map = new google.maps.Map(document.getElementById('preview'), {
 			center: {lat: 51.933799, lng: 7.655033},
@@ -233,31 +252,86 @@ function debounce(func, wait, immediate) {
 			styles: []
 		});
 
+		icon = {
+			url: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png",
+			size: new google.maps.Size(27, 43),
+			anchor: new google.maps.Point(13.5, 43),
+		};
+
 		marker = new google.maps.Marker({
 			position: {lat: 51.933799, lng: 7.655033},
 			map: map,
+			icon: icon
 		});
 	}
 
 	$(function() {
-		$('input[name="lat"], input[name="lng"]').on('input propertychange', function() {
+
+		/** set location */
+
+		$('input[name="lat"], input[name="lng"], input[name="offset_visible"]').on('input propertychange', function() {
+			let offset_visible = $('input[name="offset_visible"]').is(':checked');
+
 			let lat = parseFloat($('input[name="lat"]').val());
 			let lng = parseFloat($('input[name="lng"]').val());
 
-			map.setCenter({lat: lat, lng: lng});
-			marker.setOptions({position: {lat: lat, lng: lng}});
+			let lat_offset = parseFloat($('input[name="lat_offset"]').val());
+			let lng_offset = parseFloat($('input[name="lng_offset"]').val());
+
+			map.setCenter({
+				lat: offset_visible ? lat_offset + lat : lat,
+				lng: offset_visible ? lng_offset + lng : lng
+			});
+
+			marker.setOptions({
+				position: {
+					lat: lat,
+					lng: lng
+				}
+			});
 		});
 
 		$('input[name="zoom"]').on('input propertychange', function() {
-			let lng = parseFloat($('input[name="zoom"]').val());
+			let offset_visible = $('input[name="offset_visible"]').is(':checked');
 
-			map.setZoom(zoom);
+			let zoom = parseFloat($('input[name="zoom"]').val());
+			let zoom_offset = parseFloat($('input[name="zoom_offset"]').val());
+
+			map.setZoom(offset_visible ? zoom_offset + zoom : zoom);
 		});
+
+		/** set style */
 
 		$('textarea[name="styles"]').on('input propertychange', function() {
 			let styles = JSON.parse($('textarea[name="styles"]').val());
 
-			map.setOptions({styles: styles});
+			map.setOptions({
+				styles: styles
+			});
+		});
+
+		/** set marker icon */
+
+		$('input[name="marker"]').on('input propertychange', function() {
+			let url = $('input[name="marker"]').val() || 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png';
+
+			icon.url = url;
+
+			marker.setIcon(url);
+		});
+
+		/** set marker size */
+
+		$('input[name="marker_width"], input[name="marker_height"], input[name="anchorx"], input[name="anchory"]').on('input propertychange', function() {
+			let width = parseFloat($('input[name="marker_width"]').val()) || 27;
+			let height = parseFloat($('input[name="marker_height"]').val()) || 43;
+			let anchorx = parseFloat($('input[name="anchorx"]').val()) || 50;
+			let anchory = parseFloat($('input[name="anchory"]').val()) || 100;
+
+			icon.size = new google.maps.Size(width, height);
+			icon.anchor = new google.maps.Point(width * (anchorx / 100), height * (anchory / 100));
+
+			marker.setIcon(icon);
 		});
 	});
 </script>
