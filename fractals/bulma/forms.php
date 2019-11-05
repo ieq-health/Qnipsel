@@ -43,8 +43,8 @@ function fractalFormTextarea($attr)
 function fractalFormCheckbox($attr)
 {
 	$output =  '<div class="field">';
-	$output .= '	<label class="checkbox">';
-	$output .= '		<input type="checkbox" class="checkbox switch is-small is-rounded" ' . _parseAttr($attr) . '>';
+	$output .= '	<input id="' . $attr['name'] . '" type="checkbox" class="checkbox switch is-small is-rounded" ' . _parseAttr($attr) . '>';
+	$output .= '	<label for="' . $attr['name'] . '" class="checkbox">';
 	$output .= '		' . $attr['label'];
 	$output .= '	</label>';
 	$output .= '</div>';
