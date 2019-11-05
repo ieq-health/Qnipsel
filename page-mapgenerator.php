@@ -67,13 +67,10 @@
 							<!-- Styles -->
 							<div class="columns">
 								<div class="column">
-									<div class="field">
-										<label class="label">Styles</label>
-
-										<div class="control">
-											<textarea name="styles" class="textarea has-border"></textarea>
-										</div>
-									</div>
+									<?= bulmaFormTextarea(array(
+										'label' => 'Styles',
+										'name' => 'styles'
+									)) ?>
 
 									<p><a href="https://mapstyle.withgoogle.com/" target="_blank" rel="noopener">https://mapstyle.withgoogle.com</a></p>
 								</div>

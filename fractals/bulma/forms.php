@@ -1,16 +1,40 @@
 <?php
 
-function bulmaFormText($attr)
+function _parseAttr($attr)
 {
-	$attributes = join(
+	return join(
 		' ',
 		array_map(function($key) use ($attr) { return $key . '="' . $attr[$key] . '"'; }, array_keys($attr))
 	);
+}
 
+function bulmaFormText($attr)
+{
 	$output =  '<div class="field has-addons">';
-	$output .= '	<p class="control"><button class="button is-static">' . $attr['label'] . '</button></p>';
+
+	if ($attr['label']) {
+		$output .= '	<p class="control"><button class="button is-static">' . $attr['label'] . '</button></p>';
+	}
+
 	$output .= '	<div class="control">';
-	$output .= '		<input type="text" class="input" ' . $attributes . '>';
+	$output .= '		<input type="text" class="input" ' . _parseAttr($attr) . '>';
+	$output .= '	</div>';
+	$output .= '</div>';
+
+	return $output;
+}
+
+function bulmaFormTextarea($attr)
+{
+
+	$output =  '<div class="field">';
+
+	if ($attr['label']) {
+		$output .= '	<label class="label">' . $attr['label'] . '</label>';
+	}
+
+	$output .= '	<div class="control">';
+	$output .= '		<textarea class="textarea has-border" ' . _parseAttr($attr) . '></textarea>';
 	$output .= '	</div>';
 	$output .= '</div>';
 
