@@ -26,7 +26,6 @@ function bulmaFormText($attr)
 
 function bulmaFormTextarea($attr)
 {
-
 	$output =  '<div class="field">';
 
 	if ($attr['label']) {
@@ -37,6 +36,16 @@ function bulmaFormTextarea($attr)
 	$output .= '		<textarea class="textarea has-border" ' . _parseAttr($attr) . '></textarea>';
 	$output .= '	</div>';
 	$output .= '</div>';
+
+	return $output;
+}
+
+function bulmaFormCheckbox($attr)
+{
+	$output =  '<label class="checkbox">';
+	$output .= '	<input type="checkbox" class="checkbox" ' . _parseAttr($attr) . '>';
+	$output .= '	' . $attr['label'];
+	$output .= '</label>';
 
 	return $output;
 }

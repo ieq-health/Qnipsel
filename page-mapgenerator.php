@@ -57,10 +57,10 @@
 										'placeholder' => '0'
 									)) ?>
 
-									<label class="checkbox">
-										<input type="checkbox" class="checkbox" name="offset_visible">
-										Anzeigen
-									</label>
+									<?= bulmaFormCheckbox(array(
+										'label' => 'Anzeigen',
+										'name' => 'offset_visible'
+									)) ?>
 								</div>
 							</div>
 
