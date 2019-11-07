@@ -1,8 +1,10 @@
 <?php
 
-/** Carbon Fields
- * Define custom fields
+/** Custom Fields
+ * Set up the Custom Fields plugin and define some fields.
  */
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
 require_once( __DIR__ . '/include/fields.php');
 
 /** Walkers

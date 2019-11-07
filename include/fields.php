@@ -1,11 +1,5 @@
 <?php
 
-/** Custom Fields
- * Set up the Custom Fields plugin and define some fields.
- */
-use Carbon_Fields\Container;
-use Carbon_Fields\Field;
-
 /** Add navigation title */
 function templateq_add_navigation_option($fields)
 {
