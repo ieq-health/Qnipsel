@@ -83,8 +83,7 @@ function templateq_message_field()
 }
 
 /** Add custom fields to pages */
-function templateq_crb_attach_post_options()
-{
+add_action('carbon_fields_register_fields', function() {
 	Container::make('post_meta', 'Sections')
 		->where('post_type', '=', 'page')
 		->add_fields(array(
@@ -152,46 +151,38 @@ function templateq_crb_attach_post_options()
 			/** Output in REST Api */
 			->set_visible_in_rest_api($visible = true)
 		));
-}
-add_action('carbon_fields_register_fields', 'templateq_crb_attach_post_options');
+});
 
 /** Bootstrap Custom Fields */
-function templateq_crb_load()
-{
+add_action('after_setup_theme', function() {
 	require_once('vendor/autoload.php');
 	\Carbon_Fields\Carbon_Fields::boot();
-}
-add_action('after_setup_theme', 'templateq_crb_load');
+});
 
 /**
  * Allow more file types
  */
 
-function templateq_allow_filetypes($mime_types)
-{
+add_filter('upload_mimes', function($mime_types) {
 	$mime_types['svg'] = 'image/svg+xml';
 	$mime_types['psd'] = 'image/vnd.adobe.photoshop';
 	return $mime_types;
-}
-add_filter('upload_mimes', 'templateq_allow_filetypes', 1, 1);
+}, 1, 1);
 
 /**
  * Supporting scripts and styles
  */
 
 /** Backend */
-function templateq_enqueue_admin()
-{
+add_action('admin_enqueue_scripts', function() {
 	wp_enqueue_code_editor( array( 'type' => 'text/html' ) );
 	wp_enqueue_script('cm_emmet', 'https://cdn.jsdelivr.net/npm/@emmetio/codemirror-plugin@0.5.4/dist/emmet-codemirror-plugin.min.js', array(), '0.5.4');
 	wp_add_inline_script('cm_emmet', 'let CodeMirror = wp.CodeMirror;', 'before');
 	wp_enqueue_script('templateq_backend', get_template_directory_uri() . '/backend/script.js', array(), '0.0.1');
-}
-add_action('admin_enqueue_scripts', 'templateq_enqueue_admin');
+});
 
 /** Frontend */
-function templateq_enqueue()
-{
+add_action('wp_enqueue_scripts', function() {
 	// Remove block library (Gutenberg)
 	wp_deregister_style('wp-block-library');
 
@@ -226,8 +217,7 @@ function templateq_enqueue()
 	wp_enqueue_script('rainbow-css', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js', array('rainbow'), '1.2.0');
 	wp_enqueue_script('rainbow-js', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js', array('rainbow'), '1.2.0');
 	wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css', array('templateq_css'), '1.2.0');
-}
-add_action('wp_enqueue_scripts', 'templateq_enqueue');
+});
 
 /** Recent Changes */
 function templateq_recent_updates()

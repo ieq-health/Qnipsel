@@ -1,7 +1,6 @@
 <?php
 
-function templateq_snippet_taxonomies()
-{
+add_action('init', function() {
 	$tax_options = array(
 		'labels' => array(
 			'name'          => 'Kategorien',
@@ -15,11 +14,9 @@ function templateq_snippet_taxonomies()
 		array('vscode_snippet'),
 		$tax_options
 	);
-}
-add_action('init', 'templateq_snippet_taxonomies');
+});
 
-function templateq_crb_attach_snippet_options()
-{
+add_action('carbon_fields_register_fields', function() {
 	Container::make('post_meta', 'Snippet')
 		->where('post_type', '=', 'vscode_snippet')
 		->add_fields(array(
@@ -37,11 +34,9 @@ function templateq_crb_attach_snippet_options()
 
 			Field::make('text', 'description', 'Description')
 		));
-}
-add_action('carbon_fields_register_fields', 'templateq_crb_attach_snippet_options');
+});
 
-function templateq_snippet_post_type()
-{
+add_action('init', function() {
 	register_post_type('vscode_snippet', array(
 		'labels' => array(
 			'name' => 'VSCode Snippets',
@@ -51,5 +46,4 @@ function templateq_snippet_post_type()
 		'has_archive' => false
 	));
 	remove_post_type_support('vscode_snippet', 'editor');
-}
-add_action('init', 'templateq_snippet_post_type');
+});
