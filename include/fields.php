@@ -131,6 +131,6 @@ add_action('carbon_fields_register_fields', function() {
 
 /** Bootstrap Custom Fields */
 add_action('after_setup_theme', function() {
-	require_once('../vendor/autoload.php');
+	require_once( __DIR__ . '/../vendor/autoload.php');
 	\Carbon_Fields\Carbon_Fields::boot();
 });
