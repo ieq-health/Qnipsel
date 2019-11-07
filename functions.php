@@ -73,8 +73,7 @@ add_action('wp_enqueue_scripts', function() {
 
 	// Dennismode && Darkmode && Linewrap
 	wp_enqueue_script('cookies', 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', array(), '2');
-	wp_enqueue_script('templateq_darkMode', get_template_directory_uri() . '/js/darkMode.js', array('cookies'), '0.0.1');
-	wp_enqueue_script('templateq_lineWrap', get_template_directory_uri() . '/js/lineWrap.js', array('cookies'), '0.0.1');
+	wp_enqueue_script('templateq_toggleFeatures', get_template_directory_uri() . '/js/toggleFeatures.js', array('cookies'), '0.0.1');
 
 	// Custom Scrollbars
 	wp_enqueue_script('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), 'latest');
