@@ -1,5 +1,11 @@
 <?php
 
+/** Fractals
+ * Include some template helper functions
+ */
+
+require_once( __DIR__ . '/fractals/bulma/forms.php');
+
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
  */
