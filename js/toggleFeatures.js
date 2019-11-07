@@ -1,4 +1,4 @@
-const toggleFeature = (feature, enabled, setCookie) => {
+const toggleFeature = (feature, enabled, setCookie = false) => {
 	$('body').toggleClass(feature, enabled);
 	$(`input[name="${feature}"]`).prop('checked', enabled);
 
@@ -12,6 +12,6 @@ const toggleFeature = (feature, enabled, setCookie) => {
 
 	// toggle feature with toggler
 	$(`input[name="${feature}"]`).on('change', () => {
-		toggleFeature(feature, $(this).is(':checked'));
+		toggleFeature(feature, $(this).is(':checked'), true);
 	});
 });
