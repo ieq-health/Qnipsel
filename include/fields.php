@@ -1,5 +1,8 @@
 <?php
 
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
 /** Add navigation title */
 function templateq_add_navigation_option($fields)
 {
@@ -128,6 +131,6 @@ add_action('carbon_fields_register_fields', function() {
 
 /** Bootstrap Custom Fields */
 add_action('after_setup_theme', function() {
-	require_once('vendor/autoload.php');
+	require_once('../vendor/autoload.php');
 	\Carbon_Fields\Carbon_Fields::boot();
 });

@@ -1,5 +1,8 @@
 <?php
 
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
 add_action('init', function() {
 	$tax_options = array(
 		'labels' => array(
