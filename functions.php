@@ -320,5 +320,6 @@ function templateq_snippet_post_type()
 		'public' => true,
 		'has_archive' => false
 	));
+	remove_post_type_support('vscode_snippet', 'editor');
 }
 add_action('init', 'templateq_snippet_post_type');
