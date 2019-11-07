@@ -23,8 +23,11 @@ require_once( __DIR__ . '/include/cleanup.php');
 /** Fractals
  * Include some template helper functions
  */
+require_once( __DIR__ . '/fractals/bulma/code.php');
+require_once( __DIR__ . '/fractals/bulma/codeview.php');
 require_once( __DIR__ . '/fractals/bulma/forms.php');
-
+require_once( __DIR__ . '/fractals/bulma/message.php');
+require_once( __DIR__ . '/fractals/bulma/text.php');
 
 /**
  * Allow more file types
