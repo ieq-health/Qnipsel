@@ -3,7 +3,7 @@ const toggleFeature = (feature, enabled, setCookie = false) => {
 	$(`input[name="${feature}"]`).prop('checked', enabled);
 
 	if (setCookie) {
-		Cookies.set(feature, state, { expires: 365 });
+		Cookies.set(feature, enabled, { expires: 365 });
 	}
 };
 
