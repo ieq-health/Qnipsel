@@ -8,10 +8,10 @@ const toggleFeature = (feature, enabled, setCookie = false) => {
 };
 
 ['darkMode', 'lineWrap'].forEach((feature) => {
-	toggleFeature(feature, Cookies.get(feature));
+	toggleFeature(feature, JSON.parse(Cookies.get(feature)));
 
 	// toggle feature with toggler
 	$(`input[name="${feature}"]`).on('change', () => {
-		toggleFeature(feature, $(this).is(':checked'), true);
+		toggleFeature(feature, $(event.target).is(':checked'), true);
 	});
 });
