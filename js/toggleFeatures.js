@@ -8,7 +8,7 @@ const toggleFeature = (feature, enabled, setCookie = false) => {
 };
 
 ['darkMode', 'lineWrap'].forEach((feature) => {
-	toggleFeature(feature, JSON.parse(Cookies.get(feature)));
+	toggleFeature(feature, JSON.parse(Cookies.get(feature) || false));
 
 	// toggle feature with toggler
 	$(`input[name="${feature}"]`).on('change', () => {
