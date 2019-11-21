@@ -1,10 +1,3 @@
-<?php
-	include __DIR__ . '/content_blocks/code.php';
-	include __DIR__ . '/content_blocks/codeview.php';
-	include __DIR__ . '/content_blocks/message.php';
-	include __DIR__ . '/content_blocks/text.php';
-?>
-
 <div id="site-container">
 	<main>
 		<div class="container">

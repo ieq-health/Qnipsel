@@ -1,3 +1,13 @@
+@media (prefers-color-scheme: dark) {
+	body, html {
+		background: #222;
+	}
+}
+
+body:not(.darkMode) {
+	background: #fff;
+}
+
 body.darkMode {
 	$border-color: #333;
 
