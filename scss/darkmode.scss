@@ -4,6 +4,10 @@
 	}
 }
 
+body:not(.darkMode) {
+	background: #fff;
+}
+
 body.darkMode {
 	$border-color: #333;
 
