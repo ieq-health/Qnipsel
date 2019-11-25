@@ -43,11 +43,11 @@
 
 		<div class="navbar-end">
 			<div class="field tooltip is-tooltip-bottom" data-tooltip="Dark Mode">
-				<input id="darkMode" type="checkbox" name="darkMode" class="switch is-small is-link is-rounded is-rtl">
+				<input id="darkMode" type="checkbox" name="DarkMode" class="switch is-small is-link is-rounded is-rtl">
 				<label for="darkMode"><i class="fas fa-moon"></i></label>
 			</div>
 			<div class="field tooltip is-tooltip-bottom" data-tooltip="Zeilenumbruch">
-				<input type="checkbox" id="lineWrap" name="lineWrap" class="switch is-small is-warning is-rounded is-rtl">
+				<input type="checkbox" id="lineWrap" name="LineWrap" class="switch is-small is-warning is-rounded is-rtl">
 				<label for="lineWrap"><i class="fas fa-align-left"></i></label>
 			</div>
 		</div>
