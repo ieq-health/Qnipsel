@@ -1,5 +1,11 @@
 @mixin darkmode() {
-	body.darkMode & {
+	body.DarkMode & {
+		@content;
+	}
+}
+
+@mixin nodarkmode {
+	body.noDarkMode & {
 		@content;
 	}
 }
