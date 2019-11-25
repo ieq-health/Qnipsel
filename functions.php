@@ -1,5 +1,10 @@
 <?php
 
+/** Set version
+ * Used for cachebusting JS/CSS
+ */
+$QNIPSEL_VERSION = '0.6.2';
+
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
  */
