@@ -7,7 +7,7 @@ class Feature {
 		this.hasCookie = hasCookie;
 
 		// Turn on feature on load if the cookie is set
-		this.hasCookie && this.toggle(JSON.parse(Cookies.get(this.name)) || false);
+		this.hasCookie && this.toggle(JSON.parse(Cookies.get(this.name) || false));
 
 		// Link toggle
 		$(`input[name="${this.name}"]`).on('change', () => {
