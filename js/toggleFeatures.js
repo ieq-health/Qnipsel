@@ -11,7 +11,7 @@ class Feature {
 
 		// Link toggle
 		$(`input[name="${this.name}"]`).on('change', () => {
-			toggle($(event.target).is(':checked'));
+			this.toggle($(event.target).is(':checked'));
 		});
 	}
 
