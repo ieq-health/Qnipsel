@@ -43,8 +43,21 @@ body.DarkMode {
 		color: #aaa;
 	}
 
+	a {
+		color: #008bff;
+	}
+
 	strong {
 		color: #ccc;
+	}
+
+	.table {
+		background: inherit;
+		color: inherit;
+	}
+
+	.table td, .table th {
+		border-color: #444;
 	}
 
 	/** Tabs */
