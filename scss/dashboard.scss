@@ -100,11 +100,18 @@ aside.menu {
 		}
 
 		li {
-			padding: .5em 1em;
+			padding: .5em 0;
 		}
 
 		a {
 			color: inherit;
+			display: block;
+			font-weight: 600;
+			padding: 0 1em;
+
+			&.--active {
+				border-left: 2px solid #3273dc;
+			}
 		}
 	}
 }

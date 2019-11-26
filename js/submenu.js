@@ -3,7 +3,7 @@ $(function() {
 	let naviObserver = new IntersectionObserver(function(object, observer) {
 		let id = object[0].target.id;
 		if (typeof id != 'undefined') {
-			$('#nonDennisMenu a').removeClass('--active');
+			$('.submenu a').removeClass('--active');
 			$('a[href="#' + id + '"]').addClass('--active');
 		}
 	});
