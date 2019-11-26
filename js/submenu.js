@@ -1,16 +1,19 @@
 $(function() {
 
-	let naviObserver = new IntersectionObserver(function(object, observer) {
-		let id = object[0].target.id;
-		if (typeof id != 'undefined') {
-			$('#nonDennisMenu a').removeClass('--active');
-			$('a[href="#' + id + '"]').addClass('--active');
-		}
-	});
+	function activateNavitem (id) {
+		document.querySelectorAll('.submenu a.--active').forEach(link => link.classList.remove('--active'));
+		document.querySelector('[href="#' + id + '"]').classList.add('--active');
+	}
 
-	document.querySelectorAll('main > .container').forEach(function(section) {
-		naviObserver.observe(section);
-	});
+	const naviObserver = new IntersectionObserver(entries => {
+		if (entries[0].intersectionRatio <= 0) return;
+		if (entries[0].intersectionRatio > 0.75) activateNavitem(entries[0].target.id);
+	}, {
+		threshold: [0, 0.5, 1],
+		rootMargin: '45px 0px 0px 0px'
+	})
+
+	document.querySelectorAll('main > .container[id]').forEach(section => naviObserver.observe(section));
 
 	$('.submenu a').on('click', function(event) {
 		event.preventDefault();
