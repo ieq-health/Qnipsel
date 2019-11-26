@@ -52,5 +52,5 @@ let lineWrap = new Feature('LineWrap', true);
  */
 
 if ( typeof Cookies.get('darkMode') === 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-	toggleFeature('darkMode', true, true);
+	darkMode.enable();
 }
