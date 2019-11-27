@@ -28,6 +28,10 @@ class Feature {
 		this.hasCookie && Cookies.set(this.name, this.isEnabled, { expires: 365 });
 	}
 
+	hasCookieSet() {
+		return typeof Cookies.get(this.name) !== 'undefined';
+	}
+
 	toggle(state = !this.isEnabled) {
 		this.isEnabled = state;
 		this._updateBodyClass();
@@ -51,6 +55,6 @@ let lineWrap = new Feature('LineWrap', true);
  * Turn on dark mode if 'prefers-color-scheme: dark' matches and cookie is not set
  */
 
-if ( typeof Cookies.get('darkMode') === 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+if ( !darkMode.hasCookieSet() && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
 	darkMode.enable();
 }
