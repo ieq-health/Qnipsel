@@ -1,5 +1,5 @@
 class Feature {
-	constructor(name, hasCookie) {
+	constructor(name, hasCookie = true) {
 		this.name = name;
 		this.isEnabled = false;
 		this.bodyClassEnabled = name;
@@ -48,8 +48,8 @@ class Feature {
 	}
 }
 
-let darkMode = new Feature('DarkMode', true);
-let lineWrap = new Feature('LineWrap', true);
+let darkMode = new Feature('DarkMode');
+let lineWrap = new Feature('LineWrap');
 
 /**
  * Turn on dark mode if 'prefers-color-scheme: dark' matches and cookie is not set
