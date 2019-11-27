@@ -4,7 +4,7 @@ function templateq_code_block($lang, $code)
 {
 	$id = bin2hex(random_bytes(8)); ?>
 
-	<div data-simplebar>
+	<div class="pre-wrapper" data-simplebar>
 		<a class="has-text-grey-light has-text-weight-bold is-uppercase copy-code-button" onclick="copyCode('<?= $id ?>')">Copy</a>
 
 		<pre>
