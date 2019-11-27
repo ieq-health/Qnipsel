@@ -1,5 +1,5 @@
 class Feature {
-	constructor(name, hasCookie) {
+	constructor(name, hasCookie = true) {
 		this.name = name;
 		this.isEnabled = false;
 		this.bodyClassEnabled = name;
@@ -7,11 +7,14 @@ class Feature {
 		this.hasCookie = hasCookie;
 
 		// Turn on feature on load if the cookie is set
-		this.hasCookie && this.toggle(JSON.parse(Cookies.get(this.name) || false));
+		this.hasCookie && this.toggle({
+			state: JSON.parse(Cookies.get(this.name) || false),
+			setCookie: false // it's already set, we don't need to do that again
+		});
 
 		// Link toggle
 		$(`input[name="${this.name}"]`).on('change', () => {
-			this.toggle($(event.target).is(':checked'));
+			this.toggle({ state: $(event.target).is(':checked') });
 		});
 	}
 
@@ -28,29 +31,33 @@ class Feature {
 		this.hasCookie && Cookies.set(this.name, this.isEnabled, { expires: 365 });
 	}
 
-	toggle(state = !this.isEnabled) {
+	hasCookieSet() {
+		return typeof Cookies.get(this.name) !== 'undefined';
+	}
+
+	toggle({ state = !this.isEnabled, setCookie = true }) {
 		this.isEnabled = state;
 		this._updateBodyClass();
 		this._updateToggle();
-		this._setCookie();
+		setCookie && this._setCookie();
 	}
 
-	enable() {
-		this.toggle(true);
+	enable(setCookie = true) {
+		this.toggle({ state: true, setCookie });
 	}
 
-	disable() {
-		this.toggle(false);
+	disable(setCookie = true) {
+		this.toggle({ state: false, setCookie });
 	}
 }
 
-let darkMode = new Feature('DarkMode', true);
-let lineWrap = new Feature('LineWrap', true);
+let darkMode = new Feature('DarkMode');
+let lineWrap = new Feature('LineWrap');
 
 /**
  * Turn on dark mode if 'prefers-color-scheme: dark' matches and cookie is not set
  */
 
-if ( typeof Cookies.get('darkMode') === 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-	darkMode.enable();
+if ( !darkMode.hasCookieSet() && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+	darkMode.enable(false);
 }

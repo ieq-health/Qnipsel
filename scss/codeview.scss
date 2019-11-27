@@ -47,6 +47,28 @@
     display: none;
 }
 
+.pre-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 20px;
+
+    @include darkmode {
+        background: #282828;
+        border-color: #333;
+    }
+}
+
+pre {
+    background: transparent !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+    overflow: visible;
+
+    @include darkmode {
+        color: #c5c8c6;
+    }
+}
+
 pre code {
     font-family: SFMono-Regular,Menlo,Monaco,"Roboto Mono", Consolas,"Liberation Mono","Courier New",monospace;
 }
