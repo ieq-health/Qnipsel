@@ -7,9 +7,7 @@ function templateq_code_block($lang, $code)
 	<div class="pre-wrapper" data-simplebar>
 		<a class="has-text-grey-light has-text-weight-bold is-uppercase copy-code-button" onclick="copyCode('<?= $id ?>')">Copy</a>
 
-		<pre>
-			<code id="code_<?= $id ?>" data-language="<?= $lang ?>"><?= htmlspecialchars($code) ?></code>
-		</pre>
+		<pre><code id="code_<?= $id ?>" data-language="<?= $lang ?>"><?= htmlspecialchars($code) ?></code></pre>
 	</div>
 
 	<script>
