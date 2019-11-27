@@ -55,7 +55,6 @@
     @include darkmode {
         background: #282828;
         border-color: #333;
-        color: #c5c8c6;
     }
 }
 
@@ -64,6 +63,10 @@ pre {
     border: none !important;
     margin-bottom: 0 !important;
     overflow: visible;
+
+    @include darkmode {
+        color: #c5c8c6;
+    }
 }
 
 pre code {
