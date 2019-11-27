@@ -7,7 +7,9 @@
             </p>
 
             <p class="has-text-grey-light">
-                Version <?= $GLOBALS['qnipsel_version'] ?> &mdash; <a class="has-text-grey-light" href="https://github.com/ieq-health/Qnipsel"><i class="fab fa-github-alt"></i></a> 
+                <a class="has-text-grey-light" href="https://github.com/ieq-health/Qnipsel/blob/master/CHANGELOG.md">Version <?= $GLOBALS['qnipsel_version'] ?></a>
+                &mdash;
+                <a class="has-text-grey-light" href="https://github.com/ieq-health/Qnipsel"><i class="fab fa-github-alt"></i></a> 
             </p>
         </footer>
 
