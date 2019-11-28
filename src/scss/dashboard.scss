@@ -187,12 +187,11 @@ nav.navbar {
 	}
 
 	.switch[type="checkbox"].is-small + label {
-		display: flex;
-		align-items: center;
-		padding-top: .1rem;
+		padding-top: 0;
+		height: 1.125rem;
 
 		svg {
-			height: 1rem;
+			height: 1.125rem;
 		}
 	}
 }
