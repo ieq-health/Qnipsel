@@ -5,7 +5,7 @@ $radius-small: 3px;
 
 $fullhd-enabled: false; // too wide for two sidebars
 
-@import "../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma/bulma.sass";
 
 @import "mixins";
 @import "dashboard";
