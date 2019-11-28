@@ -4,12 +4,7 @@
   "description": "Wordpress theme to power qnipsel",
   "main": "webpack.config.js",
   "scripts": {
-    "css-main": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify",
-    "css-lint": "stylelint --syntax scss \"scss/**/*.scss\"",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/main.scss dist/css/main.css",
-    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/main.min.css dist/css/main.css",
-    "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
-    "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\""
+    "webpack": "rm -rf dist/; npx webpack"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",

@@ -21,10 +21,10 @@ jobs:
         with:
           php-version: 7.3
 
-      - name: compile CSS
+      - name: webpack
         run: |
           npm ci
-          npm run css-main
+          npm run webpack
 
       - name: install PHP deps
         run: |
