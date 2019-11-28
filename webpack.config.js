@@ -39,6 +39,12 @@ module.exports = {
 			filename: 'main.css',
 			allChunks: true,
 		}),
-	]
+	],
+
+	resolve: {
+		alias: {
+			jquery: 'jquery/src/jquery'
+		}
+	}
 
 };
