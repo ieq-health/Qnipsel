@@ -33,6 +33,7 @@ require_once( __DIR__ . '/include/enqueue.php');
 /** Fractals
  * Include some template helper functions
  */
+require_once( __DIR__ . '/fractals/icons.php');
 require_once( __DIR__ . '/fractals/bulma/code.php');
 require_once( __DIR__ . '/fractals/bulma/codeview.php');
 require_once( __DIR__ . '/fractals/bulma/forms.php');

@@ -46,3 +46,12 @@ body.LineWrap .content pre {
 	bottom: 5px;
 	height: 13px !important;
 }
+
+svg path {
+	fill: currentColor;
+}
+
+footer svg {
+	height: 1em;
+	vertical-align: middle;
+}

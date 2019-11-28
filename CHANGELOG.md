@@ -1,5 +1,8 @@
 # Changelog
 
+## [Unreleased]
+- Replace Fontawesome with inline SVG
+
 ## [0.8.0] - 2019-11-27
 
 ### Added
