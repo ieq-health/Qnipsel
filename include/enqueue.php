@@ -15,25 +15,12 @@ add_action('wp_enqueue_scripts', function() {
 
 	// Pull latest jQuery
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
 
 	// Pull custom CSS
-	wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/css/main.min.css', array(), $GLOBALS['qnipsel_version']);
-	wp_enqueue_style('bulma-switch', 'https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.4/bulma-switch/dist/css/bulma-switch.min.css', array(), '6.2.4');
-	wp_enqueue_style('bulma-tooltip', 'https://cdn.jsdelivr.net/npm/bulma-tooltip@2.0.2/dist/css/bulma-tooltip.min.css', array(), '2.0.2');
+	wp_enqueue_style('templateq_css', get_template_directory_uri() . '/dist/main.css', array(), $GLOBALS['qnipsel_version']);
 
 	// Pull custom JS
-	wp_enqueue_script('templateq_codeview', get_template_directory_uri() . '/js/codeview.js', array('jquery'), $GLOBALS['qnipsel_version'], true);
-	wp_enqueue_script('templateq_submenu', get_template_directory_uri() . '/js/submenu.js', array('jquery'), $GLOBALS['qnipsel_version'], true);
-	wp_enqueue_script('templateq_tabview', get_template_directory_uri() . '/js/tabview.js', array('jquery'), $GLOBALS['qnipsel_version'], true);
-
-	// Dennismode && Darkmode && Linewrap
-	wp_enqueue_script('cookies', 'https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', array(), '2', true);
-	wp_enqueue_script('templateq_toggleFeatures', get_template_directory_uri() . '/js/toggleFeatures.js', array('cookies'), $GLOBALS['qnipsel_version'], true);
-
-	// Custom Scrollbars
-	wp_enqueue_script('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js', array(), 'latest', true);
-	wp_enqueue_style('simplebar', 'http://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css', array(), 'latest');
+	wp_enqueue_script('templateq_js', get_template_directory_uri() . '/dist/main.js', array(), $GLOBALS['qnipsel_version'], true);
 
 	// Pull Rainbow
 	wp_enqueue_script('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js', array(), '1.2.0', true);
