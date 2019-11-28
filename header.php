@@ -42,11 +42,11 @@
 		</div>
 
 		<div class="navbar-end">
-			<div class="field tooltip is-tooltip-bottom" data-tooltip="Dark Mode">
+			<div class="field tooltip has-tooltip-bottom" data-tooltip="Dark Mode">
 				<input id="darkMode" type="checkbox" name="DarkMode" class="switch is-small is-link is-rounded is-rtl">
 				<label for="darkMode"><?= templateq_icon_moon() ?></label>
 			</div>
-			<div class="field tooltip is-tooltip-bottom" data-tooltip="Zeilenumbruch">
+			<div class="field tooltip has-tooltip-bottom" data-tooltip="Zeilenumbruch">
 				<input type="checkbox" id="lineWrap" name="LineWrap" class="switch is-small is-warning is-rounded is-rtl">
 				<label for="lineWrap"><?= templateq_icon_wrap() ?></label>
 			</div>
