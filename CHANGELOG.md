@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Replace Fontawesome with inline SVG
+- Bundle assets with webpack
 
 ## [0.8.0] - 2019-11-27
 
