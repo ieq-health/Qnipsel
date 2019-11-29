@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.1] - 2019-11-29
+
+### Fixed
+- Enqueue jQuery in Backend
+
+
 ## [0.8.0] - 2019-11-27
 
 ### Added
