@@ -30,8 +30,8 @@ function translateMode (mode) {
 //
 	
 function makeCodeEditor () {
-	let $textarea = $(this).parent().parent().next().find('textarea');
-	let lang = translateMode($(this).val());
+	let $textarea = jQuery(this).parent().parent().next().find('textarea');
+	let lang = translateMode(jQuery(this).val());
 
 	// If editor exists, change mode
 	if ($textarea.siblings('.CodeMirror').length > 0) {
@@ -45,9 +45,9 @@ function makeCodeEditor () {
 	}});
 }
 
-$(function() {
-	$('input[name*=language]').each(makeCodeEditor);
-	$('#carbon_fields_container_sections').on('blur', 'input[name*=language]', makeCodeEditor);
+jQuery(function() {
+	jQuery('input[name*=language]').each(makeCodeEditor);
+	jQuery('#carbon_fields_container_sections').on('blur', 'input[name*=language]', makeCodeEditor);
 });
 
 
@@ -57,18 +57,18 @@ $(function() {
 
 function makeCodepenEditor () {
 	setTimeout(() => {
-		$('textarea[data-editor]').each(function() {
-			if ($(this).siblings('.CodeMirror').length > 0) return;
+		jQuery('textarea[data-editor]').each(function() {
+			if (jQuery(this).siblings('.CodeMirror').length > 0) return;
 
 			wp.codeEditor.initialize(this, { codemirror: {
-				mode: translateMode($(this).data('editor')),
+				mode: translateMode(jQuery(this).data('editor')),
 				...cmOpts
 			}});
 		});
 	}, 100);
 }
 
-$(function() {
-	$('.cf-complex__inserter-item').on('click', makeCodepenEditor);
+jQuery(function() {
+	jQuery('.cf-complex__inserter-item').on('click', makeCodepenEditor);
 	makeCodepenEditor();
 });
