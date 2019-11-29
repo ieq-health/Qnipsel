@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.2] - 2019-11-29
+
+### Fixed
+- reference jQuery instead of $ in backend
+
+
 ## [0.8.1] - 2019-11-29
 
 ### Fixed
