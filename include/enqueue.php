@@ -5,7 +5,8 @@ add_action('admin_enqueue_scripts', function() {
 	wp_enqueue_code_editor( array( 'type' => 'text/html' ) );
 	wp_enqueue_script('cm_emmet', 'https://cdn.jsdelivr.net/npm/@emmetio/codemirror-plugin@0.5.4/dist/emmet-codemirror-plugin.min.js', array(), '0.5.4');
 	wp_add_inline_script('cm_emmet', 'let CodeMirror = wp.CodeMirror;', 'before');
-	wp_enqueue_script('templateq_backend', get_template_directory_uri() . '/backend/script.js', array(), $GLOBALS['qnipsel_version']);
+	wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1');
+	wp_enqueue_script('templateq_backend', get_template_directory_uri() . '/backend/script.js', array('jquery'), $GLOBALS['qnipsel_version']);
 });
 
 /** Frontend */
