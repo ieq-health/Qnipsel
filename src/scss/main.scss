@@ -20,6 +20,14 @@ $fullhd-enabled: false; // too wide for two sidebars
 @import "xml-stripper";
 @import "darkmode";
 
+@import url('https://rsms.me/inter/inter.css');
+
+body, button, input, select, textarea { font-family: 'Inter', sans-serif; }
+
+@supports (font-variation-settings: normal) {
+  body, button, input, select, textarea { font-family: 'Inter var', sans-serif; }
+}
+
 html {
 	font-size: 14px;
 }
