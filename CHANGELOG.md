@@ -6,6 +6,7 @@
 - Bundle assets with webpack
 
 ### Changed
+- Use Inter as default font https://rsms.me/inter/
 - Replace Fontawesome with inline SVG
 
 
