@@ -36,6 +36,13 @@ body, button, input, select, textarea { font-family: 'Inter', sans-serif; }
 			"cv07",   "cv08" 0, "cv09" 0, "cv10" 0,
 			"cv11" 0, "calt",   "liga",   "kern";
 	}
+
+	body {
+		transition: font-weight .3s;
+	}
+	body.DarkMode {
+		font-weight: 340;
+	}
 }
 
 html {
