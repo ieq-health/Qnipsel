@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 class Feature {
 	constructor(name, hasCookie = true) {
 		this.name = name;

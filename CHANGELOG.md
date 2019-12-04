@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+- Bundle assets with webpack
+
+### Changed
+- Use Inter as default font https://rsms.me/inter/
+- Replace Fontawesome with inline SVG
+
+
 ## [0.8.2] - 2019-11-29
 
 ### Fixed

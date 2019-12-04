@@ -1,0 +1,88 @@
+// Configure Bulma
+
+$blue: rgb(0,100,183);
+$radius-small: 3px;
+
+$fullhd-enabled: false; // too wide for two sidebars
+
+// Bundle Bulma
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma-extensions/bulma-switch/src/sass/index.sass";
+@import "../../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css";
+
+// Bundle others
+@import "../../node_modules/simplebar/dist/simplebar.css";
+
+@import "mixins";
+@import "dashboard";
+@import "codeview";
+@import "tabview";
+@import "xml-stripper";
+@import "darkmode";
+
+@import url('https://rsms.me/inter/inter.css');
+
+body, button, input, select, textarea { font-family: 'Inter', sans-serif; }
+
+@supports (font-variation-settings: normal) {
+  body, button, input, select, textarea {
+		font-family: 'Inter var', sans-serif;
+		font-feature-settings:
+			"dlig" 0, "numr" 0, "dnom" 0, "tnum" 0,
+			"case" 0, "zero" 0, "frac" 0, "sups" 0,
+			"subs" 0, "cpsp" 0, "salt" 0, "ss01",
+			"ss02" 0, "ss03",   "cv01" 0, "cv02" 0,
+			"cv03" 0, "cv04" 0, "cv05" 0, "cv06" 0,
+			"cv07",   "cv08" 0, "cv09" 0, "cv10" 0,
+			"cv11" 0, "calt",   "liga",   "kern";
+	}
+
+	body {
+		transition: font-weight .3s;
+	}
+	body.DarkMode {
+		font-weight: 340;
+	}
+}
+
+html {
+	font-size: 14px;
+}
+
+hr {
+	background: #f8f8f8;
+	border: 1px solid #eee;
+	border-left-color: #f8f8f8;
+	height: 5px;
+	margin: 4rem 0;
+
+	@include darkmode {
+		border-color: #333;
+		border-left-color: #181818;
+		background: #181818;
+	}
+}
+
+.copy-code-button {
+	margin: 0.5em 1em;
+	position: absolute;
+	right: 0;
+}
+
+body.LineWrap .content pre {
+	white-space: normal;
+}
+
+.simplebar-track.simplebar-horizontal {
+	bottom: 5px;
+	height: 13px !important;
+}
+
+svg path {
+	fill: currentColor;
+}
+
+footer svg {
+	height: 1em;
+	vertical-align: middle;
+}

@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.8.0';
+$GLOBALS['qnipsel_version'] = '0.9.0';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
@@ -33,6 +33,7 @@ require_once( __DIR__ . '/include/enqueue.php');
 /** Fractals
  * Include some template helper functions
  */
+require_once( __DIR__ . '/fractals/icons.php');
 require_once( __DIR__ . '/fractals/bulma/code.php');
 require_once( __DIR__ . '/fractals/bulma/codeview.php');
 require_once( __DIR__ . '/fractals/bulma/forms.php');

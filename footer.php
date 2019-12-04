@@ -9,7 +9,7 @@
             <p class="has-text-grey-light">
                 <a class="has-text-grey-light" href="https://github.com/ieq-health/Qnipsel/blob/master/CHANGELOG.md">Version <?= $GLOBALS['qnipsel_version'] ?></a>
                 &mdash;
-                <a class="has-text-grey-light" href="https://github.com/ieq-health/Qnipsel"><i class="fab fa-github-alt"></i></a> 
+                <a class="has-text-grey-light" href="https://github.com/ieq-health/Qnipsel"><?= templateq_icon_github(); ?></a> 
             </p>
         </footer>
 
