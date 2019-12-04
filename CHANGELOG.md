@@ -1,6 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## [0.9.1] = 2019-12-04
+
+### Fixed
+- Fixed news- and mapgenerators loading own script before jQuery was initialized
+
+## [0.9.0] - 2019-12-04
 
 ### Added
 - Bundle assets with webpack
