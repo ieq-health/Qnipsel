@@ -9,3 +9,5 @@ require('./codeview');
 require('./submenu');
 require('./tabview');
 require('./toggleFeatures');
+require('./mapgenerator');
+require('./newsgenerator');
