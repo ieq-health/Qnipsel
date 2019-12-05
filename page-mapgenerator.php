@@ -8,7 +8,7 @@
 					<div id="preview" style="width:100%;height:300px"></div>
 				</div>
 
-				<div class="container-fluid xml-stripper">
+				<div id="mapgenerator" class="container-fluid xml-stripper">
 					<div class="columns">
 						<div class="column">
 							<p class="has-text-grey is-uppercase is-size-7">Input</p>

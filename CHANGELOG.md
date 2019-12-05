@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [Unreleased]
+
+## Fixed
+- Scope Generator JS
+
+
 ## [0.9.3] - 2019-12-05
 
 ### Fixed

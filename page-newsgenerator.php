@@ -6,7 +6,7 @@
 			<?php while (have_posts()): the_post(); ?>
 				<?php get_template_part('partials/content', 'title'); ?>
 
-				<div class="container-fluid xml-stripper">
+				<div id="newsgenerator" class="container-fluid xml-stripper">
 					<div class="columns">
 						<div class="column">
 							<p class="has-text-grey is-uppercase is-size-7">Input</p>

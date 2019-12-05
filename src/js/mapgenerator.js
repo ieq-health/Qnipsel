@@ -2,32 +2,30 @@
  * Generate the output
  */
 
-$(function() {
+$('#mapgenerator').on('input propertychange', 'input, select, .field textarea', function() {
+	let lat = $('input[name="lat"]').val() || 51.933799;
+	let lng = $('input[name="lng"]').val() || 7.655033;
+	let zoom = $('input[name="zoom"]').val() || 16;
 
-	$('input, select, .field textarea').on('input propertychange', function() {
-		let lat = $('input[name="lat"]').val() || 51.933799;
-		let lng = $('input[name="lng"]').val() || 7.655033;
-		let zoom = $('input[name="zoom"]').val() || 16;
+	let lat_offset = lat * 1 + ($('input[name="lat_offset"]').val() || 0) * 1;
+	let lng_offset = lng * 1 + ($('input[name="lng_offset"]').val() || 0) * 1;
+	let zoom_offset = zoom * 1 + ($('input[name="zoom_offset"]').val() || 0) * 1;
 
-		let lat_offset = lat * 1 + ($('input[name="lat_offset"]').val() || 0) * 1;
-		let lng_offset = lng * 1 + ($('input[name="lng_offset"]').val() || 0) * 1;
-		let zoom_offset = zoom * 1 + ($('input[name="zoom_offset"]').val() || 0) * 1;
+	let styles = $('textarea[name="styles"]').val() || '[]';
 
-		let styles = $('textarea[name="styles"]').val() || '[]';
+	let marker = $('input[name="marker"]').val() || 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png';
 
-		let marker = $('input[name="marker"]').val() || 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png';
+	let marker_width = $('input[name="marker_width"]').val() || 27;
+	let marker_height = $('input[name="marker_height"]').val() || 43;
 
-		let marker_width = $('input[name="marker_width"]').val() || 27;
-		let marker_height = $('input[name="marker_height"]').val() || 43;
+	let marker_anchorx = $('input[name="anchorx"]').val() || 50;
+	let marker_anchory = $('input[name="anchory"]').val() || 100;
 
-		let marker_anchorx = $('input[name="anchorx"]').val() || 50;
-		let marker_anchory = $('input[name="anchory"]').val() || 100;
-
-		let title = $('input[name="title"]').val();
-		let url = $('input[name="url"]').val();
+	let title = $('input[name="title"]').val();
+	let url = $('input[name="url"]').val();
 
 
-		$('#output').val(`
+	$('#output').val(`
 <div id="map"></div>
 
 <script>
@@ -97,7 +95,6 @@ function debounce(func, wait, immediate) {
 <\/script>
 
 <script async="" defer="" src='https://maps.googleapis.com/maps/api/js?key=<IEQ-CMS function="InsertFirmendaten" param="Felder=googleapikey"></IEQ-CMS>&amp;callback=initMap&amp;libraries=places'></script>`);
-	});
 });
 
 let map;
@@ -130,7 +127,7 @@ function initMap() {
 
 	/** set location */
 
-	$('input[name="lat"], input[name="lng"], input[name="offset_visible"]').on('input propertychange', function() {
+	$('#mapgenerator').on('input propertychange', 'input[name="lat"], input[name="lng"], input[name="offset_visible"]', function() {
 		let offset_visible = $('input[name="offset_visible"]').is(':checked');
 
 		let lat = parseFloat($('input[name="lat"]').val()) || 51.933799;
@@ -152,7 +149,7 @@ function initMap() {
 		});
 	});
 
-	$('input[name="zoom"]').on('input propertychange', function() {
+	$('#mapgenerator').on('input propertychange', 'input[name="zoom"]', function() {
 		let offset_visible = $('input[name="offset_visible"]').is(':checked');
 
 		let zoom = parseFloat($('input[name="zoom"]').val()) || 16;
@@ -163,7 +160,7 @@ function initMap() {
 
 	/** set style */
 
-	$('textarea[name="styles"]').on('input propertychange', function() {
+	$('#mapgenerator').on('input propertychange', 'textarea[name="styles"]', function() {
 		let styles = JSON.parse($('textarea[name="styles"]').val()) || [];
 
 		map.setOptions({
@@ -173,7 +170,7 @@ function initMap() {
 
 	/** set marker icon */
 
-	$('input[name="marker"]').on('input propertychange', function() {
+	$('#mapgenerator').on('input propertychange', 'input[name="marker"]', function() {
 		let url = $('input[name="marker"]').val() || 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png';
 
 		icon.url = url;
@@ -183,7 +180,7 @@ function initMap() {
 
 	/** set marker size */
 
-	$('input[name="marker_width"], input[name="marker_height"], input[name="anchorx"], input[name="anchory"]').on('input propertychange', function() {
+	$('#mapgenerator').on('input propertychange', 'input[name="marker_width"], input[name="marker_height"], input[name="anchorx"], input[name="anchory"]', function() {
 		let width = parseFloat($('input[name="marker_width"]').val()) || 27;
 		let height = parseFloat($('input[name="marker_height"]').val()) || 43;
 		let anchorx = parseFloat($('input[name="anchorx"]').val()) || 50;
