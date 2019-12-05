@@ -101,94 +101,98 @@ let map;
 let marker;
 let icon;
 
-function initMap() {
-	map = new google.maps.Map(document.getElementById('preview'), {
-		center: {lat: 51.933799, lng: 7.655033},
-		zoom: 16,
-		disableDefaultUI: true,
-		styles: []
-	});
-
-	icon = {
-		url: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png",
-		size: new google.maps.Size(27, 43),
-		anchor: new google.maps.Point(13.5, 43),
-	};
-
-	marker = new google.maps.Marker({
-		position: {lat: 51.933799, lng: 7.655033},
-		map: map,
-		icon: icon
-	});
-
-	/**
-	 * Generate the preview
-	 */
-
-	/** set location */
-
-	$('#mapgenerator').on('input propertychange', 'input[name="lat"], input[name="lng"], input[name="offset_visible"]', function() {
-		let offset_visible = $('input[name="offset_visible"]').is(':checked');
-
-		let lat = parseFloat($('input[name="lat"]').val()) || 51.933799;
-		let lng = parseFloat($('input[name="lng"]').val()) || 7.655033;
-
-		let lat_offset = parseFloat($('input[name="lat_offset"]').val()) || 0;
-		let lng_offset = parseFloat($('input[name="lng_offset"]').val()) || 0;
-
-		map.setCenter({
-			lat: offset_visible ? lat_offset + lat : lat,
-			lng: offset_visible ? lng_offset + lng : lng
+document.addEventListener('DOMContentLoaded', () => {
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('preview'), {
+			center: {lat: 51.933799, lng: 7.655033},
+			zoom: 16,
+			disableDefaultUI: true,
+			styles: []
 		});
 
-		marker.setOptions({
-			position: {
-				lat: lat,
-				lng: lng
-			}
+		icon = {
+			url: "https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png",
+			size: new google.maps.Size(27, 43),
+			anchor: new google.maps.Point(13.5, 43),
+		};
+
+		marker = new google.maps.Marker({
+			position: {lat: 51.933799, lng: 7.655033},
+			map: map,
+			icon: icon
 		});
-	});
 
-	$('#mapgenerator').on('input propertychange', 'input[name="zoom"]', function() {
-		let offset_visible = $('input[name="offset_visible"]').is(':checked');
+		/**
+		 * Generate the preview
+		 */
 
-		let zoom = parseFloat($('input[name="zoom"]').val()) || 16;
-		let zoom_offset = parseFloat($('input[name="zoom_offset"]').val()) || 0;
+		/** set location */
 
-		map.setZoom(offset_visible ? zoom_offset + zoom : zoom);
-	});
+		$('#mapgenerator').on('input propertychange', 'input[name="lat"], input[name="lng"], input[name="offset_visible"]', function() {
+			let offset_visible = $('input[name="offset_visible"]').is(':checked');
 
-	/** set style */
+			let lat = parseFloat($('input[name="lat"]').val()) || 51.933799;
+			let lng = parseFloat($('input[name="lng"]').val()) || 7.655033;
 
-	$('#mapgenerator').on('input propertychange', 'textarea[name="styles"]', function() {
-		let styles = JSON.parse($('textarea[name="styles"]').val()) || [];
+			let lat_offset = parseFloat($('input[name="lat_offset"]').val()) || 0;
+			let lng_offset = parseFloat($('input[name="lng_offset"]').val()) || 0;
 
-		map.setOptions({
-			styles: styles
+			map.setCenter({
+				lat: offset_visible ? lat_offset + lat : lat,
+				lng: offset_visible ? lng_offset + lng : lng
+			});
+
+			marker.setOptions({
+				position: {
+					lat: lat,
+					lng: lng
+				}
+			});
 		});
-	});
 
-	/** set marker icon */
+		$('#mapgenerator').on('input propertychange', 'input[name="zoom"]', function() {
+			let offset_visible = $('input[name="offset_visible"]').is(':checked');
 
-	$('#mapgenerator').on('input propertychange', 'input[name="marker"]', function() {
-		let url = $('input[name="marker"]').val() || 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png';
+			let zoom = parseFloat($('input[name="zoom"]').val()) || 16;
+			let zoom_offset = parseFloat($('input[name="zoom_offset"]').val()) || 0;
 
-		icon.url = url;
+			map.setZoom(offset_visible ? zoom_offset + zoom : zoom);
+		});
 
-		marker.setIcon(url);
-	});
+		/** set style */
 
-	/** set marker size */
+		$('#mapgenerator').on('input propertychange', 'textarea[name="styles"]', function() {
+			let styles = JSON.parse($('textarea[name="styles"]').val()) || [];
 
-	$('#mapgenerator').on('input propertychange', 'input[name="marker_width"], input[name="marker_height"], input[name="anchorx"], input[name="anchory"]', function() {
-		let width = parseFloat($('input[name="marker_width"]').val()) || 27;
-		let height = parseFloat($('input[name="marker_height"]').val()) || 43;
-		let anchorx = parseFloat($('input[name="anchorx"]').val()) || 50;
-		let anchory = parseFloat($('input[name="anchory"]').val()) || 100;
+			map.setOptions({
+				styles: styles
+			});
+		});
 
-		icon.size = new google.maps.Size(width, height);
-		icon.anchor = new google.maps.Point(width * (anchorx / 100), height * (anchory / 100));
+		/** set marker icon */
 
-		marker.setIcon(icon);
-	});
-}
+		$('#mapgenerator').on('input propertychange', 'input[name="marker"]', function() {
+			let url = $('input[name="marker"]').val() || 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png';
+
+			icon.url = url;
+
+			marker.setIcon(url);
+		});
+
+		/** set marker size */
+
+		$('#mapgenerator').on('input propertychange', 'input[name="marker_width"], input[name="marker_height"], input[name="anchorx"], input[name="anchory"]', function() {
+			let width = parseFloat($('input[name="marker_width"]').val()) || 27;
+			let height = parseFloat($('input[name="marker_height"]').val()) || 43;
+			let anchorx = parseFloat($('input[name="anchorx"]').val()) || 50;
+			let anchory = parseFloat($('input[name="anchory"]').val()) || 100;
+
+			icon.size = new google.maps.Size(width, height);
+			icon.anchor = new google.maps.Point(width * (anchorx / 100), height * (anchory / 100));
+
+			marker.setIcon(icon);
+		});
+	}
+
+	initMap();
+});
