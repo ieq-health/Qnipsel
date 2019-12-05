@@ -21,17 +21,12 @@ jobs:
         with:
           php-version: 7.3
 
-      - name: webpack staging
-        if: github.ref == 'refs/heads/develop'
+      - name: webpack
+        env:
+          PRODUCTION: ${{ github.ref == 'refs/heads/master' }}
         run: |
           npm ci
-          npm run webpack 
-
-      - name: webpack prod
-        if: github.ref == 'refs/heads/master'
-        run: |
-          npm ci
-          npm run webpack --env.production
+          npm run webpack -- --env.PRODUCTION=$PRODUCTION
 
       - name: install PHP deps
         run: |

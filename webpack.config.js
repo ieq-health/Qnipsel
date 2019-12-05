@@ -36,7 +36,7 @@ module.exports = env => {
 		},
 
 		optimization: {
-			minimize: env.production
+			minimize: (env.PRODUCTION == 'true')
 		},
 
 		plugins: [
