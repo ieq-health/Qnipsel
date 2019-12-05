@@ -91,8 +91,8 @@ return function() {
 }
 }
 <\/script>
-<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=***API KEY***&amp;callback=initMap&amp;libraries=places">
-<\/script>`);
+
+<script async="" defer="" src='https://maps.googleapis.com/maps/api/js?key=<IEQ-CMS function="InsertFirmendaten" param="Felder=googleapikey"></IEQ-CMS>&amp;callback=initMap&amp;libraries=places'></script>`);
 	});
 });
 
