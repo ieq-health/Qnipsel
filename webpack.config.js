@@ -3,48 +3,54 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+module.exports = env => {
+	return {
 
-	entry: ['./src/js/main.js', './src/scss/main.scss'],
+		entry: ['./src/js/main.js', './src/scss/main.scss'],
 
-	output: {
-		path: path.resolve(__dirname, 'dist/'),
-	},
+		output: {
+			path: path.resolve(__dirname, 'dist/'),
+		},
 
-	module: {
-		rules: [
+		module: {
+			rules: [
 
-			/**
-			 * JS
-			 * Bundle
-			 */
-			{
-				test: /\.js$/,
-				exclude: /(node_modules|bower_components)/,
-			},
+				/**
+				 * JS
+				 * Bundle
+				 */
+				{
+					test: /\.js$/,
+					exclude: /(node_modules|bower_components)/,
+				},
 
-			/**
-			 * CSS
-			 * Compile SCSS from /src/scss/main.scss to /dist/css/index.css
-			 */
-			{
-				test: /\.scss$/,
-				use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
-			},
-		]
-	},
+				/**
+				 * CSS
+				 * Compile SCSS from /src/scss/main.scss to /dist/css/index.css
+				 */
+				{
+					test: /\.scss$/,
+					use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+				},
+			]
+		},
 
-	plugins: [
-		new MiniCssExtractPlugin({
-			filename: 'main.css',
-			allChunks: true,
-		}),
-	],
+		optimization: {
+			minimize: (env.PRODUCTION == 'true')
+		},
 
-	resolve: {
-		alias: {
-			jquery: 'jquery/src/jquery'
+		plugins: [
+			new MiniCssExtractPlugin({
+				filename: 'main.css',
+				allChunks: true,
+			}),
+		],
+
+		resolve: {
+			alias: {
+				jquery: 'jquery/src/jquery'
+			}
 		}
-	}
 
+	}
 };

@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.9.4] - 2019-12-05
+
+### Fixed
+- Scope Generator JS
+- Fix Google Maps init
+
+
 ## [0.9.3] - 2019-12-05
 
 ### Fixed
