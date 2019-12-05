@@ -1,6 +1,6 @@
 {
   "name": "templateq",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Wordpress theme to power qnipsel",
   "main": "webpack.config.js",
   "scripts": {
