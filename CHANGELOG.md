@@ -1,14 +1,23 @@
 # Changelog
 
+
+## [0.9.3] - 2019-12-05
+
+### Fixed
+- Fix Google maps loading order and default values
+
+
 ## [0.9.2] - 2019-12-05
 
 ### Changed
 - Pull Google API key using InsertFirmendaten
 
+
 ## [0.9.1] - 2019-12-04
 
 ### Fixed
 - Fixed news- and mapgenerators loading own script before jQuery was initialized
+
 
 ## [0.9.0] - 2019-12-04
 

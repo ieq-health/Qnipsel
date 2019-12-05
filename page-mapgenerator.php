@@ -142,6 +142,6 @@
 		<?php endif; ?>
 	</main>
 
-<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=***API KEY***&amp;callback=initMap&amp;libraries=places"></script>
+<?php wp_enqueue_script('gmaps', 'https://maps.googleapis.com/maps/api/js?key=***API KEY***&amp;callback=initMap&amp;libraries=places', array('templateq_js'), '', true); ?>
 
 <?php get_footer(); ?>
