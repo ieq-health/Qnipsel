@@ -5,19 +5,23 @@
 $(function() {
 
 	$('input, select, .field textarea').on('input propertychange', function() {
-		let lat = $('input[name="lat"]').val();
-		let lng = $('input[name="lng"]').val();
-		let zoom = $('input[name="zoom"]').val();
+		let lat = $('input[name="lat"]').val() || 51.933799;
+		let lng = $('input[name="lng"]').val() || 7.655033;
+		let zoom = $('input[name="zoom"]').val() || 16;
 
-		let lat_offset = lat * 1 + $('input[name="lat_offset"]').val() * 1;
-		let lng_offset = lng * 1 + $('input[name="lng_offset"]').val() * 1;
-		let zoom_offset = zoom * 1 + $('input[name="zoom_offset"]').val() * 1;
+		let lat_offset = lat * 1 + ($('input[name="lat_offset"]').val() || 0) * 1;
+		let lng_offset = lng * 1 + ($('input[name="lng_offset"]').val() || 0) * 1;
+		let zoom_offset = zoom * 1 + ($('input[name="zoom_offset"]').val() || 0) * 1;
 
 		let styles = $('textarea[name="styles"]').val() || '[]';
 
-		let marker = $('input[name="marker"]').val();
-		let marker_width = $('input[name="marker_width"]').val();
-		let marker_height = $('input[name="marker_height"]').val();
+		let marker = $('input[name="marker"]').val() || 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png';
+
+		let marker_width = $('input[name="marker_width"]').val() || 27;
+		let marker_height = $('input[name="marker_height"]').val() || 43;
+
+		let marker_anchorx = $('input[name="anchorx"]').val() || 50;
+		let marker_anchory = $('input[name="anchory"]').val() || 100;
 
 		let title = $('input[name="title"]').val();
 		let url = $('input[name="url"]').val();
@@ -30,65 +34,65 @@ $(function() {
 const mq = window.matchMedia('screen and (min-width: 1200px)');
 
 const mapLocation = {
-lat: ${lat},
-lng: ${lng},
-zoom: ${zoom},
+	lat: ${lat},
+	lng: ${lng},
+	zoom: ${zoom},
 
-get offset() {
-	return {
-		lat: ${lat_offset},
-		lng: ${lng_offset},
-		zoom: ${zoom_offset}
+	get offset() {
+		return {
+			lat: ${lat_offset},
+			lng: ${lng_offset},
+			zoom: ${zoom_offset}
+		}
 	}
-}
 };
 
 function initMap() {
-const map = new google.maps.Map(document.getElementById('map'), {
-	center: mq.matches ? mapLocation.offset : mapLocation,
-	zoom: mq.matches ? mapLocation.offset.zoom : mapLocation.zoom,
-	disableDefaultUI: true,
-	styles: ${styles}
-});
+	const map = new google.maps.Map(document.getElementById('map'), {
+		center: mq.matches ? mapLocation.offset : mapLocation,
+		zoom: mq.matches ? mapLocation.offset.zoom : mapLocation.zoom,
+		disableDefaultUI: true,
+		styles: ${styles}
+	});
 
-const image = {
-	url: '${marker}',
-	size: new google.maps.Size(${marker_width}, ${marker_height}),
-	anchor: new google.maps.Point(${marker_width / 2}, ${marker_height})
-};
+	const image = {
+		url: '${marker}',
+		size: new google.maps.Size(${marker_width}, ${marker_height}),
+		anchor: new google.maps.Point(${marker_width * (marker_anchorx / 100)}, ${marker_height * (marker_anchory / 100)})
+	};
 
-const marker = new google.maps.Marker({
-	position: mapLocation,
-	map: map,
-	title: '${title}',
-	icon: image,
-	url: '${url}'
-});
+	const marker = new google.maps.Marker({
+		position: mapLocation,
+		map: map,
+		title: '${title}',
+		icon: image,
+		url: '${url}'
+	});
 
-google.maps.event.addListener(marker, "click", function() {
-	window.open(this.url, "_blank");
-});
+	google.maps.event.addListener(marker, "click", function() {
+		window.open(this.url, "_blank");
+	});
 
-window.addEventListener('resize', debounce(function() {
-	map.setCenter(mq.matches ? mapLocation.offset : mapLocation)
-	map.setZoom(mq.matches ? mapLocation.offset.zoom : mapLocation.zoom)
-}, 200, false));
+	window.addEventListener('resize', debounce(function() {
+		map.setCenter(mq.matches ? mapLocation.offset : mapLocation);
+		map.setZoom(mq.matches ? mapLocation.offset.zoom : mapLocation.zoom);
+	}, 200, false));
 }
 
 function debounce(func, wait, immediate) {
-let timeout;
-return function() {
-	const context = this;
-	const args = arguments;
-	const later = function() {
-		timeout = null;
-		if (!immediate) func.apply(context, args);
-	};
-	const callNow = immediate && !timeout;
-	clearTimeout(timeout);
-	timeout = setTimeout(later, wait);
-	if (callNow) func.apply(context, args);
-}
+	let timeout;
+	return function() {
+		const context = this;
+		const args = arguments;
+		const later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		const callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	}
 }
 <\/script>
 
@@ -99,6 +103,7 @@ return function() {
 let map;
 let marker;
 let icon;
+
 function initMap() {
 	map = new google.maps.Map(document.getElementById('preview'), {
 		center: {lat: 51.933799, lng: 7.655033},
