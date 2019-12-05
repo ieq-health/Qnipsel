@@ -123,13 +123,10 @@ function initMap() {
 		map: map,
 		icon: icon
 	});
-}
 
-/**
- * Generate the preview
- */
-
-$(function() {
+	/**
+	 * Generate the preview
+	 */
 
 	/** set location */
 
@@ -197,4 +194,4 @@ $(function() {
 
 		marker.setIcon(icon);
 	});
-});
+}
