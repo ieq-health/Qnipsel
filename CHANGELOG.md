@@ -1,6 +1,11 @@
 # Changelog
 
-## [0.9.1] = 2019-12-04
+## [0.9.2] - 2019-12-05
+
+### Changed
+- Pull Google API key using InsertFirmendaten
+
+## [0.9.1] - 2019-12-04
 
 ### Fixed
 - Fixed news- and mapgenerators loading own script before jQuery was initialized
