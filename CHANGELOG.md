@@ -1,6 +1,7 @@
 # Changelog
 
-## [Unreleased]
+
+## [0.9.3] - 2019-12-05
 
 ### Fixed
 - Fix Google maps loading order and default values
