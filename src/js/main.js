@@ -11,3 +11,4 @@ require('./tabview');
 require('./toggleFeatures');
 require('./mapgenerator');
 require('./newsgenerator');
+require('./xmlstripper');
