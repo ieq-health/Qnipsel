@@ -96,7 +96,7 @@
 					<div class="columns">
 						<div class="column">
 							<p class="has-text-grey is-uppercase is-size-7">Input</p>
-							<textarea class="textarea is-family-code" name="" id="input" cols="30" rows="10"></textarea>
+							<textarea class="textarea is-family-code" name="" id="xml-input" cols="30" rows="10"></textarea>
 						</div>
 
 						<div class="column has-background-light">
@@ -108,24 +108,5 @@
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</main>
-
-
-
-	<script>
-		$(function() {
-			$('#input').on('input propertychange', function() {
-				let xml = $(this).val();
-
-				xml = xml.replace(/.*<lastmod.*\n/g, '');
-				xml = xml.replace(/.*<priority.*\n/g, '');
-
-				xml = xml.replace(/.*<url.*\n.*gw_dental.*\n.*url>.*\n/g, '');
-				xml = xml.replace(/.*<url.*\n.*gw_kfo.*\n.*url>.*\n/g, '');
-				xml = xml.replace(/.*<url.*\n.*dentallabor.*\n.*url>.*\n/g, '');
-
-				$('#output').val(xml);
-			});
-		});
-	</script>
 
 <?php get_footer(); ?>
