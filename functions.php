@@ -10,6 +10,11 @@ $GLOBALS['qnipsel_version'] = '0.9.5';
  */
 require_once( __DIR__ . '/include/fields.php');
 
+/** TinyMCE
+ * Extend TinyMCE for our needs
+ */
+require_once( __DIR__ . '/include/tinymce.php');
+
 /** Walkers
  * Declare our own menu walkers
  */
