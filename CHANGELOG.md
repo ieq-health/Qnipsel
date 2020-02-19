@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [0.10.0] - 2020-02-19
+
+### Added
+- Code button for TinyMCE
+
+
 ## [0.9.4] - 2019-12-05
 
 ### Fixed
