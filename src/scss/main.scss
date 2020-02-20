@@ -78,6 +78,14 @@ body.LineWrap .content pre {
 	height: 13px !important;
 }
 
+.field.has-addons {
+	justify-content: stretch;
+
+	> *:last-child {
+		flex-grow: 1;
+	}
+}
+
 svg path {
 	fill: currentColor;
 }
