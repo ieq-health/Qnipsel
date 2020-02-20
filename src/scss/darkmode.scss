@@ -18,7 +18,7 @@ body.DarkMode {
 
 	.navbar {
 		background: #333;
-											
+
 		&.has-shadow {
 			box-shadow: 0 2px 0 0 #000;
 		}
@@ -83,7 +83,6 @@ body.DarkMode {
 	
 	/** Forms */
 
-	:placeholder,
 	::placeholder {
 		color: #666;
 	}
