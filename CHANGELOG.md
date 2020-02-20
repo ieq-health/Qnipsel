@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.2] - 2020-02-20
+
+### Changed
+- Changed the way full-width inputs are generated
+
+
 ## [0.11.1] - 2020-02-20
 
 ### Fixed
