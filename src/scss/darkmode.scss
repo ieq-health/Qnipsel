@@ -83,12 +83,18 @@ body.DarkMode {
 	
 	/** Forms */
 
+	:placeholder,
+	::placeholder {
+		color: #666;
+	}
+
 	.input, .select select, .textarea {
 		background: #111;
 		border-color: $border-color;
 		color: #999;
 
-		&:placeholder {
+		&:placeholder,
+		&::placeholder {
 			color: #666;
 		}
 	}
