@@ -51,3 +51,24 @@ function fractalFormCheckbox($attr)
 
 	return $output;
 }
+
+function fractalFormSelect($attr)
+{
+	$output = '<div class="field has-addons">';
+	$output .= '	<p class="control">';
+	$output .= '		<button class="button is-static">' . $attr['label'] . '</button>';
+	$output .= '	</p>';
+	$output .= '	<div class="select">';
+	$output .= '		<select name="' . $attr['name'] . '">';
+
+	for ($i=0; $i < ( count($attr['options']) - 1 ); $i++) { 
+		$option = $attr['options'][$i];
+		$output .= '		<option value="' . $option['value'] . '">' . $option['label'] . '</option>';
+	}
+
+	$output .= '		</select>';
+	$output .= '	</div>';
+	$output .= '</div>';
+
+	return $output;
+}
