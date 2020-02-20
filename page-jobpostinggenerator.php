@@ -64,6 +64,7 @@
 										'name' => 'website',
 										'placeholder' => 'Website'
 									)) ?>
+								</div>
 
 								<!-- Jobinfos -->
 								<div class="column">
