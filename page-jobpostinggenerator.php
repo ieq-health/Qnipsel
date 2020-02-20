@@ -199,38 +199,37 @@
 
 
           $('#output').val(`
-            <script type="application/ld+json">
-              {
-                "@context": "https://schema.org/",
-                "@type": "JobPosting",
-                "title": "${jobtitle}",     // Job Suche Titel X
-                "description": "${description}",    // Beschreibender Text X
-                "hiringOrganization" : {
-                  "@type": "Organization",
-                  "name": "${name}",    // Firmenname X
-                  "sameAs": "${website}"    // Internetadresse X
-                },
-                "industry": "${industry}",    // Welche Industrie X
-                "employmentType": "${employmenttype}",   // Arbeitsweise (Vollzeit, Teilzeit etc.) X
-                "datePosted": "${postdate}",    // Seit wann kann man sich bewerben X
-                "jobLocation": {
-                  "@type": "Place",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "${street}",   // Straße X
-                    "addressLocality": "${place}",  // Ort X 
-                    "postalCode": "${plz}",   // PLZ X 
-                    "addressRegion": "${land}"  // Land X 
-                  }
-                },
-                "responsibilities": "${responsibilities}",     // Welche Verantwortlichkeiten
-                "skills": "${skills}", // Welche Skills man mitbringt
-                "qualifications": "${qualifications}", // Welche Qualifikationen man braucht Jobmäßig
-                "educationRequirements": "${educationrequirements}", // Bildungsqualis
-                "experienceRequirements": "${experiencerequirements}"  // Erfahrungen 
-              }
-            </script>
-          `)
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    "title": "${jobtitle}",     // Job Suche Titel X
+    "description": "${description}",    // Beschreibender Text X
+    "hiringOrganization" : {
+      "@type": "Organization",
+      "name": "${name}",    // Firmenname X
+      "sameAs": "${website}"    // Internetadresse X
+    },
+    "industry": "${industry}",    // Welche Industrie X
+    "employmentType": "${employmenttype}",   // Arbeitsweise (Vollzeit, Teilzeit etc.) X
+    "datePosted": "${postdate}",    // Seit wann kann man sich bewerben X
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "${street}",   // Straße X
+        "addressLocality": "${place}",  // Ort X 
+        "postalCode": "${plz}",   // PLZ X 
+        "addressRegion": "${land}"  // Land X 
+      }
+    },
+    "responsibilities": "${responsibilities}",     // Welche Verantwortlichkeiten
+    "skills": "${skills}", // Welche Skills man mitbringt
+    "qualifications": "${qualifications}", // Welche Qualifikationen man braucht Jobmäßig
+    "educationRequirements": "${educationrequirements}", // Bildungsqualis
+    "experienceRequirements": "${experiencerequirements}"  // Erfahrungen 
+  }
+</script>`);
         });
 
         </script>
