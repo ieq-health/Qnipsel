@@ -77,7 +77,7 @@
                       'placeholder' => 'Zahnmedizinische Fachangestellte/r (m/w/d)'
                     )) ?>
 
-                    <?= fracatlFormTextarea(array(
+                    <?= fractalFormTextarea(array(
                       'label' => 'Stellenbeschreibung',
                       'name' => 'description'
                     )) ?>
