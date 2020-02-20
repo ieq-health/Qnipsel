@@ -5,20 +5,20 @@ $("#application-json").on(
 		let name = $('*[name="name"]').val();
 		let street = $('*[name="street"]').val();
 		let plz = $('*[name="plz"]').val();
-		let place = $('*[name=place"]').val();
-		let country = $('*[name=country"]').val();
-		let industry = $('*[name=industry"]').val();
-		let website = $('*[name=website"]').val();
+		let place = $('*[name="place"]').val();
+		let country = $('*[name="country"]').val();
+		let industry = $('*[name="industry"]').val();
+		let website = $('*[name="website"]').val();
 
-		let jobtitle = $('*[name=jobtitle"]').val();
-		let description = $('*[name=description"]').val();
-		let employmenttype = $('*[name=employmenttype"]').val();
-		let postdate = $('*[name=postdate"]').val();
-		let responsibilities = $('*[name=responsibilities"]').val();
-		let skills = $('*[name=skills"]').val();
-		let qualifications = $('*[name=qualifications"]').val();
-		let educationrequirements = $('*[name=educationrequirements"]').val();
-		let experiencerequirements = $('*[name=experiencerequirements"]').val();
+		let jobtitle = $('*[name="jobtitle"]').val();
+		let description = $('*[name="description"]').val();
+		let employmenttype = $('*[name="employmenttype"]').val();
+		let postdate = $('*[name="postdate"]').val();
+		let responsibilities = $('*[name="responsibilities"]').val();
+		let skills = $('*[name="skills"]').val();
+		let qualifications = $('*[name="qualifications"]').val();
+		let educationrequirements = $('*[name="educationrequirements"]').val();
+		let experiencerequirements = $('*[name="experiencerequirements"]').val();
 
 		$("#output").val(`
 <script type="application/ld+json">

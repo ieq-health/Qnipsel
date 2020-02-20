@@ -1,147 +1,142 @@
 <?php get_header(); ?>
 
 <div id="site-container">
-  <main>
+	<main>
 		<?php if (have_posts()): ?>
 			<?php while (have_posts()): the_post(); ?>
 				<?php get_template_part('partials/content', 'title'); ?>
 
-        <div id="application-json" class="container-fluid xml-stripper">
-          <div class="columns">
-            <div class="column">
-              <p class="has-text-grey is-uppercase is-size-7">Input</p>
+				<div id="application-json" class="container-fluid xml-stripper">
+					<div class="columns">
 
-              <!-- Firmandaten -->
-              <div class="columns">
-                <div class="column">
-                    <label class="label">Firmendaten</label>
+						<div class="column">
+							<p class="has-text-grey is-uppercase is-size-7">Input</p>
 
-                    <?= fractalFormText(array(
-                      'label' => 'Name',
-                      'name' => 'name',
-                      'placeholder' => 'Firma GmbH'
-                    )) ?>
+							<!-- Firmandaten -->
+							<div class="columns">
+								<div class="column">
+									<label class="label">Firmendaten</label>
 
-                    <?= fractalFormText(array(
-                      'label' => 'Straße',
-                      'name' => 'street',
-                      'placeholder' => 'Straße'
-                    )) ?>
+									<?= fractalFormText(array(
+										'label' => 'Name',
+										'name' => 'name',
+										'placeholder' => 'Firma GmbH'
+									)) ?>
 
-                    <?= fractalFormText(array(
-                      'label' => 'PLZ',
-                      'name' => 'plz',
-                      'placeholder' => 'PLZ'
-                    )) ?>
+									<?= fractalFormText(array(
+										'label' => 'Straße',
+										'name' => 'street',
+										'placeholder' => 'Straße'
+									)) ?>
 
-                    <?= fractalFormText(array(
-                      'label' => 'Stadt',
-                      'name' => 'place',
-                      'placeholder' => 'Musterstadt'
-                    )) ?>
+									<?= fractalFormText(array(
+										'label' => 'PLZ',
+										'name' => 'plz',
+										'placeholder' => 'PLZ'
+									)) ?>
 
-                    <?= fractalFormSelect(array(
-                      'label' => 'Land',
-                      'name'  => 'country',
-                      'options' => array(
-                        array('value' => 'DE', 'label' => 'Deutschland'),
-                        array('value' => 'AT', 'label' => 'Österreich'),
-                        array('value' => 'CH', 'label' => 'Schweiz'),
-                        array('value' => 'NL', 'label' => 'Niederlande'),
-                        array('value' => 'LU', 'label' => 'Luxemburg')
-                      )
-                    )) ?>
+									<?= fractalFormText(array(
+										'label' => 'Stadt',
+										'name' => 'place',
+										'placeholder' => 'Musterstadt'
+									)) ?>
 
-                    <?= fractalFormText(array(
-                      'label' => 'Industrie',
-                      'name' => 'industry',
-                      'placeholder' => 'Zahnmedizin'
-                    )) ?>
+									<?= fractalFormSelect(array(
+										'label' => 'Land',
+										'name'  => 'country',
+										'options' => array(
+											array('value' => 'DE', 'label' => 'Deutschland'),
+											array('value' => 'AT', 'label' => 'Österreich'),
+											array('value' => 'CH', 'label' => 'Schweiz'),
+											array('value' => 'NL', 'label' => 'Niederlande'),
+											array('value' => 'LU', 'label' => 'Luxemburg')
+										)
+									)) ?>
 
-                    <?= fractalFormText(array(
-                      'label' => 'Website',
-                      'name' => 'website',
-                      'placeholder' => 'Website'
-                    )) ?>
-                </div>
-              </div>
+									<?= fractalFormText(array(
+										'label' => 'Industrie',
+										'name' => 'industry',
+										'placeholder' => 'Zahnmedizin'
+									)) ?>
 
-              <!-- Jobinfos -->
-              <div class="columns">
-                <div class="column">
-                    <label class="label">Stellenausschreibung</label>
+									<?= fractalFormText(array(
+										'label' => 'Website',
+										'name' => 'website',
+										'placeholder' => 'Website'
+									)) ?>
 
-                    <?= fractalFormText(array(
-                      'label' => 'Jobtitel',
-                      'name' => 'jobtitle',
-                      'placeholder' => 'Zahnmedizinische Fachangestellte/r (m/w/d)'
-                    )) ?>
+								<!-- Jobinfos -->
+								<div class="column">
+									<label class="label">Stellenausschreibung</label>
 
-                    <?= fractalFormTextarea(array(
-                      'label' => 'Stellenbeschreibung',
-                      'name' => 'description'
-                    )) ?>
+									<?= fractalFormText(array(
+										'label' => 'Jobtitel',
+										'name' => 'jobtitle',
+										'placeholder' => 'Zahnmedizinische Fachangestellte/r (m/w/d)'
+									)) ?>
 
-                    <?= fractalFormSelect(array(
-                      'label' => 'Beschäftigung',
-                      'name'  => 'employmenttype',
-                      'options' => array(
-                        array('value' => 'FULL_TIME', 'label' => 'Vollzeit'),
-                        array('value' => 'PART_TIME', 'label' => 'Teilzeit'),
-                        array('value' => 'TEMPORARY', 'label' => 'befristete Stelle'),
-                        array('value' => 'INTERN',    'label' => 'Praktikant'),
-                        array('value' => 'OTHER',     'label' => 'anderes Arbeitsverhältnis')
-                      )
-                    )) ?>
+									<?= fractalFormTextarea(array(
+										'label' => 'Stellenbeschreibung',
+										'name' => 'description'
+									)) ?>
 
-                    <?= fractalFormText(array(
-                      'label' => 'Veröffentlichungsdatum',
-                      'name' => 'postdate',
-                      'placeholder' => '2020-01-31'
-                    )) ?>
+									<?= fractalFormSelect(array(
+										'label' => 'Beschäftigung',
+										'name'  => 'employmenttype',
+										'options' => array(
+											array('value' => 'FULL_TIME', 'label' => 'Vollzeit'),
+											array('value' => 'PART_TIME', 'label' => 'Teilzeit'),
+											array('value' => 'TEMPORARY', 'label' => 'befristete Stelle'),
+											array('value' => 'INTERN',    'label' => 'Praktikant'),
+											array('value' => 'OTHER',     'label' => 'anderes Arbeitsverhältnis')
+										)
+									)) ?>
 
-                    <?= fractalFormTextarea(array(
-                      'label' => 'Verantwortlichkeiten',
-                      'name' => 'responsibilities',
-                    )) ?>
+									<?= fractalFormText(array(
+										'label' => 'Veröffentlichungsdatum',
+										'name' => 'postdate',
+										'placeholder' => '2020-01-31'
+									)) ?>
 
-                    <?= fractalFormTextarea(array(
-                      'label' => 'Skills',
-                      'name' => 'skills',
-                    )) ?>
+									<?= fractalFormTextarea(array(
+										'label' => 'Verantwortlichkeiten',
+										'name' => 'responsibilities',
+									)) ?>
 
-                    <?= fractalFormTextarea(array(
-                      'label' => 'Qualifikationen',
-                      'name' => 'qualifications',
-                    )) ?>
+									<?= fractalFormTextarea(array(
+										'label' => 'Skills',
+										'name' => 'skills',
+									)) ?>
 
-                    <?= fractalFormTextarea(array(
-                      'label' => 'Schulische Voraussetzungen',
-                      'name' => 'educationrequirements',
-                    )) ?>
+									<?= fractalFormTextarea(array(
+										'label' => 'Qualifikationen',
+										'name' => 'qualifications',
+									)) ?>
 
-                    <?= fractalFormTextarea(array(
-                      'label' => 'Arbeitserfahrung Anforderungen',
-                      'name' => 'experiencerequirements',
-                    )) ?>
-                  </div>
-                </div>
-              </div>
-            </div>
+									<?= fractalFormTextarea(array(
+										'label' => 'Schulische Voraussetzungen',
+										'name' => 'educationrequirements',
+									)) ?>
 
-            <div class="column has-background-light">
-              <p class="has-text-grey is-uppercase is-size-7">Output</p>
-              <textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly=""></textarea>
-            </div>
-          </div>
-        </div>
+									<?= fractalFormTextarea(array(
+										'label' => 'Arbeitserfahrung Anforderungen',
+										'name' => 'experiencerequirements',
+									)) ?>
+								</div>
+							</div>
 
-        <script>
+						</div>
 
-        </script>
+						<div class="column has-background-light">
+							<p class="has-text-grey is-uppercase is-size-7">Output</p>
+							<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly=""></textarea>
+						</div>
+
+					</div>
+				</div>
 
 			<?php endwhile; ?>
 		<?php endif; ?>
-  </main>
+	</main>
 
 <?php get_footer(); ?>
