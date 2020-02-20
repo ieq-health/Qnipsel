@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.11.0] - 2020-02-20
+
+### Added
+- job posting json generator
+
+### Fixed
+- Fix dark mode input placeholder color
+- Fix form fields not extending to full width of the column
+
 
 ## [0.10.0] - 2020-02-19
 
