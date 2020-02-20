@@ -78,12 +78,11 @@ body.LineWrap .content pre {
 	height: 13px !important;
 }
 
-.field.has-addons {
-	justify-content: stretch;
-
-	> *:last-child {
-		flex-grow: 1;
-	}
+.field.has-addons .control:first-child:not(:only-child) .button,
+.field.has-addons .control:first-child:not(:only-child) .input,
+.field.has-addons .control:first-child:not(:only-child) .select select {
+	min-width: 80px;
+	justify-content: flex-end;
 }
 
 svg path {
