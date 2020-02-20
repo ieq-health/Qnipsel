@@ -16,7 +16,7 @@ function fractalFormText($attr)
 		$output .= '	<p class="control"><button class="button is-static">' . $attr['label'] . '</button></p>';
 	}
 
-	$output .= '	<div class="control">';
+	$output .= '	<div class="control is-expanded">';
 	$output .= '		<input type="text" class="input" ' . _parseAttr($attr) . '>';
 	$output .= '	</div>';
 	$output .= '</div>';
@@ -58,7 +58,7 @@ function fractalFormSelect($attr)
 	$output .= '	<p class="control">';
 	$output .= '		<button class="button is-static">' . $attr['label'] . '</button>';
 	$output .= '	</p>';
-	$output .= '	<div class="select">';
+	$output .= '	<div class="select is-fullwidth">';
 	$output .= '		<select name="' . $attr['name'] . '">';
 
 	for ($i=0; $i < ( count($attr['options']) - 1 ); $i++) { 
