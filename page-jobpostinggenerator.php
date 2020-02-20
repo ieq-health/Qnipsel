@@ -100,27 +100,27 @@
                       'placeholder' => '2020-01-31'
                     )) ?>
 
-                    <?= fracatlFormTextarea(array(
+                    <?= fractalFormTextarea(array(
                       'label' => 'Verantwortlichkeiten',
                       'name' => 'responsibilities',
                     )) ?>
 
-                    <?= fracatlFormTextarea(array(
+                    <?= fractalFormTextarea(array(
                       'label' => 'Skills',
                       'name' => 'skills',
                     )) ?>
 
-                    <?= fracatlFormTextarea(array(
+                    <?= fractalFormTextarea(array(
                       'label' => 'Qualifikationen',
                       'name' => 'qualifications',
                     )) ?>
 
-                    <?= fracatlFormTextarea(array(
+                    <?= fractalFormTextarea(array(
                       'label' => 'Schulische Voraussetzungen',
                       'name' => 'educationrequirements',
                     )) ?>
 
-                    <?= fracatlFormTextarea(array(
+                    <?= fractalFormTextarea(array(
                       'label' => 'Arbeitserfahrung Anforderungen',
                       'name' => 'experiencerequirements',
                     )) ?>
