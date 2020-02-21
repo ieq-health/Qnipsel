@@ -18,7 +18,7 @@ require_once(__DIR__ . '/include/tinymce.php');
 /** Walkers
  * Declare our own menu walkers
  */
-require_once( __DIR__ . '/include/walkers/split_nav_sidenav_walker.php');
+require_once(__DIR__ . '/include/walkers/split_nav_sidenav_walker.php');
 require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
 
 
