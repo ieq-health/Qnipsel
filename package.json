@@ -4,12 +4,15 @@
   "description": "Wordpress theme to power qnipsel",
   "main": "webpack.config.js",
   "scripts": {
+    "test": "stylelint src/scss",
     "webpack": "rm -rf dist/; npx webpack"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
     "rules": {
-      "no-descending-specificity": null
+      "no-descending-specificity": null,
+      "length-zero-no-unit": true,
+      "indentation": "tab"
     }
   },
   "repository": {
