@@ -18,31 +18,31 @@
 									<p class="subtitle">Firmendaten</p>
 
 									<?= fractalFormText(array(
-										'label' => 'Name',
+										'label' => array( 'string' => 'Name', 'required' => true),
 										'name' => 'name',
 										'placeholder' => 'Firma GmbH'
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'Straße',
+										'label' => array( 'string' => 'Straße', 'required' => true),
 										'name' => 'street',
 										'placeholder' => 'Straße'
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'PLZ',
+										'label' => array( 'string' => 'PLZ', 'required' => true),
 										'name' => 'plz',
 										'placeholder' => 'PLZ'
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'Stadt',
+										'label' => array( 'string' => 'Stadt', 'required' => true),
 										'name' => 'place',
 										'placeholder' => 'Musterstadt'
 									)) ?>
 
 									<?= fractalFormSelect(array(
-										'label' => 'Land',
+										'label' => array( 'string' => 'Land', 'required' => true),
 										'name'  => 'country',
 										'options' => array(
 											array('value' => 'DE', 'label' => 'Deutschland'),
@@ -54,13 +54,13 @@
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'Industrie',
+										'label' => array( 'string' => 'Industrie', 'required' => true),
 										'name' => 'industry',
 										'placeholder' => 'Zahnmedizin'
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'Website',
+										'label' => array( 'string' => 'Website', 'required' => true),
 										'name' => 'website',
 										'placeholder' => 'Website'
 									)) ?>
@@ -71,18 +71,18 @@
 									<p class="subtitle">Stellenausschreibung</p>
 
 									<?= fractalFormText(array(
-										'label' => 'Jobtitel',
+										'label' => array( 'string' => 'Jobtitel', 'required' => true),
 										'name' => 'jobtitle',
 										'placeholder' => 'Zahnmedizinische Fachangestellte/r (m/w/d)'
 									)) ?>
 
 									<?= fractalFormTextarea(array(
-										'label' => 'Stellenbeschreibung',
+										'label' => array( 'string' => 'Stellenbeschreibung', 'required' => true),
 										'name' => 'description'
 									)) ?>
 
 									<?= fractalFormSelect(array(
-										'label' => 'Beschäftigung',
+										'label' => array( 'string' => 'Beschäftigung', 'required' => true),
 										'name'  => 'employmenttype',
 										'options' => array(
 											array('value' => 'FULL_TIME', 'label' => 'Vollzeit'),
@@ -94,7 +94,7 @@
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'Veröffentlichungsdatum',
+										'label' => array( 'string' => 'Veröffentlichungsdatum', 'required' => true),
 										'name' => 'postdate',
 										'placeholder' => '2020-01-31'
 									)) ?>
