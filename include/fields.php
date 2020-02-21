@@ -59,7 +59,7 @@ function templateq_message_field()
 }
 
 /** Add custom fields to pages */
-add_action('carbon_fields_register_fields', function() {
+add_action('carbon_fields_register_fields', function () {
 	Container::make('post_meta', 'Sections')
 		->where('post_type', '=', 'page')
 		->add_fields(array(
@@ -130,7 +130,7 @@ add_action('carbon_fields_register_fields', function() {
 });
 
 /** Bootstrap Custom Fields */
-add_action('after_setup_theme', function() {
-	require_once( __DIR__ . '/../vendor/autoload.php');
+add_action('after_setup_theme', function () {
+	require_once(__DIR__ . '/../vendor/autoload.php');
 	\Carbon_Fields\Carbon_Fields::boot();
 });

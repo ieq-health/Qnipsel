@@ -3,7 +3,7 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-add_action('init', function() {
+add_action('init', function () {
 	$tax_options = array(
 		'labels' => array(
 			'name'          => 'Kategorien',
@@ -19,7 +19,7 @@ add_action('init', function() {
 	);
 });
 
-add_action('carbon_fields_register_fields', function() {
+add_action('carbon_fields_register_fields', function () {
 	Container::make('post_meta', 'Snippet')
 		->where('post_type', '=', 'vscode_snippet')
 		->add_fields(array(
@@ -39,7 +39,7 @@ add_action('carbon_fields_register_fields', function() {
 		));
 });
 
-add_action('init', function() {
+add_action('init', function () {
 	register_post_type('vscode_snippet', array(
 		'labels' => array(
 			'name' => 'VSCode Snippets',

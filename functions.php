@@ -8,48 +8,50 @@ $GLOBALS['qnipsel_version'] = '0.11.3';
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
  */
-require_once( __DIR__ . '/include/fields.php');
+require_once(__DIR__ . '/include/fields.php');
 
 /** TinyMCE
  * Extend TinyMCE for our needs
  */
-require_once( __DIR__ . '/include/tinymce.php');
+require_once(__DIR__ . '/include/tinymce.php');
 
 /** Walkers
  * Declare our own menu walkers
  */
-require_once( __DIR__ . '/include/walkers.php');
+require_once(__DIR__ . '/include/walkers/split_nav_sidenav_walker.php');
+require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
+
 
 /** Snippet
  * Create our own post type and taxonomy
  */
-require_once( __DIR__ . '/include/vscode_snippets.php');
+require_once(__DIR__ . '/include/vscode_snippets.php');
 
 /** Cleanup
  * Remove some stuff from the backend
  */
-require_once( __DIR__ . '/include/cleanup.php');
+require_once(__DIR__ . '/include/cleanup.php');
 
 /** Styles & Scripts
  * Enqueue stylesheets and javascript in both front and backend
  */
-require_once( __DIR__ . '/include/enqueue.php');
+require_once(__DIR__ . '/include/enqueue.php');
 
 /** Fractals
  * Include some template helper functions
  */
-require_once( __DIR__ . '/fractals/icons.php');
-require_once( __DIR__ . '/fractals/bulma/code.php');
-require_once( __DIR__ . '/fractals/bulma/codeview.php');
-require_once( __DIR__ . '/fractals/bulma/forms.php');
-require_once( __DIR__ . '/fractals/bulma/message.php');
-require_once( __DIR__ . '/fractals/bulma/text.php');
+require_once(__DIR__ . '/fractals/icons.php');
+require_once(__DIR__ . '/fractals/bulma/code.php');
+require_once(__DIR__ . '/fractals/bulma/codeview.php');
+require_once(__DIR__ . '/fractals/bulma/forms.php');
+require_once(__DIR__ . '/fractals/bulma/message.php');
+require_once(__DIR__ . '/fractals/bulma/text.php');
 
 /**
  * Allow more file types
  */
 
-add_filter('upload_mimes', function($mime_types) {
+add_filter('upload_mimes', function ($mime_types) {
 	$mime_types['svg'] = 'image/svg+xml';
 	$mime_types['psd'] = 'image/vnd.adobe.photoshop';
 	return $mime_types;
