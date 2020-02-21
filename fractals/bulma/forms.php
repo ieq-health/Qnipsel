@@ -63,7 +63,7 @@ function fractalFormCheckbox($attr)
 	$output .= '	       type="checkbox"';
 	$output .= '	       class="checkbox switch is-small is-rounded"';
 	$output .= _parseAttr($attr);
-	$output .= '>'
+	$output .= '>';
 	$output .= _addLabel($attr);
 	$output .= '</div>';
 
