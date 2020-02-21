@@ -10,8 +10,19 @@ function _parseAttr($attr)
 
 function _addLabel($attr)
 {
+	if (is_array($attr['label'])) {
+		$required = $attr['label']['required'];
+	} else {
+		$required = false;
+	}
+
+	$label = (is_array($attr['label']) ? $attr['label']['string'] : $attr['label']);
+	$required = (is_array($attr['label']) ? $attr['label']['required'] : false);
+
+	if ($required) $label .= ' *';
+
 	if ($attr['label']) {
-		return '	<label class="label">' . $attr['label'] . '</label>';
+		return '	<label for="' . $attr['name'] . '" class="label">' . $label . '</label>';
 	}
 }
 
@@ -43,9 +54,7 @@ function fractalFormCheckbox($attr)
 {
 	$output =  '<div class="field">';
 	$output .= '	<input id="' . $attr['name'] . '" type="checkbox" class="checkbox switch is-small is-rounded" ' . _parseAttr($attr) . '>';
-	$output .= '	<label for="' . $attr['name'] . '" class="checkbox">';
-	$output .= '		' . $attr['label'];
-	$output .= '	</label>';
+	$output .= _addLabel($attr);
 	$output .= '</div>';
 
 	return $output;
