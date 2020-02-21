@@ -16,65 +16,43 @@
 								<!-- Gewerk -->
 
 								<div class="column">
-									<label class="label">Gewerk</label>
-									<div class="field is-grouped">
-										<div class="control">
-											<label class="radio">
-												<input type="radio" id="dental" name="gewerk" value="dental" checked> Dental
-											</label>
-											<label class="radio">
-												<input type="radio" id="dental" name="gewerk" value="kfo"> KFO
-											</label>
-										</div>
-									</div>
+									<?= fractalFormSelect(array(
+										'label' => array( 'string' => 'Gewerk', 'required' => true ),
+										'name' => 'gewerk',
+										'options' => array(
+											array('value' => 'dental', 'label' => 'Dental'),
+											array('value' => 'kfo',    'label' => 'KFO')
+										)
+									)) ?>
 								</div>
 
-								<!-- Land -->
-<!--
-								<div class="column">
-									<label class="label">Land</label>
-									<div class="field is-grouped">
-										<div class="control">
-											<label class="radio">
-												<input type="radio" id="de" name="land" value="dental" checked> Deutschland
-											</label>
-										</div>
-										<div class="control">
-											<label class="radio">
-												<input type="radio" id="a" name="land" value="aktuell"> Österreich
-											</label>
-										</div>
-									</div>
-								</div>
--->
 								<!-- Datum -->
 
 								<div class="column">
-									<label class="label">Datum</label>
-									<div class="field has-addons">
-										<div class="control">
-											<div class="select">
-												<select name="month">
-													<option value="01">Januar</option>
-													<option value="02">Februar</option>
-													<option value="03">März</option>
-													<option value="04">April</option>
-													<option value="05">Mai</option>
-													<option value="06">Juni</option>
-													<option value="07">Juli</option>
-													<option value="08">August</option>
-													<option value="09">September</option>
-													<option value="10">Oktober</option>
-													<option value="11">November</option>
-													<option value="12">Dezember</option>
-												</select>
-											</div>
-										</div>
+									<?= fractalFormSelect(array(
+										'label' => array( 'string' => 'Monat', 'required' => true ),
+										'name' => 'month',
+										'options' => array(
+											array('value' => '01', 'label' => 'Januar'),
+											array('value' => '02', 'label' => 'Februar'),
+											array('value' => '03', 'label' => 'März'),
+											array('value' => '04', 'label' => 'April'),
+											array('value' => '05', 'label' => 'Mai'),
+											array('value' => '06', 'label' => 'Juni'),
+											array('value' => '07', 'label' => 'Juli'),
+											array('value' => '08', 'label' => 'August'),
+											array('value' => '09', 'label' => 'September'),
+											array('value' => '10', 'label' => 'Oktober'),
+											array('value' => '11', 'label' => 'November'),
+											array('value' => '12', 'label' => 'Dezember'),
+										)
+									)) ?>
 
-										<div class="control">
-											<input name="year" class="input" type="text">
-										</div>
-									</div>
+									<?= fractalFormText(array(
+										'label' => array( 'string' => 'Jahr', 'required' => true ),
+										'name' => 'year'
+									)) ?>
+									
 								</div>
 							</div>
 
@@ -82,21 +60,18 @@
 
 							<!-- Titel -->
 
-							<div class="field">
-								<label class="label">Titel</label>
-								<div class="control">
-									<input name="title" class="input" type="text">
-								</div>
-							</div>
+							<?= fractalFormText(array(
+								'label' => array( 'string' => 'Titel', 'required' => true ),
+								'name' => 'title'
+							)) ?>
 
 							<!-- Teaser -->
 
-							<div class="field">
-								<label class="label">Text</label>
-								<div class="control">
-									<textarea name="text" class="textarea has-border"></textarea>
-								</div>
-							</div>
+							<?= fractalFormTextarea(array(
+								'label' => array( 'string' => 'Text', 'required' => true ),
+								'name' => 'text'
+							)) ?>
+							
 						</div>
 
 						<div class="column has-background-light">
