@@ -11,28 +11,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - name: Check out Repo
+        uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
+      # Check and compile SCSS
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        run: npm ci
         with:
           node-version: '12.x'
 
-      - uses: shivammathur/setup-php@master
+      - name: Check SCSS
+        uses: xt0rted/stylelint-problem-matcher@v1
+        run: npm test
+
+      - name: Run webpack
+        env:
+          PRODUCTION: ${{ github.ref == 'refs/heads/master' }}
+        run: npm run webpack -- --env.PRODUCTION=$PRODUCTION
+
+      # Check and compile PHP
+
+      - name: Check PHP
+        uses: chekalsky/phpcs-action@v1
+        with:
+          enable_warnings: true
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@master
         with:
           php-version: 7.3
 
-      - name: webpack
-        env:
-          PRODUCTION: ${{ github.ref == 'refs/heads/master' }}
-        run: |
-          npm ci
-          npm run webpack -- --env.PRODUCTION=$PRODUCTION
-
       - name: install PHP deps
-        run: |
-          composer install
+        run: composer install
 
-      - name: stage
+      # Sync to server
+
+      - name: Sync to Staging
         if: github.ref == 'refs/heads/develop'
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
@@ -44,7 +60,7 @@ jobs:
           sed -i "s/\*\*\*API KEY\*\*\*/$GMAPS_API/g" page-mapgenerator.php
           sshpass -p "$SSH_PASS" rsync --delete -aqz -e "ssh -o StrictHostKeyChecking=no" . $SSH_USER@$SSH_IP:html/qnipsel-staging/wp-content/themes/templateq
 
-      - name: release
+      - name: Sync to Production
         if: github.ref == 'refs/heads/master'
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}

@@ -1,4 +1,4 @@
-name: Run PHPCS on pull requests
+name: Check PHP
 
 on: pull_request
 

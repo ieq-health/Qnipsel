@@ -1,9 +1,9 @@
-name: Run Stylelint on pull requests
+name: Check SCSS
 
 on: pull_request
 
 jobs:
-  build:
+  stylelint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
