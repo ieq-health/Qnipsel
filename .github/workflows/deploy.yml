@@ -16,14 +16,16 @@ jobs:
 
       # Check and compile SCSS
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        run: npm ci
+      - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
 
+      - name: Setup Node
+        run: npm ci
+
+      - uses: xt0rted/stylelint-problem-matcher@v1
+
       - name: Check SCSS
-        uses: xt0rted/stylelint-problem-matcher@v1
         run: npm test
 
       - name: Run webpack
