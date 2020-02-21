@@ -5,7 +5,7 @@
 	box-shadow: 0 2px 0 rgba(0,0,0,0.01);
 	padding: 1em 3em 2em;
 
-    @include darkmode {
+	@include darkmode {
 		background: #282828;
 		border-color: #333;
 	}
@@ -17,68 +17,68 @@
 }
 
 .codeview__code iframe {
-    border: 1px solid #eee;
-    width: 100%;
+	border: 1px solid #eee;
+	width: 100%;
 	height: 100%;
 }
 
 .codeview__code .resizer {
-    background: #eee;
-    border-radius: 0.25em;
+	background: #eee;
+	border-radius: 0.25em;
 	cursor: row-resize;
-    display: block;
-    height: 0.5em;
-    width: 100px;
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 50px);
+	display: block;
+	height: 0.5em;
+	width: 100px;
+	position: absolute;
+	bottom: 0;
+	left: calc(50% - 50px);
 
-    @include darkmode {
-        background: #555;
-    }
+	@include darkmode {
+		background: #555;
+	}
 }
 
 .codeview__code pre {
-  height: 100%;
-  margin-bottom: 0;
+	height: 100%;
+	margin-bottom: 0;
 }
 
 .codeview__code .tab-content > div:not(.is-active) {
-    display: none;
+	display: none;
 }
 
 .pre-wrapper {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 20px;
 
-    @include darkmode {
-        background: #282828;
-        border-color: #333;
-    }
+	@include darkmode {
+		background: #282828;
+		border-color: #333;
+	}
 }
 
 pre {
-    background: transparent !important;
-    border: none !important;
-    margin-bottom: 0 !important;
-    overflow: visible;
+	background: transparent !important;
+	border: none !important;
+	margin-bottom: 0 !important;
+	overflow: visible;
 
-    @include darkmode {
-        color: #c5c8c6;
-    }
+	@include darkmode {
+		color: #c5c8c6;
+	}
 }
 
 pre code {
-    font-family: SFMono-Regular,Menlo,Monaco,"Roboto Mono", Consolas,"Liberation Mono","Courier New",monospace;
+	font-family: SFMono-Regular,Menlo,Monaco,"Roboto Mono", Consolas,"Liberation Mono","Courier New",monospace;
 }
 
 /** Bad Bulma */
 
 pre .tag {
-    background-color: transparent;
-    border-radius: 0;
-    font-size: inherit;
-    height: unset;
-    padding: 0;
+	background-color: transparent;
+	border-radius: 0;
+	font-size: inherit;
+	height: unset;
+	padding: 0;
 }
