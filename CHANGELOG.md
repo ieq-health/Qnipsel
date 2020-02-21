@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.3] - 2020-02-21
+
+### Changed
+- Restructure generator forms for better readability
+- Update form fractals to display markers for required fields
+
+
 ## [0.11.2] - 2020-02-20
 
 ### Changed

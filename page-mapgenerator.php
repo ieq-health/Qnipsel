@@ -15,16 +15,16 @@
 
 							<div class="columns">
 								<div class="column">
-									<label class="label">Location</label>
+									<p class="subtitle">Location</p>
 
 									<?= fractalFormText(array(
-										'label' => 'Lat',
+										'label' => array( 'string' => 'Lat', 'required' => true),
 										'name' => 'lat',
 										'placeholder' => '51.933799'
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'Lng',
+										'label' => array( 'string' => 'Lng', 'required' => true),
 										'name' => 'lng',
 										'placeholder' => '7.655033'
 									)) ?>
@@ -37,7 +37,7 @@
 								</div>
 
 								<div class="column">
-									<label class="label">Offset LG</label>
+									<p class="subtitle">Offset LG</p>
 
 									<?= fractalFormText(array(
 										'label' => 'Lat',
@@ -79,7 +79,7 @@
 							<!-- Marker -->
 							<div class="columns">
 								<div class="column">
-									<label class="label">Marker</label>
+									<p class="subtitle">Marker</p>
 
 									<?= fractalFormText(array(
 										'label' => 'Marker URL',
@@ -101,7 +101,7 @@
 								</div>
 
 								<div class="column">
-									<label class="label">Anker (%)</label>
+									<p class="subtitle">Anker (%)</p>
 
 									<?= fractalFormText(array(
 										'label' => 'X',
@@ -117,15 +117,15 @@
 								</div>
 
 								<div class="column">
-									<label class="label">Label</label>
+									<p class="subtitle">Label</p>
 
 									<?= fractalFormText(array(
-										'label' => 'Label Titel',
+										'label' => array( 'string' => 'Label Titel', 'required' => true),
 										'name' => 'title'
 									)) ?>
 
 									<?= fractalFormText(array(
-										'label' => 'Label URL',
+										'label' => array( 'string' => 'Label URL', 'required' => true),
 										'name' => 'url'
 									)) ?>
 								</div>
