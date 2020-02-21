@@ -15,7 +15,7 @@
 							<!-- Firmandaten -->
 							<div class="columns">
 								<div class="column">
-									<label class="label">Firmendaten</label>
+									<p class="subtitle">Firmendaten</p>
 
 									<?= fractalFormText(array(
 										'label' => 'Name',
@@ -68,7 +68,7 @@
 
 								<!-- Jobinfos -->
 								<div class="column">
-									<label class="label">Stellenausschreibung</label>
+									<p class="subtitle">Stellenausschreibung</p>
 
 									<?= fractalFormText(array(
 										'label' => 'Jobtitel',
@@ -98,6 +98,12 @@
 										'name' => 'postdate',
 										'placeholder' => '2020-01-31'
 									)) ?>
+								</div>
+							</div>
+
+							<div class="columns">
+								<div class="column">
+									<p class="subtitle">Optionale Informationen</p>
 
 									<?= fractalFormTextarea(array(
 										'label' => 'Verantwortlichkeiten',
@@ -125,7 +131,6 @@
 									)) ?>
 								</div>
 							</div>
-
 						</div>
 
 						<div class="column has-background-light">
