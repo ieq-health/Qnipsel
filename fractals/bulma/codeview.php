@@ -1,7 +1,7 @@
 <?php
 
 function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
-{ 
+{
 	$js_inject = preg_replace('/\s+/', ' ', $js);
 	$js_inject = str_replace('"', '\"', $js_inject);
 	?>
