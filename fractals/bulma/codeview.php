@@ -2,8 +2,8 @@
 
 function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 { 
-	$js = preg_replace('/\s+/', ' ', $js);
-	$js = str_replace('"', '\"', $js);
+	$js_inject = preg_replace('/\s+/', ' ', $js);
+	$js_inject = str_replace('"', '\"', $js_inject);
 	?>
 	<div class="codeview__code">
 
@@ -28,7 +28,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 			<div class="level-right">
 			<div class="level-item">
 				<div class="field is-grouped">
-				<?php if (in_array('bootstrap', $css_libs)): ?>
+				<?php if (in_array('bootstrap', $css_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
 							<div class="tag is-dark">CSS</div>
@@ -37,7 +37,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
-				<?php if (in_array('slick', $css_libs)): ?>
+				<?php if (in_array('slick', $css_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
 							<div class="tag is-dark">CSS</div>
@@ -46,7 +46,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
-				<?php if (in_array('bootstrap', $js_libs)): ?>
+				<?php if (in_array('bootstrap', $js_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
 							<div class="tag is-dark">JS</div>
@@ -55,7 +55,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
-				<?php if (in_array('jquery', $js_libs)): ?>
+				<?php if (in_array('jquery', $js_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
 							<div class="tag is-dark">JS</div>
@@ -64,7 +64,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
-				<?php if (in_array('slick', $js_libs)): ?>
+				<?php if (in_array('slick', $js_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
 							<div class="tag is-dark">JS</div>
@@ -104,11 +104,11 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 
 		iframeDocument.open();
 
-		<?php if (in_array('bootstrap', $css_libs)): ?>
+		<?php if (in_array('bootstrap', $css_libs)) : ?>
 			iframeDocument.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
 		<?php endif; ?>
 
-		<?php if (in_array('slick', $css_libs)): ?>
+		<?php if (in_array('slick', $css_libs)) : ?>
 			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
 			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
 		<?php endif; ?>
@@ -117,21 +117,21 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 		iframeDocument.write(`<style><?= $css ?></style>`);
 		iframeDocument.write(`<body><?= $html ?></body>`);
 
-		<?php if (in_array('jquery', $js_libs)): ?>
+		<?php if (in_array('jquery', $js_libs)) : ?>
 			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
-		<?php if (in_array('bootstrap', $js_libs)): ?>
+		<?php if (in_array('bootstrap', $js_libs)) : ?>
 			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
 			iframeDocument.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
-		<?php if (in_array('slick', $js_libs)): ?>
+		<?php if (in_array('slick', $js_libs)) : ?>
 			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
 			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
-		iframeDocument.write("<script><?= trim($js) ?><\/script>");
+		iframeDocument.write("<script><?= trim($js_inject) ?><\/script>");
 		iframeDocument.close();
 
 /**

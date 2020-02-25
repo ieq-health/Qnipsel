@@ -1,0 +1,15 @@
+name: Check SCSS
+
+on: pull_request
+
+jobs:
+  stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - uses: xt0rted/stylelint-problem-matcher@v1
+      - run: npm ci
+      - run: npm test

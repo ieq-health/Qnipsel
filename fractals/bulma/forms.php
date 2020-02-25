@@ -4,7 +4,11 @@ function _parseAttr($attr)
 {
 	return join(
 		' ',
-		array_map(function($key) use ($attr) { if ($key != 'label') return $key . '="' . $attr[$key] . '"'; }, array_keys($attr))
+		array_map(function ($key) use ($attr) {
+			if ($key != 'label') {
+				return $key . '="' . $attr[$key] . '"';
+			}
+		}, array_keys($attr))
 	);
 }
 
@@ -19,7 +23,9 @@ function _addLabel($attr)
 	$label = (is_array($attr['label']) ? $attr['label']['string'] : $attr['label']);
 	$required = (is_array($attr['label']) ? $attr['label']['required'] : false);
 
-	if ($required) $label .= ' *';
+	if ($required) {
+		$label .= ' *';
+	}
 
 	if ($attr['label']) {
 		return '	<label for="' . $attr['name'] . '" class="label">' . $label . '</label>';
@@ -53,7 +59,11 @@ function fractalFormTextarea($attr)
 function fractalFormCheckbox($attr)
 {
 	$output =  '<div class="field">';
-	$output .= '	<input id="' . $attr['name'] . '" type="checkbox" class="checkbox switch is-small is-rounded" ' . _parseAttr($attr) . '>';
+	$output .= '	<input id="' . $attr['name'] . '"';
+	$output .= '	       type="checkbox"';
+	$output .= '	       class="checkbox switch is-small is-rounded"';
+	$output .= _parseAttr($attr);
+	$output .= '>';
 	$output .= _addLabel($attr);
 	$output .= '</div>';
 
@@ -67,7 +77,7 @@ function fractalFormSelect($attr)
 	$output .= '	<div class="select is-fullwidth">';
 	$output .= '		<select name="' . $attr['name'] . '">';
 
-	for ($i=0; $i < ( count($attr['options']) - 1 ); $i++) { 
+	for ($i=0; $i < ( count($attr['options']) - 1 ); $i++) {
 		$option = $attr['options'][$i];
 		$output .= '		<option value="' . $option['value'] . '">' . $option['label'] . '</option>';
 	}

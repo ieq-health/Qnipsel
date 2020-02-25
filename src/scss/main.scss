@@ -25,7 +25,7 @@ $fullhd-enabled: false; // too wide for two sidebars
 body, button, input, select, textarea { font-family: 'Inter', sans-serif; }
 
 @supports (font-variation-settings: normal) {
-  body, button, input, select, textarea {
+	body, button, input, select, textarea {
 		font-family: 'Inter var', sans-serif;
 		font-feature-settings:
 			"dlig" 0, "numr" 0, "dnom" 0, "tnum" 0,
