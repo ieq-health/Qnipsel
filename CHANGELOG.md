@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.4] - 2020-02-25
+
+### Fixed
+- Escape backticks in codeview preview JS injection
+
+
 ## [0.11.3] - 2020-02-21
 
 ### Changed
