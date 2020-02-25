@@ -129,7 +129,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
-		iframeDocument.write(`<script><?= $js ?><\/script>`);
+		iframeDocument.write(`<script><?= str_replace('`', '\`', $js) ?><\/script>`);
 		iframeDocument.close();
 
 /**
