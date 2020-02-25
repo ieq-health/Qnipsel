@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.5] - 2020-02-25
+
+### Fixed
+- Rework codeview JS injection
+
+
 ## [0.11.4] - 2020-02-25
 
 ### Fixed
