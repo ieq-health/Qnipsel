@@ -2,8 +2,8 @@
 
 function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 { 
-	$js = preg_replace('/\s+/', ' ', $js);
-	$js = str_replace('"', '\"', $js);
+	$js_inject = preg_replace('/\s+/', ' ', $js);
+	$js_inject = str_replace('"', '\"', $js_inject);
 	?>
 	<div class="codeview__code">
 
@@ -131,7 +131,7 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
-		iframeDocument.write("<script><?= trim($js) ?><\/script>");
+		iframeDocument.write("<script><?= trim($js_inject) ?><\/script>");
 		iframeDocument.close();
 
 /**
