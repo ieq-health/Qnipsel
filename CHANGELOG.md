@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.11.7] - 2020-02-26
+
+### Fixed
+- Fixed form select fractal stripping last option
+
+
+## [0.11.6] - 2020-02-25
+
+### Fixed
+- Codeview JS output shouldn't be minified
+
+
 ## [0.11.5] - 2020-02-25
 
 ### Fixed
