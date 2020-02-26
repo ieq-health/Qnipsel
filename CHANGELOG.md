@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.8] - 2020-02-26
+
+### Fixed
+- Fixed newsgenerator now looking for a select with name="gewerk"
+
+
 ## [0.11.7] - 2020-02-26
 
 ### Fixed
