@@ -77,7 +77,7 @@ function fractalFormSelect($attr)
 	$output .= '	<div class="select is-fullwidth">';
 	$output .= '		<select name="' . $attr['name'] . '">';
 
-	for ($i=0; $i < ( count($attr['options']) - 1 ); $i++) {
+	for ($i=0; $i < count($attr['options']); $i++) {
 		$option = $attr['options'][$i];
 		$output .= '		<option value="' . $option['value'] . '">' . $option['label'] . '</option>';
 	}
