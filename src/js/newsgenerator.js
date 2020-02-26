@@ -28,8 +28,7 @@ $('#newsgenerator').on('input propertychange', 'input, select, .field textarea',
 	let year = $('input[name="year"]').val();
 	let ymo = `${year.substr(-2)}${month.num}`;
 	let text = $('textarea[name="text"]').val();
-	// let land = $('input[name="land"]:checked').val();
-	let gewerk = $('input[name="gewerk"]:checked').val();
+	let gewerk = $('select[name="gewerk"]').val();
 	let slug = makeSlug(title);
 	let newspath = `${ymo}-${slug}`;
 	let link = `http:/scripts/show.aspx?content=/health/${gewerk}/news/${year}/${newspath}`;
