@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.7] - 2020-02-26
+
+### Fixed
+- Fixed form select fractal stripping last option
+
+
 ## [0.11.6] - 2020-02-25
 
 ### Fixed
