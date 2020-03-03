@@ -93,7 +93,7 @@
 										)
 									)) ?>
 
-									<label>Veröffentlichungsdatum</label>
+									<p class="label">Veröffentlichungsdatum</p>
 									<div class="columns">
 										<div class="column">
 											<?= fractalFormSelect(array(
