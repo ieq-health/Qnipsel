@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.11.9] - 2020-03-03
+
+### Changed
+- Split date input in jobpost generator
+
+
 ## [0.11.8] - 2020-02-26
 
 ### Fixed
