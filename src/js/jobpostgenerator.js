@@ -13,7 +13,9 @@ $("#application-json").on(
 		let jobtitle = $('*[name="jobtitle"]').val();
 		let description = $('*[name="description"]').val();
 		let employmenttype = $('*[name="employmenttype"]').val();
-		let postdate = $('*[name="postdate"]').val();
+		let postdateDay = $('*[name="postdate-day"]').val();
+		let postdateMonth = $('*[name="postdate-month"]').val();
+		let postdateYear = $('*[name="postdate-year"]').val();
 		let responsibilities = $('*[name="responsibilities"]').val();
 		let skills = $('*[name="skills"]').val();
 		let qualifications = $('*[name="qualifications"]').val();
@@ -34,7 +36,7 @@ $("#application-json").on(
     },
     "industry": "${industry}",
     "employmentType": "${employmenttype}",
-    "datePosted": "${postdate}",
+    "datePosted": "${postdateYear}-${postdateMonth}-${postdateDay}",
     "jobLocation": {
       "@type": "Place",
       "address": {
