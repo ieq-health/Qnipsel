@@ -158,7 +158,8 @@
 											<?= fractalFormText(array(
 												'label' => array( 'string' => 'Jahr', 'required' => true),
 												'name' => 'postdate-year',
-												'placeholder' => date('Y')
+												'placeholder' => date('Y'),
+												'value' => date('Y')
 											)) ?>
 										</div>
 									</div>
