@@ -1,5 +1,5 @@
 function cleanJson (value) {
-  return value.replace(/[\r\n]/g, '\n')
+  return value.replace(/[\r\n]/g, '\\n');
 }
 
 $("#application-json").on(
