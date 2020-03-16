@@ -1,3 +1,7 @@
+function cleanJson (value) {
+  return value.replace(/[\r\n]/g, '\n')
+}
+
 $("#application-json").on(
 	"input propertychange",
 	"input, select, .field textarea",
@@ -28,7 +32,7 @@ $("#application-json").on(
     "@context": "https://schema.org/",
     "@type": "JobPosting",
     "title": "${jobtitle}",
-    "description": "${description}",
+    "description": "${cleanJson( description )}",
     "hiringOrganization" : {
       "@type": "Organization",
       "name": "${name}",
@@ -47,11 +51,11 @@ $("#application-json").on(
         "addressRegion": "${country}"
       }
     },
-    "responsibilities": "${responsibilities}",
-    "skills": "${skills}",
-    "qualifications": "${qualifications}",
-    "educationRequirements": "${educationrequirements}",
-    "experienceRequirements": "${experiencerequirements}"
+    "responsibilities": "${cleanJson( responsibilities )}",
+    "skills": "${cleanJson( skills )}",
+    "qualifications": "${cleanJson( qualifications )}",
+    "educationRequirements": "${cleanJson( educationrequirements )}",
+    "experienceRequirements": "${cleanJson( experiencerequirements )}"
   }
 <\/script>`);
 	}
