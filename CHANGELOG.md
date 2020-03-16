@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.11.10] - 2020-03-16
+
+### Fixed
+- Escape newlines in jobpost generator output
+
 ## [0.11.9] - 2020-03-03
 
 ### Changed
