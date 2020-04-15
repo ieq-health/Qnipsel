@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.12.1] - 2020-04-15
+
+### Added
+- Show parent page name in quicksearch
+
 ## [0.12.0] - 2020-04-15
 
 ### Added

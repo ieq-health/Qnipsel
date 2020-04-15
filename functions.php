@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.12.0';
+$GLOBALS['qnipsel_version'] = '0.12.1';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
