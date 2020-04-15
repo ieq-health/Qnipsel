@@ -1,0 +1,24 @@
+.page-search {
+	.control {
+		position: relative;
+	}
+
+	.control input:not(:placeholder-shown) + &__results {
+		visibility: visible;
+		pointer-events: all;
+	}
+
+	&__results {
+		position: absolute;
+		visibility: hidden;
+		pointer-events: none;
+
+		li {
+			display: none;
+
+			&.match {
+				display: list-item;
+			}
+		}
+	}
+}

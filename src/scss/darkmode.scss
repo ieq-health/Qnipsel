@@ -60,6 +60,15 @@ body.DarkMode {
 		border-color: #444;
 	}
 
+	.box {
+		background: #222;
+		color: #ccc;
+	}
+
+	.menu-list a {
+		color: inherit;
+	}
+
 	/** Tabs */
 
 	.tabs {

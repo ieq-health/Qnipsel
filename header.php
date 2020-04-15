@@ -42,6 +42,21 @@
 		</div>
 
 		<div class="navbar-end">
+			<div class="field page-search">
+				<div class="control">
+					<input type="search" class="input" placeholder="Suche">
+					<div class="box page-search__results">
+						<div class="menu">
+							<ul class="menu-list">
+								<?php wp_list_pages(array( 
+									'title_li' => null,
+									'walker' => new Templateq_Pagesearch_Walker()
+								)); ?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="field tooltip has-tooltip-bottom" data-tooltip="Dark Mode">
 				<input id="darkMode" type="checkbox" name="DarkMode" class="switch is-small is-link is-rounded is-rtl">
 				<label for="darkMode"><?= templateq_icon_moon() ?></label>

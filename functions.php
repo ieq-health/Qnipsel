@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.11.10';
+$GLOBALS['qnipsel_version'] = '0.12.0';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
@@ -18,6 +18,7 @@ require_once(__DIR__ . '/include/tinymce.php');
 /** Walkers
  * Declare our own menu walkers
  */
+require_once(__DIR__ . '/include/walkers/pagesearch_walker.php');
 require_once(__DIR__ . '/include/walkers/split_nav_sidenav_walker.php');
 require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
 
