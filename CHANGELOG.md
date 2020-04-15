@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.12.0] - 2020-04-15
+
+### Added
+- Quicksearch in header
+
 ## [0.11.10] - 2020-03-16
 
 ### Fixed
