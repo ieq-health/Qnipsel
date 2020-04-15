@@ -8,7 +8,7 @@ class Templateq_Pagesearch_Walker extends Walker_Page
 
 	public function start_el(&$output, $page, $depth = 0, $args = array(), $id = 0)
 	{
-		if ( 0 != $page->post_parent ) {
+		if (0 != $page->post_parent) {
 			$output .= '<small>' . get_the_title($page->post_parent) . '</small>';
 		}
 
