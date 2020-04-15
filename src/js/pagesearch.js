@@ -1,4 +1,4 @@
-$('.page-search .input').on('change', function() {
+$('.page-search .input').on('input', function() {
   const searchterm = $(this).val();
 
   $('.page-search__results a').each(function() {
