@@ -43,9 +43,14 @@
 
 		<div class="navbar-end">
 			<div class="field page-search">
-				<div class="control"><input type="search" class="input" placeholder="Suche"></div>
-				<div class="page-search__results">
-					<?php wp_list_pages(); ?>
+				<div class="control">
+					<input type="search" class="input" placeholder="Suche">
+					<div class="page-search__results">
+						<?php wp_list_pages(array( 
+							'title_li' => null,
+							'walker' => new Templateq_Pagesearch_Walker()
+						)); ?>
+					</div>
 				</div>
 			</div>
 			<div class="field tooltip has-tooltip-bottom" data-tooltip="Dark Mode">
