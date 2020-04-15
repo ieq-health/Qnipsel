@@ -4,12 +4,12 @@
 	}
 
 	.control input:not(:placeholder-shown) + &__results {
-		display: none;
+		display: block;
 	}
 
 	&__results {
 		position: absolute;
-		display: block;
+		display: none;
 
 		li {
 			display: none;
