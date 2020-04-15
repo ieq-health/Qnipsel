@@ -3,8 +3,15 @@
 		position: relative;
 	}
 
+	.control input:focus + &__results {
+		visibility: visible;
+		pointer-events: all;
+	}
+
 	&__results {
 		position: absolute;
+		visibility: hidden;
+		pointer-events: none;
 
 		a {
 			border-bottom: 1px solid #eee;
