@@ -5,5 +5,15 @@
 
 	&__results {
 		position: absolute;
+
+		a {
+			border-bottom: 1px solid #eee;
+			display: none;
+			padding: .5em;
+
+			&.match {
+				display: block;
+			}
+		}
 	}
 }

@@ -13,3 +13,4 @@ require('./mapgenerator');
 require('./newsgenerator');
 require('./jobpostgenerator');
 require('./xmlstripper');
+require('./pagesearch');

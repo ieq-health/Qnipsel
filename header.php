@@ -45,7 +45,7 @@
 			<div class="field page-search">
 				<div class="control">
 					<input type="search" class="input" placeholder="Suche">
-					<div class="page-search__results">
+					<div class="box page-search__results">
 						<?php wp_list_pages(array( 
 							'title_li' => null,
 							'walker' => new Templateq_Pagesearch_Walker()
