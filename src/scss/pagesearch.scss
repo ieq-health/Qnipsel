@@ -4,14 +4,12 @@
 	}
 
 	.control input:not(:placeholder-shown) + &__results {
-		visibility: visible;
-		pointer-events: all;
+		display: none;
 	}
 
 	&__results {
 		position: absolute;
-		visibility: hidden;
-		pointer-events: none;
+		display: block;
 
 		li {
 			display: none;
