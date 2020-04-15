@@ -4,14 +4,14 @@
 	}
 
 	.control input:not(:placeholder-shown) + &__results {
-		visibility: visible;
-		pointer-events: all;
+		display: block;
 	}
 
 	&__results {
+		display: none;
+		min-width: 100%;
+		padding: .5rem;
 		position: absolute;
-		visibility: hidden;
-		pointer-events: none;
 
 		li {
 			display: none;
@@ -19,6 +19,11 @@
 			&.match {
 				display: list-item;
 			}
+		}
+
+		a small {
+			display: block;
+			opacity: .5;
 		}
 	}
 }
