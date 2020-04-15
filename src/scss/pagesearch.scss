@@ -3,7 +3,7 @@
 		position: relative;
 	}
 
-	.control input:focus + &__results {
+	.control input:not(:placeholder-shown) + &__results {
 		visibility: visible;
 		pointer-events: all;
 	}
@@ -13,13 +13,11 @@
 		visibility: hidden;
 		pointer-events: none;
 
-		a {
-			border-bottom: 1px solid #eee;
+		li {
 			display: none;
-			padding: .5em;
 
 			&.match {
-				display: block;
+				display: list-item;
 			}
 		}
 	}

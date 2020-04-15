@@ -1,7 +1,7 @@
 $('.page-search .input').on('input', function() {
-  const searchterm = $(this).val();
+  const searchterm = $(this).val().toLowerCase();
 
-  $('.page-search__results a').each(function() {
-    $(this).toggleClass('match', $(this).html().includes(searchterm));
+  $('.page-search__results li').each(function() {
+    $(this).toggleClass('match', $(this).text().toLowerCase().includes(searchterm));
   });
 });

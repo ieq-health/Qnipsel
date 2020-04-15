@@ -46,10 +46,14 @@
 				<div class="control">
 					<input type="search" class="input" placeholder="Suche">
 					<div class="box page-search__results">
-						<?php wp_list_pages(array( 
-							'title_li' => null,
-							'walker' => new Templateq_Pagesearch_Walker()
-						)); ?>
+						<div class="menu">
+							<ul class="menu-list">
+								<?php wp_list_pages(array( 
+									'title_li' => null,
+									'walker' => new Templateq_Pagesearch_Walker()
+								)); ?>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
