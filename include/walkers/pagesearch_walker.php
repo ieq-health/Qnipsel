@@ -13,9 +13,9 @@ class Templateq_Pagesearch_Walker extends Walker_Page
 
 	public function end_el(&$output, $page, $depth = 0, $args = array())
 	{
-  }
+	}
 
-  public function end_lvl(&$output, $depth = 0, $args = array())
-  {
-  }
+	public function end_lvl(&$output, $depth = 0, $args = array())
+	{
+	}
 }
