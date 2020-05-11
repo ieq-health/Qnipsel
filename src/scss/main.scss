@@ -14,6 +14,7 @@ $fullhd-enabled: false; // too wide for two sidebars
 @import "../../node_modules/simplebar/dist/simplebar.css";
 
 @import "mixins";
+@import "menulist";
 @import "dashboard";
 @import "codeview";
 @import "tabview";

@@ -58,15 +58,6 @@ aside.menu {
 		}
 	}
 
-	.menu-list a:hover {
-		background-color: #eee;
-
-		@include darkmode {
-			background-color: #222;
-			color: #aaa;
-		}
-	}
-
 	.menu-list a.is-active {
 		background-color: #fff;
 		border: 1px solid #eee;

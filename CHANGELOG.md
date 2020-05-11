@@ -1,19 +1,30 @@
 # Changelog
 
+## [0.12.2] - 2020-05-11
+
+### Fixed
+- Darkmode for quicksearch
+- Focus styling for quicksearch
+- Tweak darkmode background for .box
+
+
 ## [0.12.1] - 2020-04-15
 
 ### Added
 - Show parent page name in quicksearch
+
 
 ## [0.12.0] - 2020-04-15
 
 ### Added
 - Quicksearch in header
 
+
 ## [0.11.10] - 2020-03-16
 
 ### Fixed
 - Escape newlines in jobpost generator output
+
 
 ## [0.11.9] - 2020-03-03
 
