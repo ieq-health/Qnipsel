@@ -5,6 +5,7 @@
 ### Fixed
 - Darkmode for quicksearch
 - Focus styling for quicksearch
+- Tweak darkmode background for .box
 
 
 ## [0.12.1] - 2020-04-15
