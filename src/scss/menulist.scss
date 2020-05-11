@@ -1,0 +1,11 @@
+.menu-list a {
+	&:hover, &:focus {
+		background-color: #eee;
+		outline: none;
+
+		@include darkmode {
+			background-color: #222;
+			color: #aaa;
+		}
+	}
+}
