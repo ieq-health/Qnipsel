@@ -14,3 +14,4 @@ require('./newsgenerator');
 require('./jobpostgenerator');
 require('./xmlstripper');
 require('./pagesearch');
+require('./notifications');
