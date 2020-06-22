@@ -23,6 +23,8 @@ function templateq_code_block($lang, $code)
 			$tmp.select();
 			document.execCommand('copy');
 			$tmp.remove();
+
+			qNotification('Code kopiert', 'success');
 		}
 	</script>
 <?php }
