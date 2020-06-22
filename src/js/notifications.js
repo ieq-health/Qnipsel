@@ -1,4 +1,4 @@
-export function qNotification (content, state = 'primary', persistent = false) {
+function qNotification (content, state = 'primary', persistent = false) {
 	// Check if the state is valid, otherwise set to primary
 	state = [
 		'primary',
@@ -29,3 +29,5 @@ export function qNotification (content, state = 'primary', persistent = false) {
 	// Append the notification to the body
 	$('body').append($wrapper);
 }
+
+window.qNotification = qNotification;
