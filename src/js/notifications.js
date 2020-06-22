@@ -1,4 +1,4 @@
-function qNotification (content, state = 'primary', persistent = false) {
+export function qNotification (content, state = 'primary', persistent = false) {
 	// Check if the state is valid, otherwise set to primary
 	state = [
 		'primary',
@@ -12,7 +12,7 @@ function qNotification (content, state = 'primary', persistent = false) {
 
 	// Create notification element
 	const $closeButton = $('<button class="delete"></button>');
-	const $wrapper = $(`<div class="notification is-${state}"></div>`)
+	const $wrapper = $(`<div class="qNotification notification is-${state}"></div>`)
 
 	$wrapper.text(content);
 	$wrapper.prepend($closeButton);
