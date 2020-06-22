@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.13.0] - 2020-06-22
+
+### Added
+- Added notifications
+
+
 ## [0.12.2] - 2020-05-11
 
 ### Fixed
