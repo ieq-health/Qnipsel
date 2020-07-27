@@ -30,8 +30,8 @@
                                     </div>
                 
                                 </div>
-                                <button class="faq-add">weitere hinzufügen</button>
-                                <button class="faq-generate">Give me Dat Code</button>
+                                <button class="faq-add button is-outlined">weitere hinzufügen</button>
+                                <button class="faq-generate button is-primary">Give me Dat Code</button>
                             </div>
                         </div>
                 
