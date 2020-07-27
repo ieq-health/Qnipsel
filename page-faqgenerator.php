@@ -16,8 +16,8 @@
                                     <p class="subtitle">FAQs</p>
                 
                                     <div class="field faq">
-                                        <div class="faq__item">
-                                            <div class="faq__item__content">
+                                        <div class="faq__item columns">
+                                            <div class="faq__item__content column">
                                                 <div class="control is-expanded">
                                                     <input type="text" class="input faq_question" name="frage" placeholder="Frage">
                                                 </div>
@@ -25,7 +25,7 @@
                                                     <input type="text" class="input" name="antwort" placeholder="Antwort">
                                                 </div>
                                             </div>
-                                            <button class="faq__item__delete">X</button>
+                                            <button class="faq__item__delete"><i class="far fa-trash-alt"></i></button>
                                         </div>
                                     </div>
                 
