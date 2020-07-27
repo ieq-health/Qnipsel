@@ -55,7 +55,7 @@ $('.faq-generate').click(function(){  // generate json
     });            
 
     $('.faq-generator__output').val(`
-        <script type="application/ld+json">,
+        <script type="application/ld+json">
             ${JSON.stringify(jsonFAQ)}
         <\/script>`);
 
