@@ -15,3 +15,4 @@ require('./jobpostgenerator');
 require('./xmlstripper');
 require('./pagesearch');
 require('./notifications');
+require('./faqgenerator');
