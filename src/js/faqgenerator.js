@@ -51,7 +51,12 @@ $('.faq-generate').click(function(){  // generate json
         }
 
         jsonFAQ.mainEntity.push(jsonFAQItem);
-       
+
+        let $copyJSON = $('<input>')
+        $("body").append($copy);
+        $copyJSON.val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`).text()).select();
+        document.execCommand("copy");
+        $copyJSON.remove();
     });            
 
     $('.faq-generator__output').val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`);
