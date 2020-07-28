@@ -1,21 +1,21 @@
 .faq__item {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  background: #e8e8e8;  
-   
-  .faq__item__content {
-    width: 100%;
-  }
-  .control:first-child {
-    margin-bottom: 10px;
-  }
-  
-  .faq__item__delete {
-    margin-left: 15px;
-  }
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #e8e8e8;
+
+    .faq__item__content {
+        width: 100%;
+    }
+    .control:first-child {
+        margin-bottom: 10px;
+    }
+
+    .faq__item__delete {
+        margin-left: 15px;
+    }
 }
 
 .DarkMode .faq__item {
-  background: #181818
+    background: #181818;
 }
