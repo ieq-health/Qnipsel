@@ -17,7 +17,7 @@ $('.faq-add').click(function() {
         '</div>'
         ].join("\n");
 
-    $('.field').append(faq); // add another faq
+    $('.faq').append(faq); // add another faq
 });
 
 
