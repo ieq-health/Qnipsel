@@ -18,3 +18,18 @@
 .DarkMode .faq__item {
 	background: #181818;
 }
+
+.copied-notification {
+	background: #4a4a4a;
+	border-radius: 4px;
+	color: #e8e8e8;
+	display: none;
+	font-weight: 600;
+	font-size: .75em;
+	padding: .75em;
+	position: absolute;
+	right: 0;
+	text-transform: uppercase;
+	transform: translateX(110%);
+}
+
