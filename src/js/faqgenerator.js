@@ -29,7 +29,7 @@ $('.faq').bind('DOMNodeInserted DOMNodeRemoved', function() {   //listen on chan
 
 $('.faq-generate').click(function(){  // generate json
 
-    let jsonFAQ = {
+    var jsonFAQ = {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": []
@@ -41,7 +41,7 @@ $('.faq-generate').click(function(){  // generate json
         let questionVals = $(this).find('input[name^="question"').val();
         let answerVals = $(this).find('input[name^="answer"').val();
     
-        let jsonFAQItem = {
+        var jsonFAQItem = {
             "@type": "Question",
             "name": questionVals,
             "acceptedAnswer": {
@@ -51,14 +51,17 @@ $('.faq-generate').click(function(){  // generate json
         }
 
         jsonFAQ.mainEntity.push(jsonFAQItem);
-
-        let $jsonCopy = $('<input class="jsoncopy">')
-        $("body").append($jsonCopy);
-        $jsonCopy.val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`);
-        $jsonCopy.select();
-        document.execCommand("copy");
-        $jsonCopy.remove();
     });            
 
+    // let $jsonCopy = $('<input class="jsoncopy">')
+    // $("body").append($jsonCopy);
+    // $jsonCopy.val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`);
+    // $jsonCopy.select();
+    // document.execCommand("copy");
+    // $jsonCopy.remove();
+
     $('.faq-generator__output').val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`);
+    
+    $('.faq-generator__output').select();
+    document.execCommand("copy");
 });
