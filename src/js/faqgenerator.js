@@ -52,11 +52,11 @@ $('.faq-generate').click(function(){  // generate json
 
         jsonFAQ.mainEntity.push(jsonFAQItem);
 
-        let $copyJSON = $('<input>')
-        $("body").append($copy);
-        $copyJSON.val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`).text()).select();
+        let $jsonCopy = $('<input>')
+        $("body").append($jsonCopy);
+        $jsonCopy.val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`).text().select();
         document.execCommand("copy");
-        $copyJSON.remove();
+        $jsonCopy.remove();
     });            
 
     $('.faq-generator__output').val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`);
