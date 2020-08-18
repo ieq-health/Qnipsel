@@ -10,9 +10,9 @@
 			icon: "wp_page",
 			type: "menubutton",
 			menu: [{
-        text: "Primary",
-        value: "Primary",
-        onclick: function () { makeTag("primary") },
+        text: "Info",
+        value: "Info",
+        onclick: function () { makeTag("info") },
       },
       {
         text: "Success",
@@ -28,11 +28,6 @@
         text: "Danger",
         value: "Danger",
         onclick: function () { makeTag("danger") },
-      },
-      {
-        text: "Info",
-        value: "Info",
-        onclick: function () { makeTag("info") },
       }],
 		});
 	});
