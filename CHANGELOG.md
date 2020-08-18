@@ -1,5 +1,13 @@
 # Changelog
 
+
+## [0.14.0] - 2020-08-18
+
+### Added
+- FAQ-Generator
+- tinyMCE buttons to create tags
+
+
 ## [0.13.0] - 2020-06-22
 
 ### Added
