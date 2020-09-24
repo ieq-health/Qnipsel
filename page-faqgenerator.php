@@ -10,7 +10,7 @@
 					<div class="columns is-gapless">
 			
 						<div class="column">
-							<div class="p-4">
+							<div class="px-4 py-4">
 								<!-- FAQ List -->
 								<div class="columns">
 									<div class="column">
@@ -39,7 +39,7 @@
 						</div>
 			
 						<div class="column has-background-light">
-							<div class="has-background-light p-4">
+							<div class="has-background-light px-4 py-4">
 								<p class="has-text-grey is-uppercase is-size-7">Output</p>
 								<textarea class="textarea is-family-code faq-generator__output" name="" id="output" cols="30" rows="10"
 										readonly=""></textarea>

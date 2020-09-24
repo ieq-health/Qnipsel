@@ -9,7 +9,7 @@
 				<div id="newsgenerator" class="container-fluid xml-stripper">
 					<div class="columns is-gapless">
 						<div class="column">
-							<div class="p-4">
+							<div class="px-4 py-4">
 								<p class="has-text-grey is-uppercase is-size-7">Input</p>
 
 								<div class="columns">
@@ -84,7 +84,7 @@
 						</div>
 
 						<div class="column">
-							<div class="has-background-light p-4">
+							<div class="has-background-light px-4 py-4">
 								<p class="has-text-grey is-uppercase is-size-7">Output</p>
 
 								<?= fractalFormText(array(

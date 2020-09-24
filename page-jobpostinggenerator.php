@@ -7,63 +7,65 @@
 				<?php get_template_part('partials/content', 'title'); ?>
 
 				<div id="application-json" class="container-fluid xml-stripper">
-					<div class="columns">
+					<div class="columns is-gapless">
 
 						<div class="column">
-							<p class="has-text-grey is-uppercase is-size-7">Input</p>
+							<div class="px-4 py-4">
+								<p class="has-text-grey is-uppercase is-size-7">Input</p>
 
-							<!-- Firmandaten -->
-							<div class="columns">
-								<div class="column">
-									<p class="subtitle">Firmendaten</p>
+								<!-- Firmandaten -->
+								<div class="columns">
+									<div class="column">
+										<p class="subtitle">Firmendaten</p>
 
-									<?= fractalFormText(array(
-										'label' => array( 'string' => 'Name', 'required' => true),
-										'name' => 'name',
-										'placeholder' => 'Firma GmbH'
-									)) ?>
+										<?= fractalFormText(array(
+											'label' => array( 'string' => 'Name', 'required' => true),
+											'name' => 'name',
+											'placeholder' => 'Firma GmbH'
+										)) ?>
 
-									<?= fractalFormText(array(
-										'label' => array( 'string' => 'Straße', 'required' => true),
-										'name' => 'street',
-										'placeholder' => 'Straße'
-									)) ?>
+										<?= fractalFormText(array(
+											'label' => array( 'string' => 'Straße', 'required' => true),
+											'name' => 'street',
+											'placeholder' => 'Straße'
+										)) ?>
 
-									<?= fractalFormText(array(
-										'label' => array( 'string' => 'PLZ', 'required' => true),
-										'name' => 'plz',
-										'placeholder' => 'PLZ'
-									)) ?>
+										<?= fractalFormText(array(
+											'label' => array( 'string' => 'PLZ', 'required' => true),
+											'name' => 'plz',
+											'placeholder' => 'PLZ'
+										)) ?>
 
-									<?= fractalFormText(array(
-										'label' => array( 'string' => 'Stadt', 'required' => true),
-										'name' => 'place',
-										'placeholder' => 'Musterstadt'
-									)) ?>
+										<?= fractalFormText(array(
+											'label' => array( 'string' => 'Stadt', 'required' => true),
+											'name' => 'place',
+											'placeholder' => 'Musterstadt'
+										)) ?>
 
-									<?= fractalFormSelect(array(
-										'label' => array( 'string' => 'Land', 'required' => true),
-										'name'  => 'country',
-										'options' => array(
-											array('value' => 'DE', 'label' => 'Deutschland'),
-											array('value' => 'AT', 'label' => 'Österreich'),
-											array('value' => 'CH', 'label' => 'Schweiz'),
-											array('value' => 'NL', 'label' => 'Niederlande'),
-											array('value' => 'LU', 'label' => 'Luxemburg')
-										)
-									)) ?>
+										<?= fractalFormSelect(array(
+											'label' => array( 'string' => 'Land', 'required' => true),
+											'name'  => 'country',
+											'options' => array(
+												array('value' => 'DE', 'label' => 'Deutschland'),
+												array('value' => 'AT', 'label' => 'Österreich'),
+												array('value' => 'CH', 'label' => 'Schweiz'),
+												array('value' => 'NL', 'label' => 'Niederlande'),
+												array('value' => 'LU', 'label' => 'Luxemburg')
+											)
+										)) ?>
 
-									<?= fractalFormText(array(
-										'label' => array( 'string' => 'Industrie', 'required' => true),
-										'name' => 'industry',
-										'placeholder' => 'Zahnmedizin'
-									)) ?>
+										<?= fractalFormText(array(
+											'label' => array( 'string' => 'Industrie', 'required' => true),
+											'name' => 'industry',
+											'placeholder' => 'Zahnmedizin'
+										)) ?>
 
-									<?= fractalFormText(array(
-										'label' => array( 'string' => 'Website', 'required' => true),
-										'name' => 'website',
-										'placeholder' => 'Website'
-									)) ?>
+										<?= fractalFormText(array(
+											'label' => array( 'string' => 'Website', 'required' => true),
+											'name' => 'website',
+											'placeholder' => 'Website'
+										)) ?>
+
 								</div>
 
 								<!-- Jobinfos -->
@@ -94,6 +96,7 @@
 									)) ?>
 
 									<p class="label">Veröffentlichungsdatum</p>
+
 									<div class="columns">
 										<div class="column">
 											<?= fractalFormSelect(array(
@@ -164,43 +167,45 @@
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="columns">
-								<div class="column">
-									<p class="subtitle">Optionale Informationen</p>
+								<div class="columns">
+									<div class="column">
+										<p class="subtitle">Optionale Informationen</p>
 
-									<?= fractalFormTextarea(array(
-										'label' => 'Verantwortlichkeiten',
-										'name' => 'responsibilities',
-									)) ?>
+										<?= fractalFormTextarea(array(
+											'label' => 'Verantwortlichkeiten',
+											'name' => 'responsibilities',
+										)) ?>
 
-									<?= fractalFormTextarea(array(
-										'label' => 'Skills',
-										'name' => 'skills',
-									)) ?>
+										<?= fractalFormTextarea(array(
+											'label' => 'Skills',
+											'name' => 'skills',
+										)) ?>
 
-									<?= fractalFormTextarea(array(
-										'label' => 'Qualifikationen',
-										'name' => 'qualifications',
-									)) ?>
+										<?= fractalFormTextarea(array(
+											'label' => 'Qualifikationen',
+											'name' => 'qualifications',
+										)) ?>
 
-									<?= fractalFormTextarea(array(
-										'label' => 'Schulische Voraussetzungen',
-										'name' => 'educationrequirements',
-									)) ?>
+										<?= fractalFormTextarea(array(
+											'label' => 'Schulische Voraussetzungen',
+											'name' => 'educationrequirements',
+										)) ?>
 
-									<?= fractalFormTextarea(array(
-										'label' => 'Arbeitserfahrung Anforderungen',
-										'name' => 'experiencerequirements',
-									)) ?>
+										<?= fractalFormTextarea(array(
+											'label' => 'Arbeitserfahrung Anforderungen',
+											'name' => 'experiencerequirements',
+										)) ?>
+									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="column has-background-light">
-							<p class="has-text-grey is-uppercase is-size-7">Output</p>
-							<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly=""></textarea>
+						<div class="column">
+							<div class="has-background-light px-4 py-4">
+								<p class="has-text-grey is-uppercase is-size-7">Output</p>
+								<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly=""></textarea>
+							</div>
 						</div>
 
 					</div>
