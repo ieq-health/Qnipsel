@@ -84,7 +84,25 @@
 
 						<div class="column has-background-light">
 							<p class="has-text-grey is-uppercase is-size-7">Output</p>
-							<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly></textarea>
+
+							<?= fractalFormText(array(
+								'label' => array( 'string' => 'Kurzname' ),
+								'name' => 'outputShortName',
+								'readonly' => true
+							)) ?>
+
+							<?= fractalFormText(array(
+								'label' => array( 'string' => 'Titel' ),
+								'name' => 'outputTitle',
+								'readonly' => true
+							)) ?>
+
+							<?= fractalFormTextarea(array(
+								'label' => array( 'string' => 'Kurzfassung' ),
+								'name' => 'outputText',
+								'readonly' => true
+							)) ?>
+
 						</div>
 					</div>
 				</div>
