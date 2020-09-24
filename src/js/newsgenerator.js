@@ -58,13 +58,12 @@ $('#newsgenerator').on('input propertychange', 'input, select, .field textarea',
 	$('[name="outputShortName"]').val(shortname);
 
 	/** Generate output title */
-	$('[name="outputTitle"]').val(title);
+	let titleTag = `${month.string} ${year} &ndash; ${title}`;
+	$('[name="outputTitle"]').val(titleTag);
 
 	/** Generate output text */
 
-	$('[name="outputText"]').val(`
-${imgTag}
-
+	$('[name="outputText"]').val(`${imgTag} 
 <h3 class="news-heading"><span class="news-datum">${month.string} ${year}</span> <span class="dash">&ndash;</span> ${title}</h3>
 <p class="news-text">${text} <a href="${link}" title="Gehe zu: News" class="news-link">Mehr »</a></p>
 	`);
