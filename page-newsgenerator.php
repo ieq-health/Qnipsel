@@ -26,7 +26,7 @@
 									)) ?>
 								</div>
 
-								<!-- Datum -->
+								<!-- Monat -->
 
 								<div class="column">
 									<?= fractalFormSelect(array(
@@ -47,12 +47,15 @@
 											array('value' => '12', 'label' => 'Dezember'),
 										)
 									)) ?>
+								</div>
 
+								<!-- Jahr -->
+
+								<div class="column">
 									<?= fractalFormText(array(
 										'label' => array( 'string' => 'Jahr', 'required' => true ),
 										'name' => 'year'
 									)) ?>
-									
 								</div>
 							</div>
 
@@ -71,7 +74,7 @@
 								'label' => array( 'string' => 'Text', 'required' => true ),
 								'name' => 'text'
 							)) ?>
-							
+
 						</div>
 
 						<div class="column has-background-light">
