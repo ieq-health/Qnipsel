@@ -88,19 +88,19 @@
 								<p class="has-text-grey is-uppercase is-size-7">Output</p>
 
 								<?= fractalFormText(array(
-									'label' => array( 'string' => 'Kurzname' ),
+									'label' => array( 'string' => 'Kurzname', 'required' => false ),
 									'name' => 'outputShortName',
 									'readonly' => true
 								)) ?>
 
 								<?= fractalFormText(array(
-									'label' => array( 'string' => 'Titel' ),
+									'label' => array( 'string' => 'Titel', 'required' => false ),
 									'name' => 'outputTitle',
 									'readonly' => true
 								)) ?>
 
 								<?= fractalFormTextarea(array(
-									'label' => array( 'string' => 'Kurzfassung' ),
+									'label' => array( 'string' => 'Kurzfassung', 'required' => false ),
 									'name' => 'outputText',
 									'readonly' => true
 								)) ?>
