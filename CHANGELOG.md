@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [0.15.1] - 2020-09-24
+
+### Changed
+- Include date in newsgenerator title output
+
+
 ## [0.15.0] - 2020-09-24
 
 ### Added
