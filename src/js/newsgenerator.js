@@ -20,23 +20,50 @@ $('input[name="year"]').val(year);
 
 
 $('#newsgenerator').on('input propertychange', 'input, select, .field textarea', function() {
+
+	/** Get title */
 	let title = $('input[name="title"]').val();
+	let slug = makeSlug(title);
+
+	/** Get date */
 	let month = {
 		num: $('select[name="month"]').val(),
 		string: months[$('select[name="month"]').val() - 1]
 	};
 	let year = $('input[name="year"]').val();
 	let ymo = `${year.substr(-2)}${month.num}`;
+
+	/** Get text content */
 	let text = $('textarea[name="text"]').val();
+
+	/** Get Gewerk */
 	let gewerk = $('select[name="gewerk"]').val();
-	let slug = makeSlug(title);
-	let newspath = `${ymo}-${slug}`;
-	let link = `http:/scripts/show.aspx?content=/health/${gewerk}/news/${year}/${newspath}`;
 
-	$('#output').val(`
-${newspath}
+	/** Get teaser image */
+	let imgInput = $('input[name="image"]').val();
+	let imgUrl = '';
+	let imgTag = '';
 
-${title}
+	if (imgInput !== '') {
+		imgUrl = `http:/scripts/get.aspx?media=${imgInput}`;
+		imgTag = `<div class="news-img" style="display:none;"><img class="img-responsive" src="${imgUrl}" alt="Coronavirus News"></div>`;
+	}
+
+	/** Combine date and slug to create the shortname */
+	let shortname = `${ymo}-${slug}`;
+	let link = `http:/scripts/show.aspx?content=/health/${gewerk}/news/${year}/${shortname}`;
+
+
+	/** Generate output path */
+	$('[name="outputShortName"]').val(shortname);
+
+	/** Generate output title */
+	$('[name="outputTitle"]').val(title);
+
+	/** Generate output text */
+
+	$('[name="outputText"]').val(`
+${imgTag}
 
 <h3 class="news-heading"><span class="news-datum">${month.string} ${year}</span> <span class="dash">&ndash;</span> ${title}</h3>
 <p class="news-text">${text} <a href="${link}" title="Gehe zu: News" class="news-link">Mehr »</a></p>

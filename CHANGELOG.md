@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [0.15.0] - 2020-09-24
+
+### Added
+- Teaserimage support for newsgenerator
+
+### Changed
+- Structured newsgenerator output
+- Updated node modules
+
+
 ## [0.14.0] - 2020-08-18
 
 ### Added
