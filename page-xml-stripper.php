@@ -93,15 +93,19 @@
 				<?php endforeach; ?>
 
 				<div class="container-fluid xml-stripper">
-					<div class="columns">
+					<div class="columns is-gapless">
 						<div class="column">
-							<p class="has-text-grey is-uppercase is-size-7">Input</p>
-							<textarea class="textarea is-family-code" name="" id="xml-input" cols="30" rows="10"></textarea>
+							<div class="p-4">
+								<p class="has-text-grey is-uppercase is-size-7">Input</p>
+								<textarea class="textarea is-family-code" name="" id="xml-input" cols="30" rows="10"></textarea>
+							</div>
 						</div>
 
-						<div class="column has-background-light">
-							<p class="has-text-grey is-uppercase is-size-7">Output</p>
-							<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly></textarea>
+						<div class="column">
+							<div class="has-background-light p-4">
+								<p class="has-text-grey is-uppercase is-size-7">Output</p>
+								<textarea class="textarea is-family-code" name="" id="output" cols="30" rows="10" readonly></textarea>
+							</div>
 						</div>
 					</div>
 				</div>
