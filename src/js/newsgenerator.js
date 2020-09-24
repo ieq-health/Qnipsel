@@ -33,10 +33,22 @@ $('#newsgenerator').on('input propertychange', 'input, select, .field textarea',
 	let newspath = `${ymo}-${slug}`;
 	let link = `http:/scripts/show.aspx?content=/health/${gewerk}/news/${year}/${newspath}`;
 
+	/** Teaser image */
+	let imgInput = $('input[name="image"]').val();
+	let imgUrl = '';
+	let imgTag = '';
+
+	if (imgInput !== '') {
+		imgUrl = `http:/scripts/get.aspx?media=${imgInput}`;
+		imgTag = `<div class="news-img" style="display:none;"><img class="img-responsive" src="${imgUrl}" alt="Coronavirus News"></div>`;
+	}
+
 	$('#output').val(`
 ${newspath}
 
 ${title}
+
+${imgTag}
 
 <h3 class="news-heading"><span class="news-datum">${month.string} ${year}</span> <span class="dash">&ndash;</span> ${title}</h3>
 <p class="news-text">${text} <a href="${link}" title="Gehe zu: News" class="news-link">Mehr »</a></p>
