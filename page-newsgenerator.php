@@ -75,6 +75,13 @@
 								'name' => 'text'
 							)) ?>
 
+							<!-- Image -->
+
+							<?= fractalFormText(array(
+								'label' => array( 'string' => 'Teaserbild', 'required' => false ),
+								'name' => 'image'
+							)) ?>
+
 						</div>
 
 						<div class="column has-background-light">
