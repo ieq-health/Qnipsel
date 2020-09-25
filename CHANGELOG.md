@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [0.15.2] - 2020-09-25
+
+### Fixed
+- Generate news teaser image alt tag based on title
+
+### Changed
+- Add explanation label to news teaser image input
+
+
 ## [0.15.1] - 2020-09-24
 
 ### Changed
