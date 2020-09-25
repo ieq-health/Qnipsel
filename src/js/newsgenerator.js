@@ -46,7 +46,7 @@ $('#newsgenerator').on('input propertychange', 'input, select, .field textarea',
 
 	if (imgInput !== '') {
 		imgUrl = `http:/scripts/get.aspx?media=${imgInput}`;
-		imgTag = `<div class="news-img" style="display:none;"><img class="img-responsive" src="${imgUrl}" alt="Coronavirus News"></div>`;
+		imgTag = `<div class="news-img" style="display:none;"><img class="img-responsive" src="${imgUrl}" alt="${title}"></div>`;
 	}
 
 	/** Combine date and slug to create the shortname */

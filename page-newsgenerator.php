@@ -77,7 +77,7 @@
 								<!-- Image -->
 
 								<?= fractalFormText(array(
-									'label' => array( 'string' => 'Teaserbild', 'required' => false ),
+									'label' => array( 'string' => 'Teaserbild (Backend-Pfad: /shop/...)', 'required' => false ),
 									'name' => 'image'
 								)) ?>
 							</div>
