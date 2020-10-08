@@ -195,6 +195,11 @@
 									'label' => 'Arbeitserfahrung Anforderungen',
 									'name' => 'experiencerequirements',
 								)) ?>
+								
+								<?= fractalFormTextarea(array(
+									'label' => 'Unsere Vorteile',
+									'name' => 'jobBenefits',
+								)) ?>
 
 							</div> <!-- // px py -->
 						</div> <!-- // column -->

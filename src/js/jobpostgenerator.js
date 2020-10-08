@@ -25,6 +25,7 @@ $("#application-json").on(
 		let qualifications = $('*[name="qualifications"]').val();
 		let educationrequirements = $('*[name="educationrequirements"]').val();
 		let experiencerequirements = $('*[name="experiencerequirements"]').val();
+		let jobbenefits = $('*[name="jobBenefits"]').val();
 
 		$("#output").val(`
 <script type="application/ld+json">
@@ -55,7 +56,8 @@ $("#application-json").on(
     "skills": "${cleanJson( skills )}",
     "qualifications": "${cleanJson( qualifications )}",
     "educationRequirements": "${cleanJson( educationrequirements )}",
-    "experienceRequirements": "${cleanJson( experiencerequirements )}"
+    "experienceRequirements": "${cleanJson( experiencerequirements )}",
+    "jobBenefits": "${cleanJson( jobbenefits )}"
   }
 <\/script>`);
 	}
