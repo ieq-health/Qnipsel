@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [0.15.4] - 2020-10-08
+
+### Added
+- Added benefits to jobpost generator
+
+
+## [0.15.3] - 2020-10-08
+
+### Fixed
+- Fix jobpost generator layout
+
+
 ## [0.15.2] - 2020-09-25
 
 ### Fixed
