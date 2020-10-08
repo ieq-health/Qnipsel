@@ -197,7 +197,7 @@
 								)) ?>
 								
 								<?= fractalFormTextarea(array(
-									'label' => 'Arbeitserfahrung Anforderungen',
+									'label' => 'Unsere Vorteile',
 									'name' => 'jobBenefits',
 								)) ?>
 
