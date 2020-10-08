@@ -57,7 +57,7 @@ $("#application-json").on(
     "qualifications": "${cleanJson( qualifications )}",
     "educationRequirements": "${cleanJson( educationrequirements )}",
     "experienceRequirements": "${cleanJson( experiencerequirements )}",
-	  "jobBenefits": "${cleanJson( jobbenefits )}"
+  	"jobBenefits": "${cleanJson( jobbenefits )}"
   }
 <\/script>`);
 	}
