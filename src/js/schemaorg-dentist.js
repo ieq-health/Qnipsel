@@ -56,6 +56,10 @@ function updateOutput() {
 		});
 	});
 
+	/** Create array from sameAs */
+	let sameAs = values.sameAs ? values.sameAs.split('\n') : [];
+
+
 	/** Create output object */
 	let output = {
 		"@context": "https://schema.org",
@@ -81,7 +85,7 @@ function updateOutput() {
 			longitude: values.geo_lng,
 		},
 		openingHoursSpecification: openingHours,
-		sameAs: values.sameAs.split("\n"),
+		sameAs: sameAs
 	};
 
 	/** Remove empty props from output */
