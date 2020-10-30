@@ -16,3 +16,4 @@ require('./xmlstripper');
 require('./pagesearch');
 require('./notifications');
 require('./faqgenerator');
+require('./schemaorg-dentist');
