@@ -46,10 +46,20 @@ function fractalFormText($attr)
 
 function fractalFormTextarea($attr)
 {
+	$classes = "textarea";
+
+	if (array_key_exists('borderless', $attr) && $attr['borderless'] == true) {
+		$classes .= ' has-border';
+	}
+
+	if (array_key_exists('classes', $attr)) {
+		$classes .= ' ' . $attr['classes'];
+	}
+
 	$output =  '<div class="field">';
 	$output .= _addLabel($attr);
 	$output .= '	<div class="control">';
-	$output .= '		<textarea class="textarea ' . ($attr['borderless'] ? '' : 'has-border ') . $attr['classes'] . '" ' . _parseAttr($attr) . '></textarea>';
+	$output .= '		<textarea class="' . $classes . '" ' . _parseAttr($attr) . '></textarea>';
 	$output .= '	</div>';
 	$output .= '</div>';
 
