@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "stylelint src/scss",
-    "webpack": "rm -rf dist/; npx webpack"
+    "webpack": "rm -rf dist/; npx webpack",
+    "watch": "npx webpack --watch --env.PRODUCTION=false"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
