@@ -48,7 +48,7 @@ function fractalFormTextarea($attr)
 {
 	$classes = "textarea";
 
-	if (array_key_exists('borderless', $attr) && $attr['borderless'] == true) {
+	if (!(array_key_exists('borderless', $attr) && $attr['borderless'] == true)) {
 		$classes .= ' has-border';
 	}
 
