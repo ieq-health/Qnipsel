@@ -1,64 +1,65 @@
-let faqcount = 1; // start count number
+$(".faq-add").click(function() {
 
-$('.faq-add').click(function() {
-    faqcount++; // count elements
+	let faqItem = $(`
+<div class="faq__item">
+	<div class="faq__item__content">
+		<div class="control is-expanded">
+			<input type="text" class="input" placeholder="Frage">
+		</div>
+		<div class="control is-expanded">
+			<input type="text" class="input" placeholder="Antwort">
+		</div>
+	</div>
+	<button class="button is-danger faq__item__delete">${icons.delete}</button>
+</div>
+	`);
 
-    let faq = [
-        '<div class="faq__item">',
-            '<div class="faq__item__content">',
-                '<div class="control is-expanded">',
-                    '<input type="text" class="input" name="question_' + faqcount + '" placeholder="Frage">',
-                '</div>',
-                '<div class="control is-expanded">',
-                    '<input type="text" class="input" name="answer_' + faqcount + '" placeholder="Antwort">',
-                '</div>',
-            '</div>',
-            '<span class="faq__item__delete"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg></span>',
-        '</div>'
-        ].join("\n");
+	$("button", faqItem).on("click", function () {
+		faqItem.remove();
+	})
 
-    $('.faq').append(faq); // add another faq
+	$(".faq").append(faqItem);
 });
 
-
-$('.faq').bind('DOMNodeInserted DOMNodeRemoved', function() {   //listen on change and add remove event
-    $('.faq__item__delete').click(function(e) {
-        $(this).parent().remove();
-    });
+$(".faq__item__delete").on("click", function () {
+	$(this).parent().remove();
 });
 
-$('.faq-generate').click(function(){  // generate json
+$(".faq-generate").click(function(){
+	// generate json
 
-    var jsonFAQ = {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": []
-           };
-    
-           
+	const jsonFAQ = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: [],
+	};
 
-    $('.faq__item__content').each(function () {
-        let questionVals = $(this).find('input[name^="question"').val();
-        let answerVals = $(this).find('input[name^="answer"').val();
-    
-        var jsonFAQItem = {
-            "@type": "Question",
-            "name": questionVals,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": answerVals
-            }
-        }
+	$(".faq__item__content").each(function () {
+		const questionVals = $(this).find('input[name^="question"').val();
+		const answerVals = $(this).find('input[name^="answer"').val();
 
-        jsonFAQ.mainEntity.push(jsonFAQItem);
-    });            
+		const jsonFAQItem = {
+			"@type": "Question",
+			name: questionVals,
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: answerVals,
+			},
+		};
 
-    $('.faq-generator__output').val(`<script type="application/ld+json">${JSON.stringify(jsonFAQ,null,'\t')}<\/script>`);
-    $('.faq-generator__output').select();
-    document.execCommand("copy");
+		jsonFAQ.mainEntity.push(jsonFAQItem);
+	});
 
-    $('.copied-notification').fadeIn('slow');
-    setTimeout(function(){
-        $('.copied-notification').fadeOut('slow');
-    }, 1000);
+	$(".faq-generator__output").val(`
+<script type="application/ld+json">
+	${JSON.stringify(jsonFAQ, null, 2)}
+</script>
+	`);
+	$(".faq-generator__output").select();
+	document.execCommand("copy");
+
+	$(".copied-notification").fadeIn("slow");
+	setTimeout(function () {
+		$(".copied-notification").fadeOut("slow");
+	}, 1000);
 });
