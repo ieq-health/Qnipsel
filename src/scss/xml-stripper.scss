@@ -1,13 +1,10 @@
 .xml-stripper {
+	border: solid #eee;
+	border-width: 1px 0;
 	margin-top: 3vw;
-	
-	.column {
-		border: solid #eee;
-		border-width: 1px 0;
 
-		@include darkmode {
-			border-color: #111;
-		}
+	@include darkmode {
+		border-color: #111;
 	}
 	
 	p {

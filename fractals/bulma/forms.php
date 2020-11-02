@@ -5,7 +5,7 @@ function _parseAttr($attr)
 	return join(
 		' ',
 		array_map(function ($key) use ($attr) {
-			if ($key != 'label') {
+			if ($key != 'label' && $key != 'classes' && $key != 'borderless') {
 				return $key . '="' . $attr[$key] . '"';
 			}
 		}, array_keys($attr))
@@ -46,10 +46,20 @@ function fractalFormText($attr)
 
 function fractalFormTextarea($attr)
 {
+	$classes = "textarea";
+
+	if (!(array_key_exists('borderless', $attr) && $attr['borderless'] == true)) {
+		$classes .= ' has-border';
+	}
+
+	if (array_key_exists('classes', $attr)) {
+		$classes .= ' ' . $attr['classes'];
+	}
+
 	$output =  '<div class="field">';
 	$output .= _addLabel($attr);
 	$output .= '	<div class="control">';
-	$output .= '		<textarea class="textarea has-border" ' . _parseAttr($attr) . '></textarea>';
+	$output .= '		<textarea class="' . $classes . '" ' . _parseAttr($attr) . '></textarea>';
 	$output .= '	</div>';
 	$output .= '</div>';
 

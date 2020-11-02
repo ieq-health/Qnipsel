@@ -1,11 +1,12 @@
 {
   "name": "templateq",
-  "version": "0.15.4",
+  "version": "0.16.0",
   "description": "Wordpress theme to power qnipsel",
   "main": "webpack.config.js",
   "scripts": {
     "test": "stylelint src/scss",
-    "webpack": "rm -rf dist/; npx webpack"
+    "webpack": "rm -rf dist/; npx webpack",
+    "watch": "npx webpack --watch --env.PRODUCTION=false"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
