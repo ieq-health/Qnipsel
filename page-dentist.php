@@ -46,7 +46,7 @@
 								)) ?>
 
 								<?= fractalFormText(array(
-									'label' => array( 'string' => 'URL', 'required' => true ),
+									'label' => array( 'string' => 'Website', 'required' => true ),
 									'name' => 'url'
 								)) ?>
 
@@ -110,7 +110,7 @@
 
 								<!-- hasMap -->
 
-								<p class="subtitle">Öffnungszeiten</p>
+								<p class="subtitle">Sprechzeiten</p> 
 
 
 								<table id="opening-hours" class="table is-fullwidth is-bordered is-striped">
