@@ -29,4 +29,12 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_script('rainbow-css', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js', array('rainbow'), '1.2.0', true);
 	wp_enqueue_script('rainbow-js', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js', array('rainbow'), '1.2.0', true);
 	wp_enqueue_style('rainbow', 'https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css', array('templateq_css'), '1.2.0');
+
+	// Pass PHP values to script
+	$templateq_icons = array(
+		'code' => templateq_icon_code(),
+		'delete' => templateq_icon_delete(),
+		'plus' => templateq_icon_plus()
+	);
+	wp_localize_script('templateq_js', 'icons', $templateq_icons);
 });
