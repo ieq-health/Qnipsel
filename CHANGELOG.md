@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [0.16.0] - 2020-11-02
+
+### Added
+- Schema.org generator for dentist type
+
+### Changed
+- Cleanup code
+
+
 ## [0.15.4] - 2020-10-08
 
 ### Added
