@@ -24,8 +24,10 @@ add_action('carbon_fields_register_fields', function () {
 	Container::make('post_meta', 'Autoshy')
 		->where('post_type', '=', 'autoshy_entry')
 		->add_fields(array(
-			Field::make('text', 'source', 'Source'),
+			Field::make('text', 'source', 'Source')
+				->set_visible_in_rest_api(true),
 			Field::make('text', 'replacement', 'Replacement')
+				->set_visible_in_rest_api(true),
 		));
 });
 
