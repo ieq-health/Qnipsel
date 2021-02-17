@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [0.17.0] - 2021-02-17
+
+### Added
+- Autoshy post type for consumption through REST API
+
+
 ## [0.16.0] - 2020-11-02
 
 ### Added
