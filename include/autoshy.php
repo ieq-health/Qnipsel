@@ -9,7 +9,8 @@ add_action('init', function () {
 			'name'          => 'Auto Shys',
 			'singular_name' => 'Autoshy'
 		),
-		'hierarchical' => false
+		'hierarchical' => false,
+		'show_in_rest' => true,
 	);
 
 	register_taxonomy(
@@ -35,7 +36,8 @@ add_action('init', function () {
 			'singular_name' => 'Autoshy Eintrag'
 		),
 		'public' => true,
-		'has_archive' => false
+		'has_archive' => false,
+		'show_in_rest' => true,
 	));
 	remove_post_type_support('autoshy_entry', 'editor');
 });
