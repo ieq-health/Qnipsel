@@ -50,6 +50,9 @@ jobs:
 
       # Sync to server
 
+      - name: Install sshpass
+        run: sudo apt-get -y install sshpass
+
       - name: Sync to Staging
         if: github.ref == 'refs/heads/develop'
         env:

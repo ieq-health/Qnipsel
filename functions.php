@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.16.0';
+$GLOBALS['qnipsel_version'] = '0.17.0';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
@@ -27,6 +27,11 @@ require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
  * Create our own post type and taxonomy
  */
 require_once(__DIR__ . '/include/vscode_snippets.php');
+
+/** Autoshy
+ * Keep a list of strings that should get &shy; added to them
+ */
+require_once(__DIR__ . '/include/autoshy.php');
 
 /** Cleanup
  * Remove some stuff from the backend
@@ -85,3 +90,25 @@ function templateq_recent_updates()
 	$string .= '</tbody></table>';
 	return $string;
 }
+
+/**
+ * Enable Access from CMS
+ */
+function initCors($value)
+{
+	header('Access-Control-Allow-Origin: https://www.cmsq.ieq-health.de');
+	header('Access-Control-Allow-Methods: GET, OPTIONS');
+	header('Access-Control-Allow-Credentials: true');
+
+	if ('OPTIONS' == $_SERVER['REQUEST_METHOD']) {
+		status_header(200);
+		exit();
+	}
+
+	return $value;
+}
+
+add_action('rest_api_init', function () {
+	remove_filter('rest_pre_serve_request', 'rest_send_cors_headers');
+	add_filter('rest_pre_serve_request', initCors);
+}, 15);
