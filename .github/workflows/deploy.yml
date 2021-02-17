@@ -58,6 +58,7 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
           GMAPS_API: ${{ secrets.GMAPS_API_KEY }}
         run: |
+          apt install sshpass
           rm -rf .git build node_modules scss
           sed -i "s/\*\*\*API KEY\*\*\*/$GMAPS_API/g" page-mapgenerator.php
           sshpass -p "$SSH_PASS" rsync --delete -aqz -e "ssh -o StrictHostKeyChecking=no" . $SSH_USER@$SSH_IP:html/qnipsel-staging/wp-content/themes/templateq
@@ -70,6 +71,7 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
           GMAPS_API: ${{ secrets.GMAPS_API_KEY }}
         run: |
+          apt install sshpass
           rm -rf .git build node_modules scss
           sed -i "s/\*\*\*API KEY\*\*\*/$GMAPS_API/g" page-mapgenerator.php
           sshpass -p "$SSH_PASS" rsync --delete -aqz -e "ssh -o StrictHostKeyChecking=no" . $SSH_USER@$SSH_IP:html/qnipsel/wp-content/themes/templateq
