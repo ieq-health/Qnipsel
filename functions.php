@@ -97,8 +97,14 @@ function templateq_recent_updates()
 function initCors($value)
 {
 	header('Access-Control-Allow-Origin: https://www.cmsq.ieq-health.de');
-	header('Access-Control-Allow-Methods: GET');
+	header('Access-Control-Allow-Methods: GET, OPTIONS');
 	header('Access-Control-Allow-Credentials: true');
+
+	if ('OPTIONS' == $_SERVER['REQUEST_METHOD']) {
+		status_header(200);
+		exit();
+	}
+
 	return $value;
 }
 
