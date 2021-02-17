@@ -28,6 +28,11 @@ require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
  */
 require_once(__DIR__ . '/include/vscode_snippets.php');
 
+/** Autoshy
+ * Keep a list of strings that should get &shy; added to them
+ */
+require_once(__DIR__ . '/include/vscode_snippets.php');
+
 /** Cleanup
  * Remove some stuff from the backend
  */
