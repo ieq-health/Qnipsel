@@ -35,7 +35,8 @@
 				'taxonomy' => 'vscode_taxonomy',
 				'terms' => array($category->slug),
 				'field' => 'slug'
-			))
+			)),
+			'nopaging' => true
 		));
 
 		$tabContents .= '<div id="' . $category->slug . '">';
