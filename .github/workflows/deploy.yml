@@ -28,11 +28,6 @@ jobs:
       - name: Check SCSS
         run: npm test
 
-      - name: Run webpack
-        env:
-          PRODUCTION: ${{ github.ref == 'refs/heads/master' }}
-        run: npm run webpack -- --env.PRODUCTION=$PRODUCTION
-
       # Check and compile PHP
 
       - name: Check PHP
