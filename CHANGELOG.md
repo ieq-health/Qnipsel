@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.17.1] - 2021-03-01
+
+### Fixed
+- Disabled paging on vscode_snippet query
+
 
 ## [0.17.0] - 2021-02-17
 
