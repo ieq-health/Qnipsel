@@ -1,3 +1,10 @@
+/*
+Theme Name: templateQ
+Author: Christian Brassat
+Description: Theme for templateQ
+Version: 0.16.0
+*/
+
 // Configure Bulma
 
 $blue: rgb(0,100,183);
@@ -5,13 +12,11 @@ $radius-small: 3px;
 
 $fullhd-enabled: false; // too wide for two sidebars
 
-// Bundle Bulma
+// import node stuff
+@use "../../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css";
+@use "../../node_modules/simplebar/dist/simplebar.css";
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/bulma-extensions/bulma-switch/src/sass/index.sass";
-@import "../../node_modules/bulma-tooltip/dist/css/bulma-tooltip.min.css";
-
-// Bundle others
-@import "../../node_modules/simplebar/dist/simplebar.css";
 
 @import "mixins";
 @import "menulist";

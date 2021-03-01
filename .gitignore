@@ -1,5 +1,8 @@
 .DS_Store
 
+# Ignore docker data dir
+docker
+
 # Compiled files
 dist/
 
