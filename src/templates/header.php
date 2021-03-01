@@ -28,6 +28,8 @@
 </head>
 <body>
 
+<div class="colorbar"></div>
+
 <nav class="navbar has-shadow">
 	<div class="navbar-brand">
 		<img src="<?= get_stylesheet_directory_uri() ?>/assets/logo.svg" alt="Qnipsel">
