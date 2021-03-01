@@ -1,4 +1,4 @@
-const { src, dest, series } = require('gulp')
+const { src, dest, series, watch } = require('gulp')
 const sass = require('gulp-dart-sass')
 const concat = require('gulp-concat')
 
@@ -13,7 +13,6 @@ const js = () => src([
 ])
 	.pipe(concat('main.js'))
 	.pipe(dest('dist/'))
-
 
 const copySrc = () => src([
 	'./src/functions.php/**/*',
@@ -33,6 +32,20 @@ const copyStatic = () => src([
 	'./vendor/**/*'
 ], { base: '.' }).pipe(dest('dist'))
 
+/** Watch for changes */
+
+// const watcher = watch(['src/*'])
+// watcher.on('change')
+
+const doWatch = () => {
+	watch('src/scss/*.scss', series(scss, copyStatic))
+	watch('src/js/*.js', series(js, copyStatic))
+	watch('src/templates', copyTemplates)
+}
+
+/** Exports */
+
+exports.watch = doWatch
 exports.build = series(scss, js)
 exports.copy = series(copySrc, copyTemplates, copyStatic)
 exports.default = series(scss, js, copySrc, copyTemplates, copyStatic)
