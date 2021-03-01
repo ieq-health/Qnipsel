@@ -14,7 +14,7 @@ jobs:
       - name: Check out Repo
         uses: actions/checkout@v2
 
-      # Check and compile SCSS
+      # SCSS
 
       - uses: actions/setup-node@v1
         with:
@@ -28,7 +28,7 @@ jobs:
       - name: Check SCSS
         run: npm test
 
-      # Check and compile PHP
+      # PHP
 
       - name: Check PHP
         uses: chekalsky/phpcs-action@v1
@@ -42,6 +42,10 @@ jobs:
 
       - name: install PHP deps
         run: composer install
+
+      # npm build
+      - name: npm run build
+        run: npm run build
 
       # Sync to server
 
