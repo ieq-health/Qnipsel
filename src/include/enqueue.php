@@ -20,7 +20,7 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style('templateq_css', get_template_directory_uri() . '/style.css', array(), $GLOBALS['qnipsel_version']);
 
 	// Pull custom JS
-	wp_enqueue_script('cookie-js',    'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js', array(), '2.2.1', true);
+	wp_enqueue_script('cookie-js', 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js', array(), '2.2.1', true);
 	wp_enqueue_script('templateq_js', get_template_directory_uri() . '/main.js', array(), $GLOBALS['qnipsel_version'], true);
 
 	// Pull Rainbow
