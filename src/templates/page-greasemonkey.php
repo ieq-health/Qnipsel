@@ -101,6 +101,7 @@
 		<?php endforeach; ?>
 
 		<?php while ($userscripts->have_posts()): $userscripts->the_post(); ?>
+			<hr>
 			<div class="container">
 				<div class="columns">
 					<div class="column">
