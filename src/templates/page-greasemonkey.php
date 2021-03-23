@@ -106,6 +106,7 @@
 					<div class="column">
 							<div class="content">
 								<h2 id="<?= sanitize_title(get_the_title()) ?>"><?php the_title(); ?></h2>
+								<?= wpautop(carbon_get_the_post_meta('description')) ?>
 								<?= templateq_code_block('javascript', carbon_get_the_post_meta('script')) ?>
 							</div>
 
