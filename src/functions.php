@@ -23,10 +23,11 @@ require_once(__DIR__ . '/include/walkers/split_nav_sidenav_walker.php');
 require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
 
 
-/** Snippet
- * Create our own post type and taxonomy
+/** Post Types
+ * Create our own post types and taxonomy
  */
 require_once(__DIR__ . '/include/vscode_snippets.php');
+require_once(__DIR__ . '/include/userscripts.php');
 
 /** Autoshy
  * Keep a list of strings that should get &shy; added to them
