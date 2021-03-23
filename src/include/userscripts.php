@@ -10,7 +10,7 @@ add_action('carbon_fields_register_fields', function () {
 
 			Field::make('rich_text', 'description', 'Beschreibung'),
 
-			Field::make('code', 'script', 'Script')
+			Field::make('textarea', 'script', 'Script')
 				->set_attribute('data-editor'),
 		));
 });
