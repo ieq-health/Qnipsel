@@ -41,6 +41,14 @@ const doWatch = () => {
 	watch('src/scss/*.scss', series(scss, copyStatic))
 	watch('src/js/*.js', series(js, copyStatic))
 	watch('src/templates', copyTemplates)
+	watch([
+		'./src/functions.php/**/*',
+		'./src/backend/**/*',
+		'./src/fractals/**/*',
+		'./src/include/**/*',
+		'./src/partials/**/*',
+		'./src/functions.php'
+	], copySrc)
 }
 
 /** Exports */
