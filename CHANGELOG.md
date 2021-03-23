@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.1] - 2021-03-23
+
+### Fixed
+- Change userscript script field type
+
+
 ## [0.18.0] - 2021-03-23
 
 ### Added
