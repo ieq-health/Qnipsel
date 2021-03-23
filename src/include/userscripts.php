@@ -3,7 +3,6 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-
 add_action('carbon_fields_register_fields', function () {
 	Container::make('post_meta', 'Snippet')
 		->where('post_type', '=', 'userscript')
@@ -27,4 +26,3 @@ add_action('init', function () {
 	));
 	remove_post_type_support('userscript', 'editor');
 });
-
