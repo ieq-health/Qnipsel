@@ -1,0 +1,1 @@
+<?= carbon_get_the_post_meta('script');

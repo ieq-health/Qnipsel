@@ -1,42 +1,42 @@
 <?xml version="1.0"?>
 <ruleset name="Qnipsel PHP Standard" namespace="Qnipsel\CS\Standard">
 
-  <file>functions.php</file>
-  <file>fractals</file>
-  <file>include</file>
-  <file>partials</file>
+	<file>src/functions.php</file>
+	<file>src/fractals</file>
+	<file>src/include</file>
+	<file>src/partials</file>
 
-  <!-- Base ruleset on PSR2 -->
-  <rule ref="PSR2"/>
+		<!-- Base ruleset on PSR2 -->
+	<rule ref="PSR2"/>
 
-  <!-- use tabs for indentation -->
-  <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
-  <rule ref="Generic.WhiteSpace.DisallowTabIndent">
-    <severity>0</severity>
-  </rule>
+		<!-- use tabs for indentation -->
+	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+	<rule ref="Generic.WhiteSpace.DisallowTabIndent">
+		<severity>0</severity>
+	</rule>
 
-  <!-- ignore line lenght warnings -->
-  <rule ref="Generic.Files.LineLength">
-    <severity>0</severity>
-  </rule>
+	<!-- ignore line lenght warnings -->
+	<rule ref="Generic.Files.LineLength">
+		<severity>0</severity>
+	</rule>
 
-  <!-- ignore namespace depth -->
-  <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
-    <severity>0</severity>
-  </rule>
+	<!-- ignore namespace depth -->
+	<rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+		<severity>0</severity>
+	</rule>
 
-  <!-- ignore camelcase errors -->
-  <rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
-    <severity>0</severity>
-  </rule>
-  <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
-    <severity>0</severity>
-  </rule>
+	<!-- ignore camelcase errors -->
+	<rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
+		<severity>0</severity>
+	</rule>
+	<rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+		<severity>0</severity>
+	</rule>
 
-  <!-- ignore sideeffects -->
-  <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
-    <severity>0</severity>
-  </rule>
+	<!-- ignore sideeffects -->
+	<rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+		<severity>0</severity>
+	</rule>
 
 
 </ruleset>

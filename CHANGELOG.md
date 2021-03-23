@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.0] - 2021-03-23
+
+### Added
+- Userscripts are now a custom post type with auto-update functionality
+
+
 ## [0.17.1] - 2021-03-01
 
 ### Fixed
