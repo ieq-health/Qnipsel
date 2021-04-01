@@ -8,6 +8,7 @@ $GLOBALS['qnipsel_version'] = '0.18.2';
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
  */
+require_once(__DIR__ . '/include/blocks.php');
 require_once(__DIR__ . '/include/fields.php');
 
 /** TinyMCE
@@ -28,10 +29,6 @@ require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
  */
 require_once(__DIR__ . '/include/vscode_snippets.php');
 require_once(__DIR__ . '/include/userscripts.php');
-
-/** Autoshy
- * Keep a list of strings that should get &shy; added to them
- */
 require_once(__DIR__ . '/include/autoshy.php');
 
 /** Cleanup
@@ -113,3 +110,4 @@ add_action('rest_api_init', function () {
 	remove_filter('rest_pre_serve_request', 'rest_send_cors_headers');
 	add_filter('rest_pre_serve_request', initCors);
 }, 15);
+

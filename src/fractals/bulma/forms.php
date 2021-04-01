@@ -5,7 +5,7 @@ function _parseAttr($attr)
 	return join(
 		' ',
 		array_map(function ($key) use ($attr) {
-			if ($key != 'label' && $key != 'classes' && $key != 'borderless') {
+			if ($key != 'label' && $key != 'classes' && $key != 'borderless' && $key != 'addon') {
 				return $key . '="' . $attr[$key] . '"';
 			}
 		}, array_keys($attr))
@@ -38,6 +38,25 @@ function fractalFormText($attr)
 	$output .= _addLabel($attr);
 	$output .= '	<div class="control is-expanded">';
 	$output .= '		<input type="text" class="input" ' . _parseAttr($attr) . '>';
+	$output .= '	</div>';
+	$output .= '</div>';
+
+	return $output;
+}
+
+function fractalFormTextAddon($attr)
+{
+	$output =  '<div class="field">';
+	$output .= _addLabel($attr);
+	$output .=  '	<div class="field has-addons">';
+	$output .= '		<div class="control">';
+	$output .= '			<span id="addon-' . $attr['name'] . '" class="button is-static">';
+	$output .= $attr['addon'];
+	$output .= '			</span>';
+	$output .= '		</div>';
+	$output .= '		<div class="control is-expanded">';
+	$output .= '			<input type="text" class="input" ' . _parseAttr($attr) . '>';
+	$output .= '		</div>';
 	$output .= '	</div>';
 	$output .= '</div>';
 
