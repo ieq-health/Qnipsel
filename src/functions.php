@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.18.2';
+$GLOBALS['qnipsel_version'] = '0.18.3';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
@@ -28,10 +28,6 @@ require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
  */
 require_once(__DIR__ . '/include/vscode_snippets.php');
 require_once(__DIR__ . '/include/userscripts.php');
-
-/** Autoshy
- * Keep a list of strings that should get &shy; added to them
- */
 require_once(__DIR__ . '/include/autoshy.php');
 
 /** Cleanup

@@ -15,17 +15,14 @@ const js = () => src([
 	.pipe(dest('dist/'))
 
 const copySrc = () => src([
-	'./src/functions.php/**/*',
 	'./src/backend/**/*',
 	'./src/fractals/**/*',
 	'./src/include/**/*',
 	'./src/partials/**/*',
-	'./src/functions.php'
+	'./src/*.php'
 ], { base: './src' }).pipe(dest('dist'))
 
-const copyTemplates = () => src([
-	'./src/templates/**/*'
-]).pipe(dest('dist'))
+const copyTemplates = () => src(['./src/templates/**/*']).pipe(dest('dist'))
 
 const copyStatic = () => src([
 	'./assets/**/*',
@@ -34,20 +31,19 @@ const copyStatic = () => src([
 
 /** Watch for changes */
 
-// const watcher = watch(['src/*'])
-// watcher.on('change')
+/* const watcher = watch(['src/*'])
+   watcher.on('change') */
 
 const doWatch = () => {
 	watch('src/scss/*.scss', series(scss, copyStatic))
 	watch('src/js/*.js', series(js, copyStatic))
 	watch('src/templates', copyTemplates)
 	watch([
-		'./src/functions.php/**/*',
 		'./src/backend/**/*',
 		'./src/fractals/**/*',
 		'./src/include/**/*',
 		'./src/partials/**/*',
-		'./src/functions.php'
+		'./src/*.php'
 	], copySrc)
 }
 

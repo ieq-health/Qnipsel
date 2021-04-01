@@ -24,7 +24,8 @@ $(function() {
 
 		/** Get title */
 		let title = $('input[name="title"]').val();
-		let slug = makeSlug(title);
+		let slugInput = $('input[name="slug"]').val();
+		let slug = makeSlug(slugInput === '' ? title : slugInput);
 
 		/** Get date */
 		let month = {
@@ -54,8 +55,22 @@ $(function() {
 		let shortname = `${ymo}-${slug}`;
 		let link = `http:/scripts/show.aspx?content=/health/${gewerk}/news/${year}/${shortname}`;
 
+		$('#addon-slug').text(`${ymo}-`);
+
+		/** Display slug warning */
+		let slugField = $('input[name="slug"]');
+		if ( typeof slugField.attr('placeholder') !== 'undefined' && slugField.attr('placeholder').length > slugField.attr('maxlength')) {
+			slugField.addClass('is-danger');
+			if (slugField.siblings().length === 0) {
+				slugField.after('<p class="help is-danger">Automatischer Slug ist zu lang! Bitte eigenen Slug eingeben</p>');
+			}
+		} else {
+			slugField.removeClass('is-danger');
+			slugField.siblings().remove();
+		}
 
 		/** Generate output path */
+		$('input[name="slug"]').attr('placeholder', slug);
 		$('[name="outputShortName"]').val(shortname);
 
 		/** Generate output title */
