@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.3] - 2021-04-01
+
+### Added
+- News can now have custom slugs
+
+
 ## [0.18.2] - 2021-03-23
 
 ### Fixed
