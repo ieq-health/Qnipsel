@@ -8,7 +8,6 @@ $GLOBALS['qnipsel_version'] = '0.18.2';
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
  */
-require_once(__DIR__ . '/include/blocks.php');
 require_once(__DIR__ . '/include/fields.php');
 
 /** TinyMCE
