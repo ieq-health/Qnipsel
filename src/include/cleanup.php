@@ -6,7 +6,7 @@ add_action('admin_head', function () {
 });
 
 /** Or Gutenberg */
-// add_filter('use_block_editor_for_post_type', '__return_false');
+add_filter('use_block_editor_for_post_type', '__return_false');
 
 /** Title Tag */
 add_theme_support('title-tag');
