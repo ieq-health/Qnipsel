@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.4] - 2021-04-01
+
+### Fixed
+- Remove Gutenberg again
+
+
 ## [0.18.3] - 2021-04-01
 
 ### Added
