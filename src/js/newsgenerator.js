@@ -81,6 +81,6 @@ $(function() {
 
 		$('[name="outputText"]').val(`${imgTag} 
 <h3 class="news-heading"><span class="news-datum">${month.string} ${year}</span> <span class="dash">&ndash;</span> ${title}</h3>
-<p class="news-text">${text} <a href="${link}" title="Gehe zu: News" class="news-link">Mehr »</a></p>`);
+<p class="news-text">${text} <a href="${link}" title="Gehe zu: News" class="news-link">Mehr&nbsp;»</a></p>`);
 	});
 })
