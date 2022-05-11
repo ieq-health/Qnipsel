@@ -8,6 +8,7 @@
 					<h1 class="title">FAQ</h1>
 				</div>
 			</div>
+			<?php get_template_part('partials/content', 'title'); ?>
 
 			<div class="container">
 				<div class="faq-list">
