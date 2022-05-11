@@ -20,7 +20,15 @@
 	</main>
 
 	<aside id="sideMenu" class="menu">
-
+		<nav>
+			<ul>
+				<?php foreach (get_terms('faq_taxonomy') as $category)): ?>
+				<li>
+					<a href="<?= $category->slug ?>"><?= $category->name ?></a>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+		</nav>
 	</aside>
 
 <?php get_footer(); ?>
