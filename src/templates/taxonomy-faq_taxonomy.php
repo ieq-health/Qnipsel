@@ -10,15 +10,27 @@
 			</div>
 
 			<div class="container">
-				<dl>
+				<div class="faq-list">
 					<?php while (have_posts()): the_post(); ?>
 
-					<dt><?php the_title(); ?></dt>
-
-					<dd><?php the_content(); ?></dd>
+					<div class="card">
+						<div class="card-header">
+							<p class="card-header-title">
+								<?php the_title(); ?>
+							</p>
+							<button class="card-header-icon">
+								<?= templateq_icon_arrow(); ?>
+							</button>
+						</div>
+						<div class="card-content">
+							<div class="content">
+								<?php the_content(); ?>
+							</div>
+						</div>
+					</div>
 
 					<?php endwhile ?>
-				</dl>
+				</div>
 			</div>
 		<?php endif; ?>
 	</main>
