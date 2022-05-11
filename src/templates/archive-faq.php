@@ -10,15 +10,18 @@
 			</div>
 
 			<div class="container">
-				<dl>
-					<?php while (have_posts()): the_post(); ?>
-
-					<dt><?php the_title(); ?></dt>
-
-					<dd><?php the_content(); ?></dd>
-
-					<?php endwhile ?>
-				</dl>
+				<div class="columns">
+				<?php foreach (get_terms('faq_taxonomy') as $category): ?>
+					<div class="column">
+						<div class="content">
+							<h3>
+								<a href="<?= esc_url(get_term_link($category)) ?>"><?= $category->name ?></a>
+							</h3>
+							<p><?= $category->description ?></p>
+						</div>
+					</div>
+				<?php endforeach; ?>
+				</div>
 			</div>
 		<?php endif; ?>
 	</main>

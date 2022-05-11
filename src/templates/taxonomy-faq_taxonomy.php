@@ -1,3 +1,5 @@
+<?php $taxo = get_queried_object(); ?>
+
 <?php get_header(); ?>
 
 <div id="site-container">
@@ -5,20 +7,36 @@
 		<?php if (have_posts()): ?>
 			<div class="container">
 				<div class="content">
-					<h1 class="title">FAQ</h1>
+					<h1 class="title"><?= $taxo->name ?></h1>
 				</div>
 			</div>
 
 			<div class="container">
-				<dl>
+				<p><?= $taxo->description ?></p>
+			</div>
+
+			<div class="container">
+				<div class="faq-list">
 					<?php while (have_posts()): the_post(); ?>
 
-					<dt><?php the_title(); ?></dt>
-
-					<dd><?php the_content(); ?></dd>
+					<div class="card">
+						<div class="card-header">
+							<p class="card-header-title">
+								<?php the_title(); ?>
+							</p>
+							<span class="card-header-icon">
+								<?= templateq_icon_arrow(); ?>
+							</span>
+						</div>
+						<div class="card-content">
+							<div class="content">
+								<?php the_content(); ?>
+							</div>
+						</div>
+					</div>
 
 					<?php endwhile ?>
-				</dl>
+				</div>
 			</div>
 		<?php endif; ?>
 	</main>

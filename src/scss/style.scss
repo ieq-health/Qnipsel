@@ -2,7 +2,7 @@
 Theme Name: templateQ
 Author: Christian Brassat
 Description: Theme for templateQ
-Version: 0.19.0
+Version: 0.19.1
 */
 
 // Configure Bulma
@@ -27,6 +27,7 @@ $fullhd-enabled: false; // too wide for two sidebars
 @import "darkmode";
 @import "pagesearch";
 @import "faqgenerator";
+@import "faq";
 
 @import url('https://rsms.me/inter/inter.css');
 
