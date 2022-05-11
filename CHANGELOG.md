@@ -1,5 +1,12 @@
 # Changelog
 
+
+## [0.19.1] - 2022-05-11
+
+### Changed
+- FAQ Styling
+
+
 ## [0.19.0] - 2022-05-11
 
 ### Added
