@@ -1,4 +1,13 @@
 .faq-list {
+	.card-header {
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.card-header-icon {
+		transition: transform .3s;
+	}
+
 	.card-content {
 		max-height: 0;
 		overflow: hidden;
@@ -8,5 +17,8 @@
 	.card.open .card-content {
 		max-height: none;
 		padding: 1.5rem;
+	}
+	.card.open .card-header-icon {
+		transform: rotate(180deg);
 	}
 }
