@@ -7,6 +7,6 @@ add_action('init', function () {
 			'singular_name' => 'FAQ'
 		),
 		'public' => true,
-		'has_archive' => false
+		'has_archive' => true
 	));
 });
