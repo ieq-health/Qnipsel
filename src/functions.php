@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.18.5';
+$GLOBALS['qnipsel_version'] = '0.19.0';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
@@ -29,6 +29,7 @@ require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
 require_once(__DIR__ . '/include/vscode_snippets.php');
 require_once(__DIR__ . '/include/userscripts.php');
 require_once(__DIR__ . '/include/autoshy.php');
+require_once(__DIR__ . '/include/faq.php');
 
 /** Cleanup
  * Remove some stuff from the backend
