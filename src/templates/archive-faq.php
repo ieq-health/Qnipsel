@@ -22,7 +22,7 @@
 	<aside id="sideMenu" class="menu">
 		<nav>
 			<ul>
-				<?php foreach (get_terms('faq_taxonomy') as $category)): ?>
+				<?php foreach (get_terms('faq_taxonomy') as $category): ?>
 				<li>
 					<a href="<?= $category->slug ?>"><?= $category->name ?></a>
 				</li>
