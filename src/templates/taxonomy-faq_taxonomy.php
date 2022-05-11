@@ -1,3 +1,5 @@
+<?php $taxo = get_queried_object(); ?>
+
 <?php get_header(); ?>
 
 <div id="site-container">
@@ -5,10 +7,13 @@
 		<?php if (have_posts()): ?>
 			<div class="container">
 				<div class="content">
-					<h1 class="title">FAQ</h1>
+					<h1 class="title"><?= $taxo->name ?></h1>
 				</div>
 			</div>
-			<?php get_template_part('partials/content', 'title'); ?>
+
+			<div class="container">
+				<p><?= $taxo->description ?></p>
+			</div>
 
 			<div class="container">
 				<div class="faq-list">

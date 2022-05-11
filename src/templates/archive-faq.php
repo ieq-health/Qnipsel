@@ -13,10 +13,12 @@
 				<div class="columns">
 				<?php foreach (get_terms('faq_taxonomy') as $category): ?>
 					<div class="column">
-						<h3>
-							<a href="<?= esc_url(get_term_link($category)) ?>"><?= $category->name ?></a>
-						</h3>
-						<?= $category->description ?>
+						<div class="content">
+							<h3>
+								<a href="<?= esc_url(get_term_link($category)) ?>"><?= $category->name ?></a>
+							</h3>
+							<p><?= $category->description ?></p>
+						</div>
 					</div>
 				<?php endforeach; ?>
 				</div>
