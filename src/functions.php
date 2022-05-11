@@ -29,6 +29,7 @@ require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
 require_once(__DIR__ . '/include/vscode_snippets.php');
 require_once(__DIR__ . '/include/userscripts.php');
 require_once(__DIR__ . '/include/autoshy.php');
+require_once(__DIR__ . '/include/faq.php');
 
 /** Cleanup
  * Remove some stuff from the backend
