@@ -18,9 +18,9 @@
 							<p class="card-header-title">
 								<?php the_title(); ?>
 							</p>
-							<button class="card-header-icon">
+							<span class="card-header-icon">
 								<?= templateq_icon_arrow(); ?>
-							</button>
+							</span>
 						</div>
 						<div class="card-content">
 							<div class="content">

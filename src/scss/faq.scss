@@ -1,0 +1,12 @@
+.faq-list {
+	.card-content {
+		max-height: 0;
+		overflow: hidden;
+		padding: 0;
+	}
+
+	.card.open .card-content {
+		max-height: none;
+		padding: 1.5rem;
+	}
+}
