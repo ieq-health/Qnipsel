@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.19.2] - 2022-08-22
+
+### Changed
+- Update Mapgenerator to use CCM
 
 ## [0.19.1] - 2022-05-11
 
