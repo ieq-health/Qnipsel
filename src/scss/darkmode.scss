@@ -98,8 +98,12 @@ body.DarkMode {
 
 	.input, .select select, .textarea {
 		background: #111;
-		border-color: $border-color;
 		color: #999;
+
+		&:not(.is-primary):not(.is-link):not(.is-info):not(.is-success):not(.is-warning):not(.is-danger) {
+			border-color: $border-color;
+		}
+		
 
 		&:placeholder,
 		&::placeholder {
@@ -172,6 +176,16 @@ body.DarkMode {
 
 		.keyword, .storage { 
 			color: #b294bb /* purple */
+		}
+	}
+
+
+	.card {
+		background-color: #333;
+		color: #eee;
+
+		&-header-title {
+			color: #eee;
 		}
 	}
 }

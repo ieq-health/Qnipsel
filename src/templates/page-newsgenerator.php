@@ -67,6 +67,14 @@
 									'name' => 'title'
 								)) ?>
 
+								<!-- Slug -->
+								<?= fractalFormTextAddon(array(
+									'label' => array( 'string' => 'Slug', 'required' => false ),
+									'name' => 'slug',
+									'addon' => 'slug',
+									'maxlength' => 45
+								)) ?>
+
 								<!-- Teaser -->
 
 								<?= fractalFormTextarea(array(

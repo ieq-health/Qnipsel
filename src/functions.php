@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.17.1';
+$GLOBALS['qnipsel_version'] = '0.19.2';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
@@ -23,15 +23,13 @@ require_once(__DIR__ . '/include/walkers/split_nav_sidenav_walker.php');
 require_once(__DIR__ . '/include/walkers/split_nav_topnav_walker.php');
 
 
-/** Snippet
- * Create our own post type and taxonomy
+/** Post Types
+ * Create our own post types and taxonomy
  */
 require_once(__DIR__ . '/include/vscode_snippets.php');
-
-/** Autoshy
- * Keep a list of strings that should get &shy; added to them
- */
+require_once(__DIR__ . '/include/userscripts.php');
 require_once(__DIR__ . '/include/autoshy.php');
+require_once(__DIR__ . '/include/faq.php');
 
 /** Cleanup
  * Remove some stuff from the backend

@@ -1,5 +1,52 @@
 # Changelog
 
+## [0.19.2] - 2022-08-22
+
+### Changed
+- Update Mapgenerator to use CCM
+
+## [0.19.1] - 2022-05-11
+
+### Changed
+- FAQ Styling
+
+
+## [0.19.0] - 2022-05-11
+
+### Added
+- FAQ
+
+
+## [0.18.4] - 2021-04-01
+
+### Fixed
+- Remove Gutenberg again
+
+
+## [0.18.3] - 2021-04-01
+
+### Added
+- News can now have custom slugs
+
+
+## [0.18.2] - 2021-03-23
+
+### Fixed
+- Change userscript script field type
+
+
+## [0.18.1] - 2021-03-23
+
+### Fixed
+- Change userscript script field type
+
+
+## [0.18.0] - 2021-03-23
+
+### Added
+- Userscripts are now a custom post type with auto-update functionality
+
+
 ## [0.17.1] - 2021-03-01
 
 ### Fixed

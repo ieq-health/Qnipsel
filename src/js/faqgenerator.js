@@ -1,6 +1,7 @@
-$(".faq-add").click(function() {
+$(function() {
+	$(".faq-add").click(function() {
 
-	let faqItem = $(`
+		let faqItem = $(`
 <div class="faq__item">
 	<div class="faq__item__content">
 		<div class="control is-expanded">
@@ -12,54 +13,55 @@ $(".faq-add").click(function() {
 	</div>
 	<button class="button is-danger faq__item__delete">${icons.delete}</button>
 </div>
-	`);
+		`);
 
-	$("button", faqItem).on("click", function () {
-		faqItem.remove();
-	})
+		$("button", faqItem).on("click", function () {
+			faqItem.remove();
+		})
 
-	$(".faq").append(faqItem);
-});
-
-$(".faq__item__delete").on("click", function () {
-	$(this).parent().remove();
-});
-
-$(".faq-generate").click(function(){
-	// generate json
-
-	const jsonFAQ = {
-		"@context": "https://schema.org",
-		"@type": "FAQPage",
-		mainEntity: [],
-	};
-
-	$(".faq__item__content").each(function () {
-		const questionVals = $(this).find('input[name^="question"').val();
-		const answerVals = $(this).find('input[name^="answer"').val();
-
-		const jsonFAQItem = {
-			"@type": "Question",
-			name: questionVals,
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: answerVals,
-			},
-		};
-
-		jsonFAQ.mainEntity.push(jsonFAQItem);
+		$(".faq").append(faqItem);
 	});
 
-	$(".faq-generator__output").val(`
+	$(".faq__item__delete").on("click", function () {
+		$(this).parent().remove();
+	});
+
+	$(".faq-generate").click(function(){
+		// generate json
+
+		const jsonFAQ = {
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			mainEntity: [],
+		};
+
+		$(".faq__item__content").each(function () {
+			const questionVals = $(this).find('input[name^="question"').val();
+			const answerVals = $(this).find('input[name^="answer"').val();
+
+			const jsonFAQItem = {
+				"@type": "Question",
+				name: questionVals,
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: answerVals,
+				},
+			};
+
+			jsonFAQ.mainEntity.push(jsonFAQItem);
+		});
+
+		$(".faq-generator__output").val(`
 <script type="application/ld+json">
 	${JSON.stringify(jsonFAQ, null, 2)}
 </script>
-	`);
-	$(".faq-generator__output").select();
-	document.execCommand("copy");
+		`);
+		$(".faq-generator__output").select();
+		document.execCommand("copy");
 
-	$(".copied-notification").fadeIn("slow");
-	setTimeout(function () {
-		$(".copied-notification").fadeOut("slow");
-	}, 1000);
+		$(".copied-notification").fadeIn("slow");
+		setTimeout(function () {
+			$(".copied-notification").fadeOut("slow");
+		}, 1000);
+	});
 });
