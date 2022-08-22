@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.19.3] - 2022-08-22
+
+### Changed
+- Update script placement in mapgenerator
+
 ## [0.19.2] - 2022-08-22
 
 ### Changed
