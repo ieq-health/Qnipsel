@@ -27,7 +27,9 @@ $(function() {
 
 
 		$('#output').val(`
-<div id="map"></div>
+<div id="map">
+	<div class="qScriptLoader" data-src='https://maps.googleapis.com/maps/api/js?key=<IEQ-CMS function="InsertFirmendaten" param="Felder=googleapikey"></IEQ-CMS>&amp;callback=initMap&amp;libraries=places'></div>
+</div>
 
 <script>
 const mq = window.matchMedia('screen and (min-width: 1200px)');
@@ -93,9 +95,7 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	}
 }
-<\/script>
-
-<div class="qScriptLoader" data-src='https://maps.googleapis.com/maps/api/js?key=<IEQ-CMS function="InsertFirmendaten" param="Felder=googleapikey"></IEQ-CMS>&amp;callback=initMap&amp;libraries=places'></div>`);
+<\/script>`);
 	});
 
 	let map;
