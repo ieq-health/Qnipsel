@@ -95,7 +95,7 @@ function debounce(func, wait, immediate) {
 }
 <\/script>
 
-<script async="" defer="" src='https://maps.googleapis.com/maps/api/js?key=<IEQ-CMS function="InsertFirmendaten" param="Felder=googleapikey"></IEQ-CMS>&amp;callback=initMap&amp;libraries=places'></script>`);
+<div class="qScriptLoader" data-src='https://maps.googleapis.com/maps/api/js?key=<IEQ-CMS function="InsertFirmendaten" param="Felder=googleapikey"></IEQ-CMS>&amp;callback=initMap&amp;libraries=places'></div>`);
 	});
 
 	let map;
