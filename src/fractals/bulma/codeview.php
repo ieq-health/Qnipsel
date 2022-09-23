@@ -46,6 +46,15 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
+				<?php if (in_array('swiper', $css_libs)) : ?>
+					<div class="control">
+						<div class="tags has-addons">
+							<div class="tag is-dark">CSS</div>
+							<div class="tag is-black">Swiper</div>
+						</div>
+					</div>
+				<?php endif; ?>
+
 				<?php if (in_array('bootstrap', $js_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
@@ -73,6 +82,14 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
+				<?php if (in_array('swiper', $js_libs)) : ?>
+					<div class="control">
+						<div class="tags has-addons">
+							<div class="tag is-dark">JS</div>
+							<div class="tag is-black">Swiper</div>
+						</div>
+					</div>
+				<?php endif; ?>
 
 				</div>
 			</div>
@@ -113,6 +130,10 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
 		<?php endif; ?>
 
+		<?php if (in_array('swiper', $css_libs)) : ?>
+			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@5.4.5/css/swiper.min.css">');
+		<?php endif; ?>
+
 		iframeDocument.write(`<style>html,body{margin:0;padding:0;}</style>`);
 		iframeDocument.write(`<style><?= $css ?></style>`);
 		iframeDocument.write(`<body><?= $html ?></body>`);
@@ -129,6 +150,11 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 		<?php if (in_array('slick', $js_libs)) : ?>
 			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
 			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
+		<?php endif; ?>
+
+		<?php if (in_array('swiper', $js_libs)) : ?>
+			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
+			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/swiper@5.4.5/js/swiper.min.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
 		iframeDocument.write("<script><?= trim($js_inject) ?><\/script>");
