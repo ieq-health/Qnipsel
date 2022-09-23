@@ -106,7 +106,8 @@ add_action('carbon_fields_register_fields', function () {
 				Field::make('multiselect', 'css_libs', 'CSS Libraries')
 				->add_options(array(
 					'bootstrap' => 'Bootstrap',
-					'slick' => 'Slick'
+					'slick' => 'Slick',
+					'swiper' => 'Swiper'
 				)),
 				Field::make('textarea', 'js', 'JS')
 				->set_attribute('data-editor', 'javascript'),
@@ -114,7 +115,8 @@ add_action('carbon_fields_register_fields', function () {
 				->add_options(array(
 					'bootstrap' => 'Bootstrap',
 					'jquery' => 'jQuery',
-					'slick' => 'Slick'
+					'slick' => 'Slick',
+					'swiper' => 'Swiper'
 				))
 			)))
 
