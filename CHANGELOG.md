@@ -1,14 +1,22 @@
 # Changelog
 
+## [0.20.0] - 2022-09-23
+
+### Added
+- Added swiper to codepen
+
+
 ## [0.19.3] - 2022-08-22
 
 ### Changed
 - Update script placement in mapgenerator
 
+
 ## [0.19.2] - 2022-08-22
 
 ### Changed
 - Update Mapgenerator to use CCM
+
 
 ## [0.19.1] - 2022-05-11
 
