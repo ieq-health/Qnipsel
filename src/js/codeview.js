@@ -49,7 +49,7 @@ $(function() {
 				$iframe.css('width', '100%');
 				$(this).removeClass('is-active');
 			} else {
-				$iframe.css('width', ($(this).val() + 2)); // add 2px to account for borders
+				$iframe.css('width', parseInt($(this).val()) + 2); // add 2px to account for borders
 				$responsiveButtons.removeClass('is-active');
 				$(this).addClass('is-active');
 			}
