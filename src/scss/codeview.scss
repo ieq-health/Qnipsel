@@ -11,9 +11,11 @@
 	}
 }
 
-.codeview__code div[id$="-preview"] {
+.codeview__code .framewrapper {
 	overflow: hidden;
+	margin-bottom: 15px;
 	padding-bottom: 1em;
+	position: relative;
 }
 
 .codeview__code iframe {

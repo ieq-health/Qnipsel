@@ -117,7 +117,8 @@ body.DarkMode {
 		color: #fff;
 
 		&.is-active {
-			border-color: #444;
+			background: #282828;
+			border-color: #111;
 		}
 	}
 
