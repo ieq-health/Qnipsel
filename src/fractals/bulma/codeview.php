@@ -104,11 +104,11 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 				<div class="resizer"></div>
 				<div class="responsiveControl">
 					<div class="buttons has-addons is-centered">
-						<button class="button" data-size="360">360px</button>
-						<button class="button" data-size="576">576px</button>
-						<button class="button" data-size="768">768px</button>
-						<button class="button" data-size="992">992px</button>
-						<button class="button" data-size="1200">1200px</button>
+						<button class="button" value="360">360px</button>
+						<button class="button" value="576">576px</button>
+						<button class="button" value="768">768px</button>
+						<button class="button" value="992">992px</button>
+						<button class="button" value="1200">1200px</button>
 					</div>
 				</div>
 			</div>
