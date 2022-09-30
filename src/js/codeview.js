@@ -19,7 +19,7 @@ $(function() {
 		// Resizable
 		let startY, startHeight;
 		let $dragHandle = $(this).find('.resizer');
-		let $preview = $(this).find('div[id$="-preview"]');
+		let $preview = $(this).find('div[id$="-preview"] .framewrapper');
 		let $iframe = $preview.find('iframe');
 
 		$dragHandle.on('mousedown', initDrag);
@@ -43,16 +43,14 @@ $(function() {
 
 
 		// Responsive control
-		let $responsiveButtons = $(this).find('.responsiveControl button');
-
-		function responsiveView(size) {
-			if (size === 'full') {
+		$(this).find('.responsiveControl button').on('click', function() {
+			if ($(this).hasClass('is-active')) {
 				$iframe.css('width', '100%');
+				$(this).removeClass('is-active');
 			} else {
-				$iframe.css('width', `${size}px`);
+				$iframe.css('width', $(this).val());
+				$(this).addClass('is-active');
 			}
-		}
-
-		$responsiveButtons.on('click', function() { responsiveView($(this).val()) });
+		});
 	});
 });
