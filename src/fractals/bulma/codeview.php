@@ -100,8 +100,10 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 
 		<div class="tab-content" id="<?= $title ?>TabContent">
 			<div class="is-active" id="<?= $title ?>-preview">
-				<iframe id="<?= $title ?>" class="codeview__preview-frame" data-simplebar></iframe>
-				<div class="resizer"></div>
+				<div class="framewrapper">
+					<iframe id="<?= $title ?>" class="codeview__preview-frame" data-simplebar></iframe>
+					<div class="resizer"></div>
+				</div>
 				<div class="responsiveControl">
 					<div class="buttons has-addons is-centered">
 						<button class="button" value="360">360px</button>
