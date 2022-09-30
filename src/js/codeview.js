@@ -47,9 +47,9 @@ $(function() {
 
 		function responsiveView(size) {
 			if (size === 'full') {
-				$iframe.style('width', '100%');
+				$iframe.css('width', '100%');
 			} else {
-				$iframe.style('width', `${size}px`);
+				$iframe.css('width', `${size}px`);
 			}
 		}
 
