@@ -113,7 +113,12 @@ body.DarkMode {
 
 	.button {
 		background: #363636;
+		border-color: #222;
 		color: #fff;
+
+		&.is-active {
+			border-color: #444;
+		}
 	}
 
 	.button.is-static {
