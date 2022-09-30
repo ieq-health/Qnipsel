@@ -43,12 +43,14 @@ $(function() {
 
 
 		// Responsive control
-		$(this).find('.responsiveControl button').on('click', function() {
+		let $responsiveButtons = $(this).find('.responsiveControl button');
+		$responsiveButtons.on('click', function() {
 			if ($(this).hasClass('is-active')) {
 				$iframe.css('width', '100%');
 				$(this).removeClass('is-active');
 			} else {
 				$iframe.css('width', $(this).val());
+				$responsiveButtons.removeClass('is-active');
 				$(this).addClass('is-active');
 			}
 		});
