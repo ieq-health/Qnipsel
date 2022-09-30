@@ -40,5 +40,19 @@ $(function() {
 			$iframe.css('pointer-events', 'all');
 			$(document).off('mousemove');
 		}
+
+
+		// Responsive control
+		let $responsiveButtons = $(this).find('.responsiveControl button');
+
+		function responsiveView(size) {
+			if (size === 'full') {
+				$iframe.style('width', '100%');
+			} else {
+				$iframe.style('width', `${size}px`);
+			}
+		}
+
+		$responsiveButtons.on('click', function() { responsiveView($(this).val()) });
 	});
 });
