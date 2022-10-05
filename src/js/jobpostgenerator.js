@@ -48,7 +48,7 @@ $(function() {
 				&& website
 				&& jobtitle
 				&& description
-				&& employmenttype)) {
+				&& employmenttype.length)) {
 					$("#output").val('Nicht alle Pflichtfelder ausgefüllt.');
 					return;
 			}
