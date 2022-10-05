@@ -1,5 +1,16 @@
 # Changelog
 
+## [develop]
+
+### Added
+- Added responsive controls for codeview
+
+### Changed
+- Jobposting employmentType is now multiselect
+- Jobposting generator checks required fields
+- Changed Jobposting addressRegion to addressCountry
+
+
 ## [0.20.0] - 2022-09-23
 
 ### Added

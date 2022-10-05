@@ -103,8 +103,14 @@ function fractalFormSelect($attr)
 {
 	$output = '<div class="field">';
 	$output .= _addLabel($attr);
-	$output .= '	<div class="select is-fullwidth">';
-	$output .= '		<select name="' . $attr['name'] . '">';
+
+	if (array_key_exists('multiple', $attr) && $attr['multiple'] == true) {
+		$output .= '	<div class="select is-fullwidth is-multiple">';
+		$output .= '		<select name="' . $attr['name'] . '" multiple>';
+	} else {
+		$output .= '	<div class="select is-fullwidth">';
+		$output .= '		<select name="' . $attr['name'] . '">';
+	}
 
 	for ($i=0; $i < count($attr['options']); $i++) {
 		$option = $attr['options'][$i];

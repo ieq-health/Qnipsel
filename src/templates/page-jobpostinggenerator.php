@@ -86,6 +86,7 @@
 										<?= fractalFormSelect(array(
 											'label' => array( 'string' => 'Beschäftigung', 'required' => true),
 											'name'  => 'employmenttype',
+											'multiple' => true,
 											'options' => array(
 												array('value' => 'FULL_TIME', 'label' => 'Vollzeit'),
 												array('value' => 'PART_TIME', 'label' => 'Teilzeit'),

@@ -17,7 +17,7 @@ $(function() {
 
 			let jobtitle = $('*[name="jobtitle"]').val();
 			let description = $('*[name="description"]').val();
-			let employmenttype = $('*[name="employmenttype"]').val();
+			let employmenttype = $('*[name="employmenttype"] option:selected').toArray();
 			let postdateDay = $('*[name="postdate-day"]').val();
 			let postdateMonth = $('*[name="postdate-month"]').val();
 			let postdateYear = $('*[name="postdate-year"]').val();
@@ -27,6 +27,19 @@ $(function() {
 			let educationrequirements = $('*[name="educationrequirements"]').val();
 			let experiencerequirements = $('*[name="experiencerequirements"]').val();
 			let jobbenefits = $('*[name="jobBenefits"]').val();
+
+			// check for chrystals
+			if (!(name
+				&& street
+				&& plz
+				&& place
+				&& industry
+				&& website
+				&& jobtitle
+				&& description)) {
+					$("#output").val('Nicht alle Pflichtfelder ausgefüllt.');
+					return;
+			}
 
 			$("#output").val(`
 	<script type="application/ld+json">
@@ -50,7 +63,7 @@ $(function() {
 			"streetAddress": "${street}",
 			"addressLocality": "${place}",
 			"postalCode": "${plz}",
-			"addressRegion": "${country}"
+			"addressCountry": "${country}"
 		}
 		},
 		"responsibilities": "${cleanJson( responsibilities )}",
