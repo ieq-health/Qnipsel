@@ -55,7 +55,7 @@ $(function() {
 		"sameAs": "${website}"
 	},
 	"industry": "${industry}",
-	"employmentType": "${employmenttype}",
+	"employmentType": [${employmenttype.map(i => '"' + i + '"')}],
 	"datePosted": "${postdateYear}-${postdateMonth}-${postdateDay}",
 	"jobLocation": {
 		"@type": "Place",
