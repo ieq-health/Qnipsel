@@ -19,7 +19,7 @@ $(function() {
 		// Resizable
 		let startY, startHeight;
 		let $dragHandle = $(this).find('.resizer');
-		let $preview = $(this).find('div[id$="-preview"]');
+		let $preview = $(this).find('div[id$="-preview"] .framewrapper');
 		let $iframe = $preview.find('iframe');
 
 		$dragHandle.on('mousedown', initDrag);
@@ -40,5 +40,19 @@ $(function() {
 			$iframe.css('pointer-events', 'all');
 			$(document).off('mousemove');
 		}
+
+
+		// Responsive control
+		let $responsiveButtons = $(this).find('.responsiveControl button');
+		$responsiveButtons.on('click', function() {
+			if ($(this).hasClass('is-active')) {
+				$iframe.css('width', '100%');
+				$(this).removeClass('is-active');
+			} else {
+				$iframe.css('width', parseInt($(this).val()) + 2); // add 2px to account for borders
+				$responsiveButtons.removeClass('is-active');
+				$(this).addClass('is-active');
+			}
+		});
 	});
 });
