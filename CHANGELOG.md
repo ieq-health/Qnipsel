@@ -9,6 +9,7 @@
 - Jobposting employmentType is now multiselect
 - Jobposting generator checks required fields
 - Changed Jobposting addressRegion to addressCountry
+- Automatically set postdate in Jobposting to current date
 
 
 ## [0.20.0] - 2022-09-23
