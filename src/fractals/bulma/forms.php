@@ -120,7 +120,7 @@ function fractalFormSelect($attr)
 	$output .= '		</select>';
 
 	if (array_key_exists('multiple', $attr) && $attr['multiple'] == true) {
-		$output .= '		<p class="help">Mehfachauswahl mit <code>Strg</code></p>'
+		$output .= '		<p class="help">Mehfachauswahl mit <code>Strg</code></p>';
 	}
 
 	$output .= '	</div>';
