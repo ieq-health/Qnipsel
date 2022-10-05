@@ -1,6 +1,6 @@
 # Changelog
 
-## [develop]
+## [0.20.1] - 2022-10-05
 
 ### Added
 - Added responsive controls for codeview
