@@ -17,7 +17,7 @@ $(function() {
 
 			let jobtitle = $('*[name="jobtitle"]').val();
 			let description = $('*[name="description"]').val();
-			let employmenttype = $('*[name="employmenttype"] option:selected').toArray();
+			let employmenttype = $('*[name="employmenttype"]').val();
 			let postdateDay = $('*[name="postdate-day"]').val();
 			let postdateMonth = $('*[name="postdate-month"]').val();
 			let postdateYear = $('*[name="postdate-year"]').val();
@@ -36,27 +36,28 @@ $(function() {
 				&& industry
 				&& website
 				&& jobtitle
-				&& description)) {
+				&& description
+				&& employmenttype)) {
 					$("#output").val('Nicht alle Pflichtfelder ausgefüllt.');
 					return;
 			}
 
 			$("#output").val(`
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org/",
-		"@type": "JobPosting",
-		"title": "${jobtitle}",
-		"description": "${cleanJson( description )}",
-		"hiringOrganization" : {
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "JobPosting",
+	"title": "${jobtitle}",
+	"description": "${cleanJson( description )}",
+	"hiringOrganization" : {
 		"@type": "Organization",
 		"name": "${name}",
 		"sameAs": "${website}"
-		},
-		"industry": "${industry}",
-		"employmentType": "${employmenttype}",
-		"datePosted": "${postdateYear}-${postdateMonth}-${postdateDay}",
-		"jobLocation": {
+	},
+	"industry": "${industry}",
+	"employmentType": "${employmenttype}",
+	"datePosted": "${postdateYear}-${postdateMonth}-${postdateDay}",
+	"jobLocation": {
 		"@type": "Place",
 		"address": {
 			"@type": "PostalAddress",
@@ -65,15 +66,15 @@ $(function() {
 			"postalCode": "${plz}",
 			"addressCountry": "${country}"
 		}
-		},
-		"responsibilities": "${cleanJson( responsibilities )}",
-		"skills": "${cleanJson( skills )}",
-		"qualifications": "${cleanJson( qualifications )}",
-		"educationRequirements": "${cleanJson( educationrequirements )}",
-		"experienceRequirements": "${cleanJson( experiencerequirements )}",
-		"jobBenefits": "${cleanJson( jobbenefits )}"
-	}
-	<\/script>`);
+	},
+	"responsibilities": "${cleanJson( responsibilities )}",
+	"skills": "${cleanJson( skills )}",
+	"qualifications": "${cleanJson( qualifications )}",
+	"educationRequirements": "${cleanJson( educationrequirements )}",
+	"experienceRequirements": "${cleanJson( experiencerequirements )}",
+	"jobBenefits": "${cleanJson( jobbenefits )}"
+}
+<\/script>`);
 		}
 	);
 });
