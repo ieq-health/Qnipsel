@@ -36,6 +36,12 @@
 									'name' => 'shopid',
 									'placeholder' => '50010123'
 								)) ?>
+
+								<?= fractalFormText(array(
+									'label' => array( 'string' => 'CC (Antowrt an)', 'required' => true),
+									'name' => 'cc',
+									'placeholder' => 'mein.name@ieq-health.de'
+								)) ?>
 							</div>
 						</div> <!-- // column -->
 
