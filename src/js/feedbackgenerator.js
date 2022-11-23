@@ -1,12 +1,4 @@
 $(function() {
-	function cleanJson (value) {
-		return value.replace(/[\r\n]/g, '\\n');
-	}
-
-	$('select[name="postdate-day"]').val((day < 10) ? '0' + day : day.toString()); 
-	$('select[name="postdate-month"]').val((month < 10) ? '0' + month : month.toString());
-	$('input[name="postdate-year"]').val(year);
-
 	// generate output
 	$("#feedbackgenerator").on(
 		"input propertychange",
