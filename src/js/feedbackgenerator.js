@@ -10,7 +10,7 @@ $(function() {
 			let shopid = encodeURIComponent($('*[name="shopid"]').val());
 			let cc = encodeURIComponent($('*[name="cc"]').val());
 
-			$("#output").val(`https://www.ieq-health.de/homepage-feedback?ihr-name=${name}&email=${email}&website=${website}&shopid=${shopid}`)
+			$("#output").val(`https://www.ieq-health.de/homepage-feedback?ihr-name=${name}&email=${email}&website=${website}&shopid=${shopid}&cc=${cc}`)
 		}
 	);
 });
