@@ -6,7 +6,7 @@
 			<?php while (have_posts()): the_post(); ?>
 				<?php get_template_part('partials/content', 'title'); ?>
 
-				<div id="application-json" class="container-fluid xml-stripper">
+				<div id="feedbackgenerator" class="container-fluid xml-stripper">
 					<div class="columns is-gapless">
 
 						<div class="column">
