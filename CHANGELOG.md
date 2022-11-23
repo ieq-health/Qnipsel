@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.21.0] - 2022-11-23
+
+### Added
+- Added generator for feedback form
+
+
 ## [0.20.1] - 2022-10-05
 
 ### Added
