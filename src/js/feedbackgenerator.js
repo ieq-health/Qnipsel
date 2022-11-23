@@ -4,7 +4,7 @@ $(function() {
 		"input propertychange",
 		"input, select, .field textarea",
 		function() {
-			let name = encodeURIComponent($('*[name="name"]').val());
+			let name = encodeURIComponent($('*[name="ihr-name"]').val());
 			let email = encodeURIComponent($('*[name="email"]').val());
 			let website = encodeURIComponent($('*[name="website"]').val());
 			let shopid = encodeURIComponent($('*[name="shopid"]').val());
