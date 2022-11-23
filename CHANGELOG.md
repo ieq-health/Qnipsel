@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.21.3] - 2022-11-23
+
+### Added
+- Add CC field to feedback form
+
+
 ## [0.21.2] - 2022-11-23
 
 ### Fixed
