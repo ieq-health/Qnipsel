@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.21.2] - 2022-11-23
+
+### Fixed
+- Fixed JS issue on feedback form
+
+
 ## [0.21.1] - 2022-11-23
 
 ### Fixed
