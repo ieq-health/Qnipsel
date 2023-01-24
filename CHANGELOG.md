@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.22.0] - 2023-01-24
+
+### Added
+- mmenu generator
+
+### Fixed
+- Codeview preview min-height increased
+
+
 ## [0.21.3] - 2022-11-23
 
 ### Added
