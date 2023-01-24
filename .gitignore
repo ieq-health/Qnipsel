@@ -9,3 +9,5 @@ dist/
 # Packages
 vendor/
 node_modules/
+.php-cs-fixer.cache
+package-lock.json
