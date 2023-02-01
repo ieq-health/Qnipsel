@@ -106,6 +106,7 @@ add_action('carbon_fields_register_fields', function () {
 				Field::make('multiselect', 'css_libs', 'CSS Libraries')
 				->add_options(array(
 					'bootstrap' => 'Bootstrap',
+					'mmenu' => 'mmenu',
 					'slick' => 'Slick',
 					'swiper' => 'Swiper'
 				)),
@@ -115,6 +116,7 @@ add_action('carbon_fields_register_fields', function () {
 				->add_options(array(
 					'bootstrap' => 'Bootstrap',
 					'jquery' => 'jQuery',
+					'mmenu' => 'mmenu',
 					'slick' => 'Slick',
 					'swiper' => 'Swiper'
 				))
