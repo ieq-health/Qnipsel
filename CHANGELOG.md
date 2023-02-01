@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.22.1] - 2023-02-01
+
+### Added
+- mmenu added to codepen
+
+
 ## [0.22.0] - 2023-01-24
 
 ### Added

@@ -37,6 +37,15 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
+				<?php if (in_array('mmenu', $css_libs)) : ?>
+					<div class="control">
+						<div class="tags has-addons">
+							<div class="tag is-dark">CSS</div>
+							<div class="tag is-black">mmenu</div>
+						</div>
+					</div>
+				<?php endif; ?>
+
 				<?php if (in_array('slick', $css_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
@@ -69,6 +78,15 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 						<div class="tags has-addons">
 							<div class="tag is-dark">JS</div>
 							<div class="tag is-black">jQuery</div>
+						</div>
+					</div>
+				<?php endif; ?>
+
+				<?php if (in_array('mmenu', $js_libs)) : ?>
+					<div class="control">
+						<div class="tags has-addons">
+							<div class="tag is-dark">JS</div>
+							<div class="tag is-black">mmenu</div>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -136,6 +154,14 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 			iframeDocument.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
 		<?php endif; ?>
 
+		<?php if (in_array('mmenu', $css_libs)) : ?>
+			iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.3/jquery.mmenu.all.css">');
+		<?php endif; ?>
+
+		<?php if (in_array('swiper', $css_libs)) : ?>
+			iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu.all.css">');
+		<?php endif; ?>
+
 		<?php if (in_array('slick', $css_libs)) : ?>
 			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
 			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
@@ -151,6 +177,10 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 
 		<?php if (in_array('jquery', $js_libs)) : ?>
 			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
+		<?php endif; ?>
+
+		<?php if (in_array('mmenu', $js_libs)) : ?>
+			iframeDocument.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.3/jquery.mmenu.all.js" crossorigin="anonymous"><\/script>');
 		<?php endif; ?>
 
 		<?php if (in_array('bootstrap', $js_libs)) : ?>
