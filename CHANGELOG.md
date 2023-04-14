@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.22.2] - 2023-04-14
+
+### Added
+- option to add logo to mmenu
+
+
 ## [0.22.1] - 2023-02-01
 
 ### Added
