@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.22.3] - 2023-04-14
+
+### Fixed
+- fixed bug in mmenu logo
+
+
 ## [0.22.2] - 2023-04-14
 
 ### Added

@@ -148,24 +148,25 @@ $(function () {
 		}
 
 		// Show logo instead of title
-		let navTitle = "Navigation";
+		let navTitle = "title";
 		let navHeight = 1;
 		if ($("#mmenu-generator #show-logo").is(":checked")) {
 			let logoURL = $("#mmenu-generator input[name='logo-url']").val();
-			navTitle = `<img style='max-height:100%' src='${logoURL}'>`
+			navTitle = `<img style='max-height:100%;margin:0 auto' src='${logoURL}'>`
 			navHeight = 2
+		} else {
+			options["navbar"] = { title: "Navigation" };
 		}
 
 		/** Create output object */
 		let output = {
 			...{
 				extensions: extensions,
-				navbar: { title: navTitle},
 				navbars: [
 					{
 						position: "top",
 						height: navHeight,
-						content: ["prev", "title", "close"]
+						content: ["prev", navTitle, "close"]
 					},
 					{
 						position: "bottom",
