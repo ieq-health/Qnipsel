@@ -51,6 +51,9 @@
 								<?= fractalFormCheckbox(['label' => ['string' => 'Sliding Submenu'], 'name' => 'is-sliding']) ?>
 								<?= fractalFormCheckbox(['label' => ['string' => 'Zeige Elternmenu'], 'name' => 'show-parent']) ?>
 								<?= fractalFormCheckbox(['label' => ['string' => 'Zeige Unterseitencounter'], 'name' => 'show-counters']) ?>
+								
+								<?= fractalFormText(['label' => ['string' => 'Logo'], 'name' => 'logo-url', 'value' => '//placeholder-q.de/200x70']) ?>
+								<?= fractalFormCheckbox(['label' => ['string' => 'Logo anzeigen'], 'name' => 'show-logo']) ?>
 							</div>
 						</div>
 
