@@ -37,6 +37,15 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 					</div>
 				<?php endif; ?>
 
+				<?php if (in_array('fa5', $css_libs)) : ?>
+					<div class="control">
+						<div class="tags has-addons">
+							<div class="tag is-dark">CSS</div>
+							<div class="tag is-black">FA5</div>
+						</div>
+					</div>
+				<?php endif; ?>
+
 				<?php if (in_array('mmenu', $css_libs)) : ?>
 					<div class="control">
 						<div class="tags has-addons">
@@ -152,6 +161,10 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 
 		<?php if (in_array('bootstrap', $css_libs)) : ?>
 			iframeDocument.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
+		<?php endif; ?>
+
+		<?php if (in_array('fa5', $css_libs)) : ?>
+			iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">');
 		<?php endif; ?>
 
 		<?php if (in_array('mmenu', $css_libs)) : ?>
