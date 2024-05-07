@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.22.4] - 2024-05-07
+
+### Added
+- added Font Awesome 5 as a library to codeview
+
+
 ## [0.22.3] - 2023-04-14
 
 ### Fixed
