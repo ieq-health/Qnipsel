@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.22.5] - 2024-05-10
+
+### Added
+- added mailto-generator
+
+
 ## [0.22.4] - 2024-05-07
 
 ### Added
