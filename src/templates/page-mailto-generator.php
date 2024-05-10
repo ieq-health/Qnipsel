@@ -45,15 +45,9 @@
 						addressOutput = addressOutput.slice(0, -1);
 						
 						output.value = `\<script\>
-						function UnCryptMailto(s) {
-						var myS = ''; var arrS = s.split(';'); var i = 0;
-						for (i = 0; i < arrS.length; i++) {
-							myS += String.fromCharCode(parseInt(arrS[i]));
-						}
-						return myS;
-						}
-						document.write('<a href="mailto:' + UnCryptMailto('${addressOutput}') + '">' + UnCryptMailto('${addressOutput}') + '</a>')
-						\<\/script\>`
+let UnCryptMailto = (s) => s.split(';').map((c) => String.fromCharCode(parseInt(c))).join('');
+document.write('<a href="mailto:' + UnCryptMailto('${addressOutput}') + '">' + UnCryptMailto('${addressOutput}') + '</a>')
+\<\/script\>`;
 					});
 				</script>
 
