@@ -32,15 +32,15 @@
 				</div> <!-- application -->
 
 				<script>
-					const input = document.getElementById('mail')
-					const output = document.getElementById('output')
+					const input = document.querySelector('input[name="mail"]');
+					const output = document.getElementById('output');
 
 					input.addEventListener('input', function() {
 						const addressInput = input.value;
-						let addressOutput = ''
+						let addressOutput = '';
 					
 						for (let character of addressInput) {
-							addressOutput += character.charCodeAt() + ';'
+							addressOutput += character.charCodeAt() + ';';
 						}
 						addressOutput = addressOutput.slice(0, -1);
 						
