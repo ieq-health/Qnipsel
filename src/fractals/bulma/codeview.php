@@ -154,65 +154,67 @@ function templateq_codeview_block($title, $html, $css, $css_libs, $js, $js_libs)
 	</div>
 
 	<script>
-		let iframe = document.getElementById('<?= $title ?>');
-		let iframeDocument = iframe.contentWindow.document;
+		(function() {
+			let iframe = document.getElementById('<?= $title ?>');
+			let iframeDocument = iframe.contentWindow.document;
 
-		iframeDocument.open();
+			iframeDocument.open();
 
-		<?php if (in_array('bootstrap', $css_libs)) : ?>
-			iframeDocument.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
-		<?php endif; ?>
+			<?php if (in_array('bootstrap', $css_libs)) : ?>
+				iframeDocument.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">');
+			<?php endif; ?>
 
-		<?php if (in_array('fa5', $css_libs)) : ?>
-			iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">');
-		<?php endif; ?>
+			<?php if (in_array('fa5', $css_libs)) : ?>
+				iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">');
+			<?php endif; ?>
 
-		<?php if (in_array('mmenu', $css_libs)) : ?>
-			iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.3/jquery.mmenu.all.css">');
-		<?php endif; ?>
+			<?php if (in_array('mmenu', $css_libs)) : ?>
+				iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.3/jquery.mmenu.all.css">');
+			<?php endif; ?>
 
-		<?php if (in_array('swiper', $css_libs)) : ?>
-			iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu.all.css">');
-		<?php endif; ?>
+			<?php if (in_array('swiper', $css_libs)) : ?>
+				iframeDocument.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu.all.css">');
+			<?php endif; ?>
 
-		<?php if (in_array('slick', $css_libs)) : ?>
-			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
-			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
-		<?php endif; ?>
+			<?php if (in_array('slick', $css_libs)) : ?>
+				iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">');
+				iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">');
+			<?php endif; ?>
 
-		<?php if (in_array('swiper', $css_libs)) : ?>
-			iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@5.4.5/css/swiper.min.css">');
-		<?php endif; ?>
+			<?php if (in_array('swiper', $css_libs)) : ?>
+				iframeDocument.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@5.4.5/css/swiper.min.css">');
+			<?php endif; ?>
 
-		iframeDocument.write(`<style>html,body{margin:0;padding:0;}</style>`);
-		iframeDocument.write(`<style><?= $css ?></style>`);
-		iframeDocument.write(`<body><?= $html ?></body>`);
+			iframeDocument.write(`<style>html,body{margin:0;padding:0;}</style>`);
+			iframeDocument.write(`<style><?= $css ?></style>`);
+			iframeDocument.write(`<body><?= $html ?></body>`);
 
-		<?php if (in_array('jquery', $js_libs)) : ?>
-			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
-		<?php endif; ?>
+			<?php if (in_array('jquery', $js_libs)) : ?>
+				iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
+			<?php endif; ?>
 
-		<?php if (in_array('mmenu', $js_libs)) : ?>
-			iframeDocument.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.3/jquery.mmenu.all.js" crossorigin="anonymous"><\/script>');
-		<?php endif; ?>
+			<?php if (in_array('mmenu', $js_libs)) : ?>
+				iframeDocument.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.3.3/jquery.mmenu.all.js" crossorigin="anonymous"><\/script>');
+			<?php endif; ?>
 
-		<?php if (in_array('bootstrap', $js_libs)) : ?>
-			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
-			iframeDocument.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
-		<?php endif; ?>
+			<?php if (in_array('bootstrap', $js_libs)) : ?>
+				iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
+				iframeDocument.write('<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"><\/script>');
+			<?php endif; ?>
 
-		<?php if (in_array('slick', $js_libs)) : ?>
-			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
-			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
-		<?php endif; ?>
+			<?php if (in_array('slick', $js_libs)) : ?>
+				iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
+				iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" crossorigin="anonymous"><\/script>');
+			<?php endif; ?>
 
-		<?php if (in_array('swiper', $js_libs)) : ?>
-			iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
-			iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/swiper@5.4.5/js/swiper.min.js" crossorigin="anonymous"><\/script>');
-		<?php endif; ?>
+			<?php if (in_array('swiper', $js_libs)) : ?>
+				iframeDocument.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"><\/script>');
+				iframeDocument.write('<script src="https://cdn.jsdelivr.net/npm/swiper@5.4.5/js/swiper.min.js" crossorigin="anonymous"><\/script>');
+			<?php endif; ?>
 
-		iframeDocument.write("<script><?= trim($js_inject) ?><\/script>");
-		iframeDocument.close();
+			iframeDocument.write("<script><?= trim($js_inject) ?><\/script>");
+			iframeDocument.close();
+		})();
 
 /**
 		let contentHeight = iframeDocument.body.scrollHeight;
