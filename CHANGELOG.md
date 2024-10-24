@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.22.6] - 2024-10-24
+
+### Fixed
+- wrap mailto-generator in IIFE
+
+
 ## [0.22.5] - 2024-05-10
 
 ### Added
