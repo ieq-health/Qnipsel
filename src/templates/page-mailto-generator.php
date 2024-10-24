@@ -50,9 +50,9 @@
 	document.write('<a href="mailto:' + UnCryptMailto('${addressOutput}') + '">' + UnCryptMailto('${addressOutput}') + '</a>');
 })();
 \<\/script\>`;
+					});
 				</script>
 
-					});
 
 			<?php endwhile; ?>
 		<?php endif; ?>
