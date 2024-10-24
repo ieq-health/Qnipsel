@@ -47,10 +47,10 @@
 						output.value = `\<script\>
 (function() {
 	let UnCryptMailto = (s) => s.split(';').map((c) => String.fromCharCode(parseInt(c))).join('');
-	document.write('<a href="mailto:' + UnCryptMailto('${addressOutput}') + '">' + UnCryptMailto('${addressOutput}') + '</a>')
-	\<\/script\>
+	document.write('<a href="mailto:' + UnCryptMailto('${addressOutput}') + '">' + UnCryptMailto('${addressOutput}') + '</a>');
 })();
-</script>`;
+\<\/script\>`;
+				</script>
 
 					});
 
