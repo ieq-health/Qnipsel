@@ -3,7 +3,7 @@
 /** Set version
  * Used for cachebusting JS/CSS
  */
-$GLOBALS['qnipsel_version'] = '0.22.6';
+$GLOBALS['qnipsel_version'] = '0.22.7';
 
 /** Custom Fields
  * Set up the Custom Fields plugin and define some fields.
@@ -79,7 +79,7 @@ function templateq_recent_updates()
 
 	while ($loop->have_posts() && $counter < 5) {
 		$loop->the_post();
-		$string .= '<tr><td><a href="' . get_permalink($loop->post->ID) .'">' . get_the_title($loop->post->ID) . '</a></td>';
+		$string .= '<tr><td><a href="' . get_permalink($loop->post->ID) . '">' . get_the_title($loop->post->ID) . '</a></td>';
 		$string .= '<td><small>(' . get_the_modified_date() . ')</small></td>';
 		$string .= '<td>' . get_the_modified_author() . '</td></tr>';
 		$counter++;

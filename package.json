@@ -1,49 +1,49 @@
 {
-  "name": "templateq",
-  "version": "0.22.6",
-  "description": "Wordpress theme to power qnipsel",
-  "main": "webpack.config.js",
-  "scripts": {
-    "test": "npx stylelint src/scss",
-    "build": "rm -rf dist/*; npx gulp",
-    "clean": "rm -rf dist/*",
-    "watch": "npx gulp watch --env.PRODUCTION=false"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-recommended-scss",
-    "rules": {
-      "no-descending-specificity": null,
-      "length-zero-no-unit": true,
-      "indentation": "tab"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@git.trbk.it:ieq-health/qnipsel.git"
-  },
-  "author": "Christian Brassat <christian@brassat.eu>",
-  "license": "ISC",
-  "dependencies": {
-    "bulma": "^0.9.2",
-    "bulma-extensions": "^6.2.7",
-    "bulma-tooltip": "^3.0.2",
-    "event-stream": "^4.0.1",
-    "gulp": "^4.0.2",
-    "jquery": "^3.5.1",
-    "js-cookie": "^2.2.1",
-    "nodemon": "^2.0.7",
-    "npm-run-all": "^4.1.5",
-    "shx": "^0.3.3",
-    "simplebar": "^5.3.0",
-    "stylelint": "^13.10.0",
-    "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.19.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.20.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-dart-sass": "^1.0.2"
-  }
+	"name": "templateq",
+	"version": "0.22.7",
+	"description": "Wordpress theme to power qnipsel",
+	"main": "webpack.config.js",
+	"scripts": {
+		"test": "npx stylelint src/scss",
+		"build": "rm -rf dist/*; npx gulp",
+		"clean": "rm -rf dist/*",
+		"watch": "npx gulp watch --env.PRODUCTION=false"
+	},
+	"stylelint": {
+		"extends": "stylelint-config-recommended-scss",
+		"rules": {
+			"no-descending-specificity": null,
+			"length-zero-no-unit": true,
+			"indentation": "tab"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@git.trbk.it:ieq-health/qnipsel.git"
+	},
+	"author": "Christian Brassat <christian@brassat.eu>",
+	"license": "ISC",
+	"dependencies": {
+		"bulma": "^0.9.2",
+		"bulma-extensions": "^6.2.7",
+		"bulma-tooltip": "^3.0.2",
+		"event-stream": "^4.0.1",
+		"gulp": "^4.0.2",
+		"jquery": "^3.5.1",
+		"js-cookie": "^2.2.1",
+		"nodemon": "^2.0.7",
+		"npm-run-all": "^4.1.5",
+		"shx": "^0.3.3",
+		"simplebar": "^5.3.0",
+		"stylelint": "^13.10.0",
+		"stylelint-config-recommended-scss": "^4.2.0",
+		"stylelint-config-standard": "^20.0.0",
+		"stylelint-order": "^4.1.0",
+		"stylelint-scss": "^3.19.0"
+	},
+	"devDependencies": {
+		"eslint": "^7.20.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-dart-sass": "^1.0.2"
+	}
 }
