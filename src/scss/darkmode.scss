@@ -39,8 +39,7 @@ body.DarkMode {
 
 	/** Content */
 	
-	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6,
-	.content th {
+	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
 		color: #aaa;
 	}
 
@@ -59,6 +58,16 @@ body.DarkMode {
 
 	.table td, .table th {
 		border-color: #444;
+	}
+
+	.content .table th {
+		color: #aaa;
+	}
+
+	.content code {
+	    background: #333;
+	    border-color: #111;
+	    color: #f8f8f8;
 	}
 
 	.box {
