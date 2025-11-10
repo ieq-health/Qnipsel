@@ -60,6 +60,16 @@ body.DarkMode {
 		border-color: #444;
 	}
 
+	.content .table th {
+		color: #aaa;
+	}
+
+	.content code {
+		background: #333;
+		border-color: #111;
+		color: #f8f8f8;
+	}
+
 	.box {
 		background: #1a1a1a;
 		color: #ccc;
